@@ -1,8 +1,21 @@
 # Saka: The Foundation of Indonesian NLP 🇮🇩
 
+[![PyPI version](https://img.shields.io/pypi/v/saka-nlp.svg)](https://pypi.org/project/saka-nlp/)
+[![Documentation](https://img.shields.io/badge/docs-live-brightgreen)](http://saka-nlp.netlify.app/)
+[![Colab](https://img.shields.io/badge/Colab-Playground-orange)](https://colab.research.google.com/drive/1MJ6fwJruR6B-UVT1sqKyqWXukjGe2UCH?usp=sharing)
+
 Secara filosofis, **Saka** (dalam bahasa Jawa/Sunda) berarti "tiang penyangga" atau "pilar". **Saka-NLP** dibangun untuk menjadi sebuah *architectural framework* modern yang solid bagi pemrosesan teks bahasa Indonesia dan daerah.
 
 Saka-NLP mendukung *asynchronous processing*, memiliki komponen yang dijaga terpisah secara modular (*plug-and-play*), serta menggunakan fungsi heuristik dan integrasi banyak sumber data terpercaya (seperti leksikon bahasa gaul, integrasi stopword, hingga ekstraksi KBBI resmi secara langsung).
+
+---
+
+### 🌐 Links
+*   **Website Resmi**: [saka-nlp.netlify.app](http://saka-nlp.netlify.app/)
+*   **Google Colab Playground**: [Coba Sekaran di Colab](https://colab.research.google.com/drive/1MJ6fwJruR6B-UVT1sqKyqWXukjGe2UCH?usp=sharing)
+*   **PyPI Package**: [saka-nlp on PyPI](https://pypi.org/project/saka-nlp/)
+
+---
 
 ## ✨ Fitur Unggulan
 
@@ -48,7 +61,7 @@ Saka-NLP didesain agar kode Python Anda menjadi bersih. Cukup lakukan satu baris
 import saka
 
 print(saka.__version__)
-# Output: 0.1.2
+# Output: 0.1.4
 ```
 
 ### 1. Tokenisasi Cerdas 
