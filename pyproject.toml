@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "saka-nlp"
-version = "0.1.0"
+version = "0.1.1"
 authors = [
   { name="Saka-NLP Contributors" },
 ]
@@ -21,9 +21,16 @@ dependencies = [
     "beautifulsoup4>=4.9.3",
 ]
 
+[tool.setuptools]
+package-dir = {"" = "."}
+include-package-data = true
+
+[tool.setuptools.package-data]
+"saka.dict" = ["*.json", "*.txt"]
+
 [project.urls]
-"Homepage" = "https://github.com/Saka-NLP/saka"
-"Bug Tracker" = "https://github.com/Saka-NLP/saka/issues"
+"Homepage" = "https://github.com/Muhammad-Ikhwan-Fathulloh/Saka-NLP"
+"Bug Tracker" = "https://github.com/Muhammad-Ikhwan-Fathulloh/Saka-NLP/issues"
 
 [project.scripts]
 saka = "saka.scripts.cli:main"

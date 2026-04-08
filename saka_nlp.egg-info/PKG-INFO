@@ -1,10 +1,10 @@
 Metadata-Version: 2.4
 Name: saka-nlp
-Version: 0.1.0
+Version: 0.1.1
 Summary: Saka: Pilar Pemrosesan Bahasa Nusantara
 Author: Saka-NLP Contributors
-Project-URL: Homepage, https://github.com/Saka-NLP/saka
-Project-URL: Bug Tracker, https://github.com/Saka-NLP/saka/issues
+Project-URL: Homepage, https://github.com/Muhammad-Ikhwan-Fathulloh/Saka-NLP
+Project-URL: Bug Tracker, https://github.com/Muhammad-Ikhwan-Fathulloh/Saka-NLP/issues
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
@@ -96,12 +96,23 @@ print(analysis)
 # }
 ```
 
-### 4. Live Integrasi Pencarian KBBI
-Saka menggunakan library pendukung (`requests` & `bs4`) untuk mengurai jawaban dari situs daring murni. Ini wajib menggunakan akses jaringan internet.
+### 4. Live Integrasi Pencarian KBBI (Dengan Dukungan Akun)
+Saka menggunakan library pendukung (`requests` & `bs4`) untuk mengurai jawaban dari situs resmi. Jika Anda memiliki akun KBBI Daring, Anda dapat menyertakan session cookies untuk akses yang lebih stabil.
+
+**Catatan:** Library ini **tidak menyimpan** data akun Anda. Cookies hanya dikirimkan langsung ke server resmi KBBI.
+
 ```python
 import saka
 
+# Contoh tanpa login
 kbbi_result = saka.query_kbbi("belajar")
+
+# Contoh dengan session cookies (opsional)
+my_cookies = {
+    ".AspNetCore.Antiforgery.xxx": "value",
+    "ASP.NET_SessionId": "value"
+}
+kbbi_result_logged_in = saka.query_kbbi("belajar", cookies=my_cookies)
 
 if kbbi_result["status"] == "found":
     for arti in kbbi_result["definitions"]:
@@ -118,6 +129,33 @@ import saka
 stopwords = saka.get_stopwords()
 print(f"Ukuran kamus stopwords: {len(stopwords)}")
 print(f"Apakah 'ada' adalah stopword? {'ada' in stopwords}") # Output: True
+```
+
+### 6. Dukungan Bahasa Daerah: SundaDigi & Aksara Sunda
+Saka-NLP menyediakan pilar awal untuk pemrosesan bahasa daerah, khususnya bahasa Sunda, termasuk integrasi kamus digital dan transliterasi Aksara.
+
+#### Pencarian Kamus SundaDigi
+```python
+import saka
+
+# Mencari arti kata "wilujeng"
+result = saka.query_sundadigi("wilujeng")
+print(result["definitions"])
+```
+
+#### Transliterasi Aksara Sunda
+Saka-NLP mendukung konversi teks Latin ke Aksara Sunda sesuai dengan [Panduan SundaDigi](https://sundadigi.com/panduan).
+
+```python
+import saka
+
+# Latin ke Aksara
+aksara = saka.latin_to_aksara_sunda("saka")
+print(aksara) # Output: ᮞᮊ
+
+# Aksara ke Latin
+latin = saka.aksara_sunda_to_latin("ᮞᮊ")
+print(latin) # Output: saka
 ```
 
 ---
@@ -143,7 +181,7 @@ saka --normalize "ngapain ke kampus klo libur"
 
 * **KBBI (Kamus Besar Bahasa Indonesia)**: Data yang dijaring bersumber langsung dari portal kredensial [KBBI Daring Kemendikdasmen](https://kbbi.kemendikdasmen.go.id/).
 * **Slang Words**: Memanfaatkan corpus dari [Twitter COVID-19 Sentiment Lexicon](https://github.com/evanmartua34/Twitter-COVID19-Indonesia-Sentiment-Analysis---Lexicon-Based).
-* **SundaDigi**: Menggunakan kamus digital [SundaDigi](https://sundadigi.com/) untuk terjemahan & referensi kosakata bahasa daerah Sunda.
+* **SundaDigi**: Menggunakan kamus digital [SundaDigi](https://sundadigi.com/) untuk terjemahan & referensi kosakata bahasa daerah Sunda serta [Panduan Aksara Sunda](https://sundadigi.com/panduan) untuk sistem transliterasi.
 * **Stopwords**: Mengadopsi corpus legendaris [Tala Stopwords Dataset](https://github.com/masdevid/ID-Stopwords).
 
 ## ❤️ Credits

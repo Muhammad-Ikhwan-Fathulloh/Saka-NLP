@@ -1,1 +1,5 @@
+dist
+examples
+reproduce_issues
 saka
+tests

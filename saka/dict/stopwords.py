@@ -15,5 +15,6 @@ def get_stopwords() -> Set[str]:
                 if word:
                     stopwords.add(word)
     except FileNotFoundError:
+        print(f"Warning: Stopwords file not found at {txt_path}. get_stopwords() will return empty set.")
         pass
     return stopwords
