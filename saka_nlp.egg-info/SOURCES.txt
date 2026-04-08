@@ -20,6 +20,7 @@ reproduce_issues.py
 ./saka/scripts/cli.py
 ./saka/utils/helpers.py
 ./tests/test_core.py
+./tests/test_kbbi_new.py
 ./tests/test_kbbi_session.py
 ./tests/test_sunda_trans.py
 examples/async_usage.py
@@ -45,5 +46,6 @@ saka_nlp.egg-info/entry_points.txt
 saka_nlp.egg-info/requires.txt
 saka_nlp.egg-info/top_level.txt
 tests/test_core.py
+tests/test_kbbi_new.py
 tests/test_kbbi_session.py
 tests/test_sunda_trans.py

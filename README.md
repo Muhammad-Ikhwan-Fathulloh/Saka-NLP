@@ -43,6 +43,14 @@ pip install -e .
 
 Saka-NLP didesain agar kode Python Anda menjadi bersih. Cukup lakukan satu baris `import saka` untuk mengeluarkan beragam utilitas tanpa membuang *namespace*.
 
+### 0. Cek Versi
+```python
+import saka
+
+print(saka.__version__)
+# Output: 0.1.2
+```
+
 ### 1. Tokenisasi Cerdas 
 ```python
 import saka
@@ -79,23 +87,13 @@ print(analysis)
 # }
 ```
 
-### 4. Live Integrasi Pencarian KBBI (Dengan Dukungan Akun)
-Saka menggunakan library pendukung (`requests` & `bs4`) untuk mengurai jawaban dari situs resmi. Jika Anda memiliki akun KBBI Daring, Anda dapat menyertakan session cookies untuk akses yang lebih stabil.
-
-**Catatan:** Library ini **tidak menyimpan** data akun Anda. Cookies hanya dikirimkan langsung ke server resmi KBBI.
+### 4. Live Integrasi Pencarian KBBI
+Saka menggunakan library pendukung (`requests` & `bs4`) untuk mengurai jawaban dari situs [kbbi.web.id](https://kbbi.web.id/). Ini wajib menggunakan akses jaringan internet.
 
 ```python
 import saka
 
-# Contoh tanpa login
 kbbi_result = saka.query_kbbi("belajar")
-
-# Contoh dengan session cookies (opsional)
-my_cookies = {
-    ".AspNetCore.Antiforgery.xxx": "value",
-    "ASP.NET_SessionId": "value"
-}
-kbbi_result_logged_in = saka.query_kbbi("belajar", cookies=my_cookies)
 
 if kbbi_result["status"] == "found":
     for arti in kbbi_result["definitions"]:
@@ -162,7 +160,7 @@ saka --normalize "ngapain ke kampus klo libur"
 
 ## 🗄️ Referensi & Sumber Data
 
-* **KBBI (Kamus Besar Bahasa Indonesia)**: Data yang dijaring bersumber langsung dari portal kredensial [KBBI Daring Kemendikdasmen](https://kbbi.kemendikdasmen.go.id/).
+* **KBBI (Kamus Besar Bahasa Indonesia)**: Data yang dijaring bersumber dari [KBBI Online (kbbi.web.id)](https://kbbi.web.id/).
 * **Slang Words**: Memanfaatkan corpus dari [Twitter COVID-19 Sentiment Lexicon](https://github.com/evanmartua34/Twitter-COVID19-Indonesia-Sentiment-Analysis---Lexicon-Based).
 * **SundaDigi**: Menggunakan kamus digital [SundaDigi](https://sundadigi.com/) untuk terjemahan & referensi kosakata bahasa daerah Sunda serta [Panduan Aksara Sunda](https://sundadigi.com/panduan) untuk sistem transliterasi.
 * **Stopwords**: Mengadopsi corpus legendaris [Tala Stopwords Dataset](https://github.com/masdevid/ID-Stopwords).

@@ -1,3 +1,5 @@
+__version__ = "0.1.2"
+
 from .core.tokenizer import tokenize, async_tokenize
 from .core.normalizer import normalize, async_normalize
 from .core.analyzer import analyze, async_analyze
