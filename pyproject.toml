@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "saka-nlp"
+version = "0.1.0"
+authors = [
+  { name="Saka-NLP Contributors" },
+]
+description = "Saka: Pilar Pemrosesan Bahasa Nusantara"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "requests>=2.25.1",
+    "beautifulsoup4>=4.9.3",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Saka-NLP/saka"
+"Bug Tracker" = "https://github.com/Saka-NLP/saka/issues"
+
+[project.scripts]
+saka = "saka.scripts.cli:main"

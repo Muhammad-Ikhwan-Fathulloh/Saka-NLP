@@ -1,0 +1,134 @@
+# Saka: The Foundation of Indonesian NLP 🇮🇩
+
+Secara filosofis, **Saka** (dalam bahasa Jawa/Sunda) berarti "tiang penyangga" atau "pilar". **Saka-NLP** dibangun untuk menjadi sebuah *architectural framework* modern yang solid bagi pemrosesan teks bahasa Indonesia dan daerah.
+
+Saka-NLP mendukung *asynchronous processing*, memiliki komponen yang dijaga terpisah secara modular (*plug-and-play*), serta menggunakan fungsi heuristik dan integrasi banyak sumber data terpercaya (seperti leksikon bahasa gaul, integrasi stopword, hingga ekstraksi KBBI resmi secara langsung).
+
+## ✨ Fitur Unggulan
+
+*   **Asynchronous Processing**: Dilengkapi method pendamping `async_*` (contoh: `async_tokenize`) menggunakan `asyncio` untuk pemrosesan dataset besar secara efisien tanpa *blocking*.
+*   **Plug-and-Play Components**: Fleksibel dalam memilih mesin stemming, tokenisasi, atau mengintegrasikan plugin pihak ketiga.
+*   **Heuristic Morphology Analyzer**: Mendeteksi susunan pola awalan dan akhiran menggunakan aturan tata bahasa Indonesia.
+*   **Live KBBI Scraper**: Ekstraksi arti kata langsung mendompleng ke *Kamus Besar Bahasa Indonesia Daring* dari Kemendikbudristekdikti.
+*   **Agnostic Script Support**: Termasuk dukungan awal untuk skrip bahasa daerah seperti Aksara Sunda, yang ke depannya dapat diperluas untuk aksara Nusantara lainnya.
+
+---
+
+## 🚀 Panduan Instalasi
+
+Library `saka-nlp` menggunakan `pyproject.toml` dengan *bundler* `setuptools` terbaru sehingga proses distribusinya sangat mudah. 
+
+Pastikan versi Python Anda adalah **Python 3.8 atau lebih baru**.
+
+### Opsi 1: Instalasi Via PyPI (Direkomendasikan)
+Untuk menggunakan rilis stabil Saka-NLP, instal langsung melalui PyPI:
+```bash
+pip install saka-nlp
+```
+
+### Opsi 2: Instalasi dari Source Code (Versi Deployment/Development)
+Gunakan langkah ini jika Anda ingin turut berkontribusi, memodifikasi script mesin Saka-NLP, ataupun menggunakan *snapshot* git yang belum dirilis:
+```bash
+# 1. Clone repository
+git clone https://github.com/Muhammad-Ikhwan-Fathulloh/Saka-NLP.git
+cd Saka-NLP
+
+# 2. Instal library beserta seluruh dependency-nya
+pip install -e .
+```
+
+---
+
+## 📖 Panduan Penggunaan Modul Inti
+
+Saka-NLP didesain agar kode Python Anda menjadi bersih. Cukup lakukan satu baris `import saka` untuk mengeluarkan beragam utilitas tanpa membuang *namespace*.
+
+### 1. Tokenisasi Cerdas 
+```python
+import saka
+
+text = "Belajar sambil beramal di era konektivitas."
+tokens = saka.tokenize(text)
+print(tokens)
+# Output: ['Belajar', 'sambil', 'beramal', 'di', 'era', 'konektivitas']
+```
+
+### 2. Normalisasi Bahasa Gaul (Slang)
+Menggunakan *slang lexicon* yang kuat dan lengkap dari data sosial media.
+```python
+import saka
+
+normalized = saka.normalize("klo gimana gw")
+print(normalized)
+# Output: 'kalau bagaimana saya'
+```
+
+### 3. Analisis Morfologi Teks
+Bukan cuma menarik akar kata seperti Stemming pada Sastrawi, Saka akan mendemonstrasikan penjabaran partikel secara gamblang.
+```python
+import saka
+
+analysis = saka.analyze("mempertanggungjawabkan")
+print(analysis)
+# Output:
+# {
+#   'root': 'tanggung jawab',
+#   'prefixes': ['mem', 'per'],
+#   'suffixes': ['kan'],
+#   'type': 'unknown'
+# }
+```
+
+### 4. Live Integrasi Pencarian KBBI
+Saka menggunakan library pendukung (`requests` & `bs4`) untuk mengurai jawaban dari situs daring murni. Ini wajib menggunakan akses jaringan internet.
+```python
+import saka
+
+kbbi_result = saka.query_kbbi("belajar")
+
+if kbbi_result["status"] == "found":
+    for arti in kbbi_result["definitions"]:
+        print(f"Arti: {arti}")
+else:
+    print("Kata tidak terdaftar di KBBI Daring.")
+```
+
+### 5. Koleksi Stopwords Indonesia Secara Native
+Kumpulan Stopwords yang langsung dirender dari *Tala dataset* ke dalam object `Set` Python agar latensinya O(1) untuk kebutuhan ML/Deep Learning.
+```python
+import saka
+
+stopwords = saka.get_stopwords()
+print(f"Ukuran kamus stopwords: {len(stopwords)}")
+print(f"Apakah 'ada' adalah stopword? {'ada' in stopwords}") # Output: True
+```
+
+---
+
+## 🛠️ Penggunaan Melalui Command Line (CLI)
+
+Saka-NLP menyertakan perintah langsung alias di dalam instalasinya. Anda dapat mengakses ini langsung di terminal!
+
+```bash
+# Melihat bantuan list CLI
+saka --help
+
+# Membedah morfologi kata secara cepat di Shell/CMD Anda
+saka --stem "dimakan"
+
+# Melakukan Normalisasi
+saka --normalize "ngapain ke kampus klo libur"
+```
+
+---
+
+## 🗄️ Referensi & Sumber Data
+
+* **KBBI (Kamus Besar Bahasa Indonesia)**: Data yang dijaring bersumber langsung dari portal kredensial [KBBI Daring Kemendikdasmen](https://kbbi.kemendikdasmen.go.id/).
+* **Slang Words**: Memanfaatkan corpus dari [Twitter COVID-19 Sentiment Lexicon](https://github.com/evanmartua34/Twitter-COVID19-Indonesia-Sentiment-Analysis---Lexicon-Based).
+* **SundaDigi**: Menggunakan kamus digital [SundaDigi](https://sundadigi.com/) untuk terjemahan & referensi kosakata bahasa daerah Sunda.
+* **Stopwords**: Mengadopsi corpus legendaris [Tala Stopwords Dataset](https://github.com/masdevid/ID-Stopwords).
+
+## ❤️ Credits
+* **Framework Architect**: [Muhammad Ikhwan Fathulloh](https://github.com/Muhammad-Ikhwan-Fathulloh)
+* Lisensi Terbuka di bawah [MIT License](LICENSE). 
