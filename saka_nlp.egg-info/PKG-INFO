@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: saka-nlp
-Version: 0.1.4
+Version: 0.1.5
 Summary: Saka: Pilar Pemrosesan Bahasa Nusantara
 Author: Saka-NLP Contributors
 Project-URL: Homepage, https://github.com/Muhammad-Ikhwan-Fathulloh/Saka-NLP
@@ -17,9 +17,22 @@ Dynamic: license-file
 
 # Saka: The Foundation of Indonesian NLP 🇮🇩
 
+[![PyPI version](https://img.shields.io/pypi/v/saka-nlp.svg)](https://pypi.org/project/saka-nlp/)
+[![Documentation](https://img.shields.io/badge/docs-live-brightgreen)](http://saka-nlp.netlify.app/)
+[![Colab](https://img.shields.io/badge/Colab-Playground-orange)](https://colab.research.google.com/drive/1MJ6fwJruR6B-UVT1sqKyqWXukjGe2UCH?usp=sharing)
+
 Secara filosofis, **Saka** (dalam bahasa Jawa/Sunda) berarti "tiang penyangga" atau "pilar". **Saka-NLP** dibangun untuk menjadi sebuah *architectural framework* modern yang solid bagi pemrosesan teks bahasa Indonesia dan daerah.
 
 Saka-NLP mendukung *asynchronous processing*, memiliki komponen yang dijaga terpisah secara modular (*plug-and-play*), serta menggunakan fungsi heuristik dan integrasi banyak sumber data terpercaya (seperti leksikon bahasa gaul, integrasi stopword, hingga ekstraksi KBBI resmi secara langsung).
+
+---
+
+### 🌐 Links
+*   **Website Resmi**: [saka-nlp.netlify.app](http://saka-nlp.netlify.app/)
+*   **Google Colab Playground**: [Coba Sekarang di Colab](https://colab.research.google.com/drive/1MJ6fwJruR6B-UVT1sqKyqWXukjGe2UCH?usp=sharing)
+*   **PyPI Package**: [saka-nlp on PyPI](https://pypi.org/project/saka-nlp/)
+
+---
 
 ## ✨ Fitur Unggulan
 
@@ -65,7 +78,7 @@ Saka-NLP didesain agar kode Python Anda menjadi bersih. Cukup lakukan satu baris
 import saka
 
 print(saka.__version__)
-# Output: 0.1.2
+# Output: 0.1.4
 ```
 
 ### 1. Tokenisasi Cerdas 
@@ -117,6 +130,13 @@ if kbbi_result["status"] == "found":
         print(f"Arti: {arti}")
 else:
     print("Kata tidak terdaftar di KBBI Daring.")
+
+# Output:
+# Arti: petunjuk yang diberikan kepada orang supaya diketahui (diturut)
+# Arti: ilmu yang dituntut secara tidak sempurna, tidak akan berfaedah
+# Arti: berusaha memperoleh kepandaian atau ilmu:
+# Arti: berlatih:
+# Arti: berubah tingkah laku atau tanggapan yang disebabkan oleh pengalaman
 ```
 
 ### 5. Koleksi Stopwords Indonesia Secara Native
@@ -126,7 +146,11 @@ import saka
 
 stopwords = saka.get_stopwords()
 print(f"Ukuran kamus stopwords: {len(stopwords)}")
-print(f"Apakah 'ada' adalah stopword? {'ada' in stopwords}") # Output: True
+print(f"Apakah 'ada' adalah stopword? {'ada' in stopwords}") 
+
+# Output:
+# Ukuran kamus stopwords: 757
+# Apakah 'ada' adalah stopword? True
 ```
 
 ### 6. Dukungan Bahasa Daerah: SundaDigi & Aksara Sunda
@@ -139,6 +163,9 @@ import saka
 # Mencari arti kata "wilujeng"
 result = saka.query_sundadigi("wilujeng")
 print(result["definitions"])
+
+# Output:
+# ['Selamat']
 ```
 
 #### Transliterasi Aksara Sunda

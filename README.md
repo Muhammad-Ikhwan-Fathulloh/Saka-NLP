@@ -12,7 +12,7 @@ Saka-NLP mendukung *asynchronous processing*, memiliki komponen yang dijaga terp
 
 ### 🌐 Links
 *   **Website Resmi**: [saka-nlp.netlify.app](http://saka-nlp.netlify.app/)
-*   **Google Colab Playground**: [Coba Sekaran di Colab](https://colab.research.google.com/drive/1MJ6fwJruR6B-UVT1sqKyqWXukjGe2UCH?usp=sharing)
+*   **Google Colab Playground**: [Coba Sekarang di Colab](https://colab.research.google.com/drive/1MJ6fwJruR6B-UVT1sqKyqWXukjGe2UCH?usp=sharing)
 *   **PyPI Package**: [saka-nlp on PyPI](https://pypi.org/project/saka-nlp/)
 
 ---
@@ -113,6 +113,13 @@ if kbbi_result["status"] == "found":
         print(f"Arti: {arti}")
 else:
     print("Kata tidak terdaftar di KBBI Daring.")
+
+# Output:
+# Arti: petunjuk yang diberikan kepada orang supaya diketahui (diturut)
+# Arti: ilmu yang dituntut secara tidak sempurna, tidak akan berfaedah
+# Arti: berusaha memperoleh kepandaian atau ilmu:
+# Arti: berlatih:
+# Arti: berubah tingkah laku atau tanggapan yang disebabkan oleh pengalaman
 ```
 
 ### 5. Koleksi Stopwords Indonesia Secara Native
@@ -122,7 +129,11 @@ import saka
 
 stopwords = saka.get_stopwords()
 print(f"Ukuran kamus stopwords: {len(stopwords)}")
-print(f"Apakah 'ada' adalah stopword? {'ada' in stopwords}") # Output: True
+print(f"Apakah 'ada' adalah stopword? {'ada' in stopwords}") 
+
+# Output:
+# Ukuran kamus stopwords: 757
+# Apakah 'ada' adalah stopword? True
 ```
 
 ### 6. Dukungan Bahasa Daerah: SundaDigi & Aksara Sunda
@@ -135,6 +146,9 @@ import saka
 # Mencari arti kata "wilujeng"
 result = saka.query_sundadigi("wilujeng")
 print(result["definitions"])
+
+# Output:
+# ['Selamat']
 ```
 
 #### Transliterasi Aksara Sunda
