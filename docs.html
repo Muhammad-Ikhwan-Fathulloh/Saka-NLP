@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokumentasi Saka-NLP | API Reference</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #09090b;
+            --surface: #18181b;
+            --surface-hover: #27272a;
+            --primary: #a82020;
+            --accent: #cfb53b;
+            --text: #e4e4e7;
+            --text-muted: #a1a1aa;
+            --border: #27272a;
+            --sidebar-width: 280px;
+            --code-bg: #0d0d0f;
+        }
+
+        [data-theme='light'] {
+            --bg: #fafafa;
+            --surface: #ffffff;
+            --surface-hover: #f4f4f5;
+            --primary: #a82020;
+            --accent: #b45309;
+            --text: #18181b;
+            --text-muted: #52525b;
+            --border: #e4e4e7;
+            --code-bg: #18181b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            display: flex;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            width: var(--sidebar-width);
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: var(--surface);
+            border-right: 1px solid var(--border);
+            overflow-y: auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .sidebar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .sidebar-brand span {
+            color: var(--primary);
+        }
+
+        .nav-group {
+            margin-bottom: 2rem;
+        }
+
+        .nav-group-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 0.5rem 0.8rem;
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+            margin-bottom: 0.2rem;
+        }
+
+        .nav-link:hover {
+            background-color: var(--surface-hover);
+            color: var(--accent);
+        }
+
+        .nav-link.active {
+            background-color: rgba(168, 32, 32, 0.1);
+            color: var(--primary);
+            font-weight: 500;
+            border-left: 2px solid var(--primary);
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            margin-left: var(--sidebar-width);
+            padding: 3rem 4rem;
+            max-width: 1000px;
+        }
+
+        .page-header {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .page-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* Content Sections */
+        .docs-section {
+            margin-bottom: 4rem;
+            padding-top: 2rem;
+        }
+
+        .docs-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        .method-signature {
+            font-family: 'JetBrains Mono', monospace;
+            background-color: var(--surface);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            color: #d1d5db;
+        }
+
+        .method-signature span.keyword { color: #f27c7c; }
+        .method-signature span.method { color: #66d9ef; }
+        .method-signature span.type { color: #a6e22e; }
+
+        .param-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+        }
+
+        .param-table th, .param-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            text-align: left;
+        }
+
+        .param-table th {
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .param-table td code {
+            background-color: var(--surface);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--accent);
+        }
+
+        .code-container {
+            background: var(--code-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.5);
+            margin-bottom: 2rem;
+        }
+
+        .code-header {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 0.6rem 1rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .code-lang {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .copy-btn {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .copy-btn:hover {
+            color: var(--text);
+            border-color: var(--text-muted);
+        }
+
+        .code-block {
+            padding: 1.2rem;
+            margin: 0;
+            overflow-x: auto;
+            color: #d1d1e0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .c-cm { color: #75715e; font-style: italic; }
+        .c-st { color: #e6db74; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <a href="index.html" class="sidebar-brand">Saka<span>NLP</span></a>
+        
+        <button id="theme-toggle" style="background: none; border: 1px solid var(--border); color: var(--text); cursor: pointer; padding: 0.4rem; border-radius: 6px; width: 100%; margin-bottom: 2rem; text-align: left; font-family: inherit;">🌓 Tema Light/Dark</button>
+
+        <div class="nav-group">
+            <div class="nav-group-title">Getting Started</div>
+            <a href="#intro" class="nav-link active">Introduction</a>
+            <a href="#installation" class="nav-link">Installation</a>
+        </div>
+
+        <div class="nav-group">
+            <div class="nav-group-title">Core Modules</div>
+            <a href="#tokenize" class="nav-link">Tokenization</a>
+            <a href="#normalize" class="nav-link">Normalization (Slang)</a>
+            <a href="#analyze" class="nav-link">Morphology Analyzer</a>
+            <a href="#stopwords" class="nav-link">Hybrid Stopwords</a>
+        </div>
+
+        <div class="nav-group">
+            <div class="nav-group-title">Regional & KBBI</div>
+            <a href="#kbbi" class="nav-link">KBBI Scraper</a>
+            <a href="#sunda" class="nav-link">Ekosistem Sunda</a>
+            <a href="#jawa" class="nav-link">Ekosistem Jawa</a>
+        </div>
+
+        <div class="nav-group">
+            <div class="nav-group-title">Community</div>
+            <a href="https://medium.com/@ikhwanfathulloh/mengenal-saka-nlp-library-nlp-bahasa-indonesia-modern-selain-nltk-sastrawi-f8a3df646df7" target="_blank" class="nav-link" style="color: var(--accent);">📝 Baca di Medium</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="page-header" id="intro">
+            <h1>API Reference Documentation</h1>
+            <p>Panduan lengkap teknis untuk setiap fungsi (<i>methods</i>) dan kapabilitas dalam arsitektur library Saka-NLP.</p>
+        </header>
+
+        <section class="docs-section" id="installation">
+            <h2>📦 Panduan Instalasi</h2>
+            <p>Saka-NLP sangat mudah diinstalasi dan dikelola secara resmi melalui repositori Python Package Index (<a href="https://pypi.org/project/saka-nlp/" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: bold;">PyPI</a>). Pastikan Anda menggunakan versi Python minimal <strong>3.8</strong>.</p>
+            
+            <br>
+
+            <div class="code-container">
+                <div class="code-header">
+                    <span class="code-lang">bash</span>
+                    <button class="copy-btn" onclick="copyCode(this)">Salin</button>
+                </div>
+                <pre class="code-block"><code>pip install saka-nlp</code></pre>
+            </div>
+            
+            <p>Jika Anda tertarik untuk berpartisipasi dan berkontribusi secara mandiri (*source installation*):</p>
+            <br>
+            <div class="code-container">
+                <div class="code-header">
+                    <span class="code-lang">bash</span>
+                    <button class="copy-btn" onclick="copyCode(this)">Salin</button>
+                </div>
+                <pre class="code-block"><code>git clone https://github.com/Muhammad-Ikhwan-Fathulloh/Saka-NLP.git
+cd Saka-NLP
+pip install -e .</code></pre>
+            </div>
+        </section>
+
+        <section class="docs-section" id="tokenize">
+            <h2>Pemrosesan Dasar: <code>tokenize</code></h2>
+            <p>Membelah kalimat Indonesia yang rumit menjadi token-token individual, melestarikan tanda baca dengan cerdas.</p>
+            
+            <div class="method-signature">
+                <span class="keyword">def</span> <span class="method">tokenize</span>(text: <span class="type">str</span>) -> <span class="type">List[str]</span>
+            </div>
+
+            <table class="param-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Type</th>
+                    <th>Keterangan</th>
+                </tr>
+                <tr>
+                    <td><code>text</code></td>
+                    <td><code>str</code></td>
+                    <td>Teks string murni yang ingin dipecah ke dalam representasi token.</td>
+                </tr>
+            </table>
+
+            <div class="code-container">
+                <div class="code-header">
+                    <span class="code-lang">python</span>
+                    <button class="copy-btn" onclick="copyCode(this)">Salin</button>
+                </div>
+                <pre class="code-block"><code><span class="c-kw">import</span> saka
+
+tokens = saka.<span class="c-fn">tokenize</span>(<span class="c-st">"Halo, apa kabar Dunia-ku?!"</span>)
+<span class="c-fn">print</span>(tokens) 
+<span class="c-cm"># Output: ['Halo', ',', 'apa', 'kabar', 'Dunia-ku', '?', '!']</span></code></pre>
+            </div>
+            <p><strong>Note:</strong> Tersedia juga versi <i>asynchronous</i> <code>await saka.async_tokenize(text)</code> untuk pemrosesan dataset besar berbasis event loop.</p>
+        </section>
+
+        <section class="docs-section" id="normalize">
+            <h2>Pemurnian Bahasa: <code>normalize</code></h2>
+            <p>Melakukan standardisasi bahasa gaul (Slang), *typographical error* umum ke dalam standar formal tata bahasa Indonesia.</p>
+
+            <div class="method-signature">
+                <span class="keyword">def</span> <span class="method">normalize</span>(text: <span class="type">str</span>) -> <span class="type">str</span>
+            </div>
+
+            <div class="code-container">
+                <div class="code-header">
+                    <span class="code-lang">python</span>
+                    <button class="copy-btn" onclick="copyCode(this)">Salin</button>
+                </div>
+                <pre class="code-block"><code><span class="c-kw">import</span> saka
+
+text = saka.<span class="c-fn">normalize</span>(<span class="c-st">"gmn nih bro klo bsk ujiann"</span>)
+<span class="c-fn">print</span>(text)
+<span class="c-cm"># Output: "bagaimana ini saudara kalau besok ujian"</span></code></pre>
+            </div>
+        </section>
+
+        <section class="docs-section" id="analyze">
+            <h2>Morfologi Tingkat Tinggi: <code>analyze</code></h2>
+            <p>Sistem heuritistik komprehensif yang mengatasi stemming konvensional. Fitur ini dilengkapi <strong>Morphophonemic Fix</strong> untuk peleburan kata dan <strong>Dictionary Early Stopping</strong> via leksikon daerah untuk mencegah <i>over-stemming</i>.</p>
+
+            <div class="method-signature">
+                <span class="keyword">def</span> <span class="method">analyze</span>(word: <span class="type">str</span>) -> <span class="type">Dict[str, Any]</span>
+            </div>
+
+            <div class="code-container">
+                <div class="code-header">
+                    <span class="code-lang">python</span>
+                    <button class="copy-btn" onclick="copyCode(this)">Salin</button>
+                </div>
+                <pre class="code-block"><code><span class="c-kw">import</span> saka
+
+<span class="c-cm"># Morphophonemic Fusion (meny + sebar luas)</span>
+res = saka.<span class="c-fn">analyze</span>(<span class="c-st">"menyebarluaskan"</span>)
+<span class="c-fn">print</span>(res[<span class="c-st">"root"</span>]) <span class="c-cm"># Output: 'sebar luas'</span>
+
+<span class="c-cm"># Validasi kamus daerah (Early Stopping via Sunda/Jawa)</span>
+res2 = saka.<span class="c-fn">analyze</span>(<span class="c-st">"dipikanyaah"</span>)
+<span class="c-fn">print</span>(res2[<span class="c-st">"regional_matches"</span>]) <span class="c-cm"># Output: ['sunda']</span></code></pre>
+            </div>
+        </section>
+
+        <section class="docs-section" id="stopwords">
+            <h2>Penyaringan Kata: <code>get_stopwords</code></h2>
+            <p>Memanggil *set* berisi daftar stopwords Nusantara dengan kecepatan baca O(1).</p>
+
+            <div class="method-signature">
+                <span class="keyword">def</span> <span class="method">get_stopwords</span>(lang: <span class="type">str</span> = "all") -> <span class="type">Set[str]</span>
+            </div>
+
+            <table class="param-table">
+                <tr>
+                    <th>Argumen <code>lang</code></th>
+                    <th>Cakupan *Corpus*</th>
+                </tr>
+                <tr>
+                    <td><code>"all"</code> (Default)</td>
+                    <td>Semua stopwords (Indo, Sunda, Jawa) dikombinasikan. (817+ kata)</td>
+                </tr>
+                <tr>
+                    <td><code>"id"</code></td>
+                    <td>Eksklusif Stopwords Indonesia versi Tala Dataset.</td>
+                </tr>
+                <tr>
+                    <td><code>"sunda"</code> / <code>"jawa"</code></td>
+                    <td>Eksklusif Stopwords region yang diminta.</td>
+                </tr>
+            </table>
+
+            <div class="code-container">
+                <div class="code-header">
+                    <span class="code-lang">python</span>
+                    <button class="copy-btn" onclick="copyCode(this)">Salin</button>
+                </div>
+                <pre class="code-block"><code><span class="c-kw">import</span> saka
+
+<span class="c-cm"># 1. Mengambil semua stopword (Indonesia, Sunda, Jawa digabung)</span>
+all_stops = saka.<span class="c-fn">get_stopwords</span>(<span class="c-st">"all"</span>)
+<span class="c-fn">print</span>(<span class="c-st">f"Total Stopwords Gabungan: {len(all_stops)}"</span>) <span class="c-cm"># Output: 817+</span>
+
+<span class="c-cm"># 2. Mengambil stopword khusus Sunda</span>
+sunda_stops = saka.<span class="c-fn">get_stopwords</span>(<span class="c-st">"sunda"</span>)
+<span class="c-fn">print</span>(<span class="c-st">f"Apakah 'saha' adalah stopword? {'saha' in sunda_stops}"</span>) <span class="c-cm"># Output: True</span></code></pre>
+            </div>
+        </section>
+
+        <section class="docs-section" id="kbbi">
+            <h2>Integrasi Daring: <code>query_kbbi</code></h2>
+            <p>Pencarian arti kata langsung mengekstraksi situs resmi Kemendikbud menggunakan pendekatan Web Scraping *Real-time*.</p>
+
+            <div class="method-signature">
+                <span class="keyword">def</span> <span class="method">query_kbbi</span>(word: <span class="type">str</span>) -> <span class="type">Dict[str, Any]</span>
+            </div>
+
+            <div class="code-container">
+                <div class="code-header">
+                    <span class="code-lang">python</span>
+                    <button class="copy-btn" onclick="copyCode(this)">Salin</button>
+                </div>
+                <pre class="code-block"><code><span class="c-kw">import</span> saka
+
+res = saka.<span class="c-fn">query_kbbi</span>(<span class="c-st">"mahakarya"</span>)
+<span class="c-fn">print</span>(res[<span class="c-st">"definitions"</span>])
+<span class="c-cm"># Output: ['karya besar', 'karya gemilang']</span></code></pre>
+            </div>
+        </section>
+
+        <section class="docs-section" id="sunda">
+            <h2>Ekosistem & Leksikon Sunda</h2>
+            <p>Saka-NLP memiliki modul khusus Bahasa Sunda untuk meretrieve definisi secara lokal dan bertukar Aksara.</p>
+
+            <div class="method-signature">
+                <span class="keyword">def</span> <span class="method">query_sundadigi</span>(word: <span class="type">str</span>) -> <span class="type">Dict[str, Any]</span><br>
+                <span class="keyword">def</span> <span class="method">latin_to_aksara_sunda</span>(text: <span class="type">str</span>) -> <span class="type">str</span><br>
+                <span class="keyword">def</span> <span class="method">aksara_sunda_to_latin</span>(text: <span class="type">str</span>) -> <span class="type">str</span>
+            </div>
+
+            <div class="code-container">
+                <div class="code-header">
+                    <span class="code-lang">python</span>
+                    <button class="copy-btn" onclick="copyCode(this)">Salin</button>
+                </div>
+                <pre class="code-block"><code><span class="c-kw">import</span> saka
+
+<span class="c-cm"># Dictionary Definition Search</span>
+res = saka.<span class="c-fn">query_sundadigi</span>(<span class="c-st">"wilujeng"</span>)
+<span class="c-fn">print</span>(res[<span class="c-st">"definitions"</span>][<span class="c-st">"arti"</span>]) <span class="c-cm"># Output: selamat</span>
+
+<span class="c-cm"># Transliteration</span>
+<span class="c-fn">print</span>(saka.<span class="c-fn">latin_to_aksara_sunda</span>(<span class="c-st">"saka"</span>)) <span class="c-cm"># Output: ᮞᮊ</span></code></pre>
+            </div>
+        </section>
+
+        <section class="docs-section" id="jawa">
+            <h2>Ekosistem & Leksikon Jawa</h2>
+            <p>Sinkronisasi offline kamus bahasa Jawa dan modul konversi Hanacaraka berbasis tata tulis Keraton/Sastra.</p>
+
+            <div class="method-signature">
+                <span class="keyword">def</span> <span class="method">query_sastra</span>(word: <span class="type">str</span>) -> <span class="type">Dict[str, Any]</span><br>
+                <span class="keyword">def</span> <span class="method">latin_to_aksara_jawa</span>(text: <span class="type">str</span>) -> <span class="type">str</span><br>
+                <span class="keyword">def</span> <span class="method">aksara_jawa_to_latin</span>(text: <span class="type">str</span>) -> <span class="type">str</span>
+            </div>
+
+            <div class="code-container">
+                <div class="code-header">
+                    <span class="code-lang">python</span>
+                    <button class="copy-btn" onclick="copyCode(this)">Salin</button>
+                </div>
+                <pre class="code-block"><code><span class="c-kw">import</span> saka
+
+<span class="c-cm"># Dictionary Definition Search</span>
+res = saka.<span class="c-fn">query_sastra</span>(<span class="c-st">"sugeng"</span>)
+<span class="c-fn">print</span>(res[<span class="c-st">"definitions"</span>][0][<span class="c-st">"arti"</span>]) <span class="c-cm"># Output: selamat, sejahtera</span>
+
+<span class="c-cm"># Transliteration</span>
+<span class="c-fn">print</span>(saka.<span class="c-fn">latin_to_aksara_jawa</span>(<span class="c-st">"hanacaraka"</span>)) <span class="c-cm"># Output: ꦲꦤꦕꦫꦏ</span></code></pre>
+            </div>
+        </section>
+
+        <br><br><br>
+    </main>
+
+    <script>
+        // Theme Management
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const rootElt = document.documentElement;
+
+        const applyTheme = (theme) => {
+            if (theme === 'light') {
+                rootElt.setAttribute('data-theme', 'light');
+            } else {
+                rootElt.removeAttribute('data-theme');
+            }
+        };
+
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+        const initTheme = savedTheme || (systemPrefersLight ? 'light' : 'dark');
+        applyTheme(initTheme);
+
+        themeToggleBtn.addEventListener('click', () => {
+            const isLight = rootElt.getAttribute('data-theme') === 'light';
+            const newTheme = isLight ? 'dark' : 'light';
+            applyTheme(newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+
+        // Simple active link highlight behavior based on scroll
+        const sections = document.querySelectorAll('.docs-section, .page-header');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Copy Code Function
+        function copyCode(btn) {
+            const code = btn.parentElement.nextElementSibling.innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                const originalText = btn.innerText;
+                btn.innerText = "Tersalin!";
+                btn.style.borderColor = "var(--accent)";
+                btn.style.color = "var(--accent)";
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.style.borderColor = "var(--border)";
+                    btn.style.color = "var(--text-muted)";
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>

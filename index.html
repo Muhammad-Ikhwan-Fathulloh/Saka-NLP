@@ -16,17 +16,44 @@
         :root {
             --bg: #0d0d0f;
             --surface: #16161a;
+            --surface-hover: #27272a;
             --primary: #a82020;
-            /* Nusantara Red */
             --primary-light: #d43f3f;
             --accent: #cfb53b;
-            /* Nusantara Gold */
             --text: #f0f0f5;
             --text-dim: #a0a0b5;
             --border: rgba(255, 255, 255, 0.08);
             --font-main: 'Inter', sans-serif;
             --font-display: 'Playfair Display', serif;
             --font-mono: 'JetBrains Mono', monospace;
+            --code-bg: #09090b;
+        }
+
+        [data-theme='light'] {
+            --bg: #fafafa;
+            --surface: #ffffff;
+            --surface-hover: #f4f4f5;
+            --primary: #a82020;
+            --primary-light: #dc2626;
+            --accent: #b45309;
+            --text: #18181b;
+            --text-dim: #52525b;
+            --border: #e4e4e7;
+            --code-bg: #18181b;
+        }
+
+        [data-theme='light'] .batik-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 50c0-15 10-25 25-25s25 10 25 25-10 25-25 25-25-10-25-25zm-50 0c0-15 10-25 25-25s25 10 25 25-10 25-25 25-25-10-25-25z' fill='%23000000' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        [data-theme='light'] .btn-outline {
+            background: rgba(0, 0, 0, 0.03);
+            border-color: #d4d4d8;
+        }
+
+        [data-theme='light'] .btn-outline:hover {
+            background: rgba(0, 0, 0, 0.08);
+            border-color: var(--accent);
         }
 
         * {
@@ -257,11 +284,11 @@
         }
 
         .code-container {
-            background: #09090b;
+            background: var(--code-bg);
             border-radius: 16px;
             border: 1px solid var(--border);
             overflow: hidden;
-            box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.1);
         }
 
         .code-header {
@@ -365,6 +392,9 @@
     <div class="batik-overlay"></div>
 
     <header class="container">
+        <div style="position: absolute; top: 1.5rem; right: 2rem;">
+            <button id="theme-toggle" class="btn btn-outline" style="padding: 0.5rem 1rem; border-radius: 8px;">🌓 Tema</button>
+        </div>
         <div class="hero-flag">
             <div class="flag-red"></div>
             <div class="flag-white"></div>
@@ -374,11 +404,11 @@
             yang solid untuk pemrosesan teks Bahasa Indonesia dan daerah.</p>
 
         <div class="cta-group">
-            <a href="https://pypi.org/project/saka-nlp/" target="_blank" class="btn btn-primary">📦 Install via PyPI</a>
-            <a href="https://colab.research.google.com/drive/1MJ6fwJruR6B-UVT1sqKyqWXukjGe2UCH?usp=sharing"
-                target="_blank" class="btn btn-accent">📓 Google Colab</a>
-            <a href="https://github.com/Muhammad-Ikhwan-Fathulloh/Saka-NLP" target="_blank" class="btn btn-outline">⭐
-                GitHub Repository</a>
+            <a href="docs.html" class="btn btn-primary">📖 API Docs</a>
+            <a href="https://pypi.org/project/saka-nlp/" target="_blank" class="btn btn-accent">📦 Install via PyPI</a>
+            <a href="https://medium.com/@ikhwanfathulloh/mengenal-saka-nlp-library-nlp-bahasa-indonesia-modern-selain-nltk-sastrawi-f8a3df646df7" target="_blank" class="btn btn-outline">📝 Medium Blog</a>
+            <a href="https://colab.research.google.com/drive/1MJ6fwJruR6B-UVT1sqKyqWXukjGe2UCH?usp=sharing" target="_blank" class="btn btn-outline">📓 Google Colab</a>
+            <a href="https://github.com/Muhammad-Ikhwan-Fathulloh/Saka-NLP" target="_blank" class="btn btn-outline">⭐ GitHub</a>
         </div>
     </header>
 
@@ -623,7 +653,31 @@ saka --normalize <span class="c-st">"ngapain ke kampus klo libur"</span></code><
     </footer>
 
     <script>
-        function copyCode(btn) {
+        // Theme Management
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const rootElt = document.documentElement;
+
+        const applyTheme = (theme) => {
+            if (theme === 'light') {
+                rootElt.setAttribute('data-theme', 'light');
+            } else {
+                rootElt.removeAttribute('data-theme');
+            }
+        };
+
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+        const initTheme = savedTheme || (systemPrefersLight ? 'light' : 'dark');
+        applyTheme(initTheme);
+
+        themeToggleBtn.addEventListener('click', () => {
+            const isLight = rootElt.getAttribute('data-theme') === 'light';
+            const newTheme = isLight ? 'dark' : 'light';
+            applyTheme(newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+
+        // Copy Code Function
             const code = btn.parentElement.nextElementSibling.innerText;
             navigator.clipboard.writeText(code).then(() => {
                 const originalText = btn.innerText;

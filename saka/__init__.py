@@ -1,4 +1,4 @@
-__version__ = "0.1.6"
+__version__ = "0.1.7"
 
 from .core.tokenizer import tokenize, async_tokenize
 from .core.normalizer import normalize, async_normalize
