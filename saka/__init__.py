@@ -1,4 +1,4 @@
-__version__ = "0.1.8"
+__version__ = "0.1.9"
 
 from .core.tokenizer import tokenize, async_tokenize
 from .core.normalizer import normalize, async_normalize
@@ -17,6 +17,11 @@ from .plugins.jawa.transliterate import (
     latin_to_aksara_jawa,
     aksara_jawa_to_latin
 )
+from .plugins.bali.basabali_scraper import query_basabali
+from .plugins.bali.transliterate import (
+    latin_to_aksara_bali,
+    aksara_bali_to_latin
+)
 
 __all__ = [
     "tokenize",
@@ -29,10 +34,13 @@ __all__ = [
     "query_kbbi",
     "query_sundadigi",
     "query_sastra",
+    "query_basabali",
     "latin_to_aksara_sunda",
     "aksara_sunda_to_latin",
     "latin_to_aksara_jawa",
     "aksara_jawa_to_latin",
+    "latin_to_aksara_bali",
+    "aksara_bali_to_latin",
     "latin_to_aksara",
     "aksara_to_latin",
 ]

@@ -23,7 +23,7 @@ Saka-NLP mendukung *asynchronous processing*, memiliki komponen yang dijaga terp
 *   **Plug-and-Play Components**: Fleksibel dalam memilih mesin stemming, tokenisasi, atau mengintegrasikan plugin pihak ketiga.
 *   **Heuristic Morphology Analyzer**: Mendeteksi susunan pola awalan dan akhiran menggunakan aturan tata bahasa Indonesia yang dibekali dengan **Early Stopping Validation** ke dalam leksikon bahasa daerah dan pemulihan leburan huruf (Morphophonemic).
 *   **Live KBBI Scraper**: Ekstraksi arti kata langsung mendompleng ke *Kamus Besar Bahasa Indonesia Daring* dari Kemendikbudristekdikti.
-*   **Agnostic Script Support**: Termasuk dukungan untuk skrip bahasa daerah seperti Transliterasi **Aksara Sunda** dan **Aksara Jawa** (Hanacaraka).
+*   **Agnostic Script Support**: Termasuk dukungan untuk skrip bahasa daerah seperti Transliterasi **Aksara Sunda**, **Aksara Jawa**, dan **Aksara Bali** (Hanacaraka).
 
 ---
 
@@ -61,7 +61,7 @@ Saka-NLP didesain agar kode Python Anda menjadi bersih. Cukup lakukan satu baris
 import saka
 
 print(saka.__version__)
-# Output: 0.1.4
+# Output: 0.1.9
 ```
 
 ### 1. Tokenisasi Cerdas 
@@ -134,42 +134,118 @@ print(f"Total Stopwords Gabungan: {len(all_stops)}") # Output: 817
 sunda_stops = saka.get_stopwords(lang="sunda")
 print(f"Apakah 'saha' stopword Sunda? {'saha' in sunda_stops}") # Output: True
 
-# 3. Mengambil stopword khusus Jawa ('jawa') atau Indo ('id')
+# 3. Mengambil stopword khusus Jawa ('jawa') atau Bali ('bali')
 jawa_stops = saka.get_stopwords(lang="jawa")
+bali_stops = saka.get_stopwords(lang="bali")
 ```
 
-### 6. Dukungan Bahasa Daerah: Ekosistem Sunda & Jawa
-Saka-NLP menyediakan pilar utama untuk pemrosesan bahasa etnis Nusantara, khususnya bahasa Sunda dan Jawa. Seluruh integrasi dilengkapi fungsi *offline fallback* untuk pencarian kamus berkecepatan tinggi, dan mesin berbasis *rule* adaptif (Unicode) untuk transliterasi Aksara.
-
-#### Pencarian Kamus Daerah (Cepat & Mode Offline)
-```python
-import saka
-
-# Mencari terjemahan Bahasa Sunda 
-result_sunda = saka.query_sundadigi("wilujeng")
-print(result_sunda["definitions"]["arti"]) 
-# Output: selamat
-
-# Mencari terjemahan Bahasa Jawa
-result_jawa = saka.query_sastra("sugeng")
-print(result_jawa["definitions"][0]["arti"])
-# Output: selamat
-```
-
-#### Transliterasi Aksara Nusantara (Sunda & Jawa)
-Saka-NLP memetakan konversi teks Latin ke format huruf wilayah masing-masing (*Hanacaraka* dan *Aksara Sunda*) secara akurat dan responsif.
+#### 1. Ekosistem Sunda
+Dukungan penuh untuk kamus digital SundaDigi dan transliterasi Aksara Sunda.
 
 ```python
 import saka
 
-# Latin <-> Aksara Sunda
-aksara_sunda = saka.latin_to_aksara_sunda("saka")
-print(aksara_sunda) # Output: ᮞᮊ
+# Kamus Sunda
+res = saka.query_sundadigi("wilujeng")
+print(res["definitions"]["arti"]) # Output: selamat
 
-# Latin <-> Aksara Jawa
-aksara_jawa = saka.latin_to_aksara_jawa("hanacaraka")
-print(aksara_jawa) # Output: ꦲꦤꦕꦫꦏ
+# Aksara Sunda
+print(saka.latin_to_aksara_sunda("saka")) # Output: ᮞᮊ
 ```
+
+#### 2. Ekosistem Jawa
+Integrasi Leksikon Sastra.org dan mesin transliterasi Hanacaraka (Nglegena).
+
+```python
+import saka
+
+# Kamus Jawa
+res = saka.query_sastra("sugeng")
+print(res["definitions"][0]["arti"]) # Output: selamat
+
+# Aksara Jawa
+print(saka.latin_to_aksara_jawa("hanacaraka")) # Output: ꦲꦤꦕꦫꦏ
+```
+
+#### 3. Ekosistem Bali
+Pemanfaatan BASAbali Wiki dan dukungan penuh Aksara Bali (Wreastra).
+
+```python
+import saka
+
+# Kamus Bali
+res = saka.query_basabali("rahajeng")
+print(res["definitions"][0]["arti"]) # Output: selamat
+
+# Aksara Bali
+print(saka.latin_to_aksara_bali("bali 2026.")) 
+# Output: ᬩᬮᬶ ᭒᭐᭒᭖᭟
+```
+
+---
+
+## 🏛️ Detail Aksara Nusantara
+
+Saka-NLP menggunakan pemetaan standar untuk transliterasi dasar bahasa daerah.
+
+### 1. Aksara Sunda (Ngalagena)
+| Latin | Aksara | Latin | Aksara |
+| :---- | :----- | :---- | :----- |
+| ha    | ᮠ      | na    | ᮔ      |
+| ca    | ᮎ      | ra    | ᮛ      |
+| ka    | ᮊ      | da    | ᮓ      |
+| ta    | ᮒ      | sa    | ᮞ      |
+| wa    | ᮝ      | la    | ᮜ      |
+| pa    | ᮕ      | ja    | ᮏ      |
+| ya    | ᮚ      | nya   | ᮑ      |
+| ma    | ᮙ      | ga    | ᮌ      |
+| ba    | ᮘ      | nga   | ᮍ      |
+
+### 2. Aksara Jawa (Nglegena)
+| Latin | Aksara | Latin | Aksara |
+| :---- | :----- | :---- | :----- |
+| ha    | ꦲ      | na    | ꦤ      |
+| ca    | ꦕ      | ra    | ꦫ      |
+| ka    | ꦏ      | da    | ꦢ      |
+| ta    | ꦠ      | sa    | ꦱ      |
+| wa    | ꦮ      | la    | ꦭ      |
+| pa    | ꦥ      | dha   | ꦝ      |
+| ja    | ꦗ      | ya    | ꦪ      |
+| nya   | ꦚ      | ma    | ꦩ      |
+| ga    | ꦒ      | ba    | ꦧ      |
+| tha   | ꦛ      | nga   | ꦔ      |
+
+### 3. Aksara Bali (Wreastra)
+#### Konsonan (Wreastra)
+| Latin | Aksara | Latin | Aksara |
+| :---- | :----- | :---- | :----- |
+| ha    | ᬳ      | da    | ᬤ      |
+| na    | ᬦ      | ta    | ᬢ      |
+| ca    | ᬘ      | sa    | ᬲ      |
+| ra    | ᬭ      | wa    | ᬯ      |
+| ka    | ᬓ      | la    | ᬮ      |
+| ma    | ᬫ      | pa    | ᬧ      |
+| ga    | ᬕ      | ja    | ᬚ      |
+| ba    | ᬩ      | ya    | ᬬ      |
+| nga   | ᬗ      | nya   | ᬜ      |
+
+#### Angka Bali
+| Angka | Aksara | Angka | Aksara |
+| :---- | :----- | :---- | :----- |
+| 0     | ᭐      | 5     | ᭕      |
+| 1     | ᭑      | 6     | ᭖      |
+| 2     | ᭒      | 7     | ᭗      |
+| 3     | ᭓      | 8     | ᭘      |
+| 4     | ᭔      | 9     | ᭙      |
+
+#### Pangangge Suara (Sandhangan Bali)
+| Bunyi   | Aksara | Nama         |
+| :------ | :----- | :----------- |
+| -i      | ᬶ      | Ulu          |
+| -u      | ᬸ      | Suku         |
+| -é      | ᬾ      | Taling       |
+| -o      | ᭀ      | Taling Detia |
+| -e / -ě | ᬺ      | Pepet        |
 
 ---
 
@@ -196,6 +272,7 @@ saka --normalize "ngapain ke kampus klo libur"
 * **Slang Words**: Memanfaatkan corpus dari [Twitter COVID-19 Sentiment Lexicon](https://github.com/evanmartua34/Twitter-COVID19-Indonesia-Sentiment-Analysis---Lexicon-Based).
 * **Ekosistem Sunda**: Menggunakan kamus digital [SundaDigi](https://sundadigi.com/) untuk terjemahan serta [Panduan Aksara Sunda](https://sundadigi.com/panduan) untuk sistem transliterasi dan Wiktionary Appendix.
 * **Ekosistem Jawa**: Menyadur secara komprehensif repositori dari [sastra.org](https://www.sastra.org/) baik leksikon kosa kata Jawa maupun sistem validasi Aksara Jawa.
+* **Ekosistem Bali**: Integrasi dengan [BASAbali Wiki](https://dictionary.basabali.org/) untuk kamus multi-bahasa dan pemetaan Aksara Bali (Hanacaraka).
 * **Stopwords**: Mengadopsi corpus legendaris [Tala Stopwords Dataset](https://github.com/masdevid/ID-Stopwords).
 
 ## ❤️ Credits

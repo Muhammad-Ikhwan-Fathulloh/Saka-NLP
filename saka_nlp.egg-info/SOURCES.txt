@@ -4,6 +4,7 @@ pyproject.toml
 reproduce_issues.py
 ./reproduce_issues.py
 ./examples/async_usage.py
+./examples/bali_plugin.py
 ./examples/basic_usage.py
 ./examples/jawa_plugin.py
 ./examples/kbbi_demo.py
@@ -14,6 +15,7 @@ reproduce_issues.py
 ./saka/core/analyzer.py
 ./saka/core/normalizer.py
 ./saka/core/tokenizer.py
+./saka/dict/bali_dict.json
 ./saka/dict/jawa_dict.json
 ./saka/dict/slang.json
 ./saka/dict/slang_dict.py
@@ -21,18 +23,22 @@ reproduce_issues.py
 ./saka/dict/stopwords.txt
 ./saka/dict/sunda_dict.json
 ./saka/plugins/kbbi_scraper.py
+./saka/plugins/bali/basabali_scraper.py
+./saka/plugins/bali/transliterate.py
 ./saka/plugins/jawa/sastra_scraper.py
 ./saka/plugins/jawa/transliterate.py
 ./saka/plugins/sunda/sundadigi_scraper.py
 ./saka/plugins/sunda/transliterate.py
 ./saka/scripts/cli.py
 ./saka/utils/helpers.py
+./tests/test_bali.py
 ./tests/test_core.py
 ./tests/test_kbbi_new.py
 ./tests/test_kbbi_session.py
 ./tests/test_sunda_trans.py
 ./tests/test_sundadigi_api.py
 examples/async_usage.py
+examples/bali_plugin.py
 examples/basic_usage.py
 examples/jawa_plugin.py
 examples/kbbi_demo.py
@@ -43,6 +49,7 @@ saka/__init__.py
 saka/core/analyzer.py
 saka/core/normalizer.py
 saka/core/tokenizer.py
+saka/dict/bali_dict.json
 saka/dict/jawa_dict.json
 saka/dict/slang.json
 saka/dict/slang_dict.py
@@ -50,6 +57,8 @@ saka/dict/stopwords.py
 saka/dict/stopwords.txt
 saka/dict/sunda_dict.json
 saka/plugins/kbbi_scraper.py
+saka/plugins/bali/basabali_scraper.py
+saka/plugins/bali/transliterate.py
 saka/plugins/jawa/sastra_scraper.py
 saka/plugins/jawa/transliterate.py
 saka/plugins/sunda/sundadigi_scraper.py
@@ -62,6 +71,7 @@ saka_nlp.egg-info/dependency_links.txt
 saka_nlp.egg-info/entry_points.txt
 saka_nlp.egg-info/requires.txt
 saka_nlp.egg-info/top_level.txt
+tests/test_bali.py
 tests/test_core.py
 tests/test_kbbi_new.py
 tests/test_kbbi_session.py

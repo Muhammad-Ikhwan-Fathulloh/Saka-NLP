@@ -1,0 +1,382 @@
+{
+  "titiang": {
+    "arti": "saya",
+    "keterangan": "alus"
+  },
+  "tiang": {
+    "arti": "saya",
+    "keterangan": "mider/andap"
+  },
+  "tiyang": {
+    "arti": "saya",
+    "keterangan": "mider"
+  },
+  "cang": {
+    "arti": "aku, saya",
+    "keterangan": "kasar"
+  },
+  "ragane": {
+    "arti": "anda, kamu",
+    "keterangan": "alus"
+  },
+  "jero": {
+    "arti": "anda, beliau",
+    "keterangan": "alus"
+  },
+  "cai": {
+    "arti": "kamu",
+    "keterangan": "andap/kasar laki-laki"
+  },
+  "nyai": {
+    "arti": "kamu",
+    "keterangan": "andap/kasar perempuan"
+  },
+  "ia": {
+    "arti": "dia",
+    "keterangan": "andap"
+  },
+  "ida": {
+    "arti": "beliau, dia",
+    "keterangan": "alus"
+  },
+  "iraga": {
+    "arti": "kita",
+    "keterangan": "mider"
+  },
+  "rahajeng": {
+    "arti": "selamat",
+    "keterangan": "salam umum"
+  },
+  "rahajeng semeng": {
+    "arti": "selamat pagi",
+    "keterangan": ""
+  },
+  "rahajeng tengai": {
+    "arti": "selamat siang",
+    "keterangan": ""
+  },
+  "rahajeng sanja": {
+    "arti": "selamat sore",
+    "keterangan": ""
+  },
+  "rahajeng wengi": {
+    "arti": "selamat malam",
+    "keterangan": ""
+  },
+  "suksma": {
+    "arti": "terima kasih",
+    "keterangan": "andap"
+  },
+  "matur suksma": {
+    "arti": "terima kasih banyak",
+    "keterangan": "alus"
+  },
+  "ampura": {
+    "arti": "maaf",
+    "keterangan": "mider"
+  },
+  "nunas ampura": {
+    "arti": "mohon maaf",
+    "keterangan": "alus"
+  },
+  "ngajeng": {
+    "arti": "makan",
+    "keterangan": "alus mider"
+  },
+  "madaar": {
+    "arti": "makan",
+    "keterangan": "andap"
+  },
+  "madaran": {
+    "arti": "makan",
+    "keterangan": "andap"
+  },
+  "ngamah": {
+    "arti": "makan",
+    "keterangan": "kasar"
+  },
+  "neda": {
+    "arti": "makan",
+    "keterangan": "kasar (untuk hewan/marah)"
+  },
+  "nginum": {
+    "arti": "minum",
+    "keterangan": "mider"
+  },
+  "sirep": {
+    "arti": "tidur",
+    "keterangan": "alus"
+  },
+  "pules": {
+    "arti": "tidur",
+    "keterangan": "andap"
+  },
+  "rauh": {
+    "arti": "datang",
+    "keterangan": "alus mider"
+  },
+  "teka": {
+    "arti": "datang",
+    "keterangan": "andap"
+  },
+  "memargi": {
+    "arti": "berjalan, pergi",
+    "keterangan": "alus mider"
+  },
+  "majalan": {
+    "arti": "berjalan, pergi",
+    "keterangan": "andap"
+  },
+  "lunga": {
+    "arti": "pergi",
+    "keterangan": "alus singgih"
+  },
+  "budal": {
+    "arti": "pulang",
+    "keterangan": "alus sor"
+  },
+  "mulih": {
+    "arti": "pulang",
+    "keterangan": "andap"
+  },
+  "nunas": {
+    "arti": "minta, memohon",
+    "keterangan": "alus sor"
+  },
+  "ngidih": {
+    "arti": "minta",
+    "keterangan": "andap"
+  },
+  "polih": {
+    "arti": "dapat",
+    "keterangan": "alus mider"
+  },
+  "man": {
+    "arti": "dapat",
+    "keterangan": "andap"
+  },
+  "eling": {
+    "arti": "ingat",
+    "keterangan": "alus mider"
+  },
+  "inget": {
+    "arti": "ingat",
+    "keterangan": "andap"
+  },
+  "sareng": {
+    "arti": "ikut, serta, bersama",
+    "keterangan": "alus mider"
+  },
+  "ajak": {
+    "arti": "ikut, serta, bersama",
+    "keterangan": "andap"
+  },
+  "malih": {
+    "arti": "lagi",
+    "keterangan": "alus mider"
+  },
+  "buin": {
+    "arti": "lagi",
+    "keterangan": "andap"
+  },
+  "padem": {
+    "arti": "mati, meninggal",
+    "keterangan": "alus sor"
+  },
+  "mati": {
+    "arti": "mati",
+    "keterangan": "andap"
+  },
+  "bangka": {
+    "arti": "mati",
+    "keterangan": "kasar"
+  },
+  "napi": {
+    "arti": "apa",
+    "keterangan": "alus"
+  },
+  "ape": {
+    "arti": "apa",
+    "keterangan": "andap"
+  },
+  "sira": {
+    "arti": "siapa",
+    "keterangan": "alus"
+  },
+  "nyen": {
+    "arti": "siapa",
+    "keterangan": "andap"
+  },
+  "dija": {
+    "arti": "dimana",
+    "keterangan": "andap"
+  },
+  "ring dija": {
+    "arti": "di mana",
+    "keterangan": "alus"
+  },
+  "kuda": {
+    "arti": "berapa",
+    "keterangan": "mider"
+  },
+  "sapunapi": {
+    "arti": "bagaimana",
+    "keterangan": "alus"
+  },
+  "kenken": {
+    "arti": "bagaimana, gimana",
+    "keterangan": "andap"
+  },
+  "mangkin": {
+    "arti": "sekarang",
+    "keterangan": "alus"
+  },
+  "jani": {
+    "arti": "sekarang",
+    "keterangan": "andap"
+  },
+  "sampun": {
+    "arti": "sudah",
+    "keterangan": "alus/mider"
+  },
+  "sube": {
+    "arti": "sudah",
+    "keterangan": "andap"
+  },
+  "durung": {
+    "arti": "belum",
+    "keterangan": "alus"
+  },
+  "konden": {
+    "arti": "belum",
+    "keterangan": "andap"
+  },
+  "nenten": {
+    "arti": "tidak, bukan",
+    "keterangan": "alus"
+  },
+  "tusing": {
+    "arti": "tidak",
+    "keterangan": "andap"
+  },
+  "inggih": {
+    "arti": "ya, iya",
+    "keterangan": "alus"
+  },
+  "nah": {
+    "arti": "ya, oke",
+    "keterangan": "andap"
+  },
+  "wastan": {
+    "arti": "nama",
+    "keterangan": "alus"
+  },
+  "adan": {
+    "arti": "nama",
+    "keterangan": "andap"
+  },
+  "becik": {
+    "arti": "baik, bagus",
+    "keterangan": "mider"
+  },
+  "jele": {
+    "arti": "jelek, buruk",
+    "keterangan": "andap"
+  },
+  "kaon": {
+    "arti": "buruk, rusak",
+    "keterangan": "alus"
+  },
+  "numbas": {
+    "arti": "beli",
+    "keterangan": "alus"
+  },
+  "meli": {
+    "arti": "beli",
+    "keterangan": "andap"
+  },
+  "ngadol": {
+    "arti": "jual",
+    "keterangan": "mider"
+  },
+  "aji": {
+    "arti": "harga",
+    "keterangan": "mider"
+  },
+  "ali": {
+    "arti": "cari",
+    "keterangan": "andap"
+  },
+  "luruh": {
+    "arti": "cari",
+    "keterangan": "alus"
+  },
+  "bli": {
+    "arti": "kakak laki-laki",
+    "keterangan": "sapaan"
+  },
+  "beli": {
+    "arti": "kakak laki-laki",
+    "keterangan": "sapaan"
+  },
+  "mbok": {
+    "arti": "kakak perempuan",
+    "keterangan": "sapaan"
+  },
+  "adi": {
+    "arti": "adik",
+    "keterangan": "mider"
+  },
+  "meme": {
+    "arti": "ibu",
+    "keterangan": "andap"
+  },
+  "biang": {
+    "arti": "ibu",
+    "keterangan": "alus"
+  },
+  "bapa": {
+    "arti": "ayah, bapak",
+    "keterangan": "andap"
+  },
+  "aji": {
+    "arti": "ayah",
+    "keterangan": "alus"
+  },
+  "kaki": {
+    "arti": "kakek",
+    "keterangan": "andap"
+  },
+  "niang": {
+    "arti": "nenek",
+    "keterangan": "andap"
+  },
+  "punapi gatra": {
+    "arti": "apa kabar",
+    "keterangan": "sapaan"
+  },
+  "nanging": {
+    "arti": "tetapi",
+    "keterangan": ""
+  },
+  "laut": {
+    "arti": "lalu, kemudian",
+    "keterangan": ""
+  },
+  "ene": {
+    "arti": "ini",
+    "keterangan": "andap"
+  },
+  "niki": {
+    "arti": "ini",
+    "keterangan": "alus"
+  },
+  "ento": {
+    "arti": "itu",
+    "keterangan": "andap"
+  },
+  "punika": {
+    "arti": "itu",
+    "keterangan": "alus"
+  }
+}

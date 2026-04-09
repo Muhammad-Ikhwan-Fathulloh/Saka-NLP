@@ -405,7 +405,7 @@
             yang solid untuk pemrosesan teks Bahasa Indonesia dan daerah.</p>
 
         <div class="cta-group">
-            <a href="docs.html" class="btn btn-primary">📖 API Docs</a>
+            <a href="docs.html" class="btn btn-primary">📖 Docs</a>
             <a href="https://pypi.org/project/saka-nlp/" target="_blank" class="btn btn-accent">📦 Install via PyPI</a>
             <a href="https://medium.com/@ikhwanfathulloh/mengenal-saka-nlp-library-nlp-bahasa-indonesia-modern-selain-nltk-sastrawi-f8a3df646df7"
                 target="_blank" class="btn btn-outline">📝 Medium Blog</a>
@@ -476,7 +476,7 @@ pip install -e .</code></pre>
                         <pre class="code-block"><code><span class="c-kw">import</span> saka
 
 <span class="c-fn">print</span>(saka.__version__)
-<span class="c-cm"># Output: 0.1.8</span></code></pre>
+<span class="c-cm"># Output: 0.1.9</span></code></pre>
                     </div>
                 </div>
 
@@ -564,51 +564,140 @@ kbbi_result = saka.<span class="c-fn">query_kbbi</span>(<span class="c-st">"bela
                 <div class="doc-item">
                     <div class="doc-info">
                         <h3><span>05</span> Stopwords Nusantara</h3>
-                        <p>Koleksi Stopwords (Indo, Sunda, Jawa) dengan dukungan pencarian spesifik (O(1) Search).</p>
-                    </div>
-                    <div class="code-container">
-                        <div class="code-header"><span class="code-lang">python</span><button class="copy-btn"
-                                onclick="copyCode(this)">Salin</button></div>
-                        <pre
-                            class="code-block"><code><span class="c-kw">import</span> saka
-
-<span class="c-cm"># Ambil stopword spesifik bahasa (contoh: Sunda)</span>
-sunda_stops = saka.<span class="c-fn">get_stopwords</span>(<span class="c-st">"sunda"</span>)
-<span class="c-fn">print</span>(<span class="c-st">f"Apakah 'saha' adalah stopword? {'saha' in sunda_stops}"</span>) 
-<span class="c-cm"># Output: True</span>
-
-<span class="c-cm"># Ambil semua stopword (Indo + Sunda + Jawa)</span>
-all_stops = saka.<span class="c-fn">get_stopwords</span>(<span class="c-st">"all"</span>)
-<span class="c-fn">print</span>(<span class="c-st">f"Total stopwords: {len(all_stops)}"</span>) <span class="c-cm"># Output: 817</span></code></pre>
-                    </div>
-                </div>
-
-                <!-- 6. Bahasa Daerah -->
-                <div class="doc-item">
-                    <div class="doc-info">
-                        <h3><span>06</span> Ekosistem Sunda & Jawa</h3>
-                        <p>Pencarian kamus multi-bahasa <i>offline-first</i> dan dukungan transliterasi multi-Aksara
-                            Nusantara presisi.</p>
+                        <p>Koleksi Stopwords (Indo, Sunda, Jawa, Bali) dengan dukungan pencarian spesifik (O(1) Search).
+                        </p>
                     </div>
                     <div class="code-container">
                         <div class="code-header"><span class="code-lang">python</span><button class="copy-btn"
                                 onclick="copyCode(this)">Salin</button></div>
                         <pre class="code-block"><code><span class="c-kw">import</span> saka
 
-<span class="c-cm"># Latin <-> Aksara Sunda (SundaDigi)</span>
-sunda = saka.<span class="c-fn">latin_to_aksara_sunda</span>(<span class="c-st">"saka"</span>)
-<span class="c-fn">print</span>(sunda) <span class="c-cm"># Output: ᮞᮊ</span>
+<span class="c-cm">#// Ambil stopword spesifik bahasa (contoh: Sunda)
+sunda_stops = saka.<span class="c-fn">get_stopwords</span>(<span class="c-st">"sunda"</span>)
+<span class="c-fn">print</span>(<span class="c-st">f"Apakah 'saha' adalah stopword? {'saha' in sunda_stops}"</span>) 
 
-<span class="c-cm"># Latin <-> Aksara Jawa (Sastra)</span>
-jawa = saka.<span class="c-fn">latin_to_aksara_jawa</span>(<span class="c-st">"hanacaraka"</span>)
-<span class="c-fn">print</span>(jawa) <span class="c-cm"># Output: ꦲꦤꦕꦫꦏ</span></code></pre>
+// Ambil stopword spesifik bahasa Jawa
+jawa_stops = saka.<span class="c-fn">get_stopwords</span>(<span class="c-st">"jawa"</span>)
+
+// Ambil stopword spesifik bahasa Bali
+bali_stops = saka.<span class="c-fn">get_stopwords</span>(<span class="c-st">"bali"</span>)
+
+// Ambil semua stopword (Indo + Sunda + Jawa + Bali)
+all_stops = saka.<span class="c-fn">get_stopwords</span>(<span class="c-st">"all"</span>)
+<span class="c-fn">print</span>(<span class="c-st">f"Total stopwords: {len(all_stops)}"</span>)</code></pre>
                     </div>
                 </div>
 
-                <!-- 7. CLI -->
+                <!-- 06. Ekosistem Sunda -->
                 <div class="doc-item">
                     <div class="doc-info">
-                        <h3><span>07</span> Terminal CLI</h3>
+                        <h3><span>06</span> Ekosistem Sunda</h3>
+                        <p>Dukungan kamus digital SundaDigi dan transliterasi Aksara Sunda (Ngalagena) yang presisi.</p>
+                    </div>
+                    <div class="code-container">
+                        <div class="code-header"><span class="code-lang">python</span><button class="copy-btn"
+                                onclick="copyCode(this)">Salin</button></div>
+                        <pre class="code-block"><code><span class="c-kw">import</span> saka
+
+<span class="c-cm"># Kamus Sunda (SundaDigi)</span>
+res = saka.<span class="c-fn">query_sundadigi</span>(<span class="c-st">"wilujeng"</span>)
+<span class="c-fn">print</span>(res[<span class="c-st">"definitions"</span>][<span class="c-st">"arti"</span>]) <span class="c-cm"># Output: selamat</span>
+
+<span class="c-cm"># Transliterasi Aksara Sunda</span>
+aksara = saka.<span class="c-fn">latin_to_aksara_sunda</span>(<span class="c-st">"saka"</span>)
+<span class="c-fn">print</span>(aksara) <span class="c-cm"># Output: ᮞᮊ</span></code></pre>
+                        <div style="padding: 1rem; border-top: 1px solid var(--border); overflow-x: auto;">
+                            <table
+                                style="width: 100%; border-collapse: collapse; font-size: 0.85rem; text-align: left;">
+                                <tr style="border-bottom: 1px solid var(--border);">
+                                    <td style="padding: 0.5rem; font-weight: 600; color: var(--accent);">Ngalagena</td>
+                                    <td style="padding: 0.5rem; font-family: var(--font-mono); color: #ffffff;">ha(ᮠ),
+                                        na(ᮔ), ca(ᮎ),
+                                        ra(ᮛ), ka(ᮊ), da(ᮓ), ta(ᮒ), sa(ᮞ), wa(ᮝ), la(ᮜ), pa(ᮕ), ja(ᮏ), ya(ᮚ), nya(ᮑ),
+                                        ma(ᮙ), ga(ᮌ), ba(ᮘ), nga(ᮍ)</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 07. Ekosistem Jawa -->
+                <div class="doc-item">
+                    <div class="doc-info">
+                        <h3><span>07</span> Ekosistem Jawa</h3>
+                        <p>Integrasi Leksikon Sastra.org dan mesin transliterasi Hanacaraka (Nglegena) yang akurat.</p>
+                    </div>
+                    <div class="code-container">
+                        <div class="code-header"><span class="code-lang">python</span><button class="copy-btn"
+                                onclick="copyCode(this)">Salin</button></div>
+                        <pre class="code-block"><code><span class="c-kw">import</span> saka
+
+<span class="c-cm"># Kamus Jawa (Sastra.org)</span>
+res = saka.<span class="c-fn">query_sastra</span>(<span class="c-st">"sugeng"</span>)
+<span class="c-fn">print</span>(res[<span class="c-st">"definitions"</span>][0][<span class="c-st">"arti"</span>]) <span class="c-cm"># Output: selamat</span>
+
+<span class="c-cm"># Transliterasi Aksara Jawa</span>
+aksara = saka.<span class="c-fn">latin_to_aksara_jawa</span>(<span class="c-st">"hanacaraka"</span>)
+<span class="c-fn">print</span>(aksara) <span class="c-cm"># Output: ꦲꦤꦕꦫꦏ</span></code></pre>
+                        <div style="padding: 1rem; border-top: 1px solid var(--border); overflow-x: auto;">
+                            <table
+                                style="width: 100%; border-collapse: collapse; font-size: 0.85rem; text-align: left;">
+                                <tr style="border-bottom: 1px solid var(--border);">
+                                    <td style="padding: 0.5rem; font-weight: 600; color: var(--accent);">Nglegena</td>
+                                    <td style="padding: 0.5rem; font-family: var(--font-mono); color: #ffffff;">ha(ꦲ),
+                                        na(ꦤ), ca(ꦕ),
+                                        ra(ꦫ), ka(ꦏ), da(ꦢ), ta(ꦠ), sa(ꦱ), wa(ꦮ), la(ꦭ), pa(ꦥ), dha(ꦝ), ja(ꦗ), ya(ꦪ),
+                                        nya(ꦚ), ma(ꦩ), ga(ꦒ), ba(ꦧ), tha(ꦛ), nga(ꦔ)</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 08. Ekosistem Bali -->
+                <div class="doc-item">
+                    <div class="doc-info">
+                        <h3><span>08</span> Ekosistem Bali</h3>
+                        <p>Pemanfaatan BASAbali Wiki dan dukungan penuh Aksara Bali (Wreastra) beserta angka dan tanda
+                            baca.</p>
+                    </div>
+                    <div class="code-container">
+                        <div class="code-header"><span class="code-lang">python</span><button class="copy-btn"
+                                onclick="copyCode(this)">Salin</button></div>
+                        <pre class="code-block"><code><span class="c-kw">import</span> saka
+
+<span class="c-cm"># Kamus Bali (BASAbali)</span>
+res = saka.<span class="c-fn">query_basabali</span>(<span class="c-st">"rahajeng"</span>)
+<span class="c-fn">print</span>(res[<span class="c-st">"definitions"</span>][0][<span class="c-st">"arti"</span>]) <span class="c-cm"># Output: selamat</span>
+
+<span class="c-cm"># Transliterasi Aksara Bali</span>
+aksara = saka.<span class="c-fn">latin_to_aksara_bali</span>(<span class="c-st">"bali 2026"</span>)
+<span class="c-fn">print</span>(aksara) <span class="c-cm"># Output: ᬩᬮᬶ ᭒᭐᭒᭖</span></code></pre>
+                        <div style="padding: 1rem; border-top: 1px solid var(--border); overflow-x: auto;">
+                            <table
+                                style="width: 100%; border-collapse: collapse; font-size: 0.85rem; text-align: left;">
+                                <tr style="border-bottom: 1px solid var(--border);">
+                                    <td style="padding: 0.5rem; font-weight: 600; color: var(--accent);">Wreastra</td>
+                                    <td style="padding: 0.5rem; font-family: var(--font-mono); color: #ffffff;">ha(ᬳ),
+                                        na(ᬦ), ca(ᬘ),
+                                        ra(ᬭ), ka(ᬓ), da(ᬤ), ta(ᬢ), sa(ᬲ), wa(ᬯ), la(ᬮ), ma(ᬫ), pa(ᬧ), ga(ᬕ), ja(ᬚ),
+                                        ya(ᬬ), nya(ᬜ)</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--border);">
+                                    <td style="padding: 0.5rem; font-weight: 600; color: var(--accent);">Angka</td>
+                                    <td style="padding: 0.5rem; font-family: var(--font-mono); color: #ffffff;">0(᭐),
+                                        1(᭑), 2(᭒), 3(᭓),
+                                        4(᭔), 5(᭕), 6(᭖), 7(᭗), 8(᭘), 9(᭙)</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 09. CLI -->
+                <div class="doc-item">
+                    <div class="doc-info">
+                        <h3><span>09</span> Terminal CLI</h3>
                         <p>Akses fitur Saka-NLP langsung dari terminal tanpa skrip Python.</p>
                     </div>
                     <div class="code-container">
@@ -644,6 +733,7 @@ saka --normalize <span class="c-st">"ngapain ke kampus klo libur"</span></code><
                 <li><strong>Slang Lexicon</strong>Corpus Twitter Indonesia (Evan Martua).</li>
                 <li><strong>Ekosistem Sunda</strong>Referensi kamus dan transliterasi SundaDigi + Wiktionary.</li>
                 <li><strong>Ekosistem Jawa</strong>Leksikon komprehensif & transliterasi perpustakaan sastra.org.</li>
+                <li><strong>Ekosistem Bali</strong>Leksikon BASAbali Wiki & transliterasi Aksara Bali.</li>
                 <li><strong>Tala Dataset</strong>Standar stopwords Bahasa Indonesia.</li>
             </ul>
         </section>

@@ -15,10 +15,16 @@ _JAWA_STOPWORDS = {
     "menawi", "bisa", "iso", "uga", "ugi", "ora", "mboten", "wis", "wes", "dudu", "iku"
 }
 
+_BALI_STOPWORDS = {
+    "di", "ke", "teken", "apang", "saja", "ada", "ene", "ento", "i", "ni",
+    "tiang", "iraga", "ia", "cai", "nyai", "nanging", "laut", "suba", "tusing",
+    "ngajeng", "mandaer", "neda", "keto", "kena", "be", "ne", "ento", "mare"
+}
+
 def get_stopwords(lang: str = "all") -> Set[str]:
     """
     Returns a set of stopwords. 
-    Lang options: 'id' (Indonesian), 'sunda', 'jawa', 'all' (combined).
+    Lang options: 'id' (Indonesian), 'sunda', 'jawa', 'bali', 'all' (combined).
     Defaults to 'all' for maximum coverage of Nusantara text.
     """
     stopwords = set()
@@ -40,5 +46,8 @@ def get_stopwords(lang: str = "all") -> Set[str]:
         
     if lang in ['jawa', 'all']:
         stopwords.update(_JAWA_STOPWORDS)
+        
+    if lang in ['bali', 'all']:
+        stopwords.update(_BALI_STOPWORDS)
         
     return stopwords

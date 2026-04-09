@@ -17,12 +17,20 @@ try:
 except Exception:
     _JAWA_DICT = {}
 
+try:
+    with open(os.path.join(BASE_DIR, 'dict', 'bali_dict.json'), 'r', encoding='utf-8') as f:
+        _BALI_DICT = json.load(f)
+except Exception:
+    _BALI_DICT = {}
+
 def check_dict(w: str) -> List[str]:
     langs = []
     if w in _SUNDA_DICT:
         langs.append('sunda')
     if w in _JAWA_DICT:
         langs.append('jawa')
+    if w in _BALI_DICT:
+        langs.append('bali')
     return langs
 
 def analyze(word: str) -> Dict[str, Any]:
