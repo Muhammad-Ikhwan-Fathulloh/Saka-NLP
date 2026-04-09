@@ -393,7 +393,8 @@
 
     <header class="container">
         <div style="position: absolute; top: 1.5rem; right: 2rem;">
-            <button id="theme-toggle" class="btn btn-outline" style="padding: 0.5rem 1rem; border-radius: 8px;">🌓 Tema</button>
+            <button id="theme-toggle" class="btn btn-outline" style="padding: 0.5rem 1rem; border-radius: 8px;">🌓
+                Tema</button>
         </div>
         <div class="hero-flag">
             <div class="flag-red"></div>
@@ -406,9 +407,12 @@
         <div class="cta-group">
             <a href="docs.html" class="btn btn-primary">📖 API Docs</a>
             <a href="https://pypi.org/project/saka-nlp/" target="_blank" class="btn btn-accent">📦 Install via PyPI</a>
-            <a href="https://medium.com/@ikhwanfathulloh/mengenal-saka-nlp-library-nlp-bahasa-indonesia-modern-selain-nltk-sastrawi-f8a3df646df7" target="_blank" class="btn btn-outline">📝 Medium Blog</a>
-            <a href="https://colab.research.google.com/drive/1MJ6fwJruR6B-UVT1sqKyqWXukjGe2UCH?usp=sharing" target="_blank" class="btn btn-outline">📓 Google Colab</a>
-            <a href="https://github.com/Muhammad-Ikhwan-Fathulloh/Saka-NLP" target="_blank" class="btn btn-outline">⭐ GitHub</a>
+            <a href="https://medium.com/@ikhwanfathulloh/mengenal-saka-nlp-library-nlp-bahasa-indonesia-modern-selain-nltk-sastrawi-f8a3df646df7"
+                target="_blank" class="btn btn-outline">📝 Medium Blog</a>
+            <a href="https://colab.research.google.com/drive/1MJ6fwJruR6B-UVT1sqKyqWXukjGe2UCH?usp=sharing"
+                target="_blank" class="btn btn-outline">📓 Google Colab</a>
+            <a href="https://github.com/Muhammad-Ikhwan-Fathulloh/Saka-NLP" target="_blank" class="btn btn-outline">⭐
+                GitHub</a>
         </div>
     </header>
 
@@ -472,7 +476,7 @@ pip install -e .</code></pre>
                         <pre class="code-block"><code><span class="c-kw">import</span> saka
 
 <span class="c-fn">print</span>(saka.__version__)
-<span class="c-cm"># Output: 0.1.4</span></code></pre>
+<span class="c-cm"># Output: 0.1.8</span></code></pre>
                     </div>
                 </div>
 
@@ -515,12 +519,14 @@ normalized = saka.<span class="c-fn">normalize</span>(<span class="c-st">"klo gi
                 <div class="doc-item">
                     <div class="doc-info">
                         <h3><span>03</span> Analisis Morfologi Mutakhir</h3>
-                        <p>Pemulihan leburan afiks (*Morphophonemic*) dan Validasi hibrida berbasis Dictionary Early Stopping.</p>
+                        <p>Pemulihan leburan afiks (*Morphophonemic*) dan Validasi hibrida berbasis Dictionary Early
+                            Stopping.</p>
                     </div>
                     <div class="code-container">
                         <div class="code-header"><span class="code-lang">python</span><button class="copy-btn"
                                 onclick="copyCode(this)">Salin</button></div>
-                        <pre class="code-block"><code><span class="c-kw">import</span> saka
+                        <pre
+                            class="code-block"><code><span class="c-kw">import</span> saka
 
 <span class="c-cm"># Pemulihan akar afiks melebur</span>
 analysis = saka.<span class="c-fn">analyze</span>(<span class="c-st">"menyebarluaskan"</span>)
@@ -563,7 +569,8 @@ kbbi_result = saka.<span class="c-fn">query_kbbi</span>(<span class="c-st">"bela
                     <div class="code-container">
                         <div class="code-header"><span class="code-lang">python</span><button class="copy-btn"
                                 onclick="copyCode(this)">Salin</button></div>
-                        <pre class="code-block"><code><span class="c-kw">import</span> saka
+                        <pre
+                            class="code-block"><code><span class="c-kw">import</span> saka
 
 <span class="c-cm"># Ambil stopword spesifik bahasa (contoh: Sunda)</span>
 sunda_stops = saka.<span class="c-fn">get_stopwords</span>(<span class="c-st">"sunda"</span>)
@@ -580,7 +587,8 @@ all_stops = saka.<span class="c-fn">get_stopwords</span>(<span class="c-st">"all
                 <div class="doc-item">
                     <div class="doc-info">
                         <h3><span>06</span> Ekosistem Sunda & Jawa</h3>
-                        <p>Pencarian kamus multi-bahasa <i>offline-first</i> dan dukungan transliterasi multi-Aksara Nusantara presisi.</p>
+                        <p>Pencarian kamus multi-bahasa <i>offline-first</i> dan dukungan transliterasi multi-Aksara
+                            Nusantara presisi.</p>
                     </div>
                     <div class="code-container">
                         <div class="code-header"><span class="code-lang">python</span><button class="copy-btn"
@@ -678,6 +686,7 @@ saka --normalize <span class="c-st">"ngapain ke kampus klo libur"</span></code><
         });
 
         // Copy Code Function
+        function copyCode(btn) {
             const code = btn.parentElement.nextElementSibling.innerText;
             navigator.clipboard.writeText(code).then(() => {
                 const originalText = btn.innerText;
