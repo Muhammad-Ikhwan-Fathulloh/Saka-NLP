@@ -21,9 +21,9 @@ Saka-NLP mendukung *asynchronous processing*, memiliki komponen yang dijaga terp
 
 *   **Asynchronous Processing**: Dilengkapi method pendamping `async_*` (contoh: `async_tokenize`) menggunakan `asyncio` untuk pemrosesan dataset besar secara efisien tanpa *blocking*.
 *   **Plug-and-Play Components**: Fleksibel dalam memilih mesin stemming, tokenisasi, atau mengintegrasikan plugin pihak ketiga.
-*   **Heuristic Morphology Analyzer**: Mendeteksi susunan pola awalan dan akhiran menggunakan aturan tata bahasa Indonesia.
+*   **Heuristic Morphology Analyzer**: Mendeteksi susunan pola awalan dan akhiran menggunakan aturan tata bahasa Indonesia yang dibekali dengan **Early Stopping Validation** ke dalam leksikon bahasa daerah dan pemulihan leburan huruf (Morphophonemic).
 *   **Live KBBI Scraper**: Ekstraksi arti kata langsung mendompleng ke *Kamus Besar Bahasa Indonesia Daring* dari Kemendikbudristekdikti.
-*   **Agnostic Script Support**: Termasuk dukungan awal untuk skrip bahasa daerah seperti Aksara Sunda, yang ke depannya dapat diperluas untuk aksara Nusantara lainnya.
+*   **Agnostic Script Support**: Termasuk dukungan untuk skrip bahasa daerah seperti Transliterasi **Aksara Sunda** dan **Aksara Jawa** (Hanacaraka).
 
 ---
 
@@ -85,19 +85,18 @@ print(normalized)
 ```
 
 ### 3. Analisis Morfologi Teks
-Bukan cuma menarik akar kata seperti Stemming pada Sastrawi, Saka akan mendemonstrasikan penjabaran partikel secara gamblang.
+Saka dilengkapi dengan *Heuristic Morphology Analyzer* mutakhir. Modul ini bukan hanya sekedar memotong imbuhan secara serakah layaknya *Stemming* pada umumnya. Saka mampu merekonstruksi peleburan huruf (*Morphophonemic Restructuring*) dari imbuhan, menyelesaikan akar bentuk *Kata Majemuk Serangkai*, bahkan tervalidasi secara hibrida dengan pangkalan data daerah.
+
 ```python
 import saka
 
-analysis = saka.analyze("mempertanggungjawabkan")
-print(analysis)
-# Output:
-# {
-#   'root': 'tanggung jawab',
-#   'prefixes': ['mem', 'per'],
-#   'suffixes': ['kan'],
-#   'type': 'unknown'
-# }
+# Menangani kata majemuk & afiks luluh
+print(saka.analyze("menyebarluaskan"))
+# Output: {'root': 'sebar luas', 'prefixes': ['meny'], 'suffixes': ['kan'], 'type': 'unknown', 'regional_matches': []}
+
+# Memanfaatkan validasi kamus daerah (*Early Stopping*)
+print(saka.analyze("dipikanyaah"))
+# Output: {'root': 'nyaah', 'prefixes': ['dipika'], 'suffixes': [], 'type': 'regional', 'regional_matches': ['sunda']}
 ```
 
 ### 4. Live Integrasi Pencarian KBBI
@@ -122,48 +121,54 @@ else:
 # Arti: berubah tingkah laku atau tanggapan yang disebabkan oleh pengalaman
 ```
 
-### 5. Koleksi Stopwords Indonesia Secara Native
-Kumpulan Stopwords yang langsung dirender dari *Tala dataset* ke dalam object `Set` Python agar latensinya O(1) untuk kebutuhan ML/Deep Learning.
+### 5. Koleksi Stopwords Nusantara (Hybrid)
+Kumpulan Stopwords yang langsung dirender ke dalam object `Set` Python agar latensinya O(1) untuk kebutuhan ML. Mendukung corpus Indonesia (Tala), Sunda, dan Jawa.
 ```python
 import saka
 
-stopwords = saka.get_stopwords()
-print(f"Ukuran kamus stopwords: {len(stopwords)}")
-print(f"Apakah 'ada' adalah stopword? {'ada' in stopwords}") 
+# 1. Mengambil semua stopword (Indonesia, Sunda, Jawa digabung)
+all_stops = saka.get_stopwords(lang="all") # "all" adalah parameter default
+print(f"Total Stopwords Gabungan: {len(all_stops)}") # Output: 817
 
-# Output:
-# Ukuran kamus stopwords: 757
-# Apakah 'ada' adalah stopword? True
+# 2. Mengambil stopword khusus bahasa Sunda
+sunda_stops = saka.get_stopwords(lang="sunda")
+print(f"Apakah 'saha' stopword Sunda? {'saha' in sunda_stops}") # Output: True
+
+# 3. Mengambil stopword khusus Jawa ('jawa') atau Indo ('id')
+jawa_stops = saka.get_stopwords(lang="jawa")
 ```
 
-### 6. Dukungan Bahasa Daerah: SundaDigi & Aksara Sunda
-Saka-NLP menyediakan pilar awal untuk pemrosesan bahasa daerah, khususnya bahasa Sunda, termasuk integrasi kamus digital dan transliterasi Aksara.
+### 6. Dukungan Bahasa Daerah: Ekosistem Sunda & Jawa
+Saka-NLP menyediakan pilar utama untuk pemrosesan bahasa etnis Nusantara, khususnya bahasa Sunda dan Jawa. Seluruh integrasi dilengkapi fungsi *offline fallback* untuk pencarian kamus berkecepatan tinggi, dan mesin berbasis *rule* adaptif (Unicode) untuk transliterasi Aksara.
 
-#### Pencarian Kamus SundaDigi
+#### Pencarian Kamus Daerah (Cepat & Mode Offline)
 ```python
 import saka
 
-# Mencari arti kata "wilujeng"
-result = saka.query_sundadigi("wilujeng")
-print(result["definitions"])
+# Mencari terjemahan Bahasa Sunda 
+result_sunda = saka.query_sundadigi("wilujeng")
+print(result_sunda["definitions"]["arti"]) 
+# Output: selamat
 
-# Output:
-# ['Selamat']
+# Mencari terjemahan Bahasa Jawa
+result_jawa = saka.query_sastra("sugeng")
+print(result_jawa["definitions"][0]["arti"])
+# Output: selamat
 ```
 
-#### Transliterasi Aksara Sunda
-Saka-NLP mendukung konversi teks Latin ke Aksara Sunda sesuai dengan [Panduan SundaDigi](https://sundadigi.com/panduan).
+#### Transliterasi Aksara Nusantara (Sunda & Jawa)
+Saka-NLP memetakan konversi teks Latin ke format huruf wilayah masing-masing (*Hanacaraka* dan *Aksara Sunda*) secara akurat dan responsif.
 
 ```python
 import saka
 
-# Latin ke Aksara
-aksara = saka.latin_to_aksara_sunda("saka")
-print(aksara) # Output: ᮞᮊ
+# Latin <-> Aksara Sunda
+aksara_sunda = saka.latin_to_aksara_sunda("saka")
+print(aksara_sunda) # Output: ᮞᮊ
 
-# Aksara ke Latin
-latin = saka.aksara_sunda_to_latin("ᮞᮊ")
-print(latin) # Output: saka
+# Latin <-> Aksara Jawa
+aksara_jawa = saka.latin_to_aksara_jawa("hanacaraka")
+print(aksara_jawa) # Output: ꦲꦤꦕꦫꦏ
 ```
 
 ---
@@ -189,7 +194,8 @@ saka --normalize "ngapain ke kampus klo libur"
 
 * **KBBI (Kamus Besar Bahasa Indonesia)**: Data yang dijaring bersumber dari [KBBI Online (kbbi.web.id)](https://kbbi.web.id/).
 * **Slang Words**: Memanfaatkan corpus dari [Twitter COVID-19 Sentiment Lexicon](https://github.com/evanmartua34/Twitter-COVID19-Indonesia-Sentiment-Analysis---Lexicon-Based).
-* **SundaDigi**: Menggunakan kamus digital [SundaDigi](https://sundadigi.com/) untuk terjemahan & referensi kosakata bahasa daerah Sunda serta [Panduan Aksara Sunda](https://sundadigi.com/panduan) untuk sistem transliterasi.
+* **Ekosistem Sunda**: Menggunakan kamus digital [SundaDigi](https://sundadigi.com/) untuk terjemahan serta [Panduan Aksara Sunda](https://sundadigi.com/panduan) untuk sistem transliterasi dan Wiktionary Appendix.
+* **Ekosistem Jawa**: Menyadur secara komprehensif repositori dari [sastra.org](https://www.sastra.org/) baik leksikon kosa kata Jawa maupun sistem validasi Aksara Jawa.
 * **Stopwords**: Mengadopsi corpus legendaris [Tala Stopwords Dataset](https://github.com/masdevid/ID-Stopwords).
 
 ## ❤️ Credits

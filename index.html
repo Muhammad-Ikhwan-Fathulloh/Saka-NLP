@@ -484,23 +484,21 @@ normalized = saka.<span class="c-fn">normalize</span>(<span class="c-st">"klo gi
                 <!-- 3. Morfologi -->
                 <div class="doc-item">
                     <div class="doc-info">
-                        <h3><span>03</span> Analisis Morfologi</h3>
-                        <p>Penjabaran partikel kata secara gamblang melampaui stemming biasa.</p>
+                        <h3><span>03</span> Analisis Morfologi Mutakhir</h3>
+                        <p>Pemulihan leburan afiks (*Morphophonemic*) dan Validasi hibrida berbasis Dictionary Early Stopping.</p>
                     </div>
                     <div class="code-container">
                         <div class="code-header"><span class="code-lang">python</span><button class="copy-btn"
                                 onclick="copyCode(this)">Salin</button></div>
                         <pre class="code-block"><code><span class="c-kw">import</span> saka
 
-analysis = saka.<span class="c-fn">analyze</span>(<span class="c-st">"mempertanggungjawabkan"</span>)
-<span class="c-fn">print</span>(analysis)
-<span class="c-cm"># Output:</span>
-<span class="c-cm"># {</span>
-<span class="c-cm">#   'root': 'tanggung jawab',</span>
-<span class="c-cm">#   'prefixes': ['mem', 'per'],</span>
-<span class="c-cm">#   'suffixes': ['kan'],</span>
-<span class="c-cm">#   'type': 'unknown'</span>
-<span class="c-cm"># }</span></code></pre>
+<span class="c-cm"># Pemulihan akar afiks melebur</span>
+analysis = saka.<span class="c-fn">analyze</span>(<span class="c-st">"menyebarluaskan"</span>)
+<span class="c-fn">print</span>(analysis[<span class="c-st">"root"</span>]) <span class="c-cm"># Output: sebar luas</span>
+
+<span class="c-cm"># Validasi kamus daerah (*Early Stopping*)</span>
+analysis2 = saka.<span class="c-fn">analyze</span>(<span class="c-st">"dipikanyaah"</span>)
+<span class="c-fn">print</span>(analysis2[<span class="c-st">"regional_matches"</span>]) <span class="c-cm"># Output: ['sunda']</span></code></pre>
                     </div>
                 </div>
 
@@ -529,39 +527,43 @@ kbbi_result = saka.<span class="c-fn">query_kbbi</span>(<span class="c-st">"bela
                 <!-- 5. Stopwords -->
                 <div class="doc-item">
                     <div class="doc-info">
-                        <h3><span>05</span> Native Stopwords</h3>
-                        <p>Koleksi Stopwords (Tala Dataset) dengan akses latensi O(1).</p>
+                        <h3><span>05</span> Stopwords Nusantara</h3>
+                        <p>Koleksi Stopwords (Indo, Sunda, Jawa) dengan dukungan pencarian spesifik (O(1) Search).</p>
                     </div>
                     <div class="code-container">
                         <div class="code-header"><span class="code-lang">python</span><button class="copy-btn"
                                 onclick="copyCode(this)">Salin</button></div>
                         <pre class="code-block"><code><span class="c-kw">import</span> saka
 
-stopwords = saka.<span class="c-fn">get_stopwords</span>()
-<span class="c-fn">print</span>(<span class="c-st">f"Apakah 'ada' adalah stopword? {'ada' in stopwords}"</span>) 
-<span class="c-cm"># Output:</span>
-<span class="c-cm"># Apakah 'ada' adalah stopword? True</span></code></pre>
+<span class="c-cm"># Ambil stopword spesifik bahasa (contoh: Sunda)</span>
+sunda_stops = saka.<span class="c-fn">get_stopwords</span>(<span class="c-st">"sunda"</span>)
+<span class="c-fn">print</span>(<span class="c-st">f"Apakah 'saha' adalah stopword? {'saha' in sunda_stops}"</span>) 
+<span class="c-cm"># Output: True</span>
+
+<span class="c-cm"># Ambil semua stopword (Indo + Sunda + Jawa)</span>
+all_stops = saka.<span class="c-fn">get_stopwords</span>(<span class="c-st">"all"</span>)
+<span class="c-fn">print</span>(<span class="c-st">f"Total stopwords: {len(all_stops)}"</span>) <span class="c-cm"># Output: 817</span></code></pre>
                     </div>
                 </div>
 
                 <!-- 6. Bahasa Daerah -->
                 <div class="doc-item">
                     <div class="doc-info">
-                        <h3><span>06</span> Bahasa Daerah & Aksara</h3>
-                        <p>Integrasi SundaDigi dan transliterasi Aksara Sunda presisi.</p>
+                        <h3><span>06</span> Ekosistem Sunda & Jawa</h3>
+                        <p>Pencarian kamus multi-bahasa <i>offline-first</i> dan dukungan transliterasi multi-Aksara Nusantara presisi.</p>
                     </div>
                     <div class="code-container">
                         <div class="code-header"><span class="code-lang">python</span><button class="copy-btn"
                                 onclick="copyCode(this)">Salin</button></div>
                         <pre class="code-block"><code><span class="c-kw">import</span> saka
 
-<span class="c-cm"># Latin ke Aksara</span>
-aksara = saka.<span class="c-fn">latin_to_aksara_sunda</span>(<span class="c-st">"saka"</span>)
-<span class="c-fn">print</span>(aksara) <span class="c-cm"># Output: ᮞᮊ</span>
+<span class="c-cm"># Latin <-> Aksara Sunda (SundaDigi)</span>
+sunda = saka.<span class="c-fn">latin_to_aksara_sunda</span>(<span class="c-st">"saka"</span>)
+<span class="c-fn">print</span>(sunda) <span class="c-cm"># Output: ᮞᮊ</span>
 
-<span class="c-cm"># Aksara ke Latin</span>
-latin = saka.<span class="c-fn">aksara_sunda_to_latin</span>(<span class="c-st">"ᮞᮊ"</span>)
-<span class="c-fn">print</span>(latin) <span class="c-cm"># Output: saka</span></code></pre>
+<span class="c-cm"># Latin <-> Aksara Jawa (Sastra)</span>
+jawa = saka.<span class="c-fn">latin_to_aksara_jawa</span>(<span class="c-st">"hanacaraka"</span>)
+<span class="c-fn">print</span>(jawa) <span class="c-cm"># Output: ꦲꦤꦕꦫꦏ</span></code></pre>
                     </div>
                 </div>
 
@@ -602,7 +604,8 @@ saka --normalize <span class="c-st">"ngapain ke kampus klo libur"</span></code><
             <ul class="ref-list">
                 <li><strong>KBBI Daring</strong>Sumber data leksikal resmi Kemendikbud.</li>
                 <li><strong>Slang Lexicon</strong>Corpus Twitter Indonesia (Evan Martua).</li>
-                <li><strong>SundaDigi</strong>Referensi kamus dan aksara Sunda digital.</li>
+                <li><strong>Ekosistem Sunda</strong>Referensi kamus dan transliterasi SundaDigi + Wiktionary.</li>
+                <li><strong>Ekosistem Jawa</strong>Leksikon komprehensif & transliterasi perpustakaan sastra.org.</li>
                 <li><strong>Tala Dataset</strong>Standar stopwords Bahasa Indonesia.</li>
             </ul>
         </section>

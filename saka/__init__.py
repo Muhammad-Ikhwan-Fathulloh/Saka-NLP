@@ -1,4 +1,4 @@
-__version__ = "0.1.4"
+__version__ = "0.1.6"
 
 from .core.tokenizer import tokenize, async_tokenize
 from .core.normalizer import normalize, async_normalize
@@ -12,6 +12,11 @@ from .plugins.sunda.transliterate import (
     aksara_to_latin
 )
 from .plugins.sunda.sundadigi_scraper import query_sundadigi
+from .plugins.jawa.sastra_scraper import query_sastra
+from .plugins.jawa.transliterate import (
+    latin_to_aksara_jawa,
+    aksara_jawa_to_latin
+)
 
 __all__ = [
     "tokenize",
@@ -23,8 +28,11 @@ __all__ = [
     "get_stopwords",
     "query_kbbi",
     "query_sundadigi",
+    "query_sastra",
     "latin_to_aksara_sunda",
     "aksara_sunda_to_latin",
+    "latin_to_aksara_jawa",
+    "aksara_jawa_to_latin",
     "latin_to_aksara",
     "aksara_to_latin",
 ]

@@ -5,12 +5,30 @@ from typing import Dict, Any, List
 class SundaDigiException(Exception):
     pass
 
+import os
+import json
+
+_DICT_PATH = os.path.join(os.path.dirname(__file__), '..', '..', 'dict', 'sunda_dict.json')
+_SUNDA_DICT = {}
+if os.path.exists(_DICT_PATH):
+    with open(_DICT_PATH, 'r', encoding='utf-8') as f:
+        _SUNDA_DICT = json.load(f)
+
 def query_sundadigi(word: str) -> Dict[str, Any]:
     """
-    Queries the SundaDigi dictionary for a given Sundanese word.
-    Note: Requires an active internet connection.
-    This scraper uses the background Meilisearch API of SundaDigi for accuracy.
+    Queries the Sunda dictionary. Uses an offline dataset if available.
+    Falls back to Meilisearch API of SundaDigi.
     """
+    word_lower = word.lower()
+    
+    if word_lower in _SUNDA_DICT:
+        return {
+            "query": word,
+            "status": "found",
+            "source": "offline_sunda_database",
+            "definitions": [_SUNDA_DICT[word_lower]]
+        }
+        
     # Obfuscated Public Search Token & Endpoint
     _enc_t = "NWNjZTRmNzIzYjVkYTM4NDk4ZDA5MDdkOTZhZmNlNTQ1OWNkMzM2OWYzMTYyYmI1Zjc0YmIwMmZjMDU5MmQ2ZQ=="
     _enc_u = "aHR0cHM6Ly92cHMuc3VuZGFkaWdpLmNvbS9pbmRleGVzL2thbXVzL3NlYXJjaA=="

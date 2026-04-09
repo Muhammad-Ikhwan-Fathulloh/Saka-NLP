@@ -4,9 +4,9 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "saka-nlp"
-version = "0.1.5"
+version = "0.1.6"
 authors = [
-  { name="Saka-NLP Contributors" },
+  { name="Saka-NLP Contributors", email="muhammadikhwanfathulloh17@gmail.com" },
 ]
 description = "Saka: Pilar Pemrosesan Bahasa Nusantara"
 readme = "README.md"
