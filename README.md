@@ -3,6 +3,7 @@
 [![PyPI version](https://img.shields.io/pypi/v/saka-nlp.svg)](https://pypi.org/project/saka-nlp/)
 [![Documentation](https://img.shields.io/badge/docs-live-brightgreen)](http://saka-nlp.netlify.app/)
 [![Colab](https://img.shields.io/badge/Colab-Playground-orange)](https://colab.research.google.com/drive/1MJ6fwJruR6B-UVT1sqKyqWXukjGe2UCH?usp=sharing)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20092641.svg)](https://doi.org/10.5281/zenodo.20092641)
 
 Secara filosofis, **Saka** (dalam bahasa Jawa/Sunda) berarti "tiang penyangga" atau "pilar". **Saka-NLP** dibangun untuk menjadi sebuah *architectural framework* modern yang solid bagi pemrosesan teks bahasa Indonesia dan daerah.
 
