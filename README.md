@@ -62,7 +62,7 @@ Saka-NLP didesain agar kode Python Anda menjadi bersih. Cukup lakukan satu baris
 import saka
 
 print(saka.__version__)
-# Output: 0.1.9
+# Output: 0.2.0
 ```
 
 ### 1. Tokenisasi Cerdas 
@@ -122,14 +122,14 @@ else:
 # Arti: berubah tingkah laku atau tanggapan yang disebabkan oleh pengalaman
 ```
 
-### 5. Koleksi Stopwords Nusantara (Hybrid)
-Kumpulan Stopwords yang langsung dirender ke dalam object `Set` Python agar latensinya O(1) untuk kebutuhan ML. Mendukung corpus Indonesia (Tala), Sunda, dan Jawa.
+### 5. Koleksi Stopwords Nusantara & Internasional (Hybrid)
+Kumpulan Stopwords yang langsung dirender ke dalam object `Set` Python agar latensinya O(1) untuk kebutuhan ML. Mendukung corpus Indonesia (Tala), daerah (Sunda, Jawa, Bali), hingga bahasa Internasional (English) dan Slang (Jaksel).
 ```python
 import saka
 
-# 1. Mengambil semua stopword (Indonesia, Sunda, Jawa digabung)
+# 1. Mengambil semua stopword (gabungan semua bahasa)
 all_stops = saka.get_stopwords(lang="all") # "all" adalah parameter default
-print(f"Total Stopwords Gabungan: {len(all_stops)}") # Output: 817
+print(f"Total Stopwords Gabungan: {len(all_stops)}") # Output: 900+
 
 # 2. Mengambil stopword khusus bahasa Sunda
 sunda_stops = saka.get_stopwords(lang="sunda")
@@ -138,6 +138,60 @@ print(f"Apakah 'saha' stopword Sunda? {'saha' in sunda_stops}") # Output: True
 # 3. Mengambil stopword khusus Jawa ('jawa') atau Bali ('bali')
 jawa_stops = saka.get_stopwords(lang="jawa")
 bali_stops = saka.get_stopwords(lang="bali")
+
+# 4. Bahasa Inggris ('en') dan Gaul Jakarta Selatan ('jaksel')
+en_stops = saka.get_stopwords(lang="en")
+jaksel_stops = saka.get_stopwords(lang="jaksel")
+print(f"Jaksel slang: {'literally' in jaksel_stops}") # Output: True
+```
+
+### 6. Prompt Builder LLM (Optimasi Prompt)
+Saka-NLP menyediakan alat untuk merakit struktur *prompt* LLM yang ideal (berdasarkan Anatomi Prompt) sekaligus melakukan **optimasi token** dan **normalisasi bahasa gaul** sebelum dikirim ke LLM.
+
+```python
+import saka
+
+prompt = saka.build_prompt(
+    instruction="Klasifikasikan sentimen dari ulasan berikut.",
+    context="Anda adalah asisten AI yang ahli dalam menganalisis sentimen restoran.",
+    input_data="Makanannya enak bgt tpi pelayanannya lama parah...",
+    output_indicator="JSON",
+    optimize_text=True, # Otomatis mengubah "bgt tpi" -> "banget tapi" dll.
+    max_tokens=50       # Memotong teks jika melebihi 50 token
+)
+
+print(prompt)
+# Output:
+# [Instruksi]:
+# Klasifikasikan sentimen dari ulasan berikut.
+# 
+# [Konteks]:
+# Anda adalah asisten AI yang ahli dalam menganalisis sentimen restoran.
+# 
+# [Data Input]:
+# Makanannya enak banget tapi pelayanannya lama parah...
+# 
+# [Indikator Output]:
+# JSON
+# (Keluarkan output HANYA dalam format JSON tanpa pengantar maupun penjelasan tambahan)
+```
+
+Selain itu, Anda dapat mem-parsing (mengurai) hasil teks dari LLM menjadi objek native Python dengan mudah.
+
+```python
+import saka
+
+llm_response = """
+Tentu, berikut adalah hasilnya:
+```json
+{"sentimen": "negatif", "alasan": "pelayanan lambat"}
+```
+"""
+
+# Otomatis mengekstrak markdown json block
+hasil_dict = saka.parse_llm_output(llm_response, format_type="json")
+print(hasil_dict["sentimen"]) 
+# Output: negatif
 ```
 
 #### 1. Ekosistem Sunda
@@ -264,6 +318,31 @@ saka --stem "dimakan"
 # Melakukan Normalisasi
 saka --normalize "ngapain ke kampus klo libur"
 ```
+
+---
+
+## 📚 Sitasi (Citation)
+
+Jika Anda menggunakan **Saka-NLP** dalam penelitian atau proyek Anda, mohon sitasi repositori ini menggunakan salah satu format berikut:
+
+### APA
+> Fathulloh, M. I. (2026). *Saka-NLP: Indonesian NLP Toolkit for Tokenization and Slang Normalization* (Version 0.2.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.20092641
+
+### BibTeX
+```bibtex
+@software{Fathulloh_Saka-NLP_2026,
+  author = {Fathulloh, Muhammad Ikhwan},
+  title = {{Saka-NLP: Indonesian NLP Toolkit for Tokenization and Slang Normalization}},
+  month = {5},
+  year = {2026},
+  publisher = {Zenodo},
+  version = {0.2.0},
+  doi = {10.5281/zenodo.20092641},
+  url = {https://github.com/Muhammad-Ikhwan-Fathulloh/Saka-NLP}
+}
+```
+
+Untuk format lainnya, Anda dapat mengecek file [`CITATION.cff`](CITATION.cff) di repositori ini.
 
 ---
 

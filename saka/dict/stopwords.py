@@ -5,26 +5,57 @@ _SUNDA_STOPWORDS = {
     "teu", "na", "ka", "ti", "ku", "di", "nu", "anu", "oge", "wae", 
     "bae", "mah", "teh", "tea", "jeung", "sareng", "naon", "saha", 
     "mana", "kumaha", "iraha", "naha", "pikeun", "kanggo", "pisan", 
-    "kacida", "pasti", "tangtu", "bisa", "tiasa", "aya", "euweuh", "kunaon", "ieu", "éta", "ieu"
+    "kacida", "pasti", "tangtu", "bisa", "tiasa", "aya", "euweuh", "kunaon", "ieu", "éta",
+    "ari", "nya", "atuh", "apan", "sok", "geura", "tuh", "kieu", "kitu", "engke", 
+    "ayeuna", "duka", "teuing", "pangna", "basa", "mun", "lamun", "saupama", "sanaos", 
+    "najan", "kawas", "jiga", "lir", "da", "dong", "ge", "wé", "weh"
 }
 
 _JAWA_STOPWORDS = {
     "lan", "utawa", "ing", "kang", "sing", "seng", "iki", "iku", 
     "kuwi", "apa", "opo", "sapa", "sopo", "piye", "kepiye", 
     "pira", "piro", "kapan", "nyang", "karo", "kalebet", "menawa", 
-    "menawi", "bisa", "iso", "uga", "ugi", "ora", "mboten", "wis", "wes", "dudu", "iku"
+    "menawi", "bisa", "iso", "uga", "ugi", "ora", "mboten", "wis", "wes", "dudu", 
+    "kene", "kono", "kui", "kae", "saka", "saking", "dadi", "dados", "amarga", "amargi", 
+    "nanging", "ananging", "supaya", "supados", "yen", "yèn", "bilih", "nuli", "lajeng", 
+    "banjur", "kados", "kaya", "kajaba", "kejawi", "malah", "satemah", "senajan", 
+    "sanadyan", "enggal", "ndang", "akeh", "akèh", "kathah"
 }
 
 _BALI_STOPWORDS = {
     "di", "ke", "teken", "apang", "saja", "ada", "ene", "ento", "i", "ni",
     "tiang", "iraga", "ia", "cai", "nyai", "nanging", "laut", "suba", "tusing",
-    "ngajeng", "mandaer", "neda", "keto", "kena", "be", "ne", "ento", "mare"
+    "ngajeng", "mandaer", "neda", "keto", "kena", "be", "ne", "mare",
+    "ring", "saking", "antuk", "tur", "lan", "miwah", "yening", "yen", "pinaka", "buat", 
+    "kanti", "sadurung", "sampun", "wau", "mangda", "ipun", "dane", "ida", "niki", "nika", 
+    "puniki", "punika", "sane", "ane", "indik", "kadi", "buka"
+}
+
+_EN_STOPWORDS = {
+    "i", "me", "my", "myself", "we", "our", "ours", "ourselves", "you", "your", "yours", "yourself", "yourselves",
+    "he", "him", "his", "himself", "she", "her", "hers", "herself", "it", "its", "itself", "they", "them", "their",
+    "theirs", "themselves", "what", "which", "who", "whom", "this", "that", "these", "those", "am", "is", "are",
+    "was", "were", "be", "been", "being", "have", "has", "had", "having", "do", "does", "did", "doing", "a", "an",
+    "the", "and", "but", "if", "or", "because", "as", "until", "while", "of", "at", "by", "for", "with", "about",
+    "against", "between", "into", "through", "during", "before", "after", "above", "below", "to", "from", "up",
+    "down", "in", "out", "on", "off", "over", "under", "again", "further", "then", "once", "here", "there", "when",
+    "where", "why", "how", "all", "any", "both", "each", "few", "more", "most", "other", "some", "such", "no", "nor",
+    "not", "only", "own", "same", "so", "than", "too", "very", "s", "t", "can", "will", "just", "don", "should", "now",
+    "also", "could", "would", "might", "must", "however", "therefore", "thus", "instead", "anyway", "cannot"
+}
+
+_JAKSEL_STOPWORDS = {
+    "literally", "basically", "which", "which is", "whichis", "like", "tbh", "fyi", "jujurly", "at least", "so", 
+    "as in", "btw", "anyway", "somehow", "even", "actually", "well", "cmiiw", "asap", "make sense", "worth it",
+    "end of the day", "at the end of the day", "i mean", "you know", "in terms of", "let's say", "to be honest", 
+    "not gonna lie", "ngl", "lowkey", "highkey", "for real", "fr", "periodt", "kinda", "sorta", "dunno", "lemme", 
+    "gimme", "gonna", "wanna", "gotta", "obviously", "seriously", "prefer", "vibes", "relate", "cringe", "awkward"
 }
 
 def get_stopwords(lang: str = "all") -> Set[str]:
     """
     Returns a set of stopwords. 
-    Lang options: 'id' (Indonesian), 'sunda', 'jawa', 'bali', 'all' (combined).
+    Lang options: 'id' (Indonesian), 'sunda', 'jawa', 'bali', 'en' (English), 'jaksel' (South Jakarta Slang), 'all' (combined).
     Defaults to 'all' for maximum coverage of Nusantara text.
     """
     stopwords = set()
@@ -49,5 +80,11 @@ def get_stopwords(lang: str = "all") -> Set[str]:
         
     if lang in ['bali', 'all']:
         stopwords.update(_BALI_STOPWORDS)
+        
+    if lang in ['en', 'all']:
+        stopwords.update(_EN_STOPWORDS)
+        
+    if lang in ['jaksel', 'all']:
+        stopwords.update(_JAKSEL_STOPWORDS)
         
     return stopwords

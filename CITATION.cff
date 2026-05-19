@@ -5,7 +5,7 @@ authors:
     given-names: "Muhammad Ikhwan Fathulloh"
     orcid: "https://orcid.org/0009-0009-6834-8883"
 title: "Saka-NLP: Indonesian NLP Toolkit for Tokenization and Slang Normalization"
-version: 0.1.9
+version: 0.2.0
 doi: 10.5281/zenodo.20092641
 date-released: 2026-05-09
 url: "https://github.com/Muhammad-Ikhwan-Fathulloh/Saka-NLP"

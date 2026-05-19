@@ -298,6 +298,7 @@
             <a href="#normalize" class="nav-link">Normalization (Slang)</a>
             <a href="#analyze" class="nav-link">Morphology Analyzer</a>
             <a href="#stopwords" class="nav-link">Hybrid Stopwords</a>
+            <a href="#prompt" class="nav-link">Prompt Builder LLM</a>
         </div>
 
         <div class="nav-group">
@@ -447,7 +448,7 @@ res2 = saka.<span class="c-fn">analyze</span>(<span class="c-st">"dipikanyaah"</
 
         <section class="docs-section" id="stopwords">
             <h2>Penyaringan Kata: <code>get_stopwords</code></h2>
-            <p>Memanggil *set* berisi daftar stopwords Nusantara dengan kecepatan baca O(1).</p>
+            <p>Memanggil *set* berisi daftar stopwords Nusantara dan Internasional dengan kecepatan baca O(1).</p>
 
             <div class="method-signature">
                 <span class="keyword">def</span> <span class="method">get_stopwords</span>(lang: <span
@@ -461,7 +462,7 @@ res2 = saka.<span class="c-fn">analyze</span>(<span class="c-st">"dipikanyaah"</
                 </tr>
                 <tr>
                     <td><code>"all"</code> (Default)</td>
-                    <td>Semua stopwords (Indo, Sunda, Jawa) dikombinasikan. (817+ kata)</td>
+                    <td>Gabungan seluruh bahasa yang didukung. (900+ kata)</td>
                 </tr>
                 <tr>
                     <td><code>"id"</code></td>
@@ -470,6 +471,10 @@ res2 = saka.<span class="c-fn">analyze</span>(<span class="c-st">"dipikanyaah"</
                 <tr>
                     <td><code>"sunda"</code> / <code>"jawa"</code> / <code>"bali"</code></td>
                     <td>Eksklusif Stopwords region yang diminta.</td>
+                </tr>
+                <tr>
+                    <td><code>"en"</code> / <code>"jaksel"</code></td>
+                    <td>Eksklusif Stopwords Internasional (English) dan Slang (Jaksel).</td>
                 </tr>
             </table>
 
@@ -481,13 +486,53 @@ res2 = saka.<span class="c-fn">analyze</span>(<span class="c-st">"dipikanyaah"</
                 <pre
                     class="code-block"><code><span class="c-kw">import</span> saka
 
-<span class="c-cm"># 1. Mengambil semua stopword (Indonesia, Sunda, Jawa digabung)</span>
+<span class="c-cm"># 1. Mengambil semua stopword (gabungan semua bahasa)</span>
 all_stops = saka.<span class="c-fn">get_stopwords</span>(<span class="c-st">"all"</span>)
-<span class="c-fn">print</span>(<span class="c-st">f"Total Stopwords Gabungan: {len(all_stops)}"</span>) <span class="c-cm"># Output: 817+</span>
+<span class="c-fn">print</span>(<span class="c-st">f"Total Stopwords Gabungan: {len(all_stops)}"</span>) <span class="c-cm"># Output: 900+</span>
 
 <span class="c-cm"># 2. Mengambil stopword khusus Sunda</span>
 sunda_stops = saka.<span class="c-fn">get_stopwords</span>(<span class="c-st">"sunda"</span>)
-<span class="c-fn">print</span>(<span class="c-st">f"Apakah 'saha' adalah stopword? {'saha' in sunda_stops}"</span>) <span class="c-cm"># Output: True</span></code></pre>
+<span class="c-fn">print</span>(<span class="c-st">f"Apakah 'saha' adalah stopword? {'saha' in sunda_stops}"</span>) <span class="c-cm"># Output: True</span>
+
+<span class="c-cm"># 3. Mengambil stopword Inggris ('en') dan Gaul Jaksel ('jaksel')</span>
+en_stops = saka.<span class="c-fn">get_stopwords</span>(<span class="c-st">"en"</span>)
+jaksel_stops = saka.<span class="c-fn">get_stopwords</span>(<span class="c-st">"jaksel"</span>)
+<span class="c-fn">print</span>(<span class="c-st">"literally"</span> <span class="c-kw">in</span> jaksel_stops) <span class="c-cm"># Output: True</span>
+<span class="c-fn">print</span>(<span class="c-st">"however"</span> <span class="c-kw">in</span> en_stops) <span class="c-cm"># Output: True</span></code></pre>
+            </div>
+        </section>
+
+        <section class="docs-section" id="prompt">
+            <h2>Prompt Builder LLM: <code>build_prompt</code></h2>
+            <p>Saka-NLP menyediakan fungsi untuk merakit struktur <i>prompt</i> LLM yang ideal beserta optimasi token dan fitur otomatisasi <i>parsing</i> (penguraian teks).</p>
+
+            <div class="method-signature">
+                <span class="keyword">def</span> <span class="method">build_prompt</span>(instruction: <span class="type">str</span>, input_data: <span class="type">str</span>, context: <span class="type">str</span>, ...) -> <span class="type">str</span><br>
+                <span class="keyword">def</span> <span class="method">parse_llm_output</span>(text: <span class="type">str</span>, format_type: <span class="type">str</span>) -> <span class="type">Any</span>
+            </div>
+
+            <div class="code-container">
+                <div class="code-header">
+                    <span class="code-lang">python</span>
+                    <button class="copy-btn" onclick="copyCode(this)">Salin</button>
+                </div>
+                <pre class="code-block"><code><span class="c-kw">import</span> saka
+
+prompt = saka.<span class="c-fn">build_prompt</span>(
+    instruction=<span class="c-st">"Klasifikasikan sentimen dari ulasan berikut."</span>,
+    context=<span class="c-st">"Anda adalah asisten AI."</span>,
+    input_data=<span class="c-st">"Makanannya enak bgt tpi pelayanannya lama parah..."</span>,
+    output_indicator=<span class="c-st">"JSON"</span>,
+    optimize_text=<span class="c-kw">True</span>, 
+    max_tokens=50
+)
+
+<span class="c-fn">print</span>(prompt)
+
+<span class="c-cm"># Parsing Output LLM (Contoh)</span>
+llm_response = <span class="c-st">"```json\n{\"sentimen\": \"negatif\"}\n```"</span>
+hasil_dict = saka.<span class="c-fn">parse_llm_output</span>(llm_response, format_type=<span class="c-st">"json"</span>)
+<span class="c-fn">print</span>(hasil_dict[<span class="c-st">"sentimen"</span>]) <span class="c-cm"># Output: negatif</span></code></pre>
             </div>
         </section>
 
@@ -604,6 +649,34 @@ res = saka.<span class="c-fn">query_basabali</span>(<span class="c-st">"rahajeng
 <span class="c-cm"># Transliterasi Aksara Bali (Latin -> Aksara)</span>
 aksara = saka.<span class="c-fn">latin_to_aksara_bali</span>(<span class="c-st">"bali 2026."</span>)
 <span class="c-fn">print</span>(aksara) <span class="c-cm"># Output: ᬩᬮᬶ ᭒᭐᭒᭖᭟</span></code></pre>
+            </div>
+        </section>
+
+        <!-- Citation Section -->
+        <section class="docs-section citation-section" id="citation" style="background-color: var(--surface); padding: 3rem 2rem; border-radius: 12px; margin-top: 2rem; border: 1px solid var(--border);">
+            <div style="margin-bottom: 2rem;">
+                <h2 style="font-size: 1.8rem; color: var(--accent); border-bottom:none; margin-bottom:0.5rem; padding-bottom:0;">📚 Sitasi (Citation)</h2>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Jika Anda menggunakan <strong>Saka-NLP</strong> dalam penelitian atau proyek Anda, mohon sitasi menggunakan format berikut:</p>
+            </div>
+            
+            <h4 style="margin-bottom: 0.5rem; color: var(--text);">APA</h4>
+            <div style="background-color: var(--bg); padding: 1rem; border-radius: 6px; margin-bottom: 1.5rem; border-left: 3px solid var(--primary); font-size: 0.9rem; color: #d1d5db;">
+                Fathulloh, M. I. (2026). <i>Saka-NLP: Indonesian NLP Toolkit for Tokenization and Slang Normalization</i> (Version 0.2.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.20092641
+            </div>
+
+            <h4 style="margin-bottom: 0.5rem; color: var(--text);">BibTeX</h4>
+            <div class="code-container" style="margin-bottom: 0;">
+                <div class="code-header"><span class="code-lang">bibtex</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+                <pre class="code-block" style="margin:0;"><code>@software{Fathulloh_Saka-NLP_2026,
+  author = {Fathulloh, Muhammad Ikhwan},
+  title = {{Saka-NLP: Indonesian NLP Toolkit for Tokenization and Slang Normalization}},
+  month = {5},
+  year = {2026},
+  publisher = {Zenodo},
+  version = {0.2.0},
+  doi = {10.5281/zenodo.20092641},
+  url = {https://github.com/Muhammad-Ikhwan-Fathulloh/Saka-NLP}
+}</code></pre>
             </div>
         </section>
 

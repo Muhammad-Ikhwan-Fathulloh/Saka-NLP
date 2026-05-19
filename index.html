@@ -476,7 +476,7 @@ pip install -e .</code></pre>
                         <pre class="code-block"><code><span class="c-kw">import</span> saka
 
 <span class="c-fn">print</span>(saka.__version__)
-<span class="c-cm"># Output: 0.1.9</span></code></pre>
+<span class="c-cm"># Output: 0.2.0</span></code></pre>
                     </div>
                 </div>
 
@@ -563,8 +563,8 @@ kbbi_result = saka.<span class="c-fn">query_kbbi</span>(<span class="c-st">"bela
                 <!-- 5. Stopwords -->
                 <div class="doc-item">
                     <div class="doc-info">
-                        <h3><span>05</span> Stopwords Nusantara</h3>
-                        <p>Koleksi Stopwords (Indo, Sunda, Jawa, Bali) dengan dukungan pencarian spesifik (O(1) Search).
+                        <h3><span>05</span> Stopwords Nusantara & Internasional</h3>
+                        <p>Koleksi Stopwords (Indo, Sunda, Jawa, Bali, Jaksel, English) dengan performa baca O(1).
                         </p>
                     </div>
                     <div class="code-container">
@@ -582,16 +582,43 @@ jawa_stops = saka.<span class="c-fn">get_stopwords</span>(<span class="c-st">"ja
 // Ambil stopword spesifik bahasa Bali
 bali_stops = saka.<span class="c-fn">get_stopwords</span>(<span class="c-st">"bali"</span>)
 
-// Ambil semua stopword (Indo + Sunda + Jawa + Bali)
+// Ambil semua stopword (gabungan semua bahasa)
 all_stops = saka.<span class="c-fn">get_stopwords</span>(<span class="c-st">"all"</span>)
-<span class="c-fn">print</span>(<span class="c-st">f"Total stopwords: {len(all_stops)}"</span>)</code></pre>
+<span class="c-fn">print</span>(<span class="c-st">f"Total stopwords: {len(all_stops)}"</span>)
+
+// Ambil stopword spesifik bahasa Gaul Jaksel
+jaksel_stops = saka.<span class="c-fn">get_stopwords</span>(<span class="c-st">"jaksel"</span>)
+<span class="c-fn">print</span>(<span class="c-st">f"Jaksel stopword? {'literally' in jaksel_stops}"</span>)</code></pre>
                     </div>
                 </div>
 
-                <!-- 06. Ekosistem Sunda -->
+                <!-- 06. Prompt Builder -->
                 <div class="doc-item">
                     <div class="doc-info">
-                        <h3><span>06</span> Ekosistem Sunda</h3>
+                        <h3><span>06</span> Prompt Builder LLM</h3>
+                        <p>Merakit struktur <i>prompt</i> ideal untuk LLM beserta fitur optimasi token dan <i>parsing</i> output otomatis.</p>
+                    </div>
+                    <div class="code-container">
+                        <div class="code-header"><span class="code-lang">python</span><button class="copy-btn"
+                                onclick="copyCode(this)">Salin</button></div>
+                        <pre class="code-block"><code><span class="c-kw">import</span> saka
+
+prompt = saka.<span class="c-fn">build_prompt</span>(
+    instruction=<span class="c-st">"Klasifikasikan sentimen."</span>,
+    input_data=<span class="c-st">"Keren bgt tpi mahal parah"</span>,
+    output_indicator=<span class="c-st">"JSON"</span>,
+    optimize_text=<span class="c-kw">True</span>
+)
+
+<span class="c-cm"># Mengurai respons LLM ke tipe data bawaan Python</span>
+hasil = saka.<span class="c-fn">parse_llm_output</span>(llm_response, format_type=<span class="c-st">"json"</span>)</code></pre>
+                    </div>
+                </div>
+
+                <!-- 07. Ekosistem Sunda -->
+                <div class="doc-item">
+                    <div class="doc-info">
+                        <h3><span>07</span> Ekosistem Sunda</h3>
                         <p>Dukungan kamus digital SundaDigi dan transliterasi Aksara Sunda (Ngalagena) yang presisi.</p>
                     </div>
                     <div class="code-container">
@@ -621,10 +648,10 @@ aksara = saka.<span class="c-fn">latin_to_aksara_sunda</span>(<span class="c-st"
                     </div>
                 </div>
 
-                <!-- 07. Ekosistem Jawa -->
+                <!-- 08. Ekosistem Jawa -->
                 <div class="doc-item">
                     <div class="doc-info">
-                        <h3><span>07</span> Ekosistem Jawa</h3>
+                        <h3><span>08</span> Ekosistem Jawa</h3>
                         <p>Integrasi Leksikon Sastra.org dan mesin transliterasi Hanacaraka (Nglegena) yang akurat.</p>
                     </div>
                     <div class="code-container">
@@ -654,10 +681,10 @@ aksara = saka.<span class="c-fn">latin_to_aksara_jawa</span>(<span class="c-st">
                     </div>
                 </div>
 
-                <!-- 08. Ekosistem Bali -->
+                <!-- 09. Ekosistem Bali -->
                 <div class="doc-item">
                     <div class="doc-info">
-                        <h3><span>08</span> Ekosistem Bali</h3>
+                        <h3><span>09</span> Ekosistem Bali</h3>
                         <p>Pemanfaatan BASAbali Wiki dan dukungan penuh Aksara Bali (Wreastra) beserta angka dan tanda
                             baca.</p>
                     </div>
@@ -694,10 +721,10 @@ aksara = saka.<span class="c-fn">latin_to_aksara_bali</span>(<span class="c-st">
                     </div>
                 </div>
 
-                <!-- 09. CLI -->
+                <!-- 10. CLI -->
                 <div class="doc-item">
                     <div class="doc-info">
-                        <h3><span>09</span> Terminal CLI</h3>
+                        <h3><span>10</span> Terminal CLI</h3>
                         <p>Akses fitur Saka-NLP langsung dari terminal tanpa skrip Python.</p>
                     </div>
                     <div class="code-container">
@@ -720,6 +747,34 @@ saka --normalize <span class="c-st">"ngapain ke kampus klo libur"</span></code><
                 open-source. Kami sangat terbuka bagi siapa saja yang ingin membantu memperkuat pilar NLP Nusantara.</p>
             <a href="https://github.com/Muhammad-Ikhwan-Fathulloh/Saka-NLP" target="_blank" class="btn btn-primary">Ke
                 Repository GitHub</a>
+        </section>
+
+        <!-- Citation Section -->
+        <section class="citation-section" style="background-color: var(--surface); padding: 4rem 3rem; border-radius: 12px; margin-bottom: 4rem; border: 1px solid var(--border);">
+            <div class="section-header" style="margin-bottom: 2rem;">
+                <h2 style="font-size: 2rem; color: var(--accent);">📚 Sitasi (Citation)</h2>
+            </div>
+            <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Jika Anda menggunakan <strong>Saka-NLP</strong> dalam penelitian atau proyek Anda, mohon sitasi menggunakan format berikut:</p>
+            
+            <h4 style="margin-bottom: 0.5rem; color: var(--text);">APA</h4>
+            <div style="background-color: var(--bg); padding: 1rem; border-radius: 6px; margin-bottom: 1.5rem; border-left: 3px solid var(--primary); font-size: 0.95rem; color: #d1d5db;">
+                Fathulloh, M. I. (2026). <i>Saka-NLP: Indonesian NLP Toolkit for Tokenization and Slang Normalization</i> (Version 0.2.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.20092641
+            </div>
+
+            <h4 style="margin-bottom: 0.5rem; color: var(--text);">BibTeX</h4>
+            <div class="code-container" style="margin-bottom: 0;">
+                <div class="code-header"><span class="code-lang">bibtex</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+                <pre class="code-block" style="margin:0;"><code>@software{Fathulloh_Saka-NLP_2026,
+  author = {Fathulloh, Muhammad Ikhwan},
+  title = {{Saka-NLP: Indonesian NLP Toolkit for Tokenization and Slang Normalization}},
+  month = {5},
+  year = {2026},
+  publisher = {Zenodo},
+  version = {0.2.0},
+  doi = {10.5281/zenodo.20092641},
+  url = {https://github.com/Muhammad-Ikhwan-Fathulloh/Saka-NLP}
+}</code></pre>
+            </div>
         </section>
 
         <!-- References -->

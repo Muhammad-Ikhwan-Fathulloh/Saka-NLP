@@ -1,8 +1,9 @@
-__version__ = "0.1.9"
+__version__ = "0.2.0"
 
 from .core.tokenizer import tokenize, async_tokenize
 from .core.normalizer import normalize, async_normalize
 from .core.analyzer import analyze, async_analyze
+from .core.prompt import build_prompt, async_build_prompt, parse_llm_output
 from .dict.stopwords import get_stopwords
 from .plugins.kbbi_scraper import query_kbbi
 from .plugins.sunda.transliterate import (
@@ -30,6 +31,9 @@ __all__ = [
     "async_normalize",
     "analyze",
     "async_analyze",
+    "build_prompt",
+    "async_build_prompt",
+    "parse_llm_output",
     "get_stopwords",
     "query_kbbi",
     "query_sundadigi",
