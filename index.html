@@ -476,7 +476,7 @@ pip install -e .</code></pre>
                         <pre class="code-block"><code><span class="c-kw">import</span> saka
 
 <span class="c-fn">print</span>(saka.__version__)
-<span class="c-cm"># Output: 0.2.0</span></code></pre>
+<span class="c-cm"># Output: 0.2.1</span></code></pre>
                     </div>
                 </div>
 
@@ -570,7 +570,8 @@ kbbi_result = saka.<span class="c-fn">query_kbbi</span>(<span class="c-st">"bela
                     <div class="code-container">
                         <div class="code-header"><span class="code-lang">python</span><button class="copy-btn"
                                 onclick="copyCode(this)">Salin</button></div>
-                        <pre class="code-block"><code><span class="c-kw">import</span> saka
+                        <pre
+                            class="code-block"><code><span class="c-kw">import</span> saka
 
 <span class="c-cm">#// Ambil stopword spesifik bahasa (contoh: Sunda)
 sunda_stops = saka.<span class="c-fn">get_stopwords</span>(<span class="c-st">"sunda"</span>)
@@ -596,12 +597,15 @@ jaksel_stops = saka.<span class="c-fn">get_stopwords</span>(<span class="c-st">"
                 <div class="doc-item">
                     <div class="doc-info">
                         <h3><span>06</span> Prompt Builder LLM</h3>
-                        <p>Merakit struktur <i>prompt</i> ideal untuk LLM beserta fitur optimasi token dan <i>parsing</i> output otomatis.</p>
+                        <p>Merakit struktur <i>prompt</i> ideal untuk LLM beserta fitur optimasi token dan
+                            <i>parsing</i> output otomatis.
+                        </p>
                     </div>
                     <div class="code-container">
                         <div class="code-header"><span class="code-lang">python</span><button class="copy-btn"
                                 onclick="copyCode(this)">Salin</button></div>
-                        <pre class="code-block"><code><span class="c-kw">import</span> saka
+                        <pre
+                            class="code-block"><code><span class="c-kw">import</span> saka
 
 prompt = saka.<span class="c-fn">build_prompt</span>(
     instruction=<span class="c-st">"Klasifikasikan sentimen."</span>,
@@ -750,28 +754,34 @@ saka --normalize <span class="c-st">"ngapain ke kampus klo libur"</span></code><
         </section>
 
         <!-- Citation Section -->
-        <section class="citation-section" style="background-color: var(--surface); padding: 4rem 3rem; border-radius: 12px; margin-bottom: 4rem; border: 1px solid var(--border);">
+        <section class="citation-section"
+            style="background-color: var(--surface); padding: 4rem 3rem; border-radius: 12px; margin-bottom: 4rem; border: 1px solid var(--border);">
             <div class="section-header" style="margin-bottom: 2rem;">
                 <h2 style="font-size: 2rem; color: var(--accent);">📚 Sitasi (Citation)</h2>
             </div>
-            <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Jika Anda menggunakan <strong>Saka-NLP</strong> dalam penelitian atau proyek Anda, mohon sitasi menggunakan format berikut:</p>
-            
+            <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Jika Anda menggunakan <strong>Saka-NLP</strong>
+                dalam penelitian atau proyek Anda, mohon sitasi menggunakan format berikut:</p>
+
             <h4 style="margin-bottom: 0.5rem; color: var(--text);">APA</h4>
-            <div style="background-color: var(--bg); padding: 1rem; border-radius: 6px; margin-bottom: 1.5rem; border-left: 3px solid var(--primary); font-size: 0.95rem; color: #d1d5db;">
-                Fathulloh, M. I. (2026). <i>Saka-NLP: Indonesian NLP Toolkit for Tokenization and Slang Normalization</i> (Version 0.2.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.20092641
+            <div
+                style="background-color: var(--bg); padding: 1rem; border-radius: 6px; margin-bottom: 1.5rem; border-left: 3px solid var(--primary); font-size: 0.95rem; color: #d1d5db;">
+                Fathulloh, M. I. (2026). <i>Saka-NLP: Indonesian NLP Toolkit for Tokenization and Slang
+                    Normalization</i> (Version 0.2.1) [Computer software]. Zenodo.
+                https://doi.org/10.5281/zenodo.20092641
             </div>
 
             <h4 style="margin-bottom: 0.5rem; color: var(--text);">BibTeX</h4>
             <div class="code-container" style="margin-bottom: 0;">
-                <div class="code-header"><span class="code-lang">bibtex</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+                <div class="code-header"><span class="code-lang">bibtex</span><button class="copy-btn"
+                        onclick="copyCode(this)">Salin</button></div>
                 <pre class="code-block" style="margin:0;"><code>@software{Fathulloh_Saka-NLP_2026,
   author = {Fathulloh, Muhammad Ikhwan},
   title = {{Saka-NLP: Indonesian NLP Toolkit for Tokenization and Slang Normalization}},
   month = {5},
   year = {2026},
   publisher = {Zenodo},
-  version = {0.2.0},
-  doi = {10.5281/zenodo.20092641},
+  version = {0.2.1},
+  doi = {10.5281/zenodo.20092640},
   url = {https://github.com/Muhammad-Ikhwan-Fathulloh/Saka-NLP}
 }</code></pre>
             </div>
@@ -791,6 +801,18 @@ saka --normalize <span class="c-st">"ngapain ke kampus klo libur"</span></code><
                 <li><strong>Ekosistem Bali</strong>Leksikon BASAbali Wiki & transliterasi Aksara Bali.</li>
                 <li><strong>Tala Dataset</strong>Standar stopwords Bahasa Indonesia.</li>
             </ul>
+        </section>
+        <!-- Support Section -->
+        <section class="support-section"
+            style="text-align: center; padding: 4rem 2rem; border-top: 1px solid var(--border);">
+            <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 1.5rem;">❤️ Dukung Proyek Ini
+            </h2>
+            <p style="color: var(--text-dim); margin-bottom: 2rem;">Bantu pengembangan Saka-NLP agar lebih baik lagi.
+            </p>
+            <div class="cta-group">
+                <a href="https://saweria.co/ikhwanfathulloh" target="_blank" class="btn btn-accent">💰 Saweria</a>
+                <a href="https://trakteer.id/kexnp7aorpxyaz70y7gn" target="_blank" class="btn btn-accent">☕ Trakteer</a>
+            </div>
         </section>
     </main>
 

@@ -1,2 +1,0 @@
-[console_scripts]
-saka = saka.scripts.cli:main

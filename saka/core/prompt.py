@@ -1,149 +1,78 @@
-import json
-import re
-from typing import Optional, Any, Union
+import json, re
+from typing import Optional, Any, Union, List, Dict
 from .normalizer import normalize, async_normalize
-from .tokenizer import tokenize, async_tokenize
+from .tokenizer import tokenize, async_tokenize, get_token_count
 
-def build_prompt(
-    instruction: str,
-    input_data: str,
-    context: str = "",
-    output_indicator: str = "Teks",
-    optimize_text: bool = True,
-    max_tokens: Optional[int] = None
-) -> str:
-    """
-    Membangun prompt yang terstruktur untuk LLM berdasarkan Anatomi Prompt:
-    1. Instruksi
-    2. Konteks
-    3. Data Input
-    4. Indikator Output
-    
-    Parameters:
-        instruction (str): Tugas spesifik yang harus dilakukan AI.
-        input_data (str): Teks mentah yang perlu diproses.
-        context (str, optional): Latar belakang atau gaya bahasa.
-        output_indicator (str, optional): Format hasil (misalnya JSON, Tabel).
-        optimize_text (bool, optional): Jika True, akan menormalisasi input_data dari bahasa gaul/slang.
-        max_tokens (int, optional): Batas maksimal token untuk input_data. Jika lebih, teks akan dipotong.
-        
-    Returns:
-        str: Prompt utuh yang siap dimasukkan ke LLM.
-    """
-    
-    processed_input = input_data
-    
-    # Optimasi: Normalisasi (slang to formal)
-    if optimize_text:
-        processed_input = normalize(processed_input)
-        
-    # Optimasi: Pembatasan panjang token
-    if max_tokens is not None and max_tokens > 0:
-        tokens = tokenize(processed_input)
-        if len(tokens) > max_tokens:
-            processed_input = " ".join(tokens[:max_tokens])
-            
-    # Merakit Prompt
-    prompt_parts = []
-    
-    prompt_parts.append(f"[Instruksi]:\n{instruction.strip()}\n")
-    
-    if context.strip():
-        prompt_parts.append(f"[Konteks]:\n{context.strip()}\n")
-        
-    prompt_parts.append(f"[Data Input]:\n{processed_input.strip()}\n")
-    
-    output_str = output_indicator.strip()
-    if output_str.upper() in ["JSON", "LIST", "TABEL", "MARKDOWN"]:
-        output_str = f"{output_str}\n(Keluarkan output HANYA dalam format {output_str} tanpa pengantar maupun penjelasan tambahan)"
-    
-    prompt_parts.append(f"[Indikator Output]:\n{output_str}")
-    
-    return "\n".join(prompt_parts)
+class PromptTemplate:
+    def __init__(self, template: str): self.template = template
+    def render(self, **kwargs) -> str:
+        res = self.template
+        for k, v in kwargs.items(): res = res.replace(f"{{{{{k}}}}}", str(v))
+        return res
 
-async def async_build_prompt(
-    instruction: str,
-    input_data: str,
-    context: str = "",
-    output_indicator: str = "Teks",
-    optimize_text: bool = True,
-    max_tokens: Optional[int] = None
-) -> str:
-    """
-    Versi asinkron dari build_prompt. Sangat direkomendasikan jika ingin memproses dataset besar secara paralel.
-    """
+def build_prompt(**kwargs) -> Union[str, Dict[str, Any]]:
+    """Membangun prompt terstruktur. Jika return_meta=True, mengembalikan dict dengan prompt dan token_count."""
+    opt, max_t = kwargs.get('optimize_text', True), kwargs.get('max_tokens')
+    inp = kwargs.get('input_data', "")
+    ret_meta = kwargs.get('return_meta', False)
     
-    processed_input = input_data
-    
-    # Optimasi: Normalisasi (slang to formal)
-    if optimize_text:
-        processed_input = await async_normalize(processed_input)
-        
-    # Optimasi: Pembatasan panjang token
-    if max_tokens is not None and max_tokens > 0:
-        tokens = await async_tokenize(processed_input)
-        if len(tokens) > max_tokens:
-            processed_input = " ".join(tokens[:max_tokens])
+    if opt and inp: inp = normalize(inp)
+    if max_t and inp:
+        tokens = tokenize(inp)
+        if len(tokens) > max_t: inp = " ".join(tokens[:max_t])
             
-    # Merakit Prompt
-    prompt_parts = []
+    parts = []
+    def add(label, val): 
+        if val: parts.append(f"{label.upper()}:\n{val.strip()}\n")
+
+    add("role", kwargs.get('role'))
+    add("task", kwargs.get('task') or kwargs.get('instruction'))
+    add("context", kwargs.get('context'))
+    add("constraint", kwargs.get('constraint'))
     
-    prompt_parts.append(f"[Instruksi]:\n{instruction.strip()}\n")
+    if kwargs.get('output_contract'):
+        parts.append(f"OUTPUT CONTRACT (JSON):\nKembalikan JSON valid sesuai skema:\n{json.dumps(kwargs['output_contract'], indent=2)}\n")
     
-    if context.strip():
-        prompt_parts.append(f"[Konteks]:\n{context.strip()}\n")
-        
-    prompt_parts.append(f"[Data Input]:\n{processed_input.strip()}\n")
+    add("fallback rule", kwargs.get('fallback_rule'))
     
-    output_str = output_indicator.strip()
-    if output_str.upper() in ["JSON", "LIST", "TABEL", "MARKDOWN"]:
-        output_str = f"{output_str}\n(Keluarkan output HANYA dalam format {output_str} tanpa pengantar maupun penjelasan tambahan)"
+    if kwargs.get('examples'):
+        parts.append("EXAMPLES:")
+        for i, ex in enumerate(kwargs['examples']):
+            parts.append(f"Ex {i+1}: In: {ex.get('input')} | Out: {ex.get('output')}")
+            
+    add("data input", inp)
     
-    prompt_parts.append(f"[Indikator Output]:\n{output_str}")
+    if not kwargs.get('output_contract'):
+        ind = kwargs.get('output_indicator', 'Teks').strip()
+        if ind.upper() in ["JSON", "LIST", "TABEL"]:
+            ind = f"{ind}\n(Output HANYA format {ind} tanpa penjelasan)"
+        add("output indicator", ind)
     
-    return "\n".join(prompt_parts)
+    prompt_text = "\n".join(parts)
+    
+    if ret_meta:
+        return {
+            "prompt": prompt_text,
+            "token_count": get_token_count(prompt_text)
+        }
+    return prompt_text
+
+async def async_build_prompt(**kwargs) -> str:
+    if kwargs.get('optimize_text', True) and kwargs.get('input_data'):
+        kwargs['input_data'] = await async_normalize(kwargs['input_data'])
+        kwargs['optimize_text'] = False
+    return build_prompt(**kwargs)
 
 def parse_llm_output(text: str, format_type: str = "json") -> Any:
-    """
-    Mem-parsing teks balasan dari LLM menjadi struktur data asli Python.
-    Mendukung tipe 'json' dan 'list'.
-    
-    Parameters:
-        text (str): Teks respons mentah dari LLM.
-        format_type (str): Tipe format yang diekspektasikan ("json" atau "list").
-        
-    Returns:
-        Any: Dictionary/List untuk json, List of string untuk list, atau teks aslinya jika format tidak dikenali.
-    """
-    format_type = format_type.lower()
-    
-    if format_type == "json":
-        # Cari blok kode markdown
+    if format_type.lower() == "json":
+        text = text.strip()
         match = re.search(r"```(?:json)?\s*(\{.*\}|\[.*\])\s*```", text, re.DOTALL)
-        if match:
-            json_str = match.group(1)
+        if match: text = match.group(1)
         else:
-            # Fallback jika LLM tidak menggunakan markdown code block
-            match_fallback = re.search(r"(\{.*\}|\[.*\])", text, re.DOTALL)
-            if match_fallback:
-                json_str = match_fallback.group(1)
-            else:
-                json_str = text
-                
-        try:
-            return json.loads(json_str)
-        except json.JSONDecodeError:
-            return None
-            
-    elif format_type == "list":
-        lines = text.split('\n')
-        result = []
-        for line in lines:
-            line = line.strip()
-            # Mencocokkan bullet point seperti "-", "*", atau "1."
-            match = re.match(r"^(?:[-*]|\d+\.)\s+(.+)$", line)
-            if match:
-                result.append(match.group(1))
-        return result
-        
+            match_raw = re.search(r"(\{.*\}|\[.*\])", text, re.DOTALL)
+            if match_raw: text = match_raw.group(1)
+        try: return json.loads(text)
+        except: return None
+    elif format_type.lower() == "list":
+        return [re.match(r"^(?:[-*]|\d+\.)\s+(.+)$", l.strip()).group(1) for l in text.split('\n') if re.match(r"^(?:[-*]|\d+\.)\s+(.+)$", l.strip())]
     return text

@@ -2,10 +2,10 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 authors:
   - family-names: "Fathulloh"
-    given-names: "Muhammad Ikhwan Fathulloh"
+    given-names: "Muhammad Ikhwan"
     orcid: "https://orcid.org/0009-0009-6834-8883"
 title: "Saka-NLP: Indonesian NLP Toolkit for Tokenization and Slang Normalization"
 version: 0.2.0
-doi: 10.5281/zenodo.20092641
+doi: 10.5281/zenodo.20092640
 date-released: 2026-05-09
 url: "https://github.com/Muhammad-Ikhwan-Fathulloh/Saka-NLP"

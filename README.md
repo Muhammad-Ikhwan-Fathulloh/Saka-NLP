@@ -3,7 +3,7 @@
 [![PyPI version](https://img.shields.io/pypi/v/saka-nlp.svg)](https://pypi.org/project/saka-nlp/)
 [![Documentation](https://img.shields.io/badge/docs-live-brightgreen)](http://saka-nlp.netlify.app/)
 [![Colab](https://img.shields.io/badge/Colab-Playground-orange)](https://colab.research.google.com/drive/1MJ6fwJruR6B-UVT1sqKyqWXukjGe2UCH?usp=sharing)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20092641.svg)](https://doi.org/10.5281/zenodo.20092641)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20092640.svg)](https://doi.org/10.5281/zenodo.20092640)
 
 Secara filosofis, **Saka** (dalam bahasa Jawa/Sunda) berarti "tiang penyangga" atau "pilar". **Saka-NLP** dibangun untuk menjadi sebuah *architectural framework* modern yang solid bagi pemrosesan teks bahasa Indonesia dan daerah.
 
@@ -24,6 +24,7 @@ Saka-NLP mendukung *asynchronous processing*, memiliki komponen yang dijaga terp
 *   **Plug-and-Play Components**: Fleksibel dalam memilih mesin stemming, tokenisasi, atau mengintegrasikan plugin pihak ketiga.
 *   **Heuristic Morphology Analyzer**: Mendeteksi susunan pola awalan dan akhiran menggunakan aturan tata bahasa Indonesia yang dibekali dengan **Early Stopping Validation** ke dalam leksikon bahasa daerah dan pemulihan leburan huruf (Morphophonemic).
 *   **Live KBBI Scraper**: Ekstraksi arti kata langsung mendompleng ke *Kamus Besar Bahasa Indonesia Daring* dari Kemendikbudristekdikti.
+*   **Advanced Prompting & Agentic AI**: Fitur untuk merakit prompt LLM terstruktur (Role, Task, Context, Constraint) dengan dukungan **Multi-Agent Orchestration** dan **Dynamic Tool Calling**.
 *   **Agnostic Script Support**: Termasuk dukungan untuk skrip bahasa daerah seperti Transliterasi **Aksara Sunda**, **Aksara Jawa**, dan **Aksara Bali** (Hanacaraka).
 
 ---
@@ -62,7 +63,7 @@ Saka-NLP didesain agar kode Python Anda menjadi bersih. Cukup lakukan satu baris
 import saka
 
 print(saka.__version__)
-# Output: 0.2.0
+# Output: 0.2.1
 ```
 
 ### 1. Tokenisasi Cerdas 
@@ -145,53 +146,52 @@ jaksel_stops = saka.get_stopwords(lang="jaksel")
 print(f"Jaksel slang: {'literally' in jaksel_stops}") # Output: True
 ```
 
-### 6. Prompt Builder LLM (Optimasi Prompt)
-Saka-NLP menyediakan alat untuk merakit struktur *prompt* LLM yang ideal (berdasarkan Anatomi Prompt) sekaligus melakukan **optimasi token** dan **normalisasi bahasa gaul** sebelum dikirim ke LLM.
+### 6. Advanced Prompting & Agentic AI (v0.2.1+)
+Saka-NLP kini mendukung perakitan *prompt* yang sangat terstruktur, efisien secara token, dan mendukung pola **ReAct Agent** serta pemanggilan fungsi (**Tool Calling**).
 
+#### 1. Structured Prompting & Token Evaluation
 ```python
 import saka
 
-prompt = saka.build_prompt(
-    instruction="Klasifikasikan sentimen dari ulasan berikut.",
-    context="Anda adalah asisten AI yang ahli dalam menganalisis sentimen restoran.",
-    input_data="Makanannya enak bgt tpi pelayanannya lama parah...",
-    output_indicator="JSON",
-    optimize_text=True, # Otomatis mengubah "bgt tpi" -> "banget tapi" dll.
-    max_tokens=50       # Memotong teks jika melebihi 50 token
+prompt_data = saka.build_prompt(
+    role="Virtual Teacher",
+    task="Bantuan belajar siswa.",
+    input_data="Gw mau belajar kalkulus",
+    return_meta=True # Mendapatkan metadata termasuk jumlah token
 )
 
-print(prompt)
-# Output:
-# [Instruksi]:
-# Klasifikasikan sentimen dari ulasan berikut.
-# 
-# [Konteks]:
-# Anda adalah asisten AI yang ahli dalam menganalisis sentimen restoran.
-# 
-# [Data Input]:
-# Makanannya enak banget tapi pelayanannya lama parah...
-# 
-# [Indikator Output]:
-# JSON
-# (Keluarkan output HANYA dalam format JSON tanpa pengantar maupun penjelasan tambahan)
+print(f"Tokens: {prompt_data['token_count']}")
+print(prompt_data['prompt'])
 ```
 
-Selain itu, Anda dapat mem-parsing (mengurai) hasil teks dari LLM menjadi objek native Python dengan mudah.
-
+#### 2. Multi-Agent Orchestration
 ```python
-import saka
+from saka import MultiAgentManager
 
-llm_response = """
-Tentu, berikut adalah hasilnya:
-```json
-{"sentimen": "negatif", "alasan": "pelayanan lambat"}
+mgr = MultiAgentManager()
+mgr.add_agent("math", "Alih Matematika", "Selesaikan soal kalkulus.")
+mgr.add_agent("science", "Ahli Sains", "Selesaikan soal fisika.")
+
+# Dapatkan prompt untuk Router Agent
+router_prompt = mgr.route_prompt("Soal tentang gravitasi")
+print(router_prompt)
 ```
-"""
 
-# Otomatis mengekstrak markdown json block
-hasil_dict = saka.parse_llm_output(llm_response, format_type="json")
-print(hasil_dict["sentimen"]) 
-# Output: negatif
+#### 3. Dynamic Tool Calling
+```python
+from saka import Agent
+
+bot = Agent("Asisten Nilai", "Cek nilai siswa.")
+bot.add_tool(
+    name="get_grade",
+    desc="Ambil nilai",
+    params={"name": "string"},
+    func=lambda name: f"Nilai {name}: 90" # Fungsi Python asli
+)
+
+# Simulasi eksekusi tool berdasarkan output LLM
+res = bot.call_tool("get_grade", {"name": "Budi"})
+print(res) # Output: Nilai Budi: 90
 ```
 
 #### 1. Ekosistem Sunda
@@ -355,6 +355,10 @@ Untuk format lainnya, Anda dapat mengecek file [`CITATION.cff`](CITATION.cff) di
 * **Ekosistem Bali**: Integrasi dengan [BASAbali Wiki](https://dictionary.basabali.org/) untuk kamus multi-bahasa dan pemetaan Aksara Bali (Hanacaraka).
 * **Stopwords**: Mengadopsi corpus legendaris [Tala Stopwords Dataset](https://github.com/masdevid/ID-Stopwords).
 
-## ❤️ Credits
+## ❤️ Credits & Support
 * **Framework Architect**: [Muhammad Ikhwan Fathulloh](https://github.com/Muhammad-Ikhwan-Fathulloh)
-* Lisensi Terbuka di bawah [MIT License](LICENSE). 
+* **Dukung Proyek Ini**:
+    - [Saweria](https://saweria.co/ikhwanfathulloh)
+    - [Trakteer](https://trakteer.id/kexnp7aorpxyaz70y7gn)
+
+Lisensi Terbuka di bawah [MIT License](LICENSE).

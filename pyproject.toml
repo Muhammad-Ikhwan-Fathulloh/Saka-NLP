@@ -4,11 +4,11 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "saka-nlp"
-version = "0.2.0"
+version = "0.2.1"
 authors = [
   { name="Saka-NLP Contributors", email="muhammadikhwanfathulloh17@gmail.com" },
 ]
-description = "Saka: Pilar Pemrosesan Bahasa Nusantara"
+description = "Saka: Pemrosesan Bahasa Nusantara dengan Dukungan Prompting & Agentic AI"
 readme = "README.md"
 requires-python = ">=3.8"
 classifiers = [
