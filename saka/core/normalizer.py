@@ -33,5 +33,4 @@ async def async_normalize(text: str) -> str:
     """
     Asynchronous normalization.
     """
-    await asyncio.sleep(0.001)
     return normalize(text)

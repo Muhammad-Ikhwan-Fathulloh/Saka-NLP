@@ -1,4 +1,6 @@
-# Saka: The Foundation of Indonesian NLP 🇮🇩
+# Saka: Indonesian NLP with Prompting and Agentic AI Support 🇮🇩
+
+[**Bahasa Indonesia**](README.md) | [**English**](README_EN.md)
 
 [![PyPI version](https://img.shields.io/pypi/v/saka-nlp.svg)](https://pypi.org/project/saka-nlp/)
 [![Documentation](https://img.shields.io/badge/docs-live-brightgreen)](http://saka-nlp.netlify.app/)
@@ -26,6 +28,7 @@ Saka-NLP mendukung *asynchronous processing*, memiliki komponen yang dijaga terp
 *   **Live KBBI Scraper**: Ekstraksi arti kata langsung mendompleng ke *Kamus Besar Bahasa Indonesia Daring* dari Kemendikbudristekdikti.
 *   **Advanced Prompting & Agentic AI**: Fitur untuk merakit prompt LLM terstruktur (Role, Task, Context, Constraint) dengan dukungan **Multi-Agent Orchestration** dan **Dynamic Tool Calling**.
 *   **Agnostic Script Support**: Termasuk dukungan untuk skrip bahasa daerah seperti Transliterasi **Aksara Sunda**, **Aksara Jawa**, dan **Aksara Bali** (Hanacaraka).
+*   **Emoji & Emoticon Handling**: Dukungan penuh untuk konversi Unicode emoji (3,800+) dan emotikon standar menjadi teks bahasa Indonesia.
 
 ---
 
@@ -63,7 +66,7 @@ Saka-NLP didesain agar kode Python Anda menjadi bersih. Cukup lakukan satu baris
 import saka
 
 print(saka.__version__)
-# Output: 0.2.2
+# Output: 0.2.3
 ```
 
 ### 1. Tokenisasi Cerdas 
@@ -337,17 +340,17 @@ saka --normalize "ngapain ke kampus klo libur"
 Jika Anda menggunakan **Saka-NLP** dalam penelitian atau proyek Anda, mohon sitasi repositori ini menggunakan salah satu format berikut:
 
 ### APA
-> Fathulloh, M. I. (2026). *Saka-NLP: Indonesian NLP Toolkit for Tokenization and Slang Normalization* (Version 0.2.2) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.20092640
+> Fathulloh, M. I. (2026). *Saka-NLP: Indonesian Language Processing with Prompting and Agentic AI Support* (Version 0.2.3) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.20092640
 
 ### BibTeX
 ```bibtex
 @software{Fathulloh_Saka-NLP_2026,
   author = {Fathulloh, Muhammad Ikhwan},
-  title = {{Saka-NLP: Indonesian NLP Toolkit for Tokenization and Slang Normalization}},
+  title = {{Saka-NLP: Indonesian Language Processing with Prompting and Agentic AI Support}},
   month = {5},
   year = {2026},
   publisher = {Zenodo},
-  version = {0.2.2},
+  version = {0.2.3},
   doi = {10.5281/zenodo.20092640},
   url = {https://github.com/Muhammad-Ikhwan-Fathulloh/Saka-NLP}
 }

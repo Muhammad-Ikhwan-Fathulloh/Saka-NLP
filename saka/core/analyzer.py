@@ -1,7 +1,7 @@
-import asyncio
 from typing import Dict, Any, List
 import json
 import os
+from functools import lru_cache
 
 # Load regional dictionaries
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -33,6 +33,7 @@ def check_dict(w: str) -> List[str]:
         langs.append('bali')
     return langs
 
+@lru_cache(maxsize=10000)
 def analyze(word: str) -> Dict[str, Any]:
     """
     Analyzes the morphology of an Indonesian word using a hybrid approach.
@@ -170,5 +171,4 @@ async def async_analyze(word: str) -> Dict[str, Any]:
     """
     Asynchronous morphological analysis.
     """
-    await asyncio.sleep(0.001)
     return analyze(word)

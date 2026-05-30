@@ -4,11 +4,11 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "saka-nlp"
-version = "0.2.2"
+version = "0.2.3"
 authors = [
   { name="Saka-NLP Contributors", email="muhammadikhwanfathulloh17@gmail.com" },
 ]
-description = "Saka: Pemrosesan Bahasa Nusantara dengan Dukungan Prompting & Agentic AI"
+description = "Saka-NLP: Indonesian Language Processing with Prompting and Agentic AI Support"
 readme = "README.md"
 requires-python = ">=3.8"
 classifiers = [
@@ -19,6 +19,8 @@ classifiers = [
 dependencies = [
     "requests>=2.25.1",
     "beautifulsoup4>=4.9.3",
+    "emoji>=2.0.0",
+    "emot>=3.1",
 ]
 
 [tool.setuptools]
