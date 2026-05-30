@@ -1,6 +1,7 @@
 import json
 from typing import List, Dict, Any, Optional, Callable, Union
 from .prompt import build_prompt
+from ..utils.formatter import OutputFormatter
 
 REACT = "Plan > Act > Observe > Respond. Format: Thought, Action, Action Input (JSON), Observation..., Final Answer."
 
@@ -27,6 +28,10 @@ class Agent:
             except Exception as e:
                 return f"Error executing {action}: {str(e)}"
         return f"Error: Tool {action} not found."
+
+    def format_output(self, data: Any, format_type: str = "markdown") -> str:
+        """Utility to format data using the built-in formatter."""
+        return OutputFormatter.format(data, format_type)
 
 class MultiAgentManager:
     def __init__(self): self.agents: Dict[str, Agent] = {}

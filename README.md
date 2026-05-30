@@ -63,7 +63,7 @@ Saka-NLP didesain agar kode Python Anda menjadi bersih. Cukup lakukan satu baris
 import saka
 
 print(saka.__version__)
-# Output: 0.2.1
+# Output: 0.2.2
 ```
 
 ### 1. Tokenisasi Cerdas 
@@ -146,10 +146,21 @@ jaksel_stops = saka.get_stopwords(lang="jaksel")
 print(f"Jaksel slang: {'literally' in jaksel_stops}") # Output: True
 ```
 
-### 6. Advanced Prompting & Agentic AI (v0.2.1+)
+### 6. Advanced Prompting & Agentic AI (v0.2.2+)
 Saka-NLP kini mendukung perakitan *prompt* yang sangat terstruktur, efisien secara token, dan mendukung pola **ReAct Agent** serta pemanggilan fungsi (**Tool Calling**).
 
-#### 1. Structured Prompting & Token Evaluation
+#### 1. Custom Output Formatting (Token Optimization)
+Anda dapat mengonversi hasil LLM ke berbagai format (Markdown, HTML, Table, CSV, JSON) secara lokal untuk menghemat token.
+```python
+import saka
+
+data = [{"id": 1, "kata": "makan"}, {"id": 2, "kata": "sare"}]
+# Mendukung format: html, markdown, table, csv, json
+output = saka.OutputFormatter.format(data, format_type="json")
+print(output)
+```
+
+#### 2. Structured Prompting & Token Evaluation
 ```python
 import saka
 
@@ -326,7 +337,7 @@ saka --normalize "ngapain ke kampus klo libur"
 Jika Anda menggunakan **Saka-NLP** dalam penelitian atau proyek Anda, mohon sitasi repositori ini menggunakan salah satu format berikut:
 
 ### APA
-> Fathulloh, M. I. (2026). *Saka-NLP: Indonesian NLP Toolkit for Tokenization and Slang Normalization* (Version 0.2.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.20092641
+> Fathulloh, M. I. (2026). *Saka-NLP: Indonesian NLP Toolkit for Tokenization and Slang Normalization* (Version 0.2.2) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.20092640
 
 ### BibTeX
 ```bibtex
@@ -336,11 +347,14 @@ Jika Anda menggunakan **Saka-NLP** dalam penelitian atau proyek Anda, mohon sita
   month = {5},
   year = {2026},
   publisher = {Zenodo},
-  version = {0.2.0},
-  doi = {10.5281/zenodo.20092641},
+  version = {0.2.2},
+  doi = {10.5281/zenodo.20092640},
   url = {https://github.com/Muhammad-Ikhwan-Fathulloh/Saka-NLP}
 }
 ```
+
+> [!NOTE]
+> Anda dapat menyitasi seluruh versi Saka-NLP menggunakan DOI **10.5281/zenodo.20092640**. DOI ini mewakili seluruh versi dan akan selalu mengarah ke versi terbaru.
 
 Untuk format lainnya, Anda dapat mengecek file [`CITATION.cff`](CITATION.cff) di repositori ini.
 

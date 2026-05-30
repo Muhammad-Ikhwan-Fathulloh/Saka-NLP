@@ -291,6 +291,11 @@
             <a href="#intro" class="nav-link active">Introduction</a>
             <a href="#installation" class="nav-link">Installation</a>
         </div>
+        <div class="nav-group">
+            <div class="nav-group-title">Agentic AI</div>
+            <a href="#formatter" class="nav-link">Output Formatter</a>
+            <a href="#prompt" class="nav-link">Prompt Builder LLM</a>
+        </div>
 
         <div class="nav-group">
             <div class="nav-group-title">Core Modules</div>
@@ -502,14 +507,44 @@ jaksel_stops = saka.<span class="c-fn">get_stopwords</span>(<span class="c-st">"
             </div>
         </section>
 
-        <section class="docs-section" id="prompt">
-            <h2>Prompt Builder LLM: <code>build_prompt</code></h2>
-            <p>Saka-NLP menyediakan fungsi untuk merakit struktur <i>prompt</i> LLM yang ideal beserta optimasi token dan fitur otomatisasi <i>parsing</i> (penguraian teks).</p>
+        <section class="docs-section" id="formatter">
+            <h2>Optimalisasi Output: <code>OutputFormatter</code></h2>
+            <p>Mengonversi data hasil LLM ke berbagai format secara lokal untuk menghemat token dan meningkatkan
+                performa.</p>
 
             <div class="method-signature">
-                <span class="keyword">def</span> <span class="method">build_prompt</span>(instruction: <span class="type">str</span>, input_data: <span class="type">str</span>, context: <span class="type">str</span>, ...) -> <span class="type">str</span><br>
-                <span class="keyword">def</span> <span class="method">parse_llm_output</span>(text: <span class="type">str</span>, format_type: <span class="type">str</span>) -> <span class="type">Any</span>
+                <span class="keyword">class</span> <span class="method">OutputFormatter</span>:<br>
+                &nbsp;&nbsp;<span class="keyword">def</span> <span class="method">format</span>(data: <span
+                    class="type">Any</span>, format_type: <span class="type">str</span>) -> <span
+                    class="type">str</span>
             </div>
+
+            <table class="param-table">
+                <tr>
+                    <th>Format Type</th>
+                    <th>Hasil Transformasi</th>
+                </tr>
+                <tr>
+                    <td><code>"html"</code></td>
+                    <td>Konversi Markdown/Data ke kode HTML (Local Process).</td>
+                </tr>
+                <tr>
+                    <td><code>"markdown"</code></td>
+                    <td>Konversi ke tabel/list Markdown terstruktur.</td>
+                </tr>
+                <tr>
+                    <td><code>"table"</code></td>
+                    <td>Konversi ke tabel Plain Text/ASCII.</td>
+                </tr>
+                <tr>
+                    <td><code>"csv"</code></td>
+                    <td>Konversi List of Dicts ke format CSV.</td>
+                </tr>
+                <tr>
+                    <td><code>"json"</code></td>
+                    <td>Konversi data ke format JSON string terformat.</td>
+                </tr>
+            </table>
 
             <div class="code-container">
                 <div class="code-header">
@@ -517,6 +552,39 @@ jaksel_stops = saka.<span class="c-fn">get_stopwords</span>(<span class="c-st">"
                     <button class="copy-btn" onclick="copyCode(this)">Salin</button>
                 </div>
                 <pre class="code-block"><code><span class="c-kw">import</span> saka
+
+data = [<span class="c-st">{"id": 1, "text": "makan"}</span>, <span class="c-st">{"id": 2, "text": "sare"}</span>]
+
+<span class="c-cm"># Format ke HTML secara lokal (Hemat Token!)</span>
+html_res = saka.OutputFormatter.<span class="c-fn">format</span>(data, <span class="c-st">"html"</span>)
+<span class="c-fn">print</span>(html_res)
+
+<span class="c-cm"># Format ke JSON</span>
+json_res = saka.OutputFormatter.<span class="c-fn">format</span>(data, <span class="c-st">"json"</span>)</code></pre>
+            </div>
+        </section>
+
+        <section class="docs-section" id="prompt">
+            <h2>Prompt Builder LLM: <code>build_prompt</code></h2>
+            <p>Saka-NLP menyediakan fungsi untuk merakit struktur <i>prompt</i> LLM yang ideal beserta optimasi token
+                dan fitur otomatisasi <i>parsing</i> (penguraian teks).</p>
+
+            <div class="method-signature">
+                <span class="keyword">def</span> <span class="method">build_prompt</span>(instruction: <span
+                    class="type">str</span>, input_data: <span class="type">str</span>, context: <span
+                    class="type">str</span>, ...) -> <span class="type">str</span><br>
+                <span class="keyword">def</span> <span class="method">parse_llm_output</span>(text: <span
+                    class="type">str</span>, format_type: <span class="type">str</span>) -> <span
+                    class="type">Any</span>
+            </div>
+
+            <div class="code-container">
+                <div class="code-header">
+                    <span class="code-lang">python</span>
+                    <button class="copy-btn" onclick="copyCode(this)">Salin</button>
+                </div>
+                <pre
+                    class="code-block"><code><span class="c-kw">import</span> saka
 
 prompt = saka.<span class="c-fn">build_prompt</span>(
     instruction=<span class="c-st">"Klasifikasikan sentimen dari ulasan berikut."</span>,
@@ -653,28 +721,41 @@ aksara = saka.<span class="c-fn">latin_to_aksara_bali</span>(<span class="c-st">
         </section>
 
         <!-- Citation Section -->
-        <section class="docs-section citation-section" id="citation" style="background-color: var(--surface); padding: 3rem 2rem; border-radius: 12px; margin-top: 2rem; border: 1px solid var(--border);">
+        <section class="docs-section citation-section" id="citation"
+            style="background-color: var(--surface); padding: 3rem 2rem; border-radius: 12px; margin-top: 2rem; border: 1px solid var(--border);">
             <div style="margin-bottom: 2rem;">
-                <h2 style="font-size: 1.8rem; color: var(--accent); border-bottom:none; margin-bottom:0.5rem; padding-bottom:0;">📚 Sitasi (Citation)</h2>
-                <p style="color: var(--text-muted); font-size: 0.95rem;">Jika Anda menggunakan <strong>Saka-NLP</strong> dalam penelitian atau proyek Anda, mohon sitasi menggunakan format berikut:</p>
+                <h2
+                    style="font-size: 1.8rem; color: var(--accent); border-bottom:none; margin-bottom:0.5rem; padding-bottom:0;">
+                    📚 Sitasi (Citation)</h2>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Jika Anda menggunakan <strong>Saka-NLP</strong>
+                    dalam penelitian atau proyek Anda, mohon sitasi menggunakan format berikut:</p>
             </div>
-            
+
             <h4 style="margin-bottom: 0.5rem; color: var(--text);">APA</h4>
-            <div style="background-color: var(--bg); padding: 1rem; border-radius: 6px; margin-bottom: 1.5rem; border-left: 3px solid var(--primary); font-size: 0.9rem; color: #d1d5db;">
-                Fathulloh, M. I. (2026). <i>Saka-NLP: Indonesian NLP Toolkit for Tokenization and Slang Normalization</i> (Version 0.2.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.20092641
+            <div
+                style="background-color: var(--bg); padding: 1rem; border-radius: 6px; margin-bottom: 1.5rem; border-left: 3px solid var(--primary); font-size: 0.9rem; color: #d1d5db;">
+                Fathulloh, M. I. (2026). <i>Saka-NLP: Indonesian NLP Toolkit for Tokenization and Slang
+                    Normalization</i> (Version 0.2.2) [Computer software]. Zenodo.
+                https://doi.org/10.5281/zenodo.20092640
             </div>
+
+            <p style="margin-bottom: 1.5rem; color: var(--text-muted); font-size: 0.85rem; font-style: italic;">
+                <strong>Note:</strong> Anda dapat menyitasi seluruh versi Saka-NLP menggunakan DOI
+                <b>10.5281/zenodo.20092640</b>. DOI ini mewakili seluruh versi dan selalu mengarah ke yang terbaru.
+            </p>
 
             <h4 style="margin-bottom: 0.5rem; color: var(--text);">BibTeX</h4>
             <div class="code-container" style="margin-bottom: 0;">
-                <div class="code-header"><span class="code-lang">bibtex</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+                <div class="code-header"><span class="code-lang">bibtex</span><button class="copy-btn"
+                        onclick="copyCode(this)">Salin</button></div>
                 <pre class="code-block" style="margin:0;"><code>@software{Fathulloh_Saka-NLP_2026,
   author = {Fathulloh, Muhammad Ikhwan},
   title = {{Saka-NLP: Indonesian NLP Toolkit for Tokenization and Slang Normalization}},
   month = {5},
   year = {2026},
   publisher = {Zenodo},
-  version = {0.2.0},
-  doi = {10.5281/zenodo.20092641},
+  version = {0.2.2},
+  doi = {10.5281/zenodo.20092640},
   url = {https://github.com/Muhammad-Ikhwan-Fathulloh/Saka-NLP}
 }</code></pre>
             </div>
