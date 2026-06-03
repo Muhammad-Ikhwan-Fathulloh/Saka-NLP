@@ -8,272 +8,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
         rel="stylesheet">
-    <style>
-        :root {
-            --bg: #09090b;
-            --surface: #18181b;
-            --surface-hover: #27272a;
-            --primary: #a82020;
-            --accent: #cfb53b;
-            --text: #e4e4e7;
-            --text-muted: #a1a1aa;
-            --border: #27272a;
-            --sidebar-width: 280px;
-            --code-bg: #0d0d0f;
-        }
 
-        [data-theme='light'] {
-            --bg: #fafafa;
-            --surface: #ffffff;
-            --surface-hover: #f4f4f5;
-            --primary: #a82020;
-            --accent: #b45309;
-            --text: #18181b;
-            --text-muted: #52525b;
-            --border: #e4e4e7;
-            --code-bg: #18181b;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            display: flex;
-        }
-
-        /* Sidebar Navigation */
-        .sidebar {
-            width: var(--sidebar-width);
-            height: 100vh;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background-color: var(--surface);
-            border-right: 1px solid var(--border);
-            overflow-y: auto;
-            padding: 2rem 1.5rem;
-        }
-
-        .sidebar-brand {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text);
-            margin-bottom: 2.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            text-decoration: none;
-        }
-
-        .sidebar-brand span {
-            color: var(--primary);
-        }
-
-        .nav-group {
-            margin-bottom: 2rem;
-        }
-
-        .nav-group-title {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--text-muted);
-            font-weight: 600;
-            margin-bottom: 0.8rem;
-        }
-
-        .nav-link {
-            display: block;
-            padding: 0.5rem 0.8rem;
-            color: var(--text);
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 0.95rem;
-            transition: all 0.2s;
-            margin-bottom: 0.2rem;
-        }
-
-        .nav-link:hover {
-            background-color: var(--surface-hover);
-            color: var(--accent);
-        }
-
-        .nav-link.active {
-            background-color: rgba(168, 32, 32, 0.1);
-            color: var(--primary);
-            font-weight: 500;
-            border-left: 2px solid var(--primary);
-        }
-
-        /* Main Content */
-        .main-content {
-            flex: 1;
-            margin-left: var(--sidebar-width);
-            padding: 3rem 4rem;
-            max-width: 1000px;
-        }
-
-        .page-header {
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .page-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .page-header p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-        }
-
-        /* Content Sections */
-        .docs-section {
-            margin-bottom: 4rem;
-            padding-top: 2rem;
-        }
-
-        .docs-section h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--accent);
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 0.5rem;
-        }
-
-        .method-signature {
-            font-family: 'JetBrains Mono', monospace;
-            background-color: var(--surface);
-            padding: 1rem;
-            border-radius: 8px;
-            border-left: 3px solid var(--primary);
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-            color: #d1d5db;
-        }
-
-        .method-signature span.keyword {
-            color: #f27c7c;
-        }
-
-        .method-signature span.method {
-            color: #66d9ef;
-        }
-
-        .method-signature span.type {
-            color: #a6e22e;
-        }
-
-        .param-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 1.5rem;
-        }
-
-        .param-table th,
-        .param-table td {
-            padding: 1rem;
-            border-bottom: 1px solid var(--border);
-            text-align: left;
-        }
-
-        .param-table th {
-            color: var(--text-muted);
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .param-table td code {
-            background-color: var(--surface);
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.85rem;
-            color: var(--accent);
-        }
-
-        .code-container {
-            background: var(--code-bg);
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            overflow: hidden;
-            box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.5);
-            margin-bottom: 2rem;
-        }
-
-        .code-header {
-            background: rgba(255, 255, 255, 0.03);
-            padding: 0.6rem 1rem;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .code-lang {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-        }
-
-        .copy-btn {
-            background: transparent;
-            border: 1px solid var(--border);
-            color: var(--text-muted);
-            padding: 0.3rem 0.6rem;
-            border-radius: 6px;
-            font-size: 0.7rem;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .copy-btn:hover {
-            color: var(--text);
-            border-color: var(--text-muted);
-        }
-
-        .code-block {
-            padding: 1.2rem;
-            margin: 0;
-            overflow-x: auto;
-            color: #d1d1e0;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        .c-cm {
-            color: #75715e;
-            font-style: italic;
-        }
-
-        .c-st {
-            color: #e6db74;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .sidebar {
-                transform: translateX(-100%);
-            }
-
-            .main-content {
-                margin-left: 0;
-                padding: 2rem;
-            }
-        }
-    </style>
+    <!-- Shared & Docs Styles -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/docs.css">
 </head>
 
 <body>
@@ -292,9 +30,10 @@
             <a href="#installation" class="nav-link">Installation</a>
         </div>
         <div class="nav-group">
-            <div class="nav-group-title">Agentic AI</div>
+            <div class="nav-group-title">Agentic AI & Evaluation</div>
             <a href="#formatter" class="nav-link">Output Formatter</a>
             <a href="#prompt" class="nav-link">Prompt Builder LLM</a>
+            <a href="#evaluate" class="nav-link">Saka-Eval Benchmark</a>
         </div>
 
         <div class="nav-group">
@@ -438,16 +177,16 @@ text = saka.<span class="c-fn">normalize</span>(<span class="c-st">"gmn nih bro 
                     <span class="code-lang">python</span>
                     <button class="copy-btn" onclick="copyCode(this)">Salin</button>
                 </div>
-                <pre
-                    class="code-block"><code><span class="c-kw">import</span> saka
+                <pre class="code-block"><code><span class="c-kw">import</span> saka
 
-<span class="c-cm"># Morphophonemic Fusion (meny + sebar luas)</span>
+<span class="c-cm"># Morphophonemic Fusion & Pemisahan Kata Majemuk</span>
 res = saka.<span class="c-fn">analyze</span>(<span class="c-st">"menyebarluaskan"</span>)
 <span class="c-fn">print</span>(res[<span class="c-st">"root"</span>]) <span class="c-cm"># Output: 'sebar luas'</span>
 
-<span class="c-cm"># Validasi kamus daerah (Early Stopping via Sunda/Jawa)</span>
-res2 = saka.<span class="c-fn">analyze</span>(<span class="c-st">"dipikanyaah"</span>)
-<span class="c-fn">print</span>(res2[<span class="c-st">"regional_matches"</span>]) <span class="c-cm"># Output: ['sunda']</span></code></pre>
+<span class="c-cm"># Deteksi dialek regional (Sunda / Minang)</span>
+res2 = saka.<span class="c-fn">analyze</span>(<span class="c-st">"bundokanduang"</span>)
+<span class="c-fn">print</span>(res2[<span class="c-st">"root"</span>], res2[<span class="c-st">"regional_matches"</span>])
+<span class="c-cm"># Output: 'bundo kanduang' ['minang']</span></code></pre>
             </div>
         </section>
 
@@ -474,7 +213,7 @@ res2 = saka.<span class="c-fn">analyze</span>(<span class="c-st">"dipikanyaah"</
                     <td>Eksklusif Stopwords Indonesia versi Tala Dataset.</td>
                 </tr>
                 <tr>
-                    <td><code>"sunda"</code> / <code>"jawa"</code> / <code>"bali"</code></td>
+                    <td><code>"sunda"</code> / <code>"jawa"</code> / <code>"bali"</code> / <code>"minang"</code></td>
                     <td>Eksklusif Stopwords region yang diminta.</td>
                 </tr>
                 <tr>
@@ -601,6 +340,36 @@ prompt = saka.<span class="c-fn">build_prompt</span>(
 llm_response = <span class="c-st">"```json\n{\"sentimen\": \"negatif\"}\n```"</span>
 hasil_dict = saka.<span class="c-fn">parse_llm_output</span>(llm_response, format_type=<span class="c-st">"json"</span>)
 <span class="c-fn">print</span>(hasil_dict[<span class="c-st">"sentimen"</span>]) <span class="c-cm"># Output: negatif</span></code></pre>
+            </div>
+        </section>
+
+        <section class="docs-section" id="evaluate">
+            <h2>Evaluasi & Benchmark: <code>SakaEval</code></h2>
+            <p>Modul untuk menjalankan evaluasi performa model pada berbagai tugas NLP (Sentiment, NER, QA) secara
+                asynchronous.</p>
+
+            <div class="method-signature">
+                <span class="keyword">class</span> <span class="method">SakaEval</span>:<br>
+                &nbsp;&nbsp;<span class="keyword">def</span> <span class="method">load_hf_dataset</span>(path: <span
+                    class="type">str</span>, data_files: <span class="type">Optional[str]</span>) -> <span
+                    class="type">None</span><br>
+                &nbsp;&nbsp;<span class="keyword">async def</span> <span class="method">evaluate</span>(model: <span
+                    class="type">Any</span>, **column_mapping) -> <span class="type">Dict[str, Any]</span>
+            </div>
+
+            <div class="code-container">
+                <div class="code-header">
+                    <span class="code-lang">python</span>
+                    <button class="copy-btn" onclick="copyCode(this)">Salin</button>
+                </div>
+                <pre class="code-block"><code><span class="c-kw">from</span> saka.evaluation.benchmarker <span class="c-kw">import</span> SakaEval
+
+evaluator = <span class="c-fn">SakaEval</span>(task=<span class="c-st">"sentiment"</span>)
+evaluator.<span class="c-fn">load_hf_dataset</span>(<span class="c-st">"Muhammad-Ikhwan-Fathulloh/Saka-Eval"</span>)
+
+<span class="c-cm"># Evaluasi asinkron</span>
+results = <span class="c-kw">await</span> evaluator.<span class="c-fn">evaluate</span>(model, text=<span class="c-st">"text"</span>, label=<span class="c-st">"label"</span>)
+evaluator.<span class="c-fn">save_report</span>(<span class="c-st">"report.json"</span>)</code></pre>
             </div>
         </section>
 
@@ -735,7 +504,7 @@ aksara = saka.<span class="c-fn">latin_to_aksara_bali</span>(<span class="c-st">
             <div
                 style="background-color: var(--bg); padding: 1rem; border-radius: 6px; margin-bottom: 1.5rem; border-left: 3px solid var(--primary); font-size: 0.9rem; color: #d1d5db;">
                 Fathulloh, M. I. (2026). <i>Saka-NLP: Indonesian NLP Toolkit for Tokenization and Slang
-                    Processing with Prompting and Agentic AI Support</i> (Version 0.2.3) [Computer software]. Zenodo.
+                    Processing with Prompting and Agentic AI Support</i> (Version 0.2.4) [Computer software]. Zenodo.
                 https://doi.org/10.5281/zenodo.20092640
             </div>
 
@@ -754,7 +523,7 @@ aksara = saka.<span class="c-fn">latin_to_aksara_bali</span>(<span class="c-st">
   month = {5},
   year = {2026},
   publisher = {Zenodo},
-  version = {0.2.3},
+  version = {0.2.4},
   doi = {10.5281/zenodo.20092640},
   url = {https://github.com/Muhammad-Ikhwan-Fathulloh/Saka-NLP}
 }</code></pre>

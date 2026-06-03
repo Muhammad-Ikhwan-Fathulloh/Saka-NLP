@@ -27,6 +27,10 @@ share/python-wheels/
 MANIFEST
 reproduce_issues.py
 
+# Data
+data/
+scripts/
+
 # Virtual environments
 .env
 .venv

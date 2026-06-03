@@ -12,379 +12,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,800;1,800&display=swap"
         rel="stylesheet">
-    <style>
-        :root {
-            --bg: #0d0d0f;
-            --surface: #16161a;
-            --surface-hover: #27272a;
-            --primary: #a82020;
-            --primary-light: #d43f3f;
-            --accent: #cfb53b;
-            --text: #f0f0f5;
-            --text-dim: #a0a0b5;
-            --border: rgba(255, 255, 255, 0.08);
-            --font-main: 'Inter', sans-serif;
-            --font-display: 'Playfair Display', serif;
-            --font-mono: 'JetBrains Mono', monospace;
-            --code-bg: #09090b;
-        }
 
-        [data-theme='light'] {
-            --bg: #fafafa;
-            --surface: #ffffff;
-            --surface-hover: #f4f4f5;
-            --primary: #a82020;
-            --primary-light: #dc2626;
-            --accent: #b45309;
-            --text: #18181b;
-            --text-dim: #52525b;
-            --border: #e4e4e7;
-            --code-bg: #18181b;
-        }
-
-        [data-theme='light'] .batik-overlay {
-            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 50c0-15 10-25 25-25s25 10 25 25-10 25-25 25-25-10-25-25zm-50 0c0-15 10-25 25-25s25 10 25 25-10 25-25 25-25-10-25-25z' fill='%23000000' fill-rule='evenodd'/%3E%3C/svg%3E");
-        }
-
-        [data-theme='light'] .btn-outline {
-            background: rgba(0, 0, 0, 0.03);
-            border-color: #d4d4d8;
-        }
-
-        [data-theme='light'] .btn-outline:hover {
-            background: rgba(0, 0, 0, 0.08);
-            border-color: var(--accent);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: var(--font-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-            background-image:
-                radial-gradient(circle at 10% 20%, rgba(168, 32, 32, 0.05) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(207, 181, 59, 0.05) 0%, transparent 40%);
-        }
-
-        .batik-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.03;
-            pointer-events: none;
-            z-index: -1;
-            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 50c0-15 10-25 25-25s25 10 25 25-10 25-25 25-25-10-25-25zm-50 0c0-15 10-25 25-25s25 10 25 25-10 25-25 25-25-10-25-25z' fill='%23ffffff' fill-rule='evenodd'/%3E%3C/svg%3E");
-            background-size: 150px;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        header {
-            padding: 8rem 0 4rem;
-            text-align: center;
-        }
-
-        .hero-flag {
-            display: inline-flex;
-            flex-direction: column;
-            margin-bottom: 2rem;
-        }
-
-        .flag-red {
-            width: 45px;
-            height: 14px;
-            background: var(--primary);
-            border-radius: 4px 4px 0 0;
-        }
-
-        .flag-white {
-            width: 45px;
-            height: 14px;
-            background: #fff;
-            border-radius: 0 0 4px 4px;
-            border: 1px solid var(--border);
-        }
-
-        h1 {
-            font-family: var(--font-display);
-            font-size: clamp(3.5rem, 8vw, 5.5rem);
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            margin-bottom: 1.5rem;
-            line-height: 1;
-        }
-
-        .hero-title-accent {
-            color: var(--primary);
-            font-style: italic;
-        }
-
-        .tagline {
-            font-size: clamp(1.1rem, 3vw, 1.4rem);
-            color: var(--text-dim);
-            max-width: 850px;
-            margin: 0 auto 3rem;
-            font-weight: 300;
-        }
-
-        .cta-group {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 0.9rem 2.2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            font-size: 0.95rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary) 0%, #701010 100%);
-            color: #fff;
-            box-shadow: 0 10px 25px -5px rgba(168, 32, 32, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px -5px rgba(168, 32, 32, 0.5);
-        }
-
-        .btn-outline {
-            border: 1px solid var(--border);
-            color: var(--text);
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(12px);
-        }
-
-        .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: var(--accent);
-            transform: translateY(-3px);
-        }
-
-        .btn-accent {
-            background: linear-gradient(135deg, var(--accent) 0%, #a68a1f 100%);
-            color: #1a1a1a;
-            box-shadow: 0 10px 25px -5px rgba(207, 181, 59, 0.3);
-        }
-
-        .btn-accent:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px -5px rgba(207, 181, 59, 0.5);
-        }
-
-        section {
-            padding: 5rem 0;
-        }
-
-        .section-header {
-            margin-bottom: 4rem;
-            text-align: left;
-        }
-
-        .section-header h2 {
-            font-family: var(--font-display);
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .section-header .divider {
-            width: 50px;
-            height: 4px;
-            background: var(--accent);
-            border-radius: 2px;
-        }
-
-        /* Installation Cards - Vertically Stacked */
-        .install-box {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            margin-bottom: 4rem;
-        }
-
-        .install-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 2rem;
-            transition: transform 0.3s;
-        }
-
-        .install-card h4 {
-            color: var(--accent);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        /* Documentation */
-        .docs-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 5rem;
-        }
-
-        .doc-item {
-            display: grid;
-            grid-template-columns: 320px 1fr;
-            gap: 3rem;
-            align-items: start;
-        }
-
-        @media (max-width: 900px) {
-            .doc-item {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-        }
-
-        .doc-info h3 {
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
-            color: var(--text);
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-
-        .doc-info h3 span {
-            color: var(--accent);
-            font-family: var(--font-mono);
-            font-size: 1rem;
-            opacity: 0.7;
-        }
-
-        .doc-info p {
-            color: var(--text-dim);
-            font-size: 1.05rem;
-            font-weight: 300;
-        }
-
-        .code-container {
-            background: var(--code-bg);
-            border-radius: 16px;
-            border: 1px solid var(--border);
-            overflow: hidden;
-            box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.1);
-        }
-
-        .code-header {
-            background: rgba(255, 255, 255, 0.03);
-            padding: 0.7rem 1.2rem;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .code-lang {
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            color: var(--text-dim);
-            text-transform: uppercase;
-        }
-
-        .copy-btn {
-            background: transparent;
-            border: 1px solid var(--border);
-            color: var(--text-dim);
-            padding: 0.3rem 0.7rem;
-            border-radius: 6px;
-            font-size: 0.7rem;
-            cursor: pointer;
-        }
-
-        .code-block {
-            padding: 1.2rem;
-            margin: 0;
-            overflow-x: auto;
-        }
-
-        code {
-            font-family: var(--font-mono);
-            font-size: 0.9rem;
-            line-height: 1.7;
-            color: #d1d1e0;
-        }
-
-        .c-kw {
-            color: #f27c7c;
-        }
-
-        .c-st {
-            color: #e6db74;
-        }
-
-        .c-fn {
-            color: #66d9ef;
-        }
-
-        .c-cm {
-            color: #75715e;
-            font-style: italic;
-        }
-
-        /* Contribution */
-        .contribution-section {
-            text-align: center;
-            background: linear-gradient(rgba(168, 32, 32, 0.1), transparent);
-            border-radius: 30px;
-            padding: 4rem 2rem;
-            border: 1px solid var(--border);
-        }
-
-        .ref-list {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .ref-list li strong {
-            color: var(--accent);
-            display: block;
-            margin-bottom: 0.3rem;
-        }
-
-        .ref-list li {
-            font-size: 0.9rem;
-            color: var(--text-dim);
-        }
-
-        footer {
-            padding: 5rem 0;
-            border-top: 1px solid var(--border);
-            text-align: center;
-        }
-
-        .footer-credits a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-    </style>
+    <!-- Shared & Home Styles -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/home.css">
 </head>
 
 <body>
@@ -476,7 +107,7 @@ pip install -e .</code></pre>
                         <pre class="code-block"><code><span class="c-kw">import</span> saka
 
 <span class="c-fn">print</span>(saka.__version__)
-<span class="c-cm"># Output: 0.2.3</span></code></pre>
+<span class="c-cm"># Output: 0.2.4</span></code></pre>
                     </div>
                 </div>
 
@@ -532,9 +163,9 @@ normalized = saka.<span class="c-fn">normalize</span>(<span class="c-st">"klo gi
 analysis = saka.<span class="c-fn">analyze</span>(<span class="c-st">"menyebarluaskan"</span>)
 <span class="c-fn">print</span>(analysis[<span class="c-st">"root"</span>]) <span class="c-cm"># Output: sebar luas</span>
 
-<span class="c-cm"># Validasi kamus daerah (*Early Stopping*)</span>
-analysis2 = saka.<span class="c-fn">analyze</span>(<span class="c-st">"dipikanyaah"</span>)
-<span class="c-fn">print</span>(analysis2[<span class="c-st">"regional_matches"</span>]) <span class="c-cm"># Output: ['sunda']</span></code></pre>
+<span class="c-cm"># Validasi kamus daerah (Sunda & Minang)</span>
+<span class="c-fn">print</span>(saka.<span class="c-fn">analyze</span>(<span class="c-st">"dipikanyaah"</span>)[<span class="c-st">"regional_matches"</span>]) <span class="c-cm"># Output: ['sunda']</span>
+<span class="c-fn">print</span>(saka.<span class="c-fn">analyze</span>(<span class="c-st">"bundokanduang"</span>)[<span class="c-st">"root"</span>]) <span class="c-cm"># Output: bundo kanduang</span></code></pre>
                     </div>
                 </div>
 
@@ -619,10 +250,29 @@ hasil = saka.<span class="c-fn">parse_llm_output</span>(llm_response, format_typ
                     </div>
                 </div>
 
-                <!-- 07. Ekosistem Sunda -->
+                <!-- 07. Saka-Eval -->
                 <div class="doc-item">
                     <div class="doc-info">
-                        <h3><span>07</span> Ekosistem Sunda</h3>
+                        <h3><span>07</span> Saka-Eval Benchmark</h3>
+                        <p>Modul pembanding performa model NLP untuk dataset Bahasa Indonesia (Sentiment/NER).</p>
+                    </div>
+                    <div class="code-container">
+                        <div class="code-header"><span class="code-lang">python</span><button class="copy-btn"
+                                onclick="copyCode(this)">Salin</button></div>
+                        <pre
+                            class="code-block"><code><span class="c-kw">from</span> saka.evaluation.benchmarker <span class="c-kw">import</span> SakaEval
+
+evaluator = <span class="c-fn">SakaEval</span>(task=<span class="c-st">"sentiment"</span>)
+evaluator.<span class="c-fn">load_hf_dataset</span>(<span class="c-st">"username/dataset"</span>)
+
+results = <span class="c-kw">await</span> evaluator.<span class="c-fn">evaluate</span>(model, text=<span class="c-st">"text"</span>, label=<span class="c-st">"label"</span>)</code></pre>
+                    </div>
+                </div>
+
+                <!-- 08. Ekosistem Sunda -->
+                <div class="doc-item">
+                    <div class="doc-info">
+                        <h3><span>08</span> Ekosistem Sunda</h3>
                         <p>Dukungan kamus digital SundaDigi dan transliterasi Aksara Sunda (Ngalagena) yang presisi.</p>
                     </div>
                     <div class="code-container">
@@ -655,7 +305,7 @@ aksara = saka.<span class="c-fn">latin_to_aksara_sunda</span>(<span class="c-st"
                 <!-- 08. Ekosistem Jawa -->
                 <div class="doc-item">
                     <div class="doc-info">
-                        <h3><span>08</span> Ekosistem Jawa</h3>
+                        <h3><span>09</span> Ekosistem Jawa</h3>
                         <p>Integrasi Leksikon Sastra.org dan mesin transliterasi Hanacaraka (Nglegena) yang akurat.</p>
                     </div>
                     <div class="code-container">
@@ -688,7 +338,7 @@ aksara = saka.<span class="c-fn">latin_to_aksara_jawa</span>(<span class="c-st">
                 <!-- 09. Ekosistem Bali -->
                 <div class="doc-item">
                     <div class="doc-info">
-                        <h3><span>09</span> Ekosistem Bali</h3>
+                        <h3><span>10</span> Ekosistem Bali</h3>
                         <p>Pemanfaatan BASAbali Wiki dan dukungan penuh Aksara Bali (Wreastra) beserta angka dan tanda
                             baca.</p>
                     </div>
@@ -728,7 +378,7 @@ aksara = saka.<span class="c-fn">latin_to_aksara_bali</span>(<span class="c-st">
                 <!-- 10. CLI -->
                 <div class="doc-item">
                     <div class="doc-info">
-                        <h3><span>10</span> Terminal CLI</h3>
+                        <h3><span>11</span> Terminal CLI</h3>
                         <p>Akses fitur Saka-NLP langsung dari terminal tanpa skrip Python.</p>
                     </div>
                     <div class="code-container">
@@ -754,30 +404,28 @@ saka --normalize <span class="c-st">"ngapain ke kampus klo libur"</span></code><
         </section>
 
         <!-- Citation Section -->
-        <section class="citation-section"
-            style="background-color: var(--surface); padding: 4rem 3rem; border-radius: 12px; margin-bottom: 4rem; border: 1px solid var(--border);">
-            <div class="section-header" style="margin-bottom: 2rem;">
-                <h2 style="font-size: 2rem; color: var(--accent);">📚 Sitasi (Citation)</h2>
+        <section class="citation-section">
+            <div class="section-header">
+                <h2>📚 Sitasi (Citation)</h2>
             </div>
-            <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Jika Anda menggunakan <strong>Saka-NLP</strong>
+            <p>Jika Anda menggunakan <strong>Saka-NLP</strong>
                 dalam penelitian atau proyek Anda, mohon sitasi menggunakan format berikut:</p>
 
-            <h4 style="margin-bottom: 0.5rem; color: var(--text);">APA</h4>
-            <div
-                style="background-color: var(--bg); padding: 1rem; border-radius: 6px; margin-bottom: 1.5rem; border-left: 3px solid var(--primary); font-size: 0.95rem; color: #d1d5db;">
+            <h4>APA</h4>
+            <div class="citation-box-apa">
                 Fathulloh, M. I. (2026). <i>Saka-NLP: Indonesian NLP Toolkit for Tokenization and Slang
-                    Processing with Prompting and Agentic AI Support</i> (Version 0.2.3) [Computer software]. Zenodo.
+                    Processing with Prompting and Agentic AI Support</i> (Version 0.2.4) [Computer software]. Zenodo.
                 https://doi.org/10.5281/zenodo.20092640
             </div>
 
-            <p style="margin-bottom: 1.5rem; color: var(--text-dim); font-size: 0.9rem; font-style: italic;">
+            <p class="citation-note">
                 <strong>Note:</strong> Anda dapat menyitasi seluruh versi Saka-NLP menggunakan DOI
                 <b>10.5281/zenodo.20092640</b>. DOI ini mewakili seluruh versi dan akan selalu mengarah ke versi
                 terbaru.
             </p>
 
-            <h4 style="margin-bottom: 0.5rem; color: var(--text);">BibTeX</h4>
-            <div class="code-container" style="margin-bottom: 0;">
+            <h4>BibTeX</h4>
+            <div class="code-container bibtex-container">
                 <div class="code-header"><span class="code-lang">bibtex</span><button class="copy-btn"
                         onclick="copyCode(this)">Salin</button></div>
                 <pre class="code-block" style="margin:0;"><code>@software{Fathulloh_Saka-NLP_2026,
@@ -786,7 +434,7 @@ saka --normalize <span class="c-st">"ngapain ke kampus klo libur"</span></code><
   month = {5},
   year = {2026},
   publisher = {Zenodo},
-  version = {0.2.3},
+  version = {0.2.4},
   doi = {10.5281/zenodo.20092640},
   url = {https://github.com/Muhammad-Ikhwan-Fathulloh/Saka-NLP}
 }</code></pre>
@@ -823,7 +471,7 @@ saka --normalize <span class="c-st">"ngapain ke kampus klo libur"</span></code><
     </main>
 
     <footer>
-        <div class="container">
+        <div class="container footer-content">
             <span class="footer-logo">Saka-NLP</span>
             <p class="footer-credits">
                 Architected by <a href="https://github.com/Muhammad-Ikhwan-Fathulloh" target="_blank">Muhammad Ikhwan
@@ -833,47 +481,8 @@ saka --normalize <span class="c-st">"ngapain ke kampus klo libur"</span></code><
         </div>
     </footer>
 
-    <script>
-        // Theme Management
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        const rootElt = document.documentElement;
-
-        const applyTheme = (theme) => {
-            if (theme === 'light') {
-                rootElt.setAttribute('data-theme', 'light');
-            } else {
-                rootElt.removeAttribute('data-theme');
-            }
-        };
-
-        const savedTheme = localStorage.getItem('theme');
-        const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-        const initTheme = savedTheme || (systemPrefersLight ? 'light' : 'dark');
-        applyTheme(initTheme);
-
-        themeToggleBtn.addEventListener('click', () => {
-            const isLight = rootElt.getAttribute('data-theme') === 'light';
-            const newTheme = isLight ? 'dark' : 'light';
-            applyTheme(newTheme);
-            localStorage.setItem('theme', newTheme);
-        });
-
-        // Copy Code Function
-        function copyCode(btn) {
-            const code = btn.parentElement.nextElementSibling.innerText;
-            navigator.clipboard.writeText(code).then(() => {
-                const originalText = btn.innerText;
-                btn.innerText = "Tersalin!";
-                btn.style.borderColor = "var(--accent)";
-                btn.style.color = "var(--accent)";
-                setTimeout(() => {
-                    btn.innerText = originalText;
-                    btn.style.borderColor = "var(--border)";
-                    btn.style.color = "var(--text-dim)";
-                }, 2000);
-            });
-        }
-    </script>
+    <!-- Shared Logic -->
+    <script src="assets/js/app.js"></script>
 </body>
 
 </html>

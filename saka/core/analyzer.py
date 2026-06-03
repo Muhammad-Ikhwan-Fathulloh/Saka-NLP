@@ -23,6 +23,24 @@ try:
 except Exception:
     _BALI_DICT = {}
 
+try:
+    with open(os.path.join(BASE_DIR, 'dict', 'minang_dict.json'), 'r', encoding='utf-8') as f:
+        _MINANG_DICT = json.load(f)
+except Exception:
+    _MINANG_DICT = {}
+
+try:
+    with open(os.path.join(BASE_DIR, 'dict', 'compounds.json'), 'r', encoding='utf-8') as f:
+        _COMPOUNDS_DATA = json.load(f)
+        # Flatten all patterns into a single dictionary for general lookup
+        _COMPOUND_PREFIXES = {}
+        for lang_patterns in _COMPOUNDS_DATA.values():
+            for k, v in lang_patterns.items():
+                # Handle both simple string and structured object {"replacement": "..."}
+                _COMPOUND_PREFIXES[k] = v['replacement'] if isinstance(v, dict) else v
+except Exception:
+    _COMPOUND_PREFIXES = {}
+
 def check_dict(w: str) -> List[str]:
     langs = []
     if w in _SUNDA_DICT:
@@ -31,6 +49,8 @@ def check_dict(w: str) -> List[str]:
         langs.append('jawa')
     if w in _BALI_DICT:
         langs.append('bali')
+    if w in _MINANG_DICT:
+        langs.append('minang')
     return langs
 
 @lru_cache(maxsize=10000)
@@ -95,7 +115,8 @@ def analyze(word: str) -> Dict[str, Any]:
     ]
     regional_prefix_rules = [
         ('dipika', ''), ('pika', ''), ('barang', ''), ('silih', ''), ('mipa', ''), ('nga', ''), 
-        ('dak', ''), ('kok', ''), ('tak', ''), ('mbok', ''), ('sa', ''), ('pa', ''), ('pi', ''), ('ka', ''), ('ti', ''), ('ba', '')
+        ('dak', ''), ('kok', ''), ('tak', ''), ('mbok', ''), ('sa', ''), ('pa', ''), ('pi', ''), ('ka', ''), ('ti', ''), ('ba', ''),
+        ('ma', ''), ('ta', ''), ('pa', '')
     ]
     all_prefix_rules = indo_prefix_rules + regional_prefix_rules
 
@@ -132,20 +153,8 @@ def analyze(word: str) -> Dict[str, Any]:
 
     # 4. Handle Compound Words (Kata Majemuk Serangkai)
     # Check if the fallback root needs to be split
-    compound_prefixes = {
-        "tidak": "tidak ", "tanggung": "tanggung ", "garis": "garis ", 
-        "hancur": "hancur ", "lipat": "lipat ", "sebar": "sebar ", 
-        "ebar": "sebar ", "tanda": "tanda ", "anda": "tanda ", 
-        "beri": "beri ", "ikut": "ikut ", "campur": "campur ", "ampur": "campur ",
-        "salah": "salah ", "alah": "salah ", "alih": "alih ", 
-        "uji": "uji ", "anak": "anak ", "kerja": "kerja ", 
-        "tata": "tata ", "mata": "mata ", "jual": "jual ", 
-        "beli": "beli ", "guna": "guna ", "daya": "daya ", 
-        "budi": "budi ", "temu": "temu ", "ambil": "ambil ", "pindah": "pindah "
-    }
-    
     if not regional_matches:
-        for cp, replacement in compound_prefixes.items():
+        for cp, replacement in _COMPOUND_PREFIXES.items():
             if word.startswith(cp) and len(word) >= len(cp) + 3:
                 if cp == "sebar" and word == "sebarang":
                     continue

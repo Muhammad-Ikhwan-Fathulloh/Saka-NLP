@@ -1,4 +1,5 @@
 import os
+import json
 from typing import Set
 
 _SUNDA_STOPWORDS = {
@@ -52,10 +53,23 @@ _JAKSEL_STOPWORDS = {
     "gimme", "gonna", "wanna", "gotta", "obviously", "seriously", "prefer", "vibes", "relate", "cringe", "awkward"
 }
 
+_MINANG_STOPWORDS = {
+    "nan", "jo", "dek", "di", "ko", "iko", "tu", "dari", "dan", "atau",
+    "pado", "juo", "untuak", "ka", "dalam", "pulo", "lai", "lah",
+    "adolah", "marupokan", "sabagai", "indak", "alah", "ado",
+    "kini", "inyo", "nyo", "itu", "pun", "tapi", "namun",
+    "karano", "basamo", "sarato", "sacaro", "sahinggo", "sainggo",
+    "baitu", "mako", "supayo", "sadangkan", "tatapi", "walaupun",
+    "ataupun", "maupun", "bahwa", "kalau", "dima", "katiko",
+    "akan", "bisa", "harus", "masih", "bagi", "sarajo",
+    "surang", "sajo", "hanyo", "biaso", "biasonyo", "umumnyo",
+    "sangaik", "bana", "labiah", "paliang", "alun", "mangko"
+}
+
 def get_stopwords(lang: str = "all") -> Set[str]:
     """
     Returns a set of stopwords. 
-    Lang options: 'id' (Indonesian), 'sunda', 'jawa', 'bali', 'en' (English), 'jaksel' (South Jakarta Slang), 'all' (combined).
+    Lang options: 'id' (Indonesian), 'sunda', 'jawa', 'bali', 'minang' (Minangkabau), 'en' (English), 'jaksel' (South Jakarta Slang), 'all' (combined).
     Defaults to 'all' for maximum coverage of Nusantara text.
     """
     stopwords = set()
@@ -86,5 +100,8 @@ def get_stopwords(lang: str = "all") -> Set[str]:
         
     if lang in ['jaksel', 'all']:
         stopwords.update(_JAKSEL_STOPWORDS)
+        
+    if lang in ['minang', 'all']:
+        stopwords.update(_MINANG_STOPWORDS)
         
     return stopwords

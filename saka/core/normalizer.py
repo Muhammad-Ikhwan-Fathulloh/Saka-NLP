@@ -10,6 +10,10 @@ def normalize(text: str) -> str:
     Normalizes slang / informal words into standard Indonesian.
     """
     from .tokenizer import tokenize
+    from .transaction import parse_transaction_units
+    
+    # Pre-normalization: handle transactional units (10k -> 10000)
+    text = parse_transaction_units(text)
     
     tokens = tokenize(text)
     normalized_tokens = []

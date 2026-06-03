@@ -1,0 +1,186 @@
+{
+    "id": {
+        "tidak": "tidak ",
+        "tanggung": "tanggung ",
+        "garis": "garis ",
+        "hancur": "hancur ",
+        "lipat": "lipat ",
+        "sebar": "sebar ",
+        "ebar": "sebar ",
+        "tanda": "tanda ",
+        "anda": "tanda ",
+        "beri": "beri ",
+        "ikut": "ikut ",
+        "campur": "campur ",
+        "ampur": "campur ",
+        "salah": "salah ",
+        "alah": "salah ",
+        "alih": "alih ",
+        "uji": "uji ",
+        "anak": "anak ",
+        "kerja": "kerja ",
+        "tata": "tata ",
+        "mata": "mata ",
+        "jual": "jual ",
+        "beli": "beli ",
+        "guna": "guna ",
+        "daya": "daya ",
+        "budi": "budi ",
+        "temu": "temu ",
+        "ambil": "ambil ",
+        "pindah": "pindah ",
+        "ulang": "ulang ",
+        "olah": "olah ",
+        "suka": "suka ",
+        "duka": "duka ",
+        "bumi": "bumi ",
+        "para": "para ",
+        "awal": "awal ",
+        "akhir": "akhir ",
+        "anti": "anti ",
+        "pasca": "pasca ",
+        "pra": "pra ",
+        "sub": "sub ",
+        "super": "super ",
+        "antar": "antar ",
+        "intra": "intra ",
+        "eko": "eko ",
+        "bio": "bio ",
+        "geo": "geo ",
+        "sosio": "sosio ",
+        "kripto": "kripto ",
+        "multi": "multi ",
+        "semi": "semi ",
+        "non": "non ",
+        "tanggungjawab": "tanggung jawab",
+        "terimakasih": "terima kasih",
+        "olahraga": "olah raga",
+        "beasiswa": "beasiswa",
+        "tandatangan": "tanda tangan",
+        "kacamata": "kaca mata",
+        "saputangan": "sapu tangan",
+        "walikota": "wali kota",
+        "ibukota": "ibu kota",
+        "tatabahasa": "tata bahasa",
+        "kerjasama": "kerja sama",
+        "sumberdaya": "sumber daya",
+        "penanggungjawab": "penanggung jawab",
+        "halalbihalal": "halal bihalal",
+        "simpangsiaur": "simpang siaur",
+        "dukachita": "duka cita",
+        "sukacita": "suka cita",
+        "sukarela": "suka rela",
+        "balatentara": "bala tentara",
+        "belasungkawa": "bela sungkawa",
+        "bumiputera": "bumi putera",
+        "darmawisata": "darma wisata",
+        "kacamulut": "kaca mulut",
+        "kerjakeras": "kerja keras",
+        "luarnegeri": "luar negeri",
+        "orangtua": "orang tua",
+        "rumahmakan": "rumah makan",
+        "serahterima": "serah terima",
+        "tanahair": "tanah air",
+        "tepuktangan": "tepuk tangan"
+    },
+    "sunda": {
+        "hulu": "hulu ",
+        "gadog": "gadog ",
+        "tata": "tata ",
+        "indung": "indung ",
+        "kembang": "kembang ",
+        "panca": "panca ",
+        "maha": "maha ",
+        "silih": "silih ",
+        "mipa": "mipa ",
+        "balé": "balé ",
+        "paré": "paré ",
+        "kolot": "kolot ",
+        "budak": "budak ",
+        "ayeuna": "ayeuna ",
+        "kamari": "kamari ",
+        "isukan": {
+            "replacement": "isukan ",
+            "note": "besok"
+        },
+        "pagéto": "pagéto ",
+        "beurang": "beurang ",
+        "peuting": "peuting ",
+        "subuh": "subuh "
+    },
+    "jawa": {
+        "tata": "tata ",
+        "adi": "adi ",
+        "manca": "manca ",
+        "krama": "krama ",
+        "madya": "madya ",
+        "ngoko": "ngoko ",
+        "asri": "asri ",
+        "utomo": "utomo ",
+        "bhina": "bhina ",
+        "eka": "eka ",
+        "dwi": "dwi ",
+        "tri": "tri ",
+        "catur": "catur ",
+        "panca": "panca ",
+        "sad": "sad ",
+        "sapta": "sapta ",
+        "astau": "astau ",
+        "nawa": "nawa ",
+        "dasa": "dasa "
+    },
+    "minang": {
+        "tata": {
+            "replacement": "tata ",
+            "note": "tata krama"
+        },
+        "nagari": {
+            "replacement": "nagari ",
+            "note": "nagari pariaman"
+        },
+        "adaik": {
+            "replacement": "adaik ",
+            "note": "adat"
+        },
+        "bundo": {
+            "replacement": "bundo ",
+            "note": "bundo kanduang"
+        },
+        "ranah": {
+            "replacement": "ranah ",
+            "note": "ranah minang"
+        },
+        "urang": {
+            "replacement": "urang ",
+            "note": "orang"
+        },
+        "tanah": {
+            "replacement": "tanah ",
+            "note": "tanah ulayat"
+        },
+        "rumah": {
+            "replacement": "rumah ",
+            "note": "rumah gadang"
+        },
+        "paga": {
+            "replacement": "paga ",
+            "note": "pagar"
+        },
+        "niniak": {
+            "replacement": "niniak ",
+            "note": "niniak mamak"
+        },
+        "balai": {
+            "replacement": "balai ",
+            "note": "balai adat"
+        },
+        "mamak": {
+            "replacement": "mamak ",
+            "note": "paman"
+        },
+        "kamanakan": {
+            "replacement": "kamanakan ",
+            "note": "keponakan"
+        }
+    }
+}

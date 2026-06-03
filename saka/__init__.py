@@ -1,4 +1,4 @@
-__version__ = "0.2.3"
+__version__ = "0.2.4"
 
 from .core.tokenizer import tokenize, async_tokenize, get_token_count
 from .core.normalizer import normalize, async_normalize
@@ -6,6 +6,7 @@ from .core.analyzer import analyze, async_analyze
 from .core.emoji_handler import demojize, replace_emoticons
 from .core.prompt import build_prompt, async_build_prompt, parse_llm_output, PromptTemplate
 from .core.agent import Agent, MultiAgentManager, get_react_prompt
+from .core.transaction import parse_transaction_units, extract_transaction_entities
 from .utils.formatter import OutputFormatter
 from .dict.stopwords import get_stopwords
 from .plugins.kbbi_scraper import query_kbbi
@@ -44,6 +45,8 @@ __all__ = [
     "Agent",
     "MultiAgentManager",
     "get_react_prompt",
+    "parse_transaction_units",
+    "extract_transaction_entities",
     "OutputFormatter",
     "get_stopwords",
     "query_kbbi",
@@ -54,8 +57,6 @@ __all__ = [
     "aksara_sunda_to_latin",
     "latin_to_aksara_jawa",
     "aksara_jawa_to_latin",
-    "latin_to_aksara_bali",
-    "aksara_bali_to_latin",
     "latin_to_aksara",
     "aksara_to_latin",
 ]
