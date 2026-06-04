@@ -365,7 +365,7 @@ hasil_dict = saka.<span class="c-fn">parse_llm_output</span>(llm_response, forma
                 <pre class="code-block"><code><span class="c-kw">from</span> saka.evaluation.benchmarker <span class="c-kw">import</span> SakaEval
 
 evaluator = <span class="c-fn">SakaEval</span>(task=<span class="c-st">"sentiment"</span>)
-evaluator.<span class="c-fn">load_hf_dataset</span>(<span class="c-st">"Muhammad-Ikhwan-Fathulloh/Saka-Eval"</span>)
+evaluator.<span class="c-fn">load_hf_dataset</span>(<span class="c-st">"Muhammad-Ikhwan-Fathulloh/Saka-Eval"</span>, name=<span class="c-st">"sentiment"</span>)
 
 <span class="c-cm"># Evaluasi asinkron</span>
 results = <span class="c-kw">await</span> evaluator.<span class="c-fn">evaluate</span>(model, text=<span class="c-st">"text"</span>, label=<span class="c-st">"label"</span>)
@@ -504,7 +504,7 @@ aksara = saka.<span class="c-fn">latin_to_aksara_bali</span>(<span class="c-st">
             <div
                 style="background-color: var(--bg); padding: 1rem; border-radius: 6px; margin-bottom: 1.5rem; border-left: 3px solid var(--primary); font-size: 0.9rem; color: #d1d5db;">
                 Fathulloh, M. I. (2026). <i>Saka-NLP: Indonesian NLP Toolkit for Tokenization and Slang
-                    Processing with Prompting and Agentic AI Support</i> (Version 0.2.4) [Computer software]. Zenodo.
+                    Processing with Prompting and Agentic AI Support</i> (Version 0.2.5) [Computer software]. Zenodo.
                 https://doi.org/10.5281/zenodo.20092640
             </div>
 
@@ -523,7 +523,7 @@ aksara = saka.<span class="c-fn">latin_to_aksara_bali</span>(<span class="c-st">
   month = {5},
   year = {2026},
   publisher = {Zenodo},
-  version = {0.2.4},
+  version = {0.2.5},
   doi = {10.5281/zenodo.20092640},
   url = {https://github.com/Muhammad-Ikhwan-Fathulloh/Saka-NLP}
 }</code></pre>

@@ -39,13 +39,13 @@ async def main():
     # 1. Initialize SakaEval for Sentiment Analysis
     evaluator = SakaEval(task="sentiment")
     
-    # 2. Load dataset from the HuggingFace repository
+    # 2. Load dataset from the HuggingFace repository using config name
     repo_id = "Muhammad-Ikhwan-Fathulloh/Saka-Eval"
-    sentiment_file = "sentiment/saka_sentiment_eval.jsonl"
     
     print(f"Syncing with HuggingFace Repo: {repo_id}...")
     try:
-        evaluator.load_hf_dataset(path=repo_id, data_files=sentiment_file)
+        # Use config name "sentiment" instead of data_files to avoid schema issues
+        evaluator.load_hf_dataset(path=repo_id, name="sentiment")
     except Exception as e:
         print(f"Error loading remote dataset: {e}")
         # Fallback to local

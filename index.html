@@ -107,7 +107,7 @@ pip install -e .</code></pre>
                         <pre class="code-block"><code><span class="c-kw">import</span> saka
 
 <span class="c-fn">print</span>(saka.__version__)
-<span class="c-cm"># Output: 0.2.4</span></code></pre>
+<span class="c-cm"># Output: 0.2.5</span></code></pre>
                     </div>
                 </div>
 
@@ -263,7 +263,7 @@ hasil = saka.<span class="c-fn">parse_llm_output</span>(llm_response, format_typ
                             class="code-block"><code><span class="c-kw">from</span> saka.evaluation.benchmarker <span class="c-kw">import</span> SakaEval
 
 evaluator = <span class="c-fn">SakaEval</span>(task=<span class="c-st">"sentiment"</span>)
-evaluator.<span class="c-fn">load_hf_dataset</span>(<span class="c-st">"username/dataset"</span>)
+evaluator.<span class="c-fn">load_hf_dataset</span>(<span class="c-st">"Muhammad-Ikhwan-Fathulloh/Saka-Eval"</span>, name=<span class="c-st">"sentiment"</span>)
 
 results = <span class="c-kw">await</span> evaluator.<span class="c-fn">evaluate</span>(model, text=<span class="c-st">"text"</span>, label=<span class="c-st">"label"</span>)</code></pre>
                     </div>
@@ -414,7 +414,7 @@ saka --normalize <span class="c-st">"ngapain ke kampus klo libur"</span></code><
             <h4>APA</h4>
             <div class="citation-box-apa">
                 Fathulloh, M. I. (2026). <i>Saka-NLP: Indonesian NLP Toolkit for Tokenization and Slang
-                    Processing with Prompting and Agentic AI Support</i> (Version 0.2.4) [Computer software]. Zenodo.
+                    Processing with Prompting and Agentic AI Support</i> (Version 0.2.5) [Computer software]. Zenodo.
                 https://doi.org/10.5281/zenodo.20092640
             </div>
 
@@ -434,7 +434,7 @@ saka --normalize <span class="c-st">"ngapain ke kampus klo libur"</span></code><
   month = {5},
   year = {2026},
   publisher = {Zenodo},
-  version = {0.2.4},
+  version = {0.2.5},
   doi = {10.5281/zenodo.20092640},
   url = {https://github.com/Muhammad-Ikhwan-Fathulloh/Saka-NLP}
 }</code></pre>
@@ -448,12 +448,11 @@ saka --normalize <span class="c-st">"ngapain ke kampus klo libur"</span></code><
                 <div class="divider" style="margin: 0 auto;"></div>
             </div>
             <ul class="ref-list">
+                <li><strong>Standard Datasets</strong>Carant-AI (Sentiment), Kiuyha (NER), IndoNLU (Task), Tala
+                    (Stopwords).</li>
                 <li><strong>KBBI Daring</strong>Sumber data leksikal resmi Kemendikbud.</li>
-                <li><strong>Slang Lexicon</strong>Corpus Twitter Indonesia (Evan Martua).</li>
-                <li><strong>Ekosistem Sunda</strong>Referensi kamus dan transliterasi SundaDigi + Wiktionary.</li>
-                <li><strong>Ekosistem Jawa</strong>Leksikon komprehensif & transliterasi perpustakaan sastra.org.</li>
-                <li><strong>Ekosistem Bali</strong>Leksikon BASAbali Wiki & transliterasi Aksara Bali.</li>
-                <li><strong>Tala Dataset</strong>Standar stopwords Bahasa Indonesia.</li>
+                <li><strong>Regional</strong>SundaDigi (Sunda), Sastra.org (Jawa), BASAbali Wiki (Bali).</li>
+                <li><strong>Libraries</strong>HuggingFace Datasets, scikit-learn, BeautifulSoup4, Emoji.</li>
             </ul>
         </section>
         <!-- Support Section -->

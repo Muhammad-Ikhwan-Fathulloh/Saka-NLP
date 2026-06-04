@@ -1,4 +1,4 @@
-# Saka: Indonesian NLP with Prompting and Agentic AI Support 🇮🇩
+# Saka: Indonesian NLP with Prompting and Agentic AI Support 🇮🇩 v0.2.5
 
 [**Bahasa Indonesia**](README.md) | [**English**](README_EN.md)
 
@@ -12,13 +12,17 @@
 ---
 
 ## 📌 Table of Contents
-- [✨ Key Features](#-key-features)
-- [🚀 Installation](#-installation)
-- [📖 Basic Usage](#-basic-usage)
-- [🤖 Agentic AI & Prompting](#-agentic-ai--prompting)
-- [📊 Saka-Eval Benchmark](#-saka-eval-benchmark)
-- [🌏 Regional Ecosystem](#-regional-ecosystem)
-- [🛠️ CLI & Citation](#️-cli--citation)
+- [Saka: Indonesian NLP with Prompting and Agentic AI Support 🇮🇩 v0.2.5](#saka-indonesian-nlp-with-prompting-and-agentic-ai-support-v025)
+  - [📌 Table of Contents](#-table-of-contents)
+  - [✨ Key Features](#-key-features)
+  - [🚀 Installation](#-installation)
+  - [📖 Basic Usage](#-basic-usage)
+  - [🤖 Agentic AI \& Prompting](#-agentic-ai--prompting)
+  - [📊 Saka-Eval Benchmark](#-saka-eval-benchmark)
+  - [🌏 Regional Ecosystem](#-regional-ecosystem)
+  - [🛠️ CLI \& Citation](#️-cli--citation)
+  - [🗄️ Sources \& Credits](#️-sources--credits)
+  - [❤️ Support](#️-support)
 
 ---
 
@@ -52,7 +56,7 @@ cd Saka-NLP && pip install -e .
 
 ## 📖 Basic Usage
 
-Saka-NLP is designed to be intuitive. Just `import saka`.
+Saka-NLP is designed to be intuitive. Just `import saka`. Complete examples can be found in [**basic_usage.py**](examples/basic_usage.py).
 
 <details>
 <summary><b>1. Tokenization & Normalization</b></summary>
@@ -60,13 +64,14 @@ Saka-NLP is designed to be intuitive. Just `import saka`.
 ```python
 import saka
 
-# Tokenize
-tokens = saka.tokenize("Halo, apa kabar?") 
-# ['Halo', ',', 'apa', 'kabar', '?']
+# Tokenize (Handles affixes & punctuation)
+text = "Learning NLP in the 5G era is fun!"
+tokens = saka.tokenize(text) 
+# ['Learning', 'NLP', 'in', 'the', '5G', 'era', 'is', 'fun', '!']
 
-# Slang Normalization
-normalized = saka.normalize("klo gimana gw") 
-# 'kalau bagaimana saya'
+# Slang Normalization (Indonesian)
+normalized = saka.normalize("klo gimana ntar gw k kampus") 
+# 'kalau bagaimana nanti saya ke kampus'
 ```
 </details>
 
@@ -77,11 +82,13 @@ normalized = saka.normalize("klo gimana gw")
 import saka
 
 # Morphological Analysis (Handles compound words & fusion)
-print(saka.analyze("menyebarluaskan"))
-# {'root': 'sebar luas', ...}
+word = "mempertanggungjawabkan"
+analysis = saka.analyze(word)
+print(analysis["root"]) # 'tanggung jawab'
 
-# Live KBBI Search
+# Live KBBI Search (Real-time Web Scraping)
 res = saka.query_kbbi("belajar")
+# {'status': 'found', 'definitions': [...]}
 ```
 </details>
 
@@ -90,8 +97,9 @@ res = saka.query_kbbi("belajar")
 
 ```python
 import saka
-# Supports: id, sunda, jawa, bali, en, jaksel
+# Supports: id, sunda, jawa, bali, minang, en, jaksel, all
 stops = saka.get_stopwords("sunda")
+print("eta" in stops) # True
 ```
 </details>
 
@@ -99,34 +107,42 @@ stops = saka.get_stopwords("sunda")
 
 ## 🤖 Agentic AI & Prompting
 
-Build LLM-powered applications with full control over prompts and outputs.
+Build LLM-powered applications with full control. Full examples: [**output_demo.py**](examples/output_demo.py) & [**multi_agent_edu_demo.py**](examples/multi_agent_edu_demo.py).
 
 ```python
 import saka
+from saka import Agent, OutputFormatter
 
-# 1. Token Optimization via Local Formatting
-data = [{"id": 1, "text": "Saka"}]
-output = saka.OutputFormatter.format(data, "json")
+# 1. Output Formatting (Save LLM Tokens!)
+data = [{"word": "saka", "pos": "noun"}]
+# Format to HTML/Markdown locally
+markdown_table = OutputFormatter.format(data, "markdown")
 
-# 2. Structured Prompt Builder
-prompt = saka.build_prompt(role="Analyst", task="Classification", input_data="Text...")
+# 2. Structured Agent & Tool Calling
+bot = Agent("Assistant", "Linguistic Expert")
+bot.add_tool(name="check_meaning", desc="Check KBBI", func=saka.query_kbbi)
 
-# 3. Agent & Tool Calling
-bot = saka.Agent("Assistant", "Helping users")
-bot.add_tool(name="calc", desc="Multiply", func=lambda x: x*2)
+# 3. Prompt Builder (Token Optimization)
+prompt = saka.build_prompt(
+    role="Analyst", 
+    task="Classification", 
+    input_data="Text...",
+    optimize_text=True
+)
 ```
 
 ---
 
 ## 📊 Saka-Eval Benchmark
 
-Evaluate your NLP models with standard Indonesian datasets asynchronously.
+Evaluate your models asynchronously. Example: [**saka_eval_huggingface_demo.py**](examples/saka_eval_huggingface_demo.py).
 
 ```python
 from saka.evaluation.benchmarker import SakaEval
 
 evaluator = SakaEval(task="sentiment")
-evaluator.load_hf_dataset("Muhammad-Ikhwan-Fathulloh/Saka-Eval")
+# Load via config name ("sentiment" or "ner")
+evaluator.load_hf_dataset("Muhammad-Ikhwan-Fathulloh/Saka-Eval", name="sentiment")
 
 results = await evaluator.evaluate(model, text="text", label="label")
 print(f"Accuracy: {results['metrics']['accuracy']:.2%}")
@@ -172,7 +188,7 @@ saka --normalize "ngapain ke kampus klo libur"
   author = {Fathulloh, Muhammad Ikhwan},
   title = {{Saka-NLP: Indonesian NLP Toolkit}},
   year = {2026},
-  version = {0.2.4},
+  version = {0.2.5},
   doi = {10.5281/zenodo.20092640},
   url = {https://github.com/Muhammad-Ikhwan-Fathulloh/Saka-NLP}
 }
@@ -180,7 +196,26 @@ saka --normalize "ngapain ke kampus klo libur"
 
 ---
 
-## ❤️ Credits & Support
+## 🗄️ Sources & Credits
+
+Saka-NLP is built on the foundation of the following research and open datasets. We are grateful to the researchers and contributors:
+
+| Category      | Source                                                                              | Description                  |
+| ------------- | ----------------------------------------------------------------------------------- | ---------------------------- |
+| **Datasets**  | [Carant-AI](https://huggingface.co/datasets/carant-ai/indonesian_sentiment_dataset) | Indonesian Sentiment Dataset |
+|               | [Kiuyha](https://huggingface.co/datasets/Kiuyha/surabaya-ner-dataset)               | Surabaya NER Dataset         |
+|               | [IndoNLU](https://huggingface.co/datasets/indonlp/indonlu)                          | Benchmark Standards          |
+|               | [Tala Dataset](https://github.com/masdevid/ID-Stopwords)                            | Indonesian Stopwords         |
+| **Lexicons**  | [SundaDigi](https://sundadigi.com)                                                  | Sundanese Digital Dictionary |
+|               | [Sastra.org](https://sastra.org)                                                    | Javanese Lexicon             |
+|               | [BASAbali Wiki](https://basabali.org)                                               | Balinese Lexicon             |
+| **Libraries** | [HuggingFace](https://huggingface.co)                                               | Datasets & Hub Ecoystem      |
+|               | [scikit-learn](https://scikit-learn.org)                                            | Evaluation Metrics           |
+|               | [Emoji/Emot](https://pypi.org/project/emoji/)                                       | Social Media Text Handling   |
+
+---
+
+## ❤️ Support
 - **Architect**: [Muhammad Ikhwan Fathulloh](https://github.com/Muhammad-Ikhwan-Fathulloh)
 - **License**: [MIT License](LICENSE)
 - **Support**: [Saweria](https://saweria.co/ikhwanfathulloh) | [Trakteer](https://trakteer.id/kexnp7aorpxyaz70y7gn)
