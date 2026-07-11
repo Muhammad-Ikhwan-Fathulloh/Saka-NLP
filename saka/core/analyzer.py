@@ -30,6 +30,14 @@ except Exception:
     _MINANG_DICT = {}
 
 try:
+    with open(os.path.join(BASE_DIR, 'dict', 'batak_dict.json'), 'r', encoding='utf-8') as f:
+        _raw = json.load(f)
+        # Strip the _meta entry — it's not a word
+        _BATAK_DICT = {k: v for k, v in _raw.items() if k != '_meta'}
+except Exception:
+    _BATAK_DICT = {}
+
+try:
     with open(os.path.join(BASE_DIR, 'dict', 'compounds.json'), 'r', encoding='utf-8') as f:
         _COMPOUNDS_DATA = json.load(f)
         # Flatten all patterns into a single dictionary for general lookup
@@ -51,6 +59,8 @@ def check_dict(w: str) -> List[str]:
         langs.append('bali')
     if w in _MINANG_DICT:
         langs.append('minang')
+    if w in _BATAK_DICT:
+        langs.append('batak')
     return langs
 
 @lru_cache(maxsize=10000)
@@ -116,7 +126,13 @@ def analyze(word: str) -> Dict[str, Any]:
     regional_prefix_rules = [
         ('dipika', ''), ('pika', ''), ('barang', ''), ('silih', ''), ('mipa', ''), ('nga', ''), 
         ('dak', ''), ('kok', ''), ('tak', ''), ('mbok', ''), ('sa', ''), ('pa', ''), ('pi', ''), ('ka', ''), ('ti', ''), ('ba', ''),
-        ('ma', ''), ('ta', ''), ('pa', '')
+        ('ma', ''), ('ta', ''), ('pa', ''),
+        # Batak Toba prefixes (Nababan 1981, §4.6)
+        ('manga', ''), ('mang', ''), ('mam', ''), ('man', ''), ('mar', ''), ('par', ''), ('tar', ''), ('pam', ''), ('pan', ''),
+
+        ('hum', ''), ('him', ''), ('um', ''), ('pam', ''), ('ham', ''),
+        # Batak Karo prefixes (Woollams 1996, §3.3-3.6)
+        ('nge', ''), ('nge', 'g'), ('er', ''), ('per', ''), ('ke', ''), ('pe', ''), ('ter', ''),
     ]
     all_prefix_rules = indo_prefix_rules + regional_prefix_rules
 

@@ -51,6 +51,7 @@
             <a href="#sunda" class="nav-link">Ekosistem Sunda</a>
             <a href="#jawa" class="nav-link">Ekosistem Jawa</a>
             <a href="#bali" class="nav-link">Ekosistem Bali</a>
+            <a href="#batak" class="nav-link">Ekosistem Batak</a>
         </div>
 
         <div class="nav-group">
@@ -206,14 +207,15 @@ res2 = saka.<span class="c-fn">analyze</span>(<span class="c-st">"bundokanduang"
                 </tr>
                 <tr>
                     <td><code>"all"</code> (Default)</td>
-                    <td>Gabungan seluruh bahasa yang didukung. (900+ kata)</td>
+                    <td>Gabungan seluruh bahasa yang didukung. (1 200+ kata)</td>
                 </tr>
                 <tr>
                     <td><code>"id"</code></td>
                     <td>Eksklusif Stopwords Indonesia versi Tala Dataset.</td>
                 </tr>
                 <tr>
-                    <td><code>"sunda"</code> / <code>"jawa"</code> / <code>"bali"</code> / <code>"minang"</code></td>
+                    <td><code>"sunda"</code> / <code>"jawa"</code> / <code>"bali"</code> / <code>"minang"</code> /
+                        <code>"batak"</code></td>
                     <td>Eksklusif Stopwords region yang diminta.</td>
                 </tr>
                 <tr>
@@ -489,6 +491,48 @@ aksara = saka.<span class="c-fn">latin_to_aksara_bali</span>(<span class="c-st">
             </div>
         </section>
 
+        <section class="docs-section" id="batak">
+            <h2>Ekosistem & Leksikon Batak <small style="color: var(--accent);">(Baru di v0.2.6)</small></h2>
+            <p>Dukungan bahasa Batak lintas tiga dialek — Toba, Karo, dan Mandailing — dengan leksikon <strong>780+
+                    kata</strong>
+                bersumber dari tata bahasa akademis dan KamusBatak.com.</p>
+
+            <div class="method-signature">
+                <span class="keyword">from</span> saka.core.analyzer <span class="keyword">import</span> <span
+                    class="method">_BATAK_DICT</span>
+            </div>
+
+            <div class="code-container">
+                <div class="code-header">
+                    <span class="code-lang">python</span>
+                    <button class="copy-btn" onclick="copyCode(this)">Salin</button>
+                </div>
+                <pre
+                    class="code-block"><code><span class="c-kw">import</span> saka
+<span class="c-kw">from</span> saka.core.analyzer <span class="c-kw">import</span> _BATAK_DICT
+
+<span class="c-cm"># Deteksi kata Batak dalam pipeline morfologi</span>
+<span class="c-fn">print</span>(saka.<span class="c-fn">analyze</span>(<span class="c-st">"holong"</span>)[<span class="c-st">"regional_matches"</span>])  <span class="c-cm"># ['batak'] — kasih/cinta</span>
+<span class="c-fn">print</span>(saka.<span class="c-fn">analyze</span>(<span class="c-st">"mangan"</span>)[<span class="c-st">"regional_matches"</span>])  <span class="c-cm"># ['batak'] — makan</span>
+
+<span class="c-cm"># Stopwords Batak (Nababan 1981; Woollams 1996)</span>
+sw = saka.<span class="c-fn">get_stopwords</span>(<span class="c-st">"batak"</span>)
+<span class="c-fn">print</span>(<span class="c-st">f"{len(sw)} kata fungsi Batak"</span>)
+
+<span class="c-cm"># Lookup kamus langsung</span>
+<span class="c-fn">print</span>(_BATAK_DICT[<span class="c-st">"horas"</span>][<span class="c-st">"arti"</span>])   <span class="c-cm"># halo, selamat (salam khas Batak Toba)</span>
+<span class="c-fn">print</span>(_BATAK_DICT[<span class="c-st">"denggan"</span>][<span class="c-st">"arti"</span>]) <span class="c-cm"># baik, bagus</span></code></pre>
+            </div>
+
+            <p><strong>Sumber Referensi:</strong></p>
+            <ul style="color: var(--text-muted); font-size: 0.9rem; list-style: disc; padding-left: 1.5rem;">
+                <li>Nababan, P.W.J. (1981). <em>A Grammar of Toba-Batak</em>. Pacific Linguistics, ANU.</li>
+                <li>Woollams, G. (1996). <em>A Grammar of Karo Batak, Sumatra</em>. Pacific Linguistics, ANU.</li>
+                <li><a href="https://www.kamusbatak.com" target="_blank"
+                        style="color: var(--accent);">KamusBatak.Com</a> — Kamus Batak–Indonesia Daring</li>
+            </ul>
+        </section>
+
         <!-- Citation Section -->
         <section class="docs-section citation-section" id="citation"
             style="background-color: var(--surface); padding: 3rem 2rem; border-radius: 12px; margin-top: 2rem; border: 1px solid var(--border);">
@@ -504,7 +548,7 @@ aksara = saka.<span class="c-fn">latin_to_aksara_bali</span>(<span class="c-st">
             <div
                 style="background-color: var(--bg); padding: 1rem; border-radius: 6px; margin-bottom: 1.5rem; border-left: 3px solid var(--primary); font-size: 0.9rem; color: #d1d5db;">
                 Fathulloh, M. I. (2026). <i>Saka-NLP: Indonesian NLP Toolkit for Tokenization and Slang
-                    Processing with Prompting and Agentic AI Support</i> (Version 0.2.5) [Computer software]. Zenodo.
+                    Processing with Prompting and Agentic AI Support</i> (Version 0.2.6) [Computer software]. Zenodo.
                 https://doi.org/10.5281/zenodo.20092640
             </div>
 
@@ -523,7 +567,7 @@ aksara = saka.<span class="c-fn">latin_to_aksara_bali</span>(<span class="c-st">
   month = {5},
   year = {2026},
   publisher = {Zenodo},
-  version = {0.2.5},
+  version = {0.2.6},
   doi = {10.5281/zenodo.20092640},
   url = {https://github.com/Muhammad-Ikhwan-Fathulloh/Saka-NLP}
 }</code></pre>

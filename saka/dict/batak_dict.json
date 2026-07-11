@@ -1,0 +1,3132 @@
+{
+  "_meta": {
+    "bahasa": "Batak (Toba, Karo, Mandailing)",
+    "sumber": [
+      "KamusBatak.Com — https://www.kamusbatak.com/ (daring, berbasis komunitas)",
+      "Nababan, P.W.J. (1981). A Grammar of Toba-Batak (D-37). Pacific Linguistics, ANU. DOI: 10.15144/PL-D37",
+      "Woollams, G. (1996). A Grammar of Karo Batak, Sumatra (C-130). Pacific Linguistics, ANU. DOI: 10.15144/PL-C130",
+      "Van der Tuuk, H.N. (1861). Bataksch-Nederduitsch woordenboek. Amsterdam: Muller"
+    ],
+    "catatan": "Kamus ini mencakup kosakata Batak Toba, Karo, dan Mandailing. Kolom 'dialek' menunjukkan asal kata."
+  },
+  "horas": {
+    "arti": "halo, selamat (salam khas Batak Toba)",
+    "keterangan": "Toba - salam umum"
+  },
+  "mejuah-juah": {
+    "arti": "salam sehat dan sejahtera",
+    "keterangan": "Karo - salam khas"
+  },
+  "hata": {
+    "arti": "kata, bahasa, ucapan",
+    "keterangan": "Toba"
+  },
+  "niari": {
+    "arti": "sekarang, saat ini",
+    "keterangan": "Toba"
+  },
+  "ari": {
+    "arti": "hari",
+    "keterangan": "Toba/Karo"
+  },
+  "wari": {
+    "arti": "hari",
+    "keterangan": "Karo"
+  },
+  "borngin": {
+    "arti": "malam",
+    "keterangan": "Toba"
+  },
+  "berngi": {
+    "arti": "malam",
+    "keterangan": "Karo"
+  },
+  "sogot": {
+    "arti": "pagi",
+    "keterangan": "Toba"
+  },
+  "pepagi": {
+    "arti": "pagi",
+    "keterangan": "Karo"
+  },
+  "taon": {
+    "arti": "tahun",
+    "keterangan": "Toba"
+  },
+  "tahun": {
+    "arti": "tahun",
+    "keterangan": "Karo"
+  },
+  "bulan": {
+    "arti": "bulan",
+    "keterangan": "Toba/Karo"
+  },
+  "udan": {
+    "arti": "hujan",
+    "keterangan": "Toba"
+  },
+  "oden": {
+    "arti": "hujan",
+    "keterangan": "Karo"
+  },
+  "angin": {
+    "arti": "angin",
+    "keterangan": "Toba/Karo"
+  },
+  "lau": {
+    "arti": "air, sungai",
+    "keterangan": "Karo"
+  },
+  "aek": {
+    "arti": "air",
+    "keterangan": "Toba"
+  },
+  "dolok": {
+    "arti": "gunung, bukit",
+    "keterangan": "Toba"
+  },
+  "deleng": {
+    "arti": "gunung",
+    "keterangan": "Karo"
+  },
+  "tao": {
+    "arti": "danau",
+    "keterangan": "Toba - Tao Toba = Danau Toba"
+  },
+  "juma": {
+    "arti": "ladang, sawah",
+    "keterangan": "Karo"
+  },
+  "huma": {
+    "arti": "ladang, sawah",
+    "keterangan": "Toba"
+  },
+  "huta": {
+    "arti": "kampung, desa",
+    "keterangan": "Toba"
+  },
+  "kuta": {
+    "arti": "kampung, desa",
+    "keterangan": "Karo"
+  },
+  "jabu": {
+    "arti": "rumah, keluarga",
+    "keterangan": "Toba"
+  },
+  "rumah": {
+    "arti": "rumah",
+    "keterangan": "Karo"
+  },
+  "bagas": {
+    "arti": "dalam, di dalam",
+    "keterangan": "Toba/Karo"
+  },
+  "jolo": {
+    "arti": "depan, dulu, sebelum",
+    "keterangan": "Toba"
+  },
+  "pudi": {
+    "arti": "belakang, setelah",
+    "keterangan": "Karo"
+  },
+  "ginjang": {
+    "arti": "atas, tinggi",
+    "keterangan": "Toba"
+  },
+  "ganjang": {
+    "arti": "panjang, tinggi",
+    "keterangan": "Karo"
+  },
+  "toru": {
+    "arti": "bawah",
+    "keterangan": "Toba"
+  },
+  "teruh": {
+    "arti": "bawah",
+    "keterangan": "Karo"
+  },
+  "inang": {
+    "arti": "ibu",
+    "keterangan": "Toba - sapaan hormat"
+  },
+  "nande": {
+    "arti": "ibu",
+    "keterangan": "Karo - sapaan umum"
+  },
+  "amang": {
+    "arti": "bapak",
+    "keterangan": "Toba - sapaan hormat"
+  },
+  "bapa": {
+    "arti": "bapak, ayah",
+    "keterangan": "Karo/Toba"
+  },
+  "anak": {
+    "arti": "anak",
+    "keterangan": "Toba/Karo"
+  },
+  "boru": {
+    "arti": "putri, marga pihak istri",
+    "keterangan": "Toba"
+  },
+  "bere": {
+    "arti": "keponakan",
+    "keterangan": "Toba"
+  },
+  "turang": {
+    "arti": "saudara sesama jenis",
+    "keterangan": "Karo"
+  },
+  "iboto": {
+    "arti": "saudara beda jenis",
+    "keterangan": "Toba"
+  },
+  "haha": {
+    "arti": "kakak sesama jenis",
+    "keterangan": "Toba"
+  },
+  "angka": {
+    "arti": "para, mereka (jamak)",
+    "keterangan": "Toba - penanda jamak"
+  },
+  "ompu": {
+    "arti": "kakek, nenek, buyut",
+    "keterangan": "Toba"
+  },
+  "nini": {
+    "arti": "kakek/nenek (Karo)",
+    "keterangan": "Karo"
+  },
+  "nai": {
+    "arti": "ibu dari… (teknonym)",
+    "keterangan": "Toba - mis. Nai Sinta"
+  },
+  "amani": {
+    "arti": "ayah dari… (teknonym)",
+    "keterangan": "Toba - mis. Amani Sinta"
+  },
+  "mangan": {
+    "arti": "makan",
+    "keterangan": "Toba"
+  },
+  "man": {
+    "arti": "makan",
+    "keterangan": "Karo"
+  },
+  "minum": {
+    "arti": "minum",
+    "keterangan": "Toba/Karo"
+  },
+  "modom": {
+    "arti": "tidur",
+    "keterangan": "Toba"
+  },
+  "medem": {
+    "arti": "tidur, berbaring",
+    "keterangan": "Karo"
+  },
+  "ro": {
+    "arti": "datang",
+    "keterangan": "Toba"
+  },
+  "reh": {
+    "arti": "datang",
+    "keterangan": "Karo"
+  },
+  "lao": {
+    "arti": "pergi",
+    "keterangan": "Toba"
+  },
+  "lawes": {
+    "arti": "pergi, berangkat",
+    "keterangan": "Karo"
+  },
+  "mulak": {
+    "arti": "pulang, kembali",
+    "keterangan": "Toba"
+  },
+  "mulih": {
+    "arti": "pulang, kembali",
+    "keterangan": "Karo"
+  },
+  "manurat": {
+    "arti": "menulis",
+    "keterangan": "Toba"
+  },
+  "nurat": {
+    "arti": "menulis",
+    "keterangan": "Karo"
+  },
+  "manjaha": {
+    "arti": "membaca",
+    "keterangan": "Toba"
+  },
+  "ndarami": {
+    "arti": "mencari",
+    "keterangan": "Karo"
+  },
+  "marloja": {
+    "arti": "bermain",
+    "keterangan": "Toba"
+  },
+  "mermaen": {
+    "arti": "bermain",
+    "keterangan": "Karo"
+  },
+  "tardok": {
+    "arti": "disebut, dikatakan",
+    "keterangan": "Toba"
+  },
+  "nangkih": {
+    "arti": "naik, mendaki",
+    "keterangan": "Karo"
+  },
+  "naik": {
+    "arti": "naik",
+    "keterangan": "Toba"
+  },
+  "mago": {
+    "arti": "hilang, lenyap",
+    "keterangan": "Toba"
+  },
+  "sahat": {
+    "arti": "tiba, sampai",
+    "keterangan": "Toba"
+  },
+  "sah": {
+    "arti": "tiba, sampai",
+    "keterangan": "Karo"
+  },
+  "martangiang": {
+    "arti": "berdoa",
+    "keterangan": "Toba"
+  },
+  "nggit": {
+    "arti": "mau, ingin",
+    "keterangan": "Karo"
+  },
+  "naeng": {
+    "arti": "mau, hendak, ingin",
+    "keterangan": "Toba"
+  },
+  "boi": {
+    "arti": "bisa, mampu",
+    "keterangan": "Toba"
+  },
+  "banci": {
+    "arti": "bisa, boleh, mampu",
+    "keterangan": "Karo"
+  },
+  "tola": {
+    "arti": "tidak bisa, tidak mampu",
+    "keterangan": "Toba"
+  },
+  "nggo": {
+    "arti": "sudah, telah (perfektif)",
+    "keterangan": "Karo - varian enggo"
+  },
+  "enggo": {
+    "arti": "sudah, telah",
+    "keterangan": "Karo"
+  },
+  "denggan": {
+    "arti": "baik, bagus",
+    "keterangan": "Karo"
+  },
+  "denggan-denggan": {
+    "arti": "sangat baik, baik-baik saja",
+    "keterangan": "Karo - reduplikasi penekanan"
+  },
+  "burju": {
+    "arti": "baik hati, jujur, baik",
+    "keterangan": "Toba"
+  },
+  "roa": {
+    "arti": "buruk, jelek",
+    "keterangan": "Karo/Toba"
+  },
+  "balga": {
+    "arti": "besar",
+    "keterangan": "Toba/Karo"
+  },
+  "gedang": {
+    "arti": "panjang, besar",
+    "keterangan": "Karo"
+  },
+  "kitik": {
+    "arti": "kecil",
+    "keterangan": "Karo"
+  },
+  "otik": {
+    "arti": "sedikit, kecil",
+    "keterangan": "Toba"
+  },
+  "godang": {
+    "arti": "banyak",
+    "keterangan": "Toba"
+  },
+  "melala": {
+    "arti": "banyak",
+    "keterangan": "Karo"
+  },
+  "tibbo": {
+    "arti": "tinggi, luhur",
+    "keterangan": "Toba"
+  },
+  "timbul": {
+    "arti": "muncul, timbul",
+    "keterangan": "Toba"
+  },
+  "dao": {
+    "arti": "jauh",
+    "keterangan": "Toba/Karo"
+  },
+  "ndeher": {
+    "arti": "dekat, hampir",
+    "keterangan": "Karo"
+  },
+  "rik": {
+    "arti": "dengan (komitif)",
+    "keterangan": "Karo"
+  },
+  "hepeng": {
+    "arti": "uang",
+    "keterangan": "Toba"
+  },
+  "duit": {
+    "arti": "uang",
+    "keterangan": "Karo"
+  },
+  "buku": {
+    "arti": "buku",
+    "keterangan": "Toba/Karo"
+  },
+  "motor": {
+    "arti": "kendaraan bermotor",
+    "keterangan": "Toba/Karo"
+  },
+  "sikkola": {
+    "arti": "sekolah",
+    "keterangan": "Toba"
+  },
+  "sekolah": {
+    "arti": "sekolah",
+    "keterangan": "Karo"
+  },
+  "guru": {
+    "arti": "guru, pendeta (Toba)",
+    "keterangan": "Toba/Karo"
+  },
+  "raja": {
+    "arti": "raja, pemimpin",
+    "keterangan": "Toba"
+  },
+  "datu": {
+    "arti": "dukun, tabib, peramal",
+    "keterangan": "Toba"
+  },
+  "sibaso": {
+    "arti": "dukun (perempuan)",
+    "keterangan": "Toba"
+  },
+  "adat": {
+    "arti": "adat istiadat",
+    "keterangan": "Toba/Karo"
+  },
+  "ulos": {
+    "arti": "kain adat Batak Toba",
+    "keterangan": "Toba - pakaian adat"
+  },
+  "uis": {
+    "arti": "kain, pakaian",
+    "keterangan": "Karo"
+  },
+  "tarombo": {
+    "arti": "silsilah, genealogi",
+    "keterangan": "Toba"
+  },
+  "merga": {
+    "arti": "marga (Karo)",
+    "keterangan": "Karo - 5 marga utama: Karo-karo, Ginting, Tarigan, Sembiring, Perangin-angin"
+  },
+  "marga": {
+    "arti": "marga, klan patrilineal",
+    "keterangan": "Toba"
+  },
+  "hamoraon": {
+    "arti": "kekayaan, kemakmuran",
+    "keterangan": "Toba - salah satu tiga tujuan hidup (3H)"
+  },
+  "hagabeon": {
+    "arti": "banyak keturunan",
+    "keterangan": "Toba - salah satu tujuan hidup"
+  },
+  "hasangapon": {
+    "arti": "kehormatan, kemuliaan",
+    "keterangan": "Toba - salah satu tujuan hidup"
+  },
+  "dalihan natolu": {
+    "arti": "tiga tungku (sistem kekerabatan)",
+    "keterangan": "Toba - hulahula, dongan tubu, boru"
+  },
+  "hulahula": {
+    "arti": "pihak pemberi istri (mertua)",
+    "keterangan": "Toba"
+  },
+  "dongan": {
+    "arti": "teman, kawan, kerabat semarga",
+    "keterangan": "Toba"
+  },
+  "dongan tubu": {
+    "arti": "saudara semarga",
+    "keterangan": "Toba"
+  },
+  "kalimbubu": {
+    "arti": "pihak pemberi istri (Karo)",
+    "keterangan": "Karo - dihormati seperti dewa tampak"
+  },
+  "anak beru": {
+    "arti": "pihak penerima istri (Karo)",
+    "keterangan": "Karo"
+  },
+  "sinina": {
+    "arti": "saudara semarga (Karo)",
+    "keterangan": "Karo"
+  },
+  "umpasa": {
+    "arti": "pantun/petuah adat Batak",
+    "keterangan": "Toba - ungkapan bijak bersajak"
+  },
+  "gondang": {
+    "arti": "musik tradisional Batak Toba",
+    "keterangan": "Toba"
+  },
+  "ogung": {
+    "arti": "gong Batak",
+    "keterangan": "Toba"
+  },
+  "hasapi": {
+    "arti": "kecapi Batak",
+    "keterangan": "Toba"
+  },
+  "gendang": {
+    "arti": "gendang (Karo)",
+    "keterangan": "Karo"
+  },
+  "tor-tor": {
+    "arti": "tari adat Batak Toba",
+    "keterangan": "Toba"
+  },
+  "landek": {
+    "arti": "tari adat Batak Karo",
+    "keterangan": "Karo"
+  },
+  "pesta": {
+    "arti": "pesta, perayaan adat",
+    "keterangan": "Toba/Karo"
+  },
+  "sada": {
+    "arti": "satu",
+    "keterangan": "Toba/Karo"
+  },
+  "dua": {
+    "arti": "dua",
+    "keterangan": "Toba/Karo"
+  },
+  "tolu": {
+    "arti": "tiga",
+    "keterangan": "Toba"
+  },
+  "telu": {
+    "arti": "tiga",
+    "keterangan": "Karo"
+  },
+  "opat": {
+    "arti": "empat",
+    "keterangan": "Toba/Karo"
+  },
+  "lima": {
+    "arti": "lima",
+    "keterangan": "Toba/Karo"
+  },
+  "onom": {
+    "arti": "enam",
+    "keterangan": "Toba"
+  },
+  "enem": {
+    "arti": "enam",
+    "keterangan": "Karo"
+  },
+  "pitu": {
+    "arti": "tujuh",
+    "keterangan": "Toba/Karo"
+  },
+  "ualu": {
+    "arti": "delapan",
+    "keterangan": "Toba"
+  },
+  "waluh": {
+    "arti": "delapan",
+    "keterangan": "Karo"
+  },
+  "sia": {
+    "arti": "sembilan",
+    "keterangan": "Toba/Karo"
+  },
+  "sampulu": {
+    "arti": "sepuluh",
+    "keterangan": "Toba - sappulu"
+  },
+  "sepuluh": {
+    "arti": "sepuluh",
+    "keterangan": "Karo"
+  },
+  "surat batak": {
+    "arti": "aksara Batak tradisional",
+    "keterangan": "Toba/Karo - aksara silabis turunan Pallava India"
+  },
+  "pustaha": {
+    "arti": "buku kulit kayu berisi ilmu datu",
+    "keterangan": "Toba - manuskrip tradisional"
+  },
+  "pinar": {
+    "arti": "pintar, cerdas",
+    "keterangan": "Karo"
+  },
+  "pinter": {
+    "arti": "pandai, pintar",
+    "keterangan": "Toba - sering juga 'pistar'"
+  },
+  "pistar": {
+    "arti": "pintar, cerdas",
+    "keterangan": "Toba"
+  },
+  "malomo": {
+    "arti": "mudah, gampang",
+    "keterangan": "Toba"
+  },
+  "gaor": {
+    "arti": "nama",
+    "keterangan": "Toba - goar"
+  },
+  "goar": {
+    "arti": "nama",
+    "keterangan": "Toba"
+  },
+  "gelar": {
+    "arti": "nama, gelar",
+    "keterangan": "Karo"
+  },
+  "pos": {
+    "arti": "percaya, iman",
+    "keterangan": "Toba - pos ni roha = iman/kepercayaan"
+  },
+  "roha": {
+    "arti": "hati, pikiran, perasaan",
+    "keterangan": "Toba"
+  },
+  "ukur": {
+    "arti": "hati, pikiran, perasaan",
+    "keterangan": "Karo"
+  },
+  "ate": {
+    "arti": "hati, rasa",
+    "keterangan": "Karo"
+  },
+  "sai": {
+    "arti": "selalu, selamanya",
+    "keterangan": "Toba"
+  },
+  "tong": {
+    "arti": "selalu, terus",
+    "keterangan": "Karo - tongtong"
+  },
+  "las": {
+    "arti": "senang, gembira, panas",
+    "keterangan": "Karo"
+  },
+  "badia": {
+    "arti": "suci, kudus",
+    "keterangan": "Toba/Karo"
+  },
+  "dame": {
+    "arti": "damai, tenteram",
+    "keterangan": "Toba"
+  },
+  "rende": {
+    "arti": "nyanyi, lagu",
+    "keterangan": "Karo"
+  },
+  "ende": {
+    "arti": "nyanyian, lagu rohani",
+    "keterangan": "Toba"
+  },
+  "marbada": {
+    "arti": "bertengkar, berselisih",
+    "keterangan": "Toba"
+  },
+  "tarbadabada": {
+    "arti": "sedang bertengkar (karo)",
+    "keterangan": "Karo"
+  },
+  "parjalanan": {
+    "arti": "perjalanan",
+    "keterangan": "Toba"
+  },
+  "perdalanen": {
+    "arti": "perjalanan",
+    "keterangan": "Karo"
+  },
+  "tano": {
+    "arti": "tanah, bumi, kuburan",
+    "keterangan": "Toba"
+  },
+  "taneh": {
+    "arti": "tanah",
+    "keterangan": "Karo"
+  },
+  "batu": {
+    "arti": "batu",
+    "keterangan": "Toba/Karo"
+  },
+  "kayu": {
+    "arti": "pohon, kayu",
+    "keterangan": "Toba/Karo"
+  },
+  "hau": {
+    "arti": "pohon, kayu",
+    "keterangan": "Toba"
+  },
+  "bosi": {
+    "arti": "besi",
+    "keterangan": "Toba/Karo"
+  },
+  "emas": {
+    "arti": "emas",
+    "keterangan": "Toba — mas"
+  },
+  "mas": {
+    "arti": "emas",
+    "keterangan": "Toba"
+  },
+  "pirak": {
+    "arti": "perak",
+    "keterangan": "Toba"
+  },
+  "api": {
+    "arti": "api",
+    "keterangan": "Toba"
+  },
+  "apui": {
+    "arti": "api",
+    "keterangan": "Karo"
+  },
+  "etek": {
+    "arti": "sedikit",
+    "keterangan": "Karo"
+  },
+  "hoda": {
+    "arti": "kuda",
+    "keterangan": "Toba/Karo"
+  },
+  "bihal": {
+    "arti": "anjing",
+    "keterangan": "Karo"
+  },
+  "biang": {
+    "arti": "anjing",
+    "keterangan": "Toba"
+  },
+  "manuk": {
+    "arti": "ayam, unggas",
+    "keterangan": "Toba/Karo"
+  },
+  "horbo": {
+    "arti": "kerbau",
+    "keterangan": "Toba"
+  },
+  "kerbo": {
+    "arti": "kerbau",
+    "keterangan": "Karo"
+  },
+  "ihan": {
+    "arti": "ikan mas (Danau Toba)",
+    "keterangan": "Toba — ikan khas"
+  },
+  "dekke": {
+    "arti": "ikan",
+    "keterangan": "Toba"
+  },
+  "dekke naniarsik": {
+    "arti": "ikan mas bumbu arsik (masakan adat)",
+    "keterangan": "Toba"
+  },
+  "ikan": {
+    "arti": "ikan",
+    "keterangan": "Karo"
+  },
+  "nakan": {
+    "arti": "nasi, makanan",
+    "keterangan": "Karo"
+  },
+  "indahan": {
+    "arti": "nasi",
+    "keterangan": "Toba"
+  },
+  "dengke": {
+    "arti": "ikan (Toba lama)",
+    "keterangan": "Toba — bentuk lama"
+  },
+  "bere-bere": {
+    "arti": "anak saudara ibu, keponakan (Toba)",
+    "keterangan": "Toba"
+  },
+  "sipanganon": {
+    "arti": "makanan (yang akan dimakan)",
+    "keterangan": "Toba — bentuk promisorif"
+  },
+  "pangan": {
+    "arti": "makanan, makan",
+    "keterangan": "Karo"
+  },
+  "inumen": {
+    "arti": "minuman",
+    "keterangan": "Karo"
+  },
+  "harejo": {
+    "arti": "pekerjaan",
+    "keterangan": "Karo"
+  },
+  "ulaon": {
+    "arti": "pekerjaan, acara, hajatan",
+    "keterangan": "Toba"
+  },
+  "marsiulaon": {
+    "arti": "bekerja",
+    "keterangan": "Toba"
+  },
+  "erdahin": {
+    "arti": "bekerja",
+    "keterangan": "Karo"
+  },
+  "dahin": {
+    "arti": "pekerjaan",
+    "keterangan": "Karo"
+  },
+  "pago-pago": {
+    "arti": "besok pagi",
+    "keterangan": "Toba"
+  },
+  "tading": {
+    "arti": "tinggal, tertinggal, menetap",
+    "keterangan": "Karo/Toba"
+  },
+  "tading-tading": {
+    "arti": "selalu tinggal, tidak pernah pergi",
+    "keterangan": "Karo — reduplikasi"
+  },
+  "mangolu": {
+    "arti": "hidup, masih hidup",
+    "keterangan": "Toba"
+  },
+  "nggeluh": {
+    "arti": "hidup",
+    "keterangan": "Karo"
+  },
+  "mate": {
+    "arti": "mati, meninggal",
+    "keterangan": "Toba/Karo"
+  },
+  "sakit": {
+    "arti": "sakit",
+    "keterangan": "Toba/Karo"
+  },
+  "marsahit": {
+    "arti": "sedang sakit",
+    "keterangan": "Toba"
+  },
+  "pinakiten": {
+    "arti": "penyakit, orang sakit",
+    "keterangan": "Karo"
+  },
+  "pinarit": {
+    "arti": "penyakit",
+    "keterangan": "Toba — dari 'sakit'"
+  },
+  "doktor": {
+    "arti": "dokter",
+    "keterangan": "Toba/Karo"
+  },
+  "tambar": {
+    "arti": "obat",
+    "keterangan": "Karo"
+  },
+  "hapur": {
+    "arti": "kapur (untuk sirih)",
+    "keterangan": "Toba/Karo"
+  },
+  "pinang": {
+    "arti": "pinang, pohon pinang",
+    "keterangan": "Karo"
+  },
+  "burangir": {
+    "arti": "sirih",
+    "keterangan": "Toba"
+  },
+  "belo": {
+    "arti": "sirih",
+    "keterangan": "Karo"
+  },
+  "pir": {
+    "arti": "kuat, keras, teguh",
+    "keterangan": "Toba"
+  },
+  "gogos": {
+    "arti": "kuat, keras",
+    "keterangan": "Karo — gogo"
+  },
+  "gogo": {
+    "arti": "kekuatan, tenaga",
+    "keterangan": "Toba"
+  },
+  "uli": {
+    "arti": "cantik, indah, bagus, pulang",
+    "keterangan": "Karo/Toba"
+  },
+  "ulina": {
+    "arti": "kecantikannya",
+    "keterangan": "Toba"
+  },
+  "tiur": {
+    "arti": "terang, jernih, bersih",
+    "keterangan": "Toba"
+  },
+  "terang": {
+    "arti": "terang, jelas",
+    "keterangan": "Karo"
+  },
+  "nggelap": {
+    "arti": "gelap",
+    "keterangan": "Karo"
+  },
+  "golap": {
+    "arti": "gelap",
+    "keterangan": "Toba"
+  },
+  "bontar": {
+    "arti": "putih",
+    "keterangan": "Toba"
+  },
+  "mbentar": {
+    "arti": "putih",
+    "keterangan": "Karo"
+  },
+  "habang": {
+    "arti": "terbang, merah",
+    "keterangan": "Toba — merah (biring/habang)"
+  },
+  "biring": {
+    "arti": "hitam, gelap, merah",
+    "keterangan": "Karo — hitam; Toba — merah/hitam"
+  },
+  "gara": {
+    "arti": "merah",
+    "keterangan": "Karo"
+  },
+  "metagah": {
+    "arti": "panjang (Karo)",
+    "keterangan": "Karo"
+  },
+  "nampuna": {
+    "arti": "tidak punya",
+    "keterangan": "Toba — la adong"
+  },
+  "adong": {
+    "arti": "ada, terdapat",
+    "keterangan": "Toba"
+  },
+  "lit": {
+    "arti": "ada, terdapat",
+    "keterangan": "Karo"
+  },
+  "ndang adong": {
+    "arti": "tidak ada",
+    "keterangan": "Toba — negasi eksistensial"
+  },
+  "la lit": {
+    "arti": "tidak ada",
+    "keterangan": "Karo"
+  },
+  "jandi": {
+    "arti": "janji",
+    "keterangan": "Toba"
+  },
+  "jaji": {
+    "arti": "janji",
+    "keterangan": "Karo — jadji"
+  },
+  "patik": {
+    "arti": "aturan, hukum adat",
+    "keterangan": "Toba"
+  },
+  "martuhan": {
+    "arti": "bertuhan, bertawakal",
+    "keterangan": "Toba"
+  },
+  "debata": {
+    "arti": "Tuhan, dewa",
+    "keterangan": "Toba"
+  },
+  "dibata": {
+    "arti": "Tuhan, Allah",
+    "keterangan": "Karo"
+  },
+  "mulajadi nabolon": {
+    "arti": "Tuhan Yang Maha Besar (kepercayaan asli Batak)",
+    "keterangan": "Toba"
+  },
+  "tondi": {
+    "arti": "roh, jiwa, semangat",
+    "keterangan": "Toba"
+  },
+  "tendi": {
+    "arti": "roh, jiwa",
+    "keterangan": "Karo"
+  },
+  "begu": {
+    "arti": "hantu, roh jahat",
+    "keterangan": "Toba/Karo"
+  },
+  "sahala": {
+    "arti": "wibawa, karisma bawaan",
+    "keterangan": "Toba"
+  },
+  "sumangat": {
+    "arti": "semangat hidup, spirit",
+    "keterangan": "Karo"
+  },
+  "pasu-pasu": {
+    "arti": "berkat, restu",
+    "keterangan": "Toba"
+  },
+  "pasu": {
+    "arti": "berkat, berkah",
+    "keterangan": "Karo — erpasu-pasu"
+  },
+  "tangiang": {
+    "arti": "doa",
+    "keterangan": "Toba"
+  },
+  "doa": {
+    "arti": "doa",
+    "keterangan": "Karo"
+  },
+  "parngoluon": {
+    "arti": "kehidupan, penghidupan",
+    "keterangan": "Toba"
+  },
+  "perpulungen": {
+    "arti": "perkumpulan, gereja (Karo)",
+    "keterangan": "Karo"
+  },
+  "huria": {
+    "arti": "jemaat, gereja",
+    "keterangan": "Toba"
+  },
+  "haroan": {
+    "arti": "kedatangan, penyambutan",
+    "keterangan": "Toba"
+  },
+  "rimo": {
+    "arti": "jeruk",
+    "keterangan": "Karo"
+  },
+  "durian": {
+    "arti": "durian",
+    "keterangan": "Toba/Karo"
+  },
+  "galuh": {
+    "arti": "pisang",
+    "keterangan": "Karo"
+  },
+  "hoting": {
+    "arti": "pisang",
+    "keterangan": "Toba — hotang: rotan"
+  },
+  "hotang": {
+    "arti": "rotan",
+    "keterangan": "Toba"
+  },
+  "pining": {
+    "arti": "pinus, pohon tusam",
+    "keterangan": "Karo — pohon khas dataran tinggi Karo"
+  },
+  "baringin": {
+    "arti": "pohon beringin",
+    "keterangan": "Toba — lambang kebesaran"
+  },
+  "belo kersik": {
+    "arti": "sirih beserta perlengkapannya",
+    "keterangan": "Karo — pembuka adat/mufakat"
+  },
+  "sipitu sundut": {
+    "arti": "tujuh lapis keturunan",
+    "keterangan": "Toba — konsep genealogi"
+  },
+  "tondong": {
+    "arti": "pihak pemberi istri (Mandailing)",
+    "keterangan": "Mandailing — setara hulahula"
+  },
+  "kahanggi": {
+    "arti": "kerabat semarga (Mandailing)",
+    "keterangan": "Mandailing"
+  },
+  "anak boru": {
+    "arti": "pihak penerima istri (Mandailing)",
+    "keterangan": "Mandailing"
+  },
+  "gordang sambilan": {
+    "arti": "sembilan gendang adat Mandailing",
+    "keterangan": "Mandailing"
+  },
+  "podom": {
+    "arti": "tidur",
+    "keterangan": "Mandailing"
+  },
+  "lehen": {
+    "arti": "memberi",
+    "keterangan": "Mandailing"
+  },
+  "pabuat": {
+    "arti": "membawa pergi, mengambilkan",
+    "keterangan": "Toba"
+  },
+  "lehon": {
+    "arti": "berikan, beri",
+    "keterangan": "Toba — imperatif"
+  },
+  "lehenhon": {
+    "arti": "akan diberikan",
+    "keterangan": "Toba — promisorif"
+  },
+  "mangalehon": {
+    "arti": "memberikan (kepada)",
+    "keterangan": "Toba"
+  },
+  "ibere": {
+    "arti": "diberikan",
+    "keterangan": "Karo — pasif bentuk i-"
+  },
+  "tuhon": {
+    "arti": "beli (Toba lama)",
+    "keterangan": "Toba"
+  },
+  "tuhor": {
+    "arti": "membeli",
+    "keterangan": "Toba"
+  },
+  "tuhor-tuhor": {
+    "arti": "membeli berulang / barang belanjaan",
+    "keterangan": "Toba — reduplikasi"
+  },
+  "ngerana": {
+    "arti": "berbicara",
+    "keterangan": "Karo"
+  },
+  "marsipature": {
+    "arti": "saling menghormati, bertata-krama",
+    "keterangan": "Toba"
+  },
+  "patik na sampulu": {
+    "arti": "sepuluh perintah (Batak Toba Kristen)",
+    "keterangan": "Toba"
+  },
+  "sisingamangaraja": {
+    "arti": "raja sakti legendaris Batak Toba",
+    "keterangan": "Toba — pahlawan nasional"
+  },
+  "samosir": {
+    "arti": "pulau di Danau Toba",
+    "keterangan": "Toba — tempat asal leluhur Batak"
+  },
+  "batak toba": {
+    "arti": "suku Batak dari sekitar Danau Toba",
+    "keterangan": "Toba"
+  },
+  "batak karo": {
+    "arti": "suku Batak dari dataran tinggi Karo",
+    "keterangan": "Karo"
+  },
+  "batak mandailing": {
+    "arti": "suku Batak dari Mandailing Natal",
+    "keterangan": "Mandailing"
+  },
+  "batak angkola": {
+    "arti": "suku Batak dari Tapanuli Selatan",
+    "keterangan": "Angkola"
+  },
+  "batak simalungun": {
+    "arti": "suku Batak dari Simalungun",
+    "keterangan": "Simalungun"
+  },
+  "batak pakpak": {
+    "arti": "suku Batak dari Dairi/Pakpak Bharat",
+    "keterangan": "Pakpak/Dairi"
+  },
+  "kabanjahe": {
+    "arti": "ibukota Kabupaten Karo",
+    "keterangan": "Karo — pusat budaya Karo"
+  },
+  "berastagi": {
+    "arti": "kota wisata dataran tinggi Karo",
+    "keterangan": "Karo — terkenal dengan buah dan sayur"
+  },
+  "tarutung": {
+    "arti": "ibukota Tapanuli Utara",
+    "keterangan": "Toba"
+  },
+  "balige": {
+    "arti": "kota di pinggir Danau Toba",
+    "keterangan": "Toba"
+  },
+  "pematangsiantar": {
+    "arti": "kota terbesar di Sumatera Utara setelah Medan",
+    "keterangan": "Simalungun"
+  },
+  "medan": {
+    "arti": "ibukota Sumatera Utara",
+    "keterangan": "umum"
+  },
+  "mandailing natal": {
+    "arti": "kabupaten di Sumatera Utara bagian selatan",
+    "keterangan": "Mandailing"
+  },
+  "nias": {
+    "arti": "pulau dan suku di Sumatera Utara",
+    "keterangan": "non-Batak — tetangga linguistik"
+  },
+  "hata batak": {
+    "arti": "bahasa Batak (Toba)",
+    "keterangan": "Toba — nama bahasa dalam bahasa itu sendiri"
+  },
+  "cakap karo": {
+    "arti": "bahasa Karo",
+    "keterangan": "Karo — nama bahasa dalam bahasa itu sendiri"
+  },
+  "bahasa mandailing": {
+    "arti": "bahasa Mandailing",
+    "keterangan": "Mandailing"
+  },
+  "partohonan": {
+    "arti": "persaudaraan, kekeluargaan",
+    "keterangan": "Toba"
+  },
+  "runggu": {
+    "arti": "musyawarah, rapat adat",
+    "keterangan": "Karo"
+  },
+  "harajaon": {
+    "arti": "kerajaan",
+    "keterangan": "Toba"
+  },
+  "sipitu marsada": {
+    "arti": "ketujuh bersatu (kesatuan tujuh marga)",
+    "keterangan": "Toba"
+  },
+  "partuturon": {
+    "arti": "sistem sapaan kekerabatan",
+    "keterangan": "Karo — menentukan cara sapaan"
+  },
+  "tudos": {
+    "arti": "serupa, mirip, perumpamaan",
+    "keterangan": "Karo"
+  },
+  "umpama": {
+    "arti": "perumpamaan, peribahasa",
+    "keterangan": "Karo"
+  },
+  "andung": {
+    "arti": "ratapan, nyanyian duka",
+    "keterangan": "Toba — ekspresi kesedihan"
+  },
+  "bilang-bilang": {
+    "arti": "nyanyian ratapan (Karo)",
+    "keterangan": "Karo"
+  },
+  "mata": {
+    "arti": "mata",
+    "keterangan": "Toba/Karo"
+  },
+  "tinga": {
+    "arti": "telinga",
+    "keterangan": "Toba"
+  },
+  "korong": {
+    "arti": "telinga",
+    "keterangan": "Karo — karahung"
+  },
+  "ipon": {
+    "arti": "gigi",
+    "keterangan": "Toba"
+  },
+  "ipeng": {
+    "arti": "gigi",
+    "keterangan": "Karo"
+  },
+  "til": {
+    "arti": "hidung",
+    "keterangan": "Karo"
+  },
+  "igung": {
+    "arti": "hidung",
+    "keterangan": "Toba"
+  },
+  "baba": {
+    "arti": "mulut",
+    "keterangan": "Karo/Toba"
+  },
+  "simakkudap": {
+    "arti": "mulut (halus)",
+    "keterangan": "Karo — si-ma-k-kudap"
+  },
+  "ulu": {
+    "arti": "kepala",
+    "keterangan": "Toba/Karo"
+  },
+  "tomba": {
+    "arti": "tangan",
+    "keterangan": "Toba — tangan, lengan"
+  },
+  "tan": {
+    "arti": "tangan",
+    "keterangan": "Karo — takal=kepala"
+  },
+  "tangan": {
+    "arti": "tangan",
+    "keterangan": "Toba/Karo"
+  },
+  "pat": {
+    "arti": "kaki, empat",
+    "keterangan": "Toba — kaki (juga berarti empat)"
+  },
+  "nahe": {
+    "arti": "kaki",
+    "keterangan": "Karo"
+  },
+  "tobang": {
+    "arti": "paha",
+    "keterangan": "Toba"
+  },
+  "boto": {
+    "arti": "lengan, tangan bawah",
+    "keterangan": "Karo"
+  },
+  "andora": {
+    "arti": "dada",
+    "keterangan": "Toba"
+  },
+  "petak": {
+    "arti": "perut",
+    "keterangan": "Karo"
+  },
+  "bagot": {
+    "arti": "perut (Toba)",
+    "keterangan": "Toba"
+  },
+  "bonggol": {
+    "arti": "punggung",
+    "keterangan": "Toba — punggung badan"
+  },
+  "tukkulan": {
+    "arti": "lutut",
+    "keterangan": "Karo — tiwen"
+  },
+  "tiwen": {
+    "arti": "lutut",
+    "keterangan": "Karo"
+  },
+  "totok": {
+    "arti": "leher",
+    "keterangan": "Toba"
+  },
+  "korung": {
+    "arti": "leher, tenggorokan",
+    "keterangan": "Karo"
+  },
+  "abit": {
+    "arti": "pakaian, baju",
+    "keterangan": "Toba/Karo"
+  },
+  "baju": {
+    "arti": "baju, kemeja",
+    "keterangan": "Toba/Karo"
+  },
+  "sarung": {
+    "arti": "sarung",
+    "keterangan": "Toba/Karo"
+  },
+  "solu": {
+    "arti": "perahu, sampan",
+    "keterangan": "Toba"
+  },
+  "jukung": {
+    "arti": "perahu kecil",
+    "keterangan": "Karo"
+  },
+  "barita": {
+    "arti": "kabar, berita",
+    "keterangan": "Toba"
+  },
+  "berita": {
+    "arti": "kabar, berita",
+    "keterangan": "Karo"
+  },
+  "turpuk": {
+    "arti": "ayat (kitab suci)",
+    "keterangan": "Toba"
+  },
+  "surat": {
+    "arti": "surat, tulisan, aksara",
+    "keterangan": "Toba/Karo"
+  },
+  "parsorion": {
+    "arti": "tempat bertanya, narasumber",
+    "keterangan": "Toba"
+  },
+  "pardalanan": {
+    "arti": "jalan yang dilalui, cara hidup",
+    "keterangan": "Toba"
+  },
+  "dalan": {
+    "arti": "jalan",
+    "keterangan": "Toba/Karo"
+  },
+  "mardalan": {
+    "arti": "berjalan, melangkah",
+    "keterangan": "Toba"
+  },
+  "erdalan": {
+    "arti": "berjalan",
+    "keterangan": "Karo"
+  },
+  "riap": {
+    "arti": "halaman, kebun di sekitar rumah",
+    "keterangan": "Karo"
+  },
+  "poken": {
+    "arti": "pasar",
+    "keterangan": "Toba"
+  },
+  "pekan": {
+    "arti": "pasar (Karo)",
+    "keterangan": "Karo"
+  },
+  "bondar": {
+    "arti": "saluran air, irigasi",
+    "keterangan": "Toba/Karo"
+  },
+  "paret": {
+    "arti": "selokan, got",
+    "keterangan": "Karo"
+  },
+  "parung": {
+    "arti": "empang, kolam",
+    "keterangan": "Toba"
+  },
+  "kobun": {
+    "arti": "kebun",
+    "keterangan": "Karo"
+  },
+  "harangen": {
+    "arti": "hutan",
+    "keterangan": "Karo — kerangen"
+  },
+  "kerangen": {
+    "arti": "hutan",
+    "keterangan": "Karo"
+  },
+  "harangan": {
+    "arti": "hutan, rimba",
+    "keterangan": "Toba"
+  },
+  "sitik": {
+    "arti": "sedikit, sebentar",
+    "keterangan": "Karo"
+  },
+  "kentisik": {
+    "arti": "sebentar, sejenak",
+    "keterangan": "Karo"
+  },
+  "tongtong": {
+    "arti": "selalu, senantiasa",
+    "keterangan": "Toba/Karo"
+  },
+  "naborngin": {
+    "arti": "tadi malam",
+    "keterangan": "Toba"
+  },
+  "nderbih": {
+    "arti": "kemarin",
+    "keterangan": "Karo"
+  },
+  "nattoaredan": {
+    "arti": "kemarin",
+    "keterangan": "Toba"
+  },
+  "sadari": {
+    "arti": "satu hari, suatu hari",
+    "keterangan": "Toba — sadari pe"
+  },
+  "inganon": {
+    "arti": "nanti, sesaat lagi",
+    "keterangan": "Toba"
+  },
+  "engke": {
+    "arti": "nanti, kelak",
+    "keterangan": "Karo"
+  },
+  "piga-piga": {
+    "arti": "beberapa, berapa-berapa",
+    "keterangan": "Karo — redupl. indefinit"
+  },
+  "sigop": {
+    "arti": "semua, seluruh",
+    "keterangan": "Karo"
+  },
+  "kerina": {
+    "arti": "semua, seluruhnya",
+    "keterangan": "Karo"
+  },
+  "saluhutna": {
+    "arti": "semuanya, keseluruhannya",
+    "keterangan": "Toba"
+  },
+  "sasude": {
+    "arti": "seluruhnya, semua",
+    "keterangan": "Toba"
+  },
+  "naring": {
+    "arti": "hanya, saja, seorang diri",
+    "keterangan": "Toba"
+  },
+  "sahali": {
+    "arti": "sekali, satu kali",
+    "keterangan": "Toba/Karo"
+  },
+  "dua hali": {
+    "arti": "dua kali",
+    "keterangan": "Toba"
+  },
+  "piga hali": {
+    "arti": "berapa kali",
+    "keterangan": "Karo"
+  },
+  "leleng": {
+    "arti": "lama, panjang (waktu)",
+    "keterangan": "Karo"
+  },
+  "leleng-leleng": {
+    "arti": "terlalu lama",
+    "keterangan": "Karo — reduplikasi penekanan"
+  },
+  "nari": {
+    "arti": "lagi, lebih (komparatif)",
+    "keterangan": "Karo"
+  },
+  "labih": {
+    "arti": "lebih",
+    "keterangan": "Toba — lehon labih = beri lebih"
+  },
+  "dumenggan": {
+    "arti": "lebih baik",
+    "keterangan": "Karo — UM- + denggan"
+  },
+  "umuli": {
+    "arti": "lebih cantik, lebih indah",
+    "keterangan": "Toba — UM- + uli"
+  },
+  "paling": {
+    "arti": "paling, ter- (superlatif)",
+    "keterangan": "Karo"
+  },
+  "mula": {
+    "arti": "asal, mula, awal",
+    "keterangan": "Toba/Karo"
+  },
+  "sahat-sahat ni solu": {
+    "arti": "sampai ke tujuan (peribahasa)",
+    "keterangan": "Toba — dalam umpasa"
+  },
+  "gurgur": {
+    "arti": "mengalir deras, bergolak",
+    "keterangan": "Toba — dalam umpasa"
+  },
+  "rura": {
+    "arti": "lembah sungai, cekungan",
+    "keterangan": "Karo"
+  },
+  "deleng sinabun": {
+    "arti": "Gunung Sinabung",
+    "keterangan": "Karo — gunung berapi di tanah Karo"
+  },
+  "pusuk buhit": {
+    "arti": "gunung suci leluhur Batak",
+    "keterangan": "Toba — di Samosir"
+  },
+  "sigura-gura": {
+    "arti": "air terjun di Sumatera Utara",
+    "keterangan": "Toba"
+  },
+  "situmorang": {
+    "arti": "marga Batak Toba",
+    "keterangan": "Toba — salah satu marga"
+  },
+  "sinaga": {
+    "arti": "marga Batak Toba",
+    "keterangan": "Toba"
+  },
+  "nainggolan": {
+    "arti": "marga Batak Toba",
+    "keterangan": "Toba"
+  },
+  "simanjuntak": {
+    "arti": "marga Batak Toba",
+    "keterangan": "Toba"
+  },
+  "siahaan": {
+    "arti": "marga Batak Toba",
+    "keterangan": "Toba"
+  },
+  "panjaitan": {
+    "arti": "marga Batak Toba",
+    "keterangan": "Toba"
+  },
+  "ginting": {
+    "arti": "marga Batak Karo",
+    "keterangan": "Karo — salah satu dari lima marga induk"
+  },
+  "tarigan": {
+    "arti": "marga Batak Karo",
+    "keterangan": "Karo"
+  },
+  "sembiring": {
+    "arti": "marga Batak Karo",
+    "keterangan": "Karo"
+  },
+  "peranginangin": {
+    "arti": "marga Batak Karo",
+    "keterangan": "Karo — Perangin-angin"
+  },
+  "karokaro": {
+    "arti": "marga Batak Karo (induk)",
+    "keterangan": "Karo — Karo-karo"
+  },
+  "nasution": {
+    "arti": "marga Mandailing",
+    "keterangan": "Mandailing — marga umum"
+  },
+  "lubis": {
+    "arti": "marga Mandailing",
+    "keterangan": "Mandailing"
+  },
+  "harahap": {
+    "arti": "marga Mandailing",
+    "keterangan": "Mandailing"
+  },
+  "dalimunthe": {
+    "arti": "marga Mandailing",
+    "keterangan": "Mandailing"
+  },
+  "parinduri": {
+    "arti": "marga Mandailing",
+    "keterangan": "Mandailing"
+  },
+  "purgatorion": {
+    "arti": "api penyucian (konsep Kristen Batak)",
+    "keterangan": "Toba"
+  },
+  "punguan": {
+    "arti": "perkumpulan, ikatan marga",
+    "keterangan": "Toba"
+  },
+  "arisan": {
+    "arti": "arisan, koperasi informal",
+    "keterangan": "Toba/Karo"
+  },
+  "partangiangan": {
+    "arti": "kebaktian, ibadah keluarga",
+    "keterangan": "Toba"
+  },
+  "kebaktian": {
+    "arti": "ibadah, kebaktian",
+    "keterangan": "Karo — sering disebut kebaktian"
+  },
+  "manortor": {
+    "arti": "menari tor-tor",
+    "keterangan": "Toba"
+  },
+  "erlandek": {
+    "arti": "menari landek",
+    "keterangan": "Karo"
+  },
+  "marende": {
+    "arti": "bernyanyi (Toba)",
+    "keterangan": "Toba"
+  },
+  "marsinambul": {
+    "arti": "bercanda, berkelakar",
+    "keterangan": "Toba"
+  },
+  "ngocak": {
+    "arti": "bercanda, bergurau",
+    "keterangan": "Karo"
+  },
+  "bujuk": {
+    "arti": "bujuk, rayu",
+    "keterangan": "Toba/Karo"
+  },
+  "tanggung": {
+    "arti": "tanggung, menjamin",
+    "keterangan": "Toba/Karo"
+  },
+  "manangkup": {
+    "arti": "menangkap, meraih",
+    "keterangan": "Toba"
+  },
+  "nangkap": {
+    "arti": "menangkap",
+    "keterangan": "Karo"
+  },
+  "mandok": {
+    "arti": "menyampaikan, mengatakan",
+    "keterangan": "Toba — imperatif: dohon"
+  },
+  "dok": {
+    "arti": "katakan, ucapkan",
+    "keterangan": "Toba — bentuk akar dari 'mandok'"
+  },
+  "mambege": {
+    "arti": "mendengar",
+    "keterangan": "Toba"
+  },
+  "ndegeri": {
+    "arti": "mendengarkan",
+    "keterangan": "Karo"
+  },
+  "maidah": {
+    "arti": "melihat",
+    "keterangan": "Toba — mangidah"
+  },
+  "mangidah": {
+    "arti": "melihat, memandang",
+    "keterangan": "Toba"
+  },
+  "ngenehen": {
+    "arti": "melihat, memandang",
+    "keterangan": "Karo"
+  },
+  "manisia": {
+    "arti": "manusia",
+    "keterangan": "Toba"
+  },
+  "kalak manisia": {
+    "arti": "manusia, orang biasa",
+    "keterangan": "Karo"
+  },
+  "jolma": {
+    "arti": "orang, manusia (Toba)",
+    "keterangan": "Toba"
+  },
+  "halak": {
+    "arti": "orang, seseorang (Toba)",
+    "keterangan": "Toba"
+  },
+  "kalak": {
+    "arti": "orang, seseorang (Karo)",
+    "keterangan": "Karo"
+  },
+  "parsinabul": {
+    "arti": "pelawak, penghibur",
+    "keterangan": "Toba"
+  },
+  "sijujung": {
+    "arti": "pengemban, pembawa tanggung jawab",
+    "keterangan": "Toba"
+  },
+  "nahinan": {
+    "arti": "dahulu, zaman dulu",
+    "keterangan": "Toba"
+  },
+  "dillaki": {
+    "arti": "laki-laki",
+    "keterangan": "Karo — dimandaki"
+  },
+  "dilaki": {
+    "arti": "laki-laki",
+    "keterangan": "Toba"
+  },
+  "diberu": {
+    "arti": "perempuan",
+    "keterangan": "Toba/Karo"
+  },
+  "sipaingot": {
+    "arti": "peringatan, nasihat",
+    "keterangan": "Toba"
+  },
+  "aingot": {
+    "arti": "ingat, kenang",
+    "keterangan": "Toba — si-ingot"
+  },
+  "ingot": {
+    "arti": "ingat, kenang",
+    "keterangan": "Toba/Karo"
+  },
+  "lupa": {
+    "arti": "lupa",
+    "keterangan": "Toba/Karo"
+  },
+  "tarbadak": {
+    "arti": "secara tidak sengaja, tiba-tiba jatuh",
+    "keterangan": "Toba — tar- prefix pasif aksidental"
+  },
+  "tardabuh": {
+    "arti": "terjatuh (tidak sengaja)",
+    "keterangan": "Karo — ter- + dabuh"
+  },
+  "mengalor": {
+    "arti": "mengalir (sungai)",
+    "keterangan": "Karo — ngalur"
+  },
+  "mangalir": {
+    "arti": "mengalir",
+    "keterangan": "Toba"
+  },
+  "martumba": {
+    "arti": "bertarung, berkompetisi",
+    "keterangan": "Toba"
+  },
+  "marlojong": {
+    "arti": "berlari",
+    "keterangan": "Toba"
+  },
+  "kiamken": {
+    "arti": "berlari (Karo)",
+    "keterangan": "Karo — kiam"
+  },
+  "kiam": {
+    "arti": "lari, berlari",
+    "keterangan": "Karo"
+  },
+  "manogot": {
+    "arti": "pagi-pagi, di pagi hari",
+    "keterangan": "Toba"
+  },
+  "marsogot": {
+    "arti": "besok pagi",
+    "keterangan": "Toba"
+  },
+  "nasogot": {
+    "arti": "pagi ini (yang sudah lewat)",
+    "keterangan": "Toba"
+  },
+  "manopoti": {
+    "arti": "mengunjungi, mendatangi",
+    "keterangan": "Toba"
+  },
+  "nopot": {
+    "arti": "berkunjung, datang",
+    "keterangan": "Toba — manopot"
+  },
+  "ertama": {
+    "arti": "bertamu, berkunjung",
+    "keterangan": "Karo"
+  },
+  "tama": {
+    "arti": "masuk, tamu",
+    "keterangan": "Karo"
+  },
+  "marsiajar": {
+    "arti": "belajar, berlatih",
+    "keterangan": "Toba"
+  },
+  "melajari": {
+    "arti": "belajar",
+    "keterangan": "Karo — erlajar"
+  },
+  "erlajar": {
+    "arti": "belajar",
+    "keterangan": "Karo"
+  },
+  "mangajari": {
+    "arti": "mengajari, mendidik",
+    "keterangan": "Toba"
+  },
+  "ngajari": {
+    "arti": "mengajari",
+    "keterangan": "Karo — ngajar"
+  },
+  "ajar": {
+    "arti": "ajar, ajaran",
+    "keterangan": "Toba/Karo"
+  },
+  "parsiajaran": {
+    "arti": "pelajaran, ilmu",
+    "keterangan": "Toba"
+  },
+  "perpelajaren": {
+    "arti": "pelajaran",
+    "keterangan": "Karo"
+  },
+  "pangalaho": {
+    "arti": "kelakuan, tingkah laku",
+    "keterangan": "Toba"
+  },
+  "perlakun": {
+    "arti": "kelakuan, perilaku",
+    "keterangan": "Karo"
+  },
+  "manguluhon": {
+    "arti": "memimpin, mengetuai",
+    "keterangan": "Toba"
+  },
+  "uluken": {
+    "arti": "memimpin",
+    "keterangan": "Karo"
+  },
+  "pangulu": {
+    "arti": "pemimpin, kepala",
+    "keterangan": "Toba/Mandailing"
+  },
+  "ketua": {
+    "arti": "ketua, pemimpin",
+    "keterangan": "Karo"
+  },
+  "manghirim": {
+    "arti": "mengirim, mengutus",
+    "keterangan": "Toba"
+  },
+  "ngekirim": {
+    "arti": "mengirim",
+    "keterangan": "Karo"
+  },
+  "manangkap": {
+    "arti": "menangkap",
+    "keterangan": "Toba"
+  },
+  "manghilala": {
+    "arti": "merasakan, mengalami",
+    "keterangan": "Toba"
+  },
+  "ngandung": {
+    "arti": "menangis, meratap",
+    "keterangan": "Karo"
+  },
+  "tangis": {
+    "arti": "tangis, menangis",
+    "keterangan": "Toba/Karo"
+  },
+  "marlas ni roha": {
+    "arti": "bersukacita, bergembira",
+    "keterangan": "Toba"
+  },
+  "arsakna": {
+    "arti": "kesedihannya",
+    "keterangan": "Toba — dari arsak"
+  },
+  "arsak": {
+    "arti": "sedih, duka, kesedihan",
+    "keterangan": "Toba"
+  },
+  "mehawal": {
+    "arti": "sedih, duka",
+    "keterangan": "Karo"
+  },
+  "ngeri": {
+    "arti": "takut, ngeri",
+    "keterangan": "Toba/Karo"
+  },
+  "biar": {
+    "arti": "takut, gentar",
+    "keterangan": "Karo"
+  },
+  "mabiar": {
+    "arti": "takut",
+    "keterangan": "Karo — ma-biar"
+  },
+  "mabuha": {
+    "arti": "berani, pemberani",
+    "keterangan": "Karo"
+  },
+  "mbisa": {
+    "arti": "berani, berbisa",
+    "keterangan": "Karo"
+  },
+  "berani": {
+    "arti": "berani",
+    "keterangan": "Toba — harani"
+  },
+  "harani": {
+    "arti": "berani, pemberani",
+    "keterangan": "Toba"
+  },
+  "mabiar-biar": {
+    "arti": "selalu takut, penakut",
+    "keterangan": "Karo — reduplikasi"
+  },
+  "sonang": {
+    "arti": "senang, bahagia",
+    "keterangan": "Toba"
+  },
+  "pande": {
+    "arti": "pandai, terampil; tukang",
+    "keterangan": "Toba/Karo"
+  },
+  "panday": {
+    "arti": "pandai, ahli",
+    "keterangan": "Toba"
+  },
+  "pintar": {
+    "arti": "pintar, cerdas",
+    "keterangan": "Toba/Karo"
+  },
+  "beteh": {
+    "arti": "tahu, mengetahui",
+    "keterangan": "Karo"
+  },
+  "la beteh": {
+    "arti": "tidak tahu",
+    "keterangan": "Karo"
+  },
+  "ndang huboto": {
+    "arti": "saya tidak tahu",
+    "keterangan": "Toba"
+  },
+  "nungnga": {
+    "arti": "sudah, telah (perfektif)",
+    "keterangan": "Toba — varian nunga"
+  },
+  "lenga": {
+    "arti": "belum",
+    "keterangan": "Karo"
+  },
+  "ndang be": {
+    "arti": "tidak lagi, sudah tidak",
+    "keterangan": "Toba"
+  },
+  "lehon ma": {
+    "arti": "berikanlah",
+    "keterangan": "Toba — imperatif + partikel ma"
+  },
+  "rohon": {
+    "arti": "datanglah, masuklah",
+    "keterangan": "Toba — imperatif dari 'ro'"
+  },
+  "lawesken": {
+    "arti": "pergilah (perintah)",
+    "keterangan": "Karo — imperatif -ken"
+  },
+  "horas ma di hamu": {
+    "arti": "salam sejahtera untuk kalian",
+    "keterangan": "Toba — salam penuh"
+  },
+  "mejuah-juah kita kena": {
+    "arti": "semoga kita semua sehat sejahtera",
+    "keterangan": "Karo — salam penuh"
+  },
+  "ngo denggan": {
+    "arti": "sudah baik (Karo)",
+    "keterangan": "Karo — nge + denggan"
+  },
+  "porsea": {
+    "arti": "percaya, iman",
+    "keterangan": "Toba"
+  },
+  "porseaken": {
+    "arti": "percayakanlah",
+    "keterangan": "Toba"
+  },
+  "haposoanna": {
+    "arti": "masa mudanya, generasi muda",
+    "keterangan": "Toba"
+  },
+  "naposo": {
+    "arti": "anak muda, pemuda",
+    "keterangan": "Toba"
+  },
+  "kalak muda": {
+    "arti": "orang muda, pemuda",
+    "keterangan": "Karo"
+  },
+  "tua": {
+    "arti": "tua, senior, berumur",
+    "keterangan": "Toba/Karo"
+  },
+  "metua": {
+    "arti": "sudah tua",
+    "keterangan": "Karo — me- + tua"
+  },
+  "nguda": {
+    "arti": "muda, masih muda",
+    "keterangan": "Karo"
+  },
+  "nakkok": {
+    "arti": "naik ke atas, mendaki",
+    "keterangan": "Toba"
+  },
+  "niurupi": {
+    "arti": "dibantu, ditolong",
+    "keterangan": "Toba — pasif NI- + urup + -i"
+  },
+  "siuruhon": {
+    "arti": "yang harus dikirim/diutus",
+    "keterangan": "Toba — si + uruh + -on"
+  },
+  "panuruton": {
+    "arti": "ketaatan, kepatuhan",
+    "keterangan": "Toba"
+  },
+  "tunduk": {
+    "arti": "tunduk, patuh",
+    "keterangan": "Toba/Karo"
+  },
+  "unduken": {
+    "arti": "tundukkan, rendahkan",
+    "keterangan": "Karo — unduk + -ken"
+  },
+  "unduk": {
+    "arti": "tunduk, rendah hati",
+    "keterangan": "Karo"
+  },
+  "manat": {
+    "arti": "hati-hati, waspada",
+    "keterangan": "Toba"
+  },
+  "tehe-tehe": {
+    "arti": "perlahan-lahan, hati-hati",
+    "keterangan": "Karo"
+  },
+  "marsigantungan": {
+    "arti": "saling bergantung, tolong-menolong",
+    "keterangan": "Toba"
+  },
+  "siampudan": {
+    "arti": "anak bungsu",
+    "keterangan": "Toba"
+  },
+  "pariban": {
+    "arti": "sepupu (anak saudara laki-laki ibu)",
+    "keterangan": "Toba"
+  },
+  "silih": {
+    "arti": "ipar, pasangan saudara",
+    "keterangan": "Toba"
+  },
+  "bengkila": {
+    "arti": "paman (suami dari saudari ayah)",
+    "keterangan": "Karo"
+  },
+  "mama": {
+    "arti": "paman (saudara laki-laki ibu)",
+    "keterangan": "Toba/Karo"
+  },
+  "nantulang": {
+    "arti": "bibi (istri dari tulang)",
+    "keterangan": "Toba"
+  },
+  "tulang": {
+    "arti": "paman dari pihak ibu (saudara laki-laki ibu)",
+    "keterangan": "Toba"
+  },
+  "impal": {
+    "arti": "sepupu (anak dari saudara laki-laki ayah)",
+    "keterangan": "Karo"
+  },
+  "nini tua": {
+    "arti": "kakek dari pihak ayah",
+    "keterangan": "Karo"
+  },
+  "nini tuduk": {
+    "arti": "nenek dari pihak ibu",
+    "keterangan": "Karo"
+  },
+  "ompung doli": {
+    "arti": "kakek",
+    "keterangan": "Toba — doli = laki-laki"
+  },
+  "ompung boru": {
+    "arti": "nenek",
+    "keterangan": "Toba — boru = perempuan"
+  },
+  "amangboru": {
+    "arti": "suami dari saudari ayah, paman",
+    "keterangan": "Toba"
+  },
+  "namboru": {
+    "arti": "saudari dari ayah, bibi",
+    "keterangan": "Toba"
+  },
+  "mami": {
+    "arti": "istri paman, tante",
+    "keterangan": "Karo"
+  },
+  "tutur": {
+    "arti": "sapaan kekerabatan, sistem adress",
+    "keterangan": "Karo"
+  },
+  "partuturan": {
+    "arti": "sistem sapaan kekerabatan Karo",
+    "keterangan": "Karo"
+  },
+  "ertutur": {
+    "arti": "saling menyapa sesuai garis kekerabatan",
+    "keterangan": "Karo"
+  },
+  "senina": {
+    "arti": "saudara semarga laki-laki",
+    "keterangan": "Karo — turang sesama jenis"
+  },
+  "agi": {
+    "arti": "adik (sesama jenis, Karo)",
+    "keterangan": "Karo"
+  },
+  "anggi": {
+    "arti": "adik (sesama jenis)",
+    "keterangan": "Toba"
+  },
+  "kaka": {
+    "arti": "kakak",
+    "keterangan": "Karo — kaka tua = tertua"
+  },
+  "si ahadaan": {
+    "arti": "anak sulung",
+    "keterangan": "Toba"
+  },
+  "si penampat": {
+    "arti": "anak tengah",
+    "keterangan": "Karo"
+  },
+  "si paling kelitong": {
+    "arti": "anak bungsu",
+    "keterangan": "Karo"
+  },
+  "siapudan": {
+    "arti": "si bungsu",
+    "keterangan": "Toba"
+  },
+  "maranak": {
+    "arti": "mempunyai anak laki-laki",
+    "keterangan": "Toba"
+  },
+  "marboru": {
+    "arti": "mempunyai anak perempuan",
+    "keterangan": "Toba"
+  },
+  "borhat": {
+    "arti": "berangkat, pergi (dalam adat)",
+    "keterangan": "Toba"
+  },
+  "perkata": {
+    "arti": "pembicaraan, ucapan",
+    "keterangan": "Karo — perkataen"
+  },
+  "perkataen": {
+    "arti": "perkataan, ucapan",
+    "keterangan": "Karo"
+  },
+  "hata-hata": {
+    "arti": "perkataan, pembicaraan",
+    "keterangan": "Toba — reduplikasi"
+  },
+  "marpoda": {
+    "arti": "bercakap-cakap, berbincang",
+    "keterangan": "Toba"
+  },
+  "marhatahata": {
+    "arti": "berbicara, berunding",
+    "keterangan": "Toba"
+  },
+  "runggu-runggu": {
+    "arti": "bermusyawarah, bermufakat",
+    "keterangan": "Karo"
+  },
+  "markusip": {
+    "arti": "berbisik",
+    "keterangan": "Toba"
+  },
+  "erkusik-kusik": {
+    "arti": "berbisik-bisik",
+    "keterangan": "Karo"
+  },
+  "toho": {
+    "arti": "benar, tepat, sesuai",
+    "keterangan": "Toba"
+  },
+  "tuhu": {
+    "arti": "benar, jujur, sungguh-sungguh",
+    "keterangan": "Karo"
+  },
+  "tuhu-tuhu": {
+    "arti": "sungguh-sungguh, benar-benar",
+    "keterangan": "Karo — reduplikasi penekanan"
+  },
+  "toto": {
+    "arti": "sungguh, benar",
+    "keterangan": "Toba"
+  },
+  "bohir": {
+    "arti": "bohong, dusta",
+    "keterangan": "Toba"
+  },
+  "bual-bual": {
+    "arti": "bohong, mengada-ada",
+    "keterangan": "Karo"
+  },
+  "apus": {
+    "arti": "tipu, bohong",
+    "keterangan": "Toba — kuapusi = kubohongi"
+  },
+  "mangapusi": {
+    "arti": "membohongi, menipu",
+    "keterangan": "Toba"
+  },
+  "pujuk": {
+    "arti": "bujuk, rayu, bohong",
+    "keterangan": "Karo"
+  },
+  "margogo": {
+    "arti": "berusaha keras, bersemangat",
+    "keterangan": "Toba"
+  },
+  "payo": {
+    "arti": "sungguh, sangat (penguat)",
+    "keterangan": "Karo"
+  },
+  "payo-payo": {
+    "arti": "sungguh-sungguh, serius",
+    "keterangan": "Karo — reduplikasi"
+  },
+  "dik": {
+    "arti": "keras, padat, kuat",
+    "keterangan": "Karo"
+  },
+  "meteh": {
+    "arti": "tahu, mengetahui",
+    "keterangan": "Karo — varian beteh"
+  },
+  "sura-sura": {
+    "arti": "cita-cita, harapan, impian",
+    "keterangan": "Karo"
+  },
+  "sura": {
+    "arti": "keinginan, niat",
+    "keterangan": "Toba — sura-sura"
+  },
+  "parharapan": {
+    "arti": "pengharapan, harapan",
+    "keterangan": "Toba"
+  },
+  "pengharapan": {
+    "arti": "pengharapan",
+    "keterangan": "Karo — pengarapen"
+  },
+  "pengarapen": {
+    "arti": "pengharapan, harapan",
+    "keterangan": "Karo"
+  },
+  "habayuan": {
+    "arti": "kebesaran, kejayaan",
+    "keterangan": "Toba"
+  },
+  "martuahon": {
+    "arti": "beruntung, mendapat berkah",
+    "keterangan": "Toba"
+  },
+  "tuah": {
+    "arti": "tuah, keberuntungan, berkah",
+    "keterangan": "Toba"
+  },
+  "erdana": {
+    "arti": "berdana, beramal, berbagi",
+    "keterangan": "Karo"
+  },
+  "dana": {
+    "arti": "dana, sumbangan, amal",
+    "keterangan": "Karo"
+  },
+  "mangula": {
+    "arti": "bekerja, mengerjakan",
+    "keterangan": "Toba"
+  },
+  "nula": {
+    "arti": "mengerjakan, membuat",
+    "keterangan": "Karo"
+  },
+  "paboa": {
+    "arti": "memberitahukan, mengumumkan",
+    "keterangan": "Toba"
+  },
+  "pabotoh": {
+    "arti": "memberitahu, menyampaikan",
+    "keterangan": "Karo"
+  },
+  "turiken": {
+    "arti": "ceritakan, sampaikan",
+    "keterangan": "Karo"
+  },
+  "patorang": {
+    "arti": "menjelaskan, menerangkan",
+    "keterangan": "Toba"
+  },
+  "pernah": {
+    "arti": "pernah, sudah pernah",
+    "keterangan": "Toba/Karo"
+  },
+  "ndang pernah": {
+    "arti": "tidak pernah",
+    "keterangan": "Toba"
+  },
+  "la pernah": {
+    "arti": "tidak pernah",
+    "keterangan": "Karo"
+  },
+  "paima-ima": {
+    "arti": "menunggu-nunggu, menantikan",
+    "keterangan": "Toba"
+  },
+  "nimai-nimai": {
+    "arti": "menunggu-nunggu (Karo)",
+    "keterangan": "Karo — reduplikasi aspek duratif"
+  },
+  "nimai": {
+    "arti": "menunggu",
+    "keterangan": "Karo"
+  },
+  "paima": {
+    "arti": "menunggu, menantikan",
+    "keterangan": "Toba"
+  },
+  "jujung": {
+    "arti": "angkat, junjung di kepala",
+    "keterangan": "Toba/Karo"
+  },
+  "junjung baringin": {
+    "arti": "junjungan tinggi (gelar kehormatan adat)",
+    "keterangan": "Toba — nama/gelar adat"
+  },
+  "sarunei": {
+    "arti": "seruling khas Karo",
+    "keterangan": "Karo"
+  },
+  "suling": {
+    "arti": "seruling, flute",
+    "keterangan": "Toba"
+  },
+  "taganing": {
+    "arti": "set gendang Toba (7 buah)",
+    "keterangan": "Toba — bagian dari gondang sabangunan"
+  },
+  "sarune etek": {
+    "arti": "suling kecil Toba",
+    "keterangan": "Toba"
+  },
+  "gendang lima sendalanen": {
+    "arti": "ansambel 5 gendang Karo",
+    "keterangan": "Karo"
+  },
+  "mangkuling": {
+    "arti": "berbicara, bersuara",
+    "keterangan": "Toba"
+  },
+  "kuliku": {
+    "arti": "berbicara (Karo lama)",
+    "keterangan": "Karo — makkuIing"
+  },
+  "perumah begu": {
+    "arti": "ritual memanggil roh leluhur (Karo)",
+    "keterangan": "Karo"
+  },
+  "sibaso bolon": {
+    "arti": "medium roh besar, tabib wanita",
+    "keterangan": "Toba"
+  },
+  "guru tendi": {
+    "arti": "dukun / tabib roh (Karo)",
+    "keterangan": "Karo"
+  },
+  "porsea ma": {
+    "arti": "percayalah",
+    "keterangan": "Toba — imperatif + partikel ma"
+  },
+  "hata ni Debata": {
+    "arti": "firman Tuhan",
+    "keterangan": "Toba — Alkitab Batak"
+  },
+  "Injil": {
+    "arti": "Injil, kabar baik",
+    "keterangan": "Toba/Karo — Kristen"
+  },
+  "Parmalim": {
+    "arti": "pengikut agama asli Batak (Malim)",
+    "keterangan": "Toba — agama tradisional"
+  },
+  "Islam Mandailing": {
+    "arti": "Islam yang dianut mayoritas Mandailing",
+    "keterangan": "Mandailing"
+  },
+  "martutu aek": {
+    "arti": "pembaptisan bayi (Toba)",
+    "keterangan": "Toba — aek = air"
+  },
+  "jujuken": {
+    "arti": "tunjukkan, junjungkan",
+    "keterangan": "Karo"
+  },
+  "patuduhon": {
+    "arti": "menunjukkan, memperlihatkan",
+    "keterangan": "Toba"
+  },
+  "tuduhon": {
+    "arti": "tunjukkanlah",
+    "keterangan": "Toba — imperatif"
+  },
+  "pandok": {
+    "arti": "kata, ucapan",
+    "keterangan": "Karo — pandokna = katanya"
+  },
+  "pandokna": {
+    "arti": "katanya, ucapannya",
+    "keterangan": "Karo"
+  },
+  "ninna": {
+    "arti": "katanya, ucapnya (Toba)",
+    "keterangan": "Toba — ni + ninna"
+  },
+  "ninana": {
+    "arti": "katanya (3 orang)",
+    "keterangan": "Toba"
+  },
+  "nikkuna": {
+    "arti": "kataku",
+    "keterangan": "Toba — niku = saya katakan"
+  },
+  "dohonon": {
+    "arti": "akan dikatakan",
+    "keterangan": "Toba — promisorif dari 'dok'"
+  },
+  "dohonmu": {
+    "arti": "kamu sampaikan, kamu katakan",
+    "keterangan": "Toba — dohon + -mu"
+  },
+  "nidok": {
+    "arti": "dikatakan, disebut",
+    "keterangan": "Toba — pasif kompletif"
+  },
+  "ninna ibana": {
+    "arti": "dia berkata, katanya",
+    "keterangan": "Toba"
+  },
+  "manghatai": {
+    "arti": "berbicara, bercakap",
+    "keterangan": "Toba"
+  },
+  "ngomong": {
+    "arti": "berbicara, ngomong",
+    "keterangan": "Karo — bahasa sehari-hari modern"
+  },
+  "ndang boi be": {
+    "arti": "tidak bisa lagi, sudah tidak mampu",
+    "keterangan": "Toba — dari kamusbatak.com"
+  },
+  "dang boi be": {
+    "arti": "tidak bisa lagi",
+    "keterangan": "Toba"
+  },
+  "boi do": {
+    "arti": "bisa, sanggup",
+    "keterangan": "Toba — afirmatif"
+  },
+  "otik sitik godang salah": {
+    "arti": "sedikit banyak ada salah (peribahasa)",
+    "keterangan": "Toba — dari kamusbatak.com"
+  },
+  "tondi ma nian": {
+    "arti": "sekiranya jiwa / semoga",
+    "keterangan": "Toba — ungkapan harapan"
+  },
+  "arga ni roha": {
+    "arti": "nilai hati, kasih sayang yang tulus",
+    "keterangan": "Toba"
+  },
+  "parroha": {
+    "arti": "orang bijak, yang berhati nurani",
+    "keterangan": "Toba"
+  },
+  "manghaholongi": {
+    "arti": "mengasihi, mencintai",
+    "keterangan": "Toba — mang + holong + -i"
+  },
+  "holong": {
+    "arti": "kasih, cinta, sayang",
+    "keterangan": "Toba"
+  },
+  "kelengi": {
+    "arti": "kasih, cinta, sayang (Karo)",
+    "keterangan": "Karo"
+  },
+  "ngkelengi": {
+    "arti": "mencintai, menyayangi",
+    "keterangan": "Karo"
+  },
+  "mangamori": {
+    "arti": "menghormati (yang lebih tua)",
+    "keterangan": "Toba"
+  },
+  "erhormat": {
+    "arti": "menghormati",
+    "keterangan": "Karo"
+  },
+  "pamatang": {
+    "arti": "badan, tubuh",
+    "keterangan": "Toba — tubuh manusia"
+  },
+  "awak": {
+    "arti": "badan, tubuh, pinggang",
+    "keterangan": "Karo"
+  },
+  "rimo menuk": {
+    "arti": "jeruk purut",
+    "keterangan": "Karo"
+  },
+  "nangka": {
+    "arti": "nangka",
+    "keterangan": "Toba/Karo"
+  },
+  "salak": {
+    "arti": "salak",
+    "keterangan": "Karo"
+  },
+  "markus": {
+    "arti": "rambutan",
+    "keterangan": "Karo"
+  },
+  "gadung": {
+    "arti": "ubi jalar, kentang",
+    "keterangan": "Karo"
+  },
+  "kentang": {
+    "arti": "kentang",
+    "keterangan": "Karo — dataran tinggi Karo terkenal dengan kentang"
+  },
+  "kol": {
+    "arti": "kubis, kol",
+    "keterangan": "Karo"
+  },
+  "toba": {
+    "arti": "orang/tanah Toba; juga nama Danau Toba",
+    "keterangan": "Toba"
+  },
+  "tano batak": {
+    "arti": "tanah Batak, wilayah asal Batak",
+    "keterangan": "Toba"
+  },
+  "napitu": {
+    "arti": "yang tujuh",
+    "keterangan": "Toba — na + pitu"
+  },
+  "natolunai": {
+    "arti": "yang ketiga",
+    "keterangan": "Toba"
+  },
+  "siamun": {
+    "arti": "kanan",
+    "keterangan": "Karo — arah kanan"
+  },
+  "siambil": {
+    "arti": "kiri",
+    "keterangan": "Karo"
+  },
+  "hatopan": {
+    "arti": "kecepatan, ketangkasan",
+    "keterangan": "Toba"
+  },
+  "hatorop": {
+    "arti": "segera, cepat-cepat",
+    "keterangan": "Toba"
+  },
+  "sanga": {
+    "arti": "sedang, ketika, sambil",
+    "keterangan": "Karo/Toba"
+  },
+  "sanga modom": {
+    "arti": "sedang tidur",
+    "keterangan": "Toba/Karo"
+  },
+  "jotjot": {
+    "arti": "sering, kerap kali",
+    "keterangan": "Toba"
+  },
+  "sekali-sekali": {
+    "arti": "sekali-sekali, jarang-jarang",
+    "keterangan": "Karo"
+  },
+  "ndang sadia": {
+    "arti": "tidak berapa lama",
+    "keterangan": "Toba"
+  },
+  "las roha": {
+    "arti": "bersukacita, gembira hati",
+    "keterangan": "Toba"
+  },
+  "tua ma": {
+    "arti": "beruntunglah, semoga beruntung",
+    "keterangan": "Toba — doa berkat"
+  },
+  "burju ma ho": {
+    "arti": "jadilah baik kamu",
+    "keterangan": "Toba — nasihat"
+  },
+  "denggan-denggan ma kam": {
+    "arti": "semoga kamu baik-baik saja",
+    "keterangan": "Karo — doa salam"
+  },
+  "ula sai ngkalong": {
+    "arti": "jangan malas",
+    "keterangan": "Karo — nasihat"
+  },
+  "ndang sibahen": {
+    "arti": "tidak boleh, tidak seharusnya",
+    "keterangan": "Toba"
+  },
+  "ulang sai": {
+    "arti": "jangan terus-terusan",
+    "keterangan": "Toba"
+  },
+  "ulang pola": {
+    "arti": "tidak perlu, tak usah",
+    "keterangan": "Toba"
+  },
+  "ula pe": {
+    "arti": "jangan juga",
+    "keterangan": "Karo"
+  },
+  "ula nari": {
+    "arti": "jangan lagi",
+    "keterangan": "Karo"
+  },
+  "lenga nge": {
+    "arti": "belum juga",
+    "keterangan": "Karo"
+  },
+  "molo boi": {
+    "arti": "kalau bisa, jika memungkinkan",
+    "keterangan": "Toba"
+  },
+  "adi banci": {
+    "arti": "kalau bisa (Karo)",
+    "keterangan": "Karo"
+  },
+  "pola ma": {
+    "arti": "biarlah, biarkan saja",
+    "keterangan": "Toba"
+  },
+  "banci pe": {
+    "arti": "boleh juga, bisa juga",
+    "keterangan": "Karo"
+  },
+  "ndang boi": {
+    "arti": "tidak bisa, tidak boleh",
+    "keterangan": "Toba"
+  },
+  "la banci": {
+    "arti": "tidak bisa, tidak boleh",
+    "keterangan": "Karo"
+  },
+  "ido": {
+    "arti": "ya, itulah",
+    "keterangan": "Toba — penegasan"
+  },
+  "olo": {
+    "arti": "ya, mau (afirmatif)",
+    "keterangan": "Karo"
+  },
+  "daong": {
+    "arti": "tidak (jawaban negatif)",
+    "keterangan": "Karo"
+  },
+  "daong doi": {
+    "arti": "bukan begitu, tidak",
+    "keterangan": "Karo"
+  },
+  "olo doi": {
+    "arti": "ya begitu, iya",
+    "keterangan": "Karo"
+  },
+  "ndang": {
+    "arti": "tidak (negatif Toba)",
+    "keterangan": "Toba"
+  },
+  "ndang na tu i": {
+    "arti": "tidak ke sana, bukan ke situ",
+    "keterangan": "Toba"
+  },
+  "di ja ho": {
+    "arti": "di mana kamu",
+    "keterangan": "Toba"
+  },
+  "ia pe kam di ja": {
+    "arti": "di mana kamu sekarang",
+    "keterangan": "Karo"
+  },
+  "tu dia": {
+    "arti": "ke mana",
+    "keterangan": "Toba"
+  },
+  "ku ja": {
+    "arti": "ke mana (Karo)",
+    "keterangan": "Karo"
+  },
+  "ise": {
+    "arti": "siapa",
+    "keterangan": "Toba"
+  },
+  "ise do ho": {
+    "arti": "siapa kamu",
+    "keterangan": "Toba"
+  },
+  "ise kam": {
+    "arti": "siapa kamu (Karo)",
+    "keterangan": "Karo"
+  },
+  "aha": {
+    "arti": "apa",
+    "keterangan": "Toba"
+  },
+  "kai": {
+    "arti": "apa (Karo)",
+    "keterangan": "Karo"
+  },
+  "kai do i": {
+    "arti": "apa itu",
+    "keterangan": "Karo"
+  },
+  "boasa": {
+    "arti": "mengapa, kenapa",
+    "keterangan": "Toba"
+  },
+  "maka adi": {
+    "arti": "mengapa, kenapa (Karo)",
+    "keterangan": "Karo"
+  },
+  "piga": {
+    "arti": "berapa",
+    "keterangan": "Toba/Karo"
+  },
+  "piga hargana": {
+    "arti": "berapa harganya",
+    "keterangan": "Toba"
+  },
+  "piga ergana": {
+    "arti": "berapa harganya (Karo)",
+    "keterangan": "Karo"
+  },
+  "erga": {
+    "arti": "harga",
+    "keterangan": "Karo"
+  },
+  "harga": {
+    "arti": "harga",
+    "keterangan": "Toba"
+  },
+  "boi do digatip": {
+    "arti": "bisa ditawar tidak",
+    "keterangan": "Toba"
+  },
+  "mahal": {
+    "arti": "mahal",
+    "keterangan": "Toba/Karo"
+  },
+  "meharga": {
+    "arti": "mahal, berharga",
+    "keterangan": "Karo — me- + erga"
+  },
+  "murah": {
+    "arti": "murah",
+    "keterangan": "Toba/Karo"
+  },
+  "memurah": {
+    "arti": "murah (Karo)",
+    "keterangan": "Karo"
+  },
+  "jual": {
+    "arti": "jual",
+    "keterangan": "Toba/Karo"
+  },
+  "beli": {
+    "arti": "beli (verba umum Karo)",
+    "keterangan": "Karo"
+  },
+  "manggadis": {
+    "arti": "menjual",
+    "keterangan": "Toba"
+  },
+  "ergadis": {
+    "arti": "berjualan",
+    "keterangan": "Karo"
+  },
+  "partahanan": {
+    "arti": "tempat tinggal, kedudukan",
+    "keterangan": "Toba"
+  },
+  "inganken": {
+    "arti": "tempat tinggal, tempat",
+    "keterangan": "Karo"
+  },
+  "inganan": {
+    "arti": "tempat, lokasi",
+    "keterangan": "Karo"
+  },
+  "ingani": {
+    "arti": "tinggali, diami",
+    "keterangan": "Karo — ingan + -i"
+  },
+  "mardomu": {
+    "arti": "bertemu, berjumpa",
+    "keterangan": "Toba"
+  },
+  "erjumpa": {
+    "arti": "berjumpa, bertemu",
+    "keterangan": "Karo"
+  },
+  "jumpa": {
+    "arti": "jumpa, temu",
+    "keterangan": "Karo/Toba"
+  },
+  "paborhat": {
+    "arti": "memberangkatkan, melepas kepergian",
+    "keterangan": "Toba"
+  },
+  "surotan": {
+    "arti": "surat, tulisan",
+    "keterangan": "Toba — surat + -an"
+  },
+  "sorate": {
+    "arti": "tertulis, dalam tulisan",
+    "keterangan": "Karo"
+  },
+  "basa": {
+    "arti": "bahasa, cara baca",
+    "keterangan": "Toba/Karo"
+  },
+  "mambasa": {
+    "arti": "membaca",
+    "keterangan": "Toba"
+  },
+  "mambaca": {
+    "arti": "membaca",
+    "keterangan": "Karo — mababasa"
+  },
+  "bacoaken": {
+    "arti": "bacakan, bacakan untuk...",
+    "keterangan": "Karo"
+  },
+  "manghapus": {
+    "arti": "menghapus",
+    "keterangan": "Toba"
+  },
+  "ngapus": {
+    "arti": "menghapus",
+    "keterangan": "Karo"
+  },
+  "uhum": {
+    "arti": "hukum, keputusan adat",
+    "keterangan": "Toba"
+  },
+  "aturan": {
+    "arti": "aturan, peraturan",
+    "keterangan": "Toba/Karo"
+  },
+  "suhi ni ampang na opat": {
+    "arti": "empat sudut nyiru (simbol kesatuan adat)",
+    "keterangan": "Toba"
+  },
+  "ampang": {
+    "arti": "nyiru, tampah (wadah anyaman)",
+    "keterangan": "Toba"
+  },
+  "nampan": {
+    "arti": "nampan, ampan",
+    "keterangan": "Karo"
+  },
+  "bide": {
+    "arti": "pagar, pembatas",
+    "keterangan": "Karo"
+  },
+  "bale": {
+    "arti": "balai, aula pertemuan",
+    "keterangan": "Toba"
+  },
+  "jambur": {
+    "arti": "balai desa, tempat pertemuan Karo",
+    "keterangan": "Karo"
+  },
+  "sopo": {
+    "arti": "gubuk, pondok di ladang",
+    "keterangan": "Toba/Karo"
+  },
+  "losung": {
+    "arti": "lesung (penumbuk padi)",
+    "keterangan": "Toba/Karo"
+  },
+  "alu": {
+    "arti": "alu (penumbuk padi)",
+    "keterangan": "Toba/Karo"
+  },
+  "erbage": {
+    "arti": "beragam, berbagai macam",
+    "keterangan": "Karo"
+  },
+  "bage": {
+    "arti": "seperti itu, begitu",
+    "keterangan": "Karo"
+  },
+  "bage kari": {
+    "arti": "begitulah, demikianlah",
+    "keterangan": "Karo"
+  },
+  "songoni": {
+    "arti": "begini, seperti ini",
+    "keterangan": "Toba"
+  },
+  "bagekon": {
+    "arti": "lakukan seperti itu",
+    "keterangan": "Karo"
+  },
+  "i ma i": {
+    "arti": "itulah, ya itulah",
+    "keterangan": "Toba — penegasan kuat"
+  },
+  "bia pe": {
+    "arti": "bagaimanapun juga",
+    "keterangan": "Karo"
+  },
+  "piga pe": {
+    "arti": "berapapun, meskipun berapa",
+    "keterangan": "Karo"
+  },
+  "kai pe": {
+    "arti": "apapun juga",
+    "keterangan": "Karo"
+  },
+  "sekalak pe": {
+    "arti": "siapapun juga",
+    "keterangan": "Karo"
+  },
+  "ndia pe": {
+    "arti": "mana pun juga, dimanapun",
+    "keterangan": "Karo"
+  },
+  "la ngenca": {
+    "arti": "bukan hanya, tidak sekedar",
+    "keterangan": "Karo"
+  },
+  "bukan holan": {
+    "arti": "bukan hanya",
+    "keterangan": "Toba"
+  },
+  "alana": {
+    "arti": "sebabnya, alasannya",
+    "keterangan": "Toba"
+  },
+  "alani i": {
+    "arti": "karena itu, oleh sebab itu",
+    "keterangan": "Karo"
+  },
+  "alani nai": {
+    "arti": "itulah sebabnya",
+    "keterangan": "Karo"
+  },
+  "gara-gara": {
+    "arti": "gara-gara, penyebab masalah",
+    "keterangan": "Toba/Karo"
+  },
+  "ido na masa": {
+    "arti": "itulah yang terjadi",
+    "keterangan": "Toba"
+  },
+  "i me i": {
+    "arti": "itulah, begitulah adanya",
+    "keterangan": "Karo"
+  },
+  "tabo": {
+    "arti": "enak, lezat, nikmat",
+    "keterangan": "Toba"
+  },
+  "ntebu": {
+    "arti": "manis",
+    "keterangan": "Karo — N- + tebu"
+  },
+  "tebu": {
+    "arti": "manis, tebu",
+    "keterangan": "Karo"
+  },
+  "manis": {
+    "arti": "manis",
+    "keterangan": "Toba/Karo"
+  },
+  "pait": {
+    "arti": "pahit",
+    "keterangan": "Toba/Karo"
+  },
+  "masem": {
+    "arti": "asam, masam",
+    "keterangan": "Toba/Karo"
+  },
+  "asin": {
+    "arti": "asin, garam",
+    "keterangan": "Toba/Karo"
+  },
+  "sira": {
+    "arti": "garam",
+    "keterangan": "Toba"
+  },
+  "nasu": {
+    "arti": "memasak (dengan merebus)",
+    "keterangan": "Toba"
+  },
+  "masak": {
+    "arti": "masak, memasak; matang",
+    "keterangan": "Toba/Karo"
+  },
+  "nusur": {
+    "arti": "turun, merosot",
+    "keterangan": "Karo"
+  },
+  "turun": {
+    "arti": "turun, menurun",
+    "keterangan": "Toba/Karo"
+  },
+  "darat": {
+    "arti": "ke luar, ke darat",
+    "keterangan": "Karo — ndaratken = keluarkan"
+  },
+  "luar": {
+    "arti": "luar, di luar",
+    "keterangan": "Toba/Karo"
+  },
+  "tonga": {
+    "arti": "tengah, pertengahan",
+    "keterangan": "Toba/Karo"
+  },
+  "parumaen": {
+    "arti": "menantu perempuan",
+    "keterangan": "Toba"
+  },
+  "hela": {
+    "arti": "menantu laki-laki",
+    "keterangan": "Toba"
+  },
+  "kela": {
+    "arti": "menantu laki-laki (Karo)",
+    "keterangan": "Karo"
+  }
+}

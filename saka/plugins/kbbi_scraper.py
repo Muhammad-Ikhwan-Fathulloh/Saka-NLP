@@ -5,7 +5,7 @@ from typing import Dict, Any, List
 class KBBIException(Exception):
     pass
 
-def query_kbbi(word: str) -> Dict[str, Any]:
+def query_kbbi(word: str, cookies: Dict[str, str] = None) -> Dict[str, Any]:
     """
     Queries the unofficial but popular kbbi.web.id dictionary for a given word.
     Note: Requires an active internet connection.
@@ -16,8 +16,9 @@ def query_kbbi(word: str) -> Dict[str, Any]:
     }
     
     try:
-        response = requests.get(url, headers=headers, timeout=10)
+        response = requests.get(url, headers=headers, cookies=cookies, timeout=10)
         response.raise_for_status()
+
     except requests.RequestException as e:
         raise KBBIException(f"Failed to fetch from KBBI: {e}")
         
