@@ -1,10 +1,12 @@
 import asyncio
 from typing import Dict
+from functools import lru_cache
 from ..dict.slang_dict import get_slang_dict
 
 # Load slang dictionary into memory
 _SLANG_DICT: Dict[str, str] = get_slang_dict()
 
+@lru_cache(maxsize=10000)
 def normalize(text: str) -> str:
     """
     Normalizes slang / informal words into standard Indonesian.

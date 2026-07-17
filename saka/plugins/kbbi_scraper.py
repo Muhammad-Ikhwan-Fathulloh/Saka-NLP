@@ -1,11 +1,11 @@
 import requests
 from bs4 import BeautifulSoup
-from typing import Dict, Any, List
+from typing import Dict, Any, List, Optional
 
 class KBBIException(Exception):
     pass
 
-def query_kbbi(word: str, cookies: Dict[str, str] = None) -> Dict[str, Any]:
+def query_kbbi(word: str, cookies: Optional[Dict[str, str]] = None) -> Dict[str, Any]:
     """
     Queries the unofficial but popular kbbi.web.id dictionary for a given word.
     Note: Requires an active internet connection.

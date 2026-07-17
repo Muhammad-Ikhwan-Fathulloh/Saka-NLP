@@ -1,6 +1,7 @@
 import os
 import json
 from typing import Set
+from functools import lru_cache
 
 _SUNDA_STOPWORDS = {
     "teu", "na", "ka", "ti", "ku", "di", "nu", "anu", "oge", "wae", 
@@ -246,6 +247,24 @@ _BATAK_STOPWORDS = {
     "aso",       # so that (variant of 'asa')
 }
 
+# Cache Indonesian stopwords loaded from file
+_ID_STOPWORDS_CACHED: Set[str] = set()
+def _load_id_stopwords() -> Set[str]:
+    global _ID_STOPWORDS_CACHED
+    if not _ID_STOPWORDS_CACHED:
+        current_dir = os.path.dirname(__file__)
+        txt_path = os.path.join(current_dir, 'stopwords.txt')
+        try:
+            with open(txt_path, 'r', encoding='utf-8') as f:
+                for line in f:
+                    word = line.strip()
+                    if word:
+                        _ID_STOPWORDS_CACHED.add(word)
+        except FileNotFoundError:
+            print(f"Warning: Stopwords file not found at {txt_path}.")
+    return _ID_STOPWORDS_CACHED
+
+@lru_cache(maxsize=10)
 def get_stopwords(lang: str = "all") -> Set[str]:
     """
     Returns a set of stopwords.
@@ -264,16 +283,7 @@ def get_stopwords(lang: str = "all") -> Set[str]:
     stopwords = set()
     
     if lang in ['id', 'all']:
-        current_dir = os.path.dirname(__file__)
-        txt_path = os.path.join(current_dir, 'stopwords.txt')
-        try:
-            with open(txt_path, 'r', encoding='utf-8') as f:
-                for line in f:
-                    word = line.strip()
-                    if word:
-                        stopwords.add(word)
-        except FileNotFoundError:
-            print(f"Warning: Stopwords file not found at {txt_path}.")
+        stopwords.update(_load_id_stopwords())
             
     if lang in ['sunda', 'all']:
         stopwords.update(_SUNDA_STOPWORDS)
