@@ -23,17 +23,23 @@ def normalize(text: str) -> str:
     for token in tokens:
         lower_token = token.lower()
         if lower_token in _SLANG_DICT:
-            # Preserve original casing roughly if it was title case
-            if token.istitle():
-                normalized_tokens.append(_SLANG_DICT[lower_token].title())
+            mapped_val = _SLANG_DICT[lower_token]
+            # Preserve original casing
+            if token.isupper():
+                normalized_tokens.append(mapped_val.upper())
+            elif token.istitle():
+                normalized_tokens.append(mapped_val.title())
             else:
-                normalized_tokens.append(_SLANG_DICT[lower_token])
+                normalized_tokens.append(mapped_val)
         else:
             normalized_tokens.append(token)
             
-    # Simple reconstruction
-    # A true detokenizer would handle punctuation better
-    return " ".join(normalized_tokens)
+    # Simple detokenizer to handle punctuation better
+    import re
+    reconstructed = " ".join(normalized_tokens)
+    # Remove spaces before punctuation marks
+    reconstructed = re.sub(r'\s+([.,!?:;])', r'\1', reconstructed)
+    return reconstructed
 
 async def async_normalize(text: str) -> str:
     """

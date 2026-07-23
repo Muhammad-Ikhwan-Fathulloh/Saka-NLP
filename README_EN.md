@@ -1,4 +1,4 @@
-# Saka: Indonesian Language Processing with Prompting and Agentic AI Support v0.2.7
+# Saka: Indonesian Language Processing with Prompting and Agentic AI Support v0.2.8
 
 [**English**](README_EN.md) | [**Bahasa Indonesia**](README.md)
 
@@ -14,7 +14,7 @@
 ---
 
 ## Table of Contents
-- [Saka: Indonesian Language Processing with Prompting and Agentic AI Support v0.2.7](#saka-indonesian-language-processing-with-prompting-and-agentic-ai-support-v026)
+- [Saka: Indonesian Language Processing with Prompting and Agentic AI Support v0.2.8](#saka-indonesian-language-processing-with-prompting-and-agentic-ai-support-v026)
   - [Table of Contents](#table-of-contents)
   - [Key Features](#key-features)
   - [Installation](#installation)
@@ -189,7 +189,7 @@ Saka-NLP automatically splits compound words using rules defined in `compounds.j
 
 Deep support for regional languages through dictionaries and traditional scripts.
 
-### Batak (New in v0.2.7)
+### Batak (New in v0.2.8)
 
 Saka-NLP now supports **Batak** across three dialects — Toba, Karo, and Mandailing — with a lexicon of **780+ words** sourced from academic grammars and KamusBatak.com.
 
@@ -257,7 +257,7 @@ saka --normalize "ngapain ke kampus klo libur"
   month     = {5},
   year      = {2026},
   publisher = {Zenodo},
-  version   = {0.2.7},
+  version   = {0.2.8},
   doi       = {10.5281/zenodo.20092640},
   url       = {https://github.com/Muhammad-Ikhwan-Fathulloh/Saka-NLP}
 }

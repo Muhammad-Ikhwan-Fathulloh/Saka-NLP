@@ -1,1014 +1,1018 @@
 {
-    "nan": {
-        "arti": "yang",
-        "keterangan": ""
-    },
-    "jo": {
-        "arti": "dengan",
-        "keterangan": ""
-    },
-    "dek": {
-        "arti": "karena",
-        "keterangan": ""
-    },
-    "ko": {
-        "arti": "ini",
-        "keterangan": ""
-    },
-    "iko": {
-        "arti": "ini",
-        "keterangan": ""
-    },
-    "tu": {
-        "arti": "itu",
-        "keterangan": ""
-    },
-    "adolah": {
-        "arti": "adalah",
-        "keterangan": ""
-    },
-    "pado": {
-        "arti": "pada",
-        "keterangan": ""
-    },
-    "juo": {
-        "arti": "juga",
-        "keterangan": ""
-    },
-    "marupokan": {
-        "arti": "merupakan",
-        "keterangan": ""
-    },
-    "biasonyo": {
-        "arti": "biasanya",
-        "keterangan": ""
-    },
-    "untuak": {
-        "arti": "untuk",
-        "keterangan": ""
-    },
-    "mamakan": {
-        "arti": "memakan",
-        "keterangan": ""
-    },
-    "sabagai": {
-        "arti": "sebagai",
-        "keterangan": ""
-    },
-    "ka": {
-        "arti": "ke",
-        "keterangan": ""
-    },
-    "taun": {
-        "arti": "tahun",
-        "keterangan": ""
-    },
-    "ado": {
-        "arti": "ada",
-        "keterangan": ""
-    },
-    "inyo": {
-        "arti": "dia",
-        "keterangan": ""
-    },
-    "manjadi": {
-        "arti": "menjadi",
-        "keterangan": ""
-    },
-    "sabuah": {
-        "arti": "sebuah",
-        "keterangan": ""
-    },
-    "urang": {
-        "arti": "orang",
-        "keterangan": ""
-    },
-    "sarato": {
-        "arti": "serta",
-        "keterangan": ""
-    },
-    "indak": {
-        "arti": "tidak",
-        "keterangan": ""
-    },
-    "alah": {
-        "arti": "telah",
-        "keterangan": ""
-    },
-    "baliau": {
-        "arti": "beliau",
-        "keterangan": ""
-    },
-    "dapek": {
-        "arti": "dapat",
-        "keterangan": ""
-    },
-    "gadang": {
-        "arti": "besar",
-        "keterangan": ""
-    },
-    "namo": {
-        "arti": "nama",
-        "keterangan": ""
-    },
-    "nagari": {
-        "arti": "negeri",
-        "keterangan": ""
-    },
-    "labiah": {
-        "arti": "lebih",
-        "keterangan": ""
-    },
-    "surang": {
-        "arti": "sendiri",
-        "keterangan": ""
-    },
-    "pulo": {
-        "arti": "pula",
-        "keterangan": ""
-    },
-    "karano": {
-        "arti": "karena",
-        "keterangan": ""
-    },
-    "kini": {
-        "arti": "sekarang",
-        "keterangan": ""
-    },
-    "talatak": {
-        "arti": "terletak",
-        "keterangan": ""
-    },
-    "bahaso": {
-        "arti": "bahasa",
-        "keterangan": ""
-    },
-    "antaro": {
-        "arti": "antara",
-        "keterangan": ""
-    },
-    "sacaro": {
-        "arti": "secara",
-        "keterangan": ""
-    },
-    "maso": {
-        "arti": "masa",
-        "keterangan": ""
-    },
-    "babarapo": {
-        "arti": "beberapa",
-        "keterangan": ""
-    },
-    "sarupo": {
-        "arti": "seperti",
-        "keterangan": ""
-    },
-    "disabuik": {
-        "arti": "disebut",
-        "keterangan": ""
-    },
-    "paliang": {
-        "arti": "paling",
-        "keterangan": ""
-    },
-    "duo": {
-        "arti": "dua",
-        "keterangan": ""
-    },
-    "katiko": {
-        "arti": "ketika",
-        "keterangan": ""
-    },
-    "tampek": {
-        "arti": "tempat",
-        "keterangan": ""
-    },
-    "tasabuik": {
-        "arti": "tersebut",
-        "keterangan": ""
-    },
-    "sasudah": {
-        "arti": "setelah",
-        "keterangan": ""
-    },
-    "mambuek": {
-        "arti": "membuat",
-        "keterangan": ""
-    },
-    "saurang": {
-        "arti": "seorang",
-        "keterangan": ""
-    },
-    "ateh": {
-        "arti": "atas",
-        "keterangan": ""
-    },
-    "balando": {
-        "arti": "belanda",
-        "keterangan": ""
-    },
-    "iyolah": {
-        "arti": "ialah",
-        "keterangan": ""
-    },
-    "basamo": {
-        "arti": "bersama",
-        "keterangan": ""
-    },
-    "punyo": {
-        "arti": "punya",
-        "keterangan": ""
-    },
-    "wakatu": {
-        "arti": "waktu",
-        "keterangan": ""
-    },
-    "lainnyo": {
-        "arti": "lainnya",
-        "keterangan": ""
-    },
-    "kudian": {
-        "arti": "setelah",
-        "keterangan": ""
-    },
-    "mampunyoi": {
-        "arti": "mempunyai",
-        "keterangan": ""
-    },
-    "salamo": {
-        "arti": "selama",
-        "keterangan": ""
-    },
-    "acok": {
-        "arti": "sering",
-        "keterangan": ""
-    },
-    "aia": {
-        "arti": "air",
-        "keterangan": ""
-    },
-    "panduduak": {
-        "arti": "penduduk",
-        "keterangan": ""
-    },
-    "tigo": {
-        "arti": "tiga",
-        "keterangan": ""
-    },
-    "kaduo": {
-        "arti": "kedua",
-        "keterangan": ""
-    },
-    "bantuak": {
-        "arti": "bentuk",
-        "keterangan": ""
-    },
-    "banamo": {
-        "arti": "bernama",
-        "keterangan": ""
-    },
-    "babagai": {
-        "arti": "berbagai",
-        "keterangan": ""
-    },
-    "patamo": {
-        "arti": "pertama",
-        "keterangan": ""
-    },
-    "partamo": {
-        "arti": "pertama",
-        "keterangan": ""
-    },
-    "kamudian": {
-        "arti": "kemudian",
-        "keterangan": ""
-    },
-    "inggo": {
-        "arti": "hingga",
-        "keterangan": ""
-    },
-    "sikolah": {
-        "arti": "sekolah",
-        "keterangan": ""
-    },
-    "ciek": {
-        "arti": "satu",
-        "keterangan": ""
-    },
-    "baso": {
-        "arti": "bahasa",
-        "keterangan": ""
-    },
-    "tangah": {
-        "arti": "tengah",
-        "keterangan": ""
-    },
-    "masyarakaik": {
-        "arti": "masyarakat",
-        "keterangan": ""
-    },
-    "hanyo": {
-        "arti": "hanya",
-        "keterangan": ""
-    },
-    "manuruik": {
-        "arti": "menurut",
-        "keterangan": ""
-    },
-    "mandapek": {
-        "arti": "mendapat",
-        "keterangan": ""
-    },
-    "kapado": {
-        "arti": "kepada",
-        "keterangan": ""
-    },
-    "ketek": {
-        "arti": "kecil",
-        "keterangan": ""
-    },
-    "lahia": {
-        "arti": "lahir",
-        "keterangan": ""
-    },
-    "laweh": {
-        "arti": "luas",
-        "keterangan": ""
-    },
-    "utamo": {
-        "arti": "utama",
-        "keterangan": ""
-    },
-    "baraso": {
-        "arti": "berasa",
-        "keterangan": ""
-    },
-    "kato": {
-        "arti": "kata",
-        "keterangan": ""
-    },
-    "padusi": {
-        "arti": "perempuan",
-        "keterangan": ""
-    },
-    "tanamo": {
-        "arti": "ternama",
-        "keterangan": ""
-    },
-    "satalah": {
-        "arti": "setelah",
-        "keterangan": ""
-    },
-    "inggirih": {
-        "arti": "inggris",
-        "keterangan": ""
-    },
-    "sijarah": {
-        "arti": "sejarah",
-        "keterangan": ""
-    },
-    "mamiliki": {
-        "arti": "memiliki",
-        "keterangan": ""
-    },
-    "biaso": {
-        "arti": "biasa",
-        "keterangan": ""
-    },
-    "tadapek": {
-        "arti": "terdapat",
-        "keterangan": ""
-    },
-    "abaik": {
-        "arti": "abad",
-        "keterangan": ""
-    },
-    "sabalun": {
-        "arti": "sebelum",
-        "keterangan": ""
-    },
-    "lah": {
-        "arti": "sudah",
-        "keterangan": ""
-    },
-    "masuak": {
-        "arti": "masuk",
-        "keterangan": ""
-    },
-    "kapalo": {
-        "arti": "kepala",
-        "keterangan": ""
-    },
-    "sakitar": {
-        "arti": "sekitar",
-        "keterangan": ""
-    },
-    "sahinggo": {
-        "arti": "sehingga",
-        "keterangan": ""
-    },
-    "lua": {
-        "arti": "luar",
-        "keterangan": ""
-    },
-    "caro": {
-        "arti": "cara",
-        "keterangan": ""
-    },
-    "parang": {
-        "arti": "perang",
-        "keterangan": ""
-    },
-    "lai": {
-        "arti": "ada",
-        "keterangan": ""
-    },
-    "bamain": {
-        "arti": "bermain",
-        "keterangan": ""
-    },
-    "baliak": {
-        "arti": "kembali",
-        "keterangan": ""
-    },
-    "panduduknyo": {
-        "arti": "penduduknya",
-        "keterangan": ""
-    },
-    "tajadi": {
-        "arti": "terjadi",
-        "keterangan": ""
-    },
-    "pamain": {
-        "arti": "pemain",
-        "keterangan": ""
-    },
-    "nyo": {
-        "arti": "nya",
-        "keterangan": ""
-    },
-    "rajo": {
-        "arti": "raja",
-        "keterangan": ""
-    },
-    "samantaro": {
-        "arti": "sementara",
-        "keterangan": ""
-    },
-    "maningga": {
-        "arti": "meninggal",
-        "keterangan": ""
-    },
-    "barado": {
-        "arti": "berada",
-        "keterangan": ""
-    },
-    "bakeh": {
-        "arti": "bekas",
-        "keterangan": ""
-    },
-    "ampek": {
-        "arti": "empat",
-        "keterangan": ""
-    },
-    "lamo": {
-        "arti": "lama",
-        "keterangan": ""
-    },
-    "mudo": {
-        "arti": "muda",
-        "keterangan": ""
-    },
-    "gunuang": {
-        "arti": "gunung",
-        "keterangan": ""
-    },
-    "sadangkan": {
-        "arti": "sedangkan",
-        "keterangan": ""
-    },
-    "dipakai": {
-        "arti": "dipakai",
-        "keterangan": ""
-    },
-    "budayo": {
-        "arti": "budaya",
-        "keterangan": ""
-    },
-    "umumnyo": {
-        "arti": "umumnya",
-        "keterangan": ""
-    },
-    "adaik": {
-        "arti": "adat",
-        "keterangan": ""
-    },
-    "kiro": {
-        "arti": "kira",
-        "keterangan": ""
-    },
-    "dibuek": {
-        "arti": "dibuat",
-        "keterangan": ""
-    },
-    "sangaik": {
-        "arti": "sangat",
-        "keterangan": ""
-    },
-    "pamarintahan": {
-        "arti": "pemerintahan",
-        "keterangan": ""
-    },
-    "satiok": {
-        "arti": "setiap",
-        "keterangan": ""
-    },
-    "sabalah": {
-        "arti": "sebelah",
-        "keterangan": ""
-    },
-    "digunoan": {
-        "arti": "digunakan",
-        "keterangan": ""
-    },
-    "sabalunnyo": {
-        "arti": "sebelumnya",
-        "keterangan": ""
-    },
-    "manulih": {
-        "arti": "menulis",
-        "keterangan": ""
-    },
-    "kamardekaan": {
-        "arti": "kemerdekaan",
-        "keterangan": ""
-    },
-    "karajo": {
-        "arti": "kerja",
-        "keterangan": ""
-    },
-    "umua": {
-        "arti": "umur",
-        "keterangan": ""
-    },
-    "sajo": {
-        "arti": "saja",
-        "keterangan": ""
-    },
-    "patandiangan": {
-        "arti": "pertandingan",
-        "keterangan": ""
-    },
-    "tingga": {
-        "arti": "tinggal",
-        "keterangan": ""
-    },
-    "mancapai": {
-        "arti": "mencapai",
-        "keterangan": ""
-    },
-    "carito": {
-        "arti": "cerita",
-        "keterangan": ""
-    },
-    "pamarintah": {
-        "arti": "pemerintah",
-        "keterangan": ""
-    },
-    "hiduik": {
-        "arti": "hidup",
-        "keterangan": ""
-    },
-    "dakek": {
-        "arti": "dekat",
-        "keterangan": ""
-    },
-    "saluruah": {
-        "arti": "seluruh",
-        "keterangan": ""
-    },
-    "tingkek": {
-        "arti": "tingkat",
-        "keterangan": ""
-    },
-    "cukuik": {
-        "arti": "cukup",
-        "keterangan": ""
-    },
-    "ubek": {
-        "arti": "obat",
-        "keterangan": ""
-    },
-    "diagiah": {
-        "arti": "diberi",
-        "keterangan": ""
-    },
-    "iduik": {
-        "arti": "hidup",
-        "keterangan": ""
-    },
-    "manjabaik": {
-        "arti": "menjabat",
-        "keterangan": ""
-    },
-    "bakarajo": {
-        "arti": "bekerja",
-        "keterangan": ""
-    },
-    "panyakik": {
-        "arti": "penyakit",
-        "keterangan": ""
-    },
-    "iolah": {
-        "arti": "ialah",
-        "keterangan": ""
-    },
-    "akhianyo": {
-        "arti": "akhirnya",
-        "keterangan": ""
-    },
-    "kampuang": {
-        "arti": "kampung",
-        "keterangan": ""
-    },
-    "ikuik": {
-        "arti": "ikut",
-        "keterangan": ""
-    },
-    "sadang": {
-        "arti": "sedang",
-        "keterangan": ""
-    },
-    "bakambang": {
-        "arti": "berkembang",
-        "keterangan": ""
-    },
-    "sakola": {
-        "arti": "sekolah",
-        "keterangan": ""
-    },
-    "babeda": {
-        "arti": "berbeda",
-        "keterangan": ""
-    },
-    "tuo": {
-        "arti": "tua",
-        "keterangan": ""
-    },
-    "manggunoan": {
-        "arti": "menggunakan",
-        "keterangan": ""
-    },
-    "katua": {
-        "arti": "ketua",
-        "keterangan": ""
-    },
-    "sasuai": {
-        "arti": "sesuai",
-        "keterangan": ""
-    },
-    "pantiang": {
-        "arti": "penting",
-        "keterangan": ""
-    },
-    "taruih": {
-        "arti": "terus",
-        "keterangan": ""
-    },
-    "baiak": {
-        "arti": "baik",
-        "keterangan": ""
-    },
-    "sabanyak": {
-        "arti": "sebanyak",
-        "keterangan": ""
-    },
-    "kahidupan": {
-        "arti": "kehidupan",
-        "keterangan": ""
-    },
-    "akhia": {
-        "arti": "akhir",
-        "keterangan": ""
-    },
-    "nagaro": {
-        "arti": "negara",
-        "keterangan": ""
-    },
-    "salapeh": {
-        "arti": "selepas",
-        "keterangan": ""
-    },
-    "masiang": {
-        "arti": "masing",
-        "keterangan": ""
-    },
-    "maagiah": {
-        "arti": "memberikan",
-        "keterangan": ""
-    },
-    "mandirian": {
-        "arti": "mendirikan",
-        "keterangan": ""
-    },
-    "bagabuang": {
-        "arti": "bergabung",
-        "keterangan": ""
-    },
-    "katigo": {
-        "arti": "ketiga",
-        "keterangan": ""
-    },
-    "raso": {
-        "arti": "rasa",
-        "keterangan": ""
-    },
-    "kagiatan": {
-        "arti": "kegiatan",
-        "keterangan": ""
-    },
-    "salanjuiknyo": {
-        "arti": "selanjutnya",
-        "keterangan": ""
-    },
-    "tapiliah": {
-        "arti": "terpilih",
-        "keterangan": ""
-    },
-    "liau": {
-        "arti": "beliau",
-        "keterangan": ""
-    },
-    "pambangunan": {
-        "arti": "pembangunan",
-        "keterangan": ""
-    },
-    "panulih": {
-        "arti": "penulis",
-        "keterangan": ""
-    },
-    "mulo": {
-        "arti": "mula",
-        "keterangan": ""
-    },
-    "malawan": {
-        "arti": "melawan",
-        "keterangan": ""
-    },
-    "sajumlah": {
-        "arti": "sejumlah",
-        "keterangan": ""
-    },
-    "anam": {
-        "arti": "enam",
-        "keterangan": ""
-    },
-    "mambantuak": {
-        "arti": "membentuk",
-        "keterangan": ""
-    },
-    "daripado": {
-        "arti": "daripada",
-        "keterangan": ""
-    },
-    "mamakai": {
-        "arti": "memakai",
-        "keterangan": ""
-    },
-    "langsuang": {
-        "arti": "langsung",
-        "keterangan": ""
-    },
-    "namonyo": {
-        "arti": "namanya",
-        "keterangan": ""
-    },
-    "umaik": {
-        "arti": "umat",
-        "keterangan": ""
-    },
-    "sakik": {
-        "arti": "sakit",
-        "keterangan": ""
-    },
-    "mato": {
-        "arti": "mata",
-        "keterangan": ""
-    },
-    "digunokan": {
-        "arti": "digunakan",
-        "keterangan": ""
-    },
-    "datuak": {
-        "arti": "datuk",
-        "keterangan": ""
-    },
-    "jauah": {
-        "arti": "jauh",
-        "keterangan": ""
-    },
-    "tarutamo": {
-        "arti": "terutama",
-        "keterangan": ""
-    },
-    "babantuak": {
-        "arti": "berbentuk",
-        "keterangan": ""
-    },
-    "supayo": {
-        "arti": "supaya",
-        "keterangan": ""
-    },
-    "tatapi": {
-        "arti": "tetapi",
-        "keterangan": ""
-    },
-    "antaronyo": {
-        "arti": "diantaranya",
-        "keterangan": ""
-    },
-    "diangkek": {
-        "arti": "diangkat",
-        "keterangan": ""
-    },
-    "ayahnyo": {
-        "arti": "ayahnya",
-        "keterangan": ""
-    },
-    "dima": {
-        "arti": "dimana",
-        "keterangan": ""
-    },
-    "muko": {
-        "arti": "muka",
-        "keterangan": ""
-    },
-    "alun": {
-        "arti": "belum",
-        "keterangan": ""
-    },
-    "talua": {
-        "arti": "telur",
-        "keterangan": ""
-    },
-    "karusakan": {
-        "arti": "kerusakan",
-        "keterangan": ""
-    },
-    "baitu": {
-        "arti": "adalah",
-        "keterangan": ""
-    },
-    "katurunan": {
-        "arti": "keturunan",
-        "keterangan": ""
-    },
-    "mamainan": {
-        "arti": "memainkan",
-        "keterangan": ""
-    },
-    "pajuang": {
-        "arti": "pejuang",
-        "keterangan": ""
-    },
-    "gulo": {
-        "arti": "gula",
-        "keterangan": ""
-    },
-    "suaro": {
-        "arti": "suara",
-        "keterangan": ""
-    },
-    "didirian": {
-        "arti": "didirikan",
-        "keterangan": ""
-    },
-    "manikah": {
-        "arti": "menikah",
-        "keterangan": ""
-    },
-    "manggunokan": {
-        "arti": "menggunakan",
-        "keterangan": ""
-    },
-    "bungo": {
-        "arti": "bunga",
-        "keterangan": ""
-    },
-    "sainggo": {
-        "arti": "sehingga",
-        "keterangan": ""
-    },
-    "kulik": {
-        "arti": "kulit",
-        "keterangan": ""
-    },
-    "pai": {
-        "arti": "pergi",
-        "keterangan": ""
-    },
-    "mako": {
-        "arti": "maka",
-        "keterangan": ""
-    },
-    "dagiang": {
-        "arti": "daging",
-        "keterangan": ""
-    },
-    "sadonyo": {
-        "arti": "semuanya",
-        "keterangan": ""
-    },
-    "rakyaik": {
-        "arti": "rakyat",
-        "keterangan": ""
-    },
-    "tibo": {
-        "arti": "tiba",
-        "keterangan": ""
-    },
-    "bukik": {
-        "arti": "bukit",
-        "keterangan": ""
-    },
-    "tubuah": {
-        "arti": "tubuh",
-        "keterangan": ""
-    },
-    "adonyo": {
-        "arti": "adanya",
-        "keterangan": ""
-    },
-    "kalua": {
-        "arti": "keluar",
-        "keterangan": ""
-    },
-    "kaduonyo": {
-        "arti": "keduanya",
-        "keterangan": ""
-    },
-    "parubahan": {
-        "arti": "perubahan",
-        "keterangan": ""
-    },
-    "bakapasitas": {
-        "arti": "berkapasitas",
-        "keterangan": ""
-    },
-    "ditulih": {
-        "arti": "ditulis",
-        "keterangan": ""
-    },
-    "kandangnyo": {
-        "arti": "kandangnya",
-        "keterangan": ""
-    },
-    "barikuik": {
-        "arti": "berikut",
-        "keterangan": ""
-    },
-    "satampek": {
-        "arti": "setempat",
-        "keterangan": ""
-    },
-    "sangkek": {
-        "arti": "sejak",
-        "keterangan": ""
-    },
-    "mandapekan": {
-        "arti": "mendapatkan",
-        "keterangan": ""
-    },
-    "saaik": {
-        "arti": "saat",
-        "keterangan": ""
-    },
-    "kantua": {
-        "arti": "kantor",
-        "keterangan": ""
-    },
-    "palabuahan": {
-        "arti": "pelabuhan",
-        "keterangan": ""
-    },
-    "surek": {
-        "arti": "surat",
-        "keterangan": ""
-    },
-    "limo": {
-        "arti": "lima",
-        "keterangan": ""
-    },
-    "jawi": {
-        "arti": "sapi",
-        "keterangan": ""
-    },
-    "pamimpin": {
-        "arti": "pemimpin",
-        "keterangan": ""
-    },
-    "bana": {
-        "arti": "sangat",
-        "keterangan": ""
-    }
+  "nan": {
+    "arti": "yang",
+    "keterangan": ""
+  },
+  "jo": {
+    "arti": "dengan",
+    "keterangan": ""
+  },
+  "dek": {
+    "arti": "karena",
+    "keterangan": ""
+  },
+  "ko": {
+    "arti": "ini",
+    "keterangan": ""
+  },
+  "iko": {
+    "arti": "ini",
+    "keterangan": ""
+  },
+  "tu": {
+    "arti": "itu",
+    "keterangan": ""
+  },
+  "adolah": {
+    "arti": "adalah",
+    "keterangan": ""
+  },
+  "pado": {
+    "arti": "pada",
+    "keterangan": ""
+  },
+  "juo": {
+    "arti": "juga",
+    "keterangan": ""
+  },
+  "marupokan": {
+    "arti": "merupakan",
+    "keterangan": ""
+  },
+  "biasonyo": {
+    "arti": "biasanya",
+    "keterangan": ""
+  },
+  "untuak": {
+    "arti": "untuk",
+    "keterangan": ""
+  },
+  "mamakan": {
+    "arti": "memakan",
+    "keterangan": ""
+  },
+  "sabagai": {
+    "arti": "sebagai",
+    "keterangan": ""
+  },
+  "ka": {
+    "arti": "ke",
+    "keterangan": ""
+  },
+  "taun": {
+    "arti": "tahun",
+    "keterangan": ""
+  },
+  "ado": {
+    "arti": "ada",
+    "keterangan": ""
+  },
+  "inyo": {
+    "arti": "dia",
+    "keterangan": ""
+  },
+  "manjadi": {
+    "arti": "menjadi",
+    "keterangan": ""
+  },
+  "sabuah": {
+    "arti": "sebuah",
+    "keterangan": ""
+  },
+  "urang": {
+    "arti": "saya, orang",
+    "keterangan": ""
+  },
+  "sarato": {
+    "arti": "serta",
+    "keterangan": ""
+  },
+  "indak": {
+    "arti": "tidak",
+    "keterangan": ""
+  },
+  "alah": {
+    "arti": "telah",
+    "keterangan": ""
+  },
+  "baliau": {
+    "arti": "beliau",
+    "keterangan": ""
+  },
+  "dapek": {
+    "arti": "dapat",
+    "keterangan": ""
+  },
+  "gadang": {
+    "arti": "besar",
+    "keterangan": ""
+  },
+  "namo": {
+    "arti": "nama",
+    "keterangan": ""
+  },
+  "nagari": {
+    "arti": "negeri",
+    "keterangan": ""
+  },
+  "labiah": {
+    "arti": "lebih",
+    "keterangan": ""
+  },
+  "surang": {
+    "arti": "sendiri",
+    "keterangan": ""
+  },
+  "pulo": {
+    "arti": "pula",
+    "keterangan": ""
+  },
+  "karano": {
+    "arti": "karena",
+    "keterangan": ""
+  },
+  "kini": {
+    "arti": "sekarang",
+    "keterangan": ""
+  },
+  "talatak": {
+    "arti": "terletak",
+    "keterangan": ""
+  },
+  "bahaso": {
+    "arti": "bahasa",
+    "keterangan": ""
+  },
+  "antaro": {
+    "arti": "antara",
+    "keterangan": ""
+  },
+  "sacaro": {
+    "arti": "secara",
+    "keterangan": ""
+  },
+  "maso": {
+    "arti": "masa",
+    "keterangan": ""
+  },
+  "babarapo": {
+    "arti": "beberapa",
+    "keterangan": ""
+  },
+  "sarupo": {
+    "arti": "seperti",
+    "keterangan": ""
+  },
+  "disabuik": {
+    "arti": "disebut",
+    "keterangan": ""
+  },
+  "paliang": {
+    "arti": "paling",
+    "keterangan": ""
+  },
+  "duo": {
+    "arti": "dua",
+    "keterangan": ""
+  },
+  "katiko": {
+    "arti": "ketika",
+    "keterangan": ""
+  },
+  "tampek": {
+    "arti": "tempat",
+    "keterangan": ""
+  },
+  "tasabuik": {
+    "arti": "tersebut",
+    "keterangan": ""
+  },
+  "sasudah": {
+    "arti": "setelah",
+    "keterangan": ""
+  },
+  "mambuek": {
+    "arti": "membuat",
+    "keterangan": ""
+  },
+  "saurang": {
+    "arti": "seorang",
+    "keterangan": ""
+  },
+  "ateh": {
+    "arti": "atas",
+    "keterangan": ""
+  },
+  "balando": {
+    "arti": "belanda",
+    "keterangan": ""
+  },
+  "iyolah": {
+    "arti": "ialah",
+    "keterangan": ""
+  },
+  "basamo": {
+    "arti": "bersama",
+    "keterangan": ""
+  },
+  "punyo": {
+    "arti": "punya",
+    "keterangan": ""
+  },
+  "wakatu": {
+    "arti": "waktu",
+    "keterangan": ""
+  },
+  "lainnyo": {
+    "arti": "lainnya",
+    "keterangan": ""
+  },
+  "kudian": {
+    "arti": "setelah",
+    "keterangan": ""
+  },
+  "mampunyoi": {
+    "arti": "mempunyai",
+    "keterangan": ""
+  },
+  "salamo": {
+    "arti": "selama",
+    "keterangan": ""
+  },
+  "acok": {
+    "arti": "sering",
+    "keterangan": ""
+  },
+  "aia": {
+    "arti": "air",
+    "keterangan": ""
+  },
+  "panduduak": {
+    "arti": "penduduk",
+    "keterangan": ""
+  },
+  "tigo": {
+    "arti": "tiga",
+    "keterangan": ""
+  },
+  "kaduo": {
+    "arti": "kedua",
+    "keterangan": ""
+  },
+  "bantuak": {
+    "arti": "bentuk",
+    "keterangan": ""
+  },
+  "banamo": {
+    "arti": "bernama",
+    "keterangan": ""
+  },
+  "babagai": {
+    "arti": "berbagai",
+    "keterangan": ""
+  },
+  "patamo": {
+    "arti": "pertama",
+    "keterangan": ""
+  },
+  "partamo": {
+    "arti": "pertama",
+    "keterangan": ""
+  },
+  "kamudian": {
+    "arti": "kemudian",
+    "keterangan": ""
+  },
+  "inggo": {
+    "arti": "hingga",
+    "keterangan": ""
+  },
+  "sikolah": {
+    "arti": "sekolah",
+    "keterangan": ""
+  },
+  "ciek": {
+    "arti": "satu",
+    "keterangan": ""
+  },
+  "baso": {
+    "arti": "bahasa",
+    "keterangan": ""
+  },
+  "tangah": {
+    "arti": "tengah",
+    "keterangan": ""
+  },
+  "masyarakaik": {
+    "arti": "masyarakat",
+    "keterangan": ""
+  },
+  "hanyo": {
+    "arti": "hanya",
+    "keterangan": ""
+  },
+  "manuruik": {
+    "arti": "menurut",
+    "keterangan": ""
+  },
+  "mandapek": {
+    "arti": "mendapat",
+    "keterangan": ""
+  },
+  "kapado": {
+    "arti": "kepada",
+    "keterangan": ""
+  },
+  "ketek": {
+    "arti": "kecil",
+    "keterangan": ""
+  },
+  "lahia": {
+    "arti": "lahir",
+    "keterangan": ""
+  },
+  "laweh": {
+    "arti": "luas",
+    "keterangan": ""
+  },
+  "utamo": {
+    "arti": "utama",
+    "keterangan": ""
+  },
+  "baraso": {
+    "arti": "berasa",
+    "keterangan": ""
+  },
+  "kato": {
+    "arti": "kata",
+    "keterangan": ""
+  },
+  "padusi": {
+    "arti": "perempuan",
+    "keterangan": ""
+  },
+  "tanamo": {
+    "arti": "ternama",
+    "keterangan": ""
+  },
+  "satalah": {
+    "arti": "setelah",
+    "keterangan": ""
+  },
+  "inggirih": {
+    "arti": "inggris",
+    "keterangan": ""
+  },
+  "sijarah": {
+    "arti": "sejarah",
+    "keterangan": ""
+  },
+  "mamiliki": {
+    "arti": "memiliki",
+    "keterangan": ""
+  },
+  "biaso": {
+    "arti": "biasa",
+    "keterangan": ""
+  },
+  "tadapek": {
+    "arti": "terdapat",
+    "keterangan": ""
+  },
+  "abaik": {
+    "arti": "abad",
+    "keterangan": ""
+  },
+  "sabalun": {
+    "arti": "sebelum",
+    "keterangan": ""
+  },
+  "lah": {
+    "arti": "sudah",
+    "keterangan": ""
+  },
+  "masuak": {
+    "arti": "masuk",
+    "keterangan": ""
+  },
+  "kapalo": {
+    "arti": "kepala",
+    "keterangan": ""
+  },
+  "sakitar": {
+    "arti": "sekitar",
+    "keterangan": ""
+  },
+  "sahinggo": {
+    "arti": "sehingga",
+    "keterangan": ""
+  },
+  "lua": {
+    "arti": "luar",
+    "keterangan": ""
+  },
+  "caro": {
+    "arti": "cara",
+    "keterangan": ""
+  },
+  "parang": {
+    "arti": "perang",
+    "keterangan": ""
+  },
+  "lai": {
+    "arti": "ada",
+    "keterangan": ""
+  },
+  "bamain": {
+    "arti": "bermain",
+    "keterangan": ""
+  },
+  "baliak": {
+    "arti": "kembali",
+    "keterangan": ""
+  },
+  "panduduknyo": {
+    "arti": "penduduknya",
+    "keterangan": ""
+  },
+  "tajadi": {
+    "arti": "terjadi",
+    "keterangan": ""
+  },
+  "pamain": {
+    "arti": "pemain",
+    "keterangan": ""
+  },
+  "nyo": {
+    "arti": "nya",
+    "keterangan": ""
+  },
+  "rajo": {
+    "arti": "raja",
+    "keterangan": ""
+  },
+  "samantaro": {
+    "arti": "sementara",
+    "keterangan": ""
+  },
+  "maningga": {
+    "arti": "meninggal",
+    "keterangan": ""
+  },
+  "barado": {
+    "arti": "berada",
+    "keterangan": ""
+  },
+  "bakeh": {
+    "arti": "bekas",
+    "keterangan": ""
+  },
+  "ampek": {
+    "arti": "empat",
+    "keterangan": ""
+  },
+  "lamo": {
+    "arti": "lama",
+    "keterangan": ""
+  },
+  "mudo": {
+    "arti": "muda",
+    "keterangan": ""
+  },
+  "gunuang": {
+    "arti": "gunung",
+    "keterangan": ""
+  },
+  "sadangkan": {
+    "arti": "sedangkan",
+    "keterangan": ""
+  },
+  "dipakai": {
+    "arti": "dipakai",
+    "keterangan": ""
+  },
+  "budayo": {
+    "arti": "budaya",
+    "keterangan": ""
+  },
+  "umumnyo": {
+    "arti": "umumnya",
+    "keterangan": ""
+  },
+  "adaik": {
+    "arti": "adat",
+    "keterangan": ""
+  },
+  "kiro": {
+    "arti": "kira",
+    "keterangan": ""
+  },
+  "dibuek": {
+    "arti": "dibuat",
+    "keterangan": ""
+  },
+  "sangaik": {
+    "arti": "sangat",
+    "keterangan": ""
+  },
+  "pamarintahan": {
+    "arti": "pemerintahan",
+    "keterangan": ""
+  },
+  "satiok": {
+    "arti": "setiap",
+    "keterangan": ""
+  },
+  "sabalah": {
+    "arti": "sebelah",
+    "keterangan": ""
+  },
+  "digunoan": {
+    "arti": "digunakan",
+    "keterangan": ""
+  },
+  "sabalunnyo": {
+    "arti": "sebelumnya",
+    "keterangan": ""
+  },
+  "manulih": {
+    "arti": "menulis",
+    "keterangan": ""
+  },
+  "kamardekaan": {
+    "arti": "kemerdekaan",
+    "keterangan": ""
+  },
+  "karajo": {
+    "arti": "kerja",
+    "keterangan": ""
+  },
+  "umua": {
+    "arti": "umur",
+    "keterangan": ""
+  },
+  "sajo": {
+    "arti": "saja",
+    "keterangan": ""
+  },
+  "patandiangan": {
+    "arti": "pertandingan",
+    "keterangan": ""
+  },
+  "tingga": {
+    "arti": "tinggal",
+    "keterangan": ""
+  },
+  "mancapai": {
+    "arti": "mencapai",
+    "keterangan": ""
+  },
+  "carito": {
+    "arti": "cerita",
+    "keterangan": ""
+  },
+  "pamarintah": {
+    "arti": "pemerintah",
+    "keterangan": ""
+  },
+  "hiduik": {
+    "arti": "hidup",
+    "keterangan": ""
+  },
+  "dakek": {
+    "arti": "dekat",
+    "keterangan": ""
+  },
+  "saluruah": {
+    "arti": "seluruh",
+    "keterangan": ""
+  },
+  "tingkek": {
+    "arti": "tingkat",
+    "keterangan": ""
+  },
+  "cukuik": {
+    "arti": "cukup",
+    "keterangan": ""
+  },
+  "ubek": {
+    "arti": "obat",
+    "keterangan": ""
+  },
+  "diagiah": {
+    "arti": "diberi",
+    "keterangan": ""
+  },
+  "iduik": {
+    "arti": "hidup",
+    "keterangan": ""
+  },
+  "manjabaik": {
+    "arti": "menjabat",
+    "keterangan": ""
+  },
+  "bakarajo": {
+    "arti": "bekerja",
+    "keterangan": ""
+  },
+  "panyakik": {
+    "arti": "penyakit",
+    "keterangan": ""
+  },
+  "iolah": {
+    "arti": "ialah",
+    "keterangan": ""
+  },
+  "akhianyo": {
+    "arti": "akhirnya",
+    "keterangan": ""
+  },
+  "kampuang": {
+    "arti": "kampung",
+    "keterangan": ""
+  },
+  "ikuik": {
+    "arti": "ikut",
+    "keterangan": ""
+  },
+  "sadang": {
+    "arti": "sedang",
+    "keterangan": ""
+  },
+  "bakambang": {
+    "arti": "berkembang",
+    "keterangan": ""
+  },
+  "sakola": {
+    "arti": "sekolah",
+    "keterangan": ""
+  },
+  "babeda": {
+    "arti": "berbeda",
+    "keterangan": ""
+  },
+  "tuo": {
+    "arti": "tua",
+    "keterangan": ""
+  },
+  "manggunoan": {
+    "arti": "menggunakan",
+    "keterangan": ""
+  },
+  "katua": {
+    "arti": "ketua",
+    "keterangan": ""
+  },
+  "sasuai": {
+    "arti": "sesuai",
+    "keterangan": ""
+  },
+  "pantiang": {
+    "arti": "penting",
+    "keterangan": ""
+  },
+  "taruih": {
+    "arti": "terus",
+    "keterangan": ""
+  },
+  "baiak": {
+    "arti": "baik",
+    "keterangan": ""
+  },
+  "sabanyak": {
+    "arti": "sebanyak",
+    "keterangan": ""
+  },
+  "kahidupan": {
+    "arti": "kehidupan",
+    "keterangan": ""
+  },
+  "akhia": {
+    "arti": "akhir",
+    "keterangan": ""
+  },
+  "nagaro": {
+    "arti": "negara",
+    "keterangan": ""
+  },
+  "salapeh": {
+    "arti": "selepas",
+    "keterangan": ""
+  },
+  "masiang": {
+    "arti": "masing",
+    "keterangan": ""
+  },
+  "maagiah": {
+    "arti": "memberikan",
+    "keterangan": ""
+  },
+  "mandirian": {
+    "arti": "mendirikan",
+    "keterangan": ""
+  },
+  "bagabuang": {
+    "arti": "bergabung",
+    "keterangan": ""
+  },
+  "katigo": {
+    "arti": "ketiga",
+    "keterangan": ""
+  },
+  "raso": {
+    "arti": "rasa",
+    "keterangan": ""
+  },
+  "kagiatan": {
+    "arti": "kegiatan",
+    "keterangan": ""
+  },
+  "salanjuiknyo": {
+    "arti": "selanjutnya",
+    "keterangan": ""
+  },
+  "tapiliah": {
+    "arti": "terpilih",
+    "keterangan": ""
+  },
+  "liau": {
+    "arti": "beliau",
+    "keterangan": ""
+  },
+  "pambangunan": {
+    "arti": "pembangunan",
+    "keterangan": ""
+  },
+  "panulih": {
+    "arti": "penulis",
+    "keterangan": ""
+  },
+  "mulo": {
+    "arti": "mula",
+    "keterangan": ""
+  },
+  "malawan": {
+    "arti": "melawan",
+    "keterangan": ""
+  },
+  "sajumlah": {
+    "arti": "sejumlah",
+    "keterangan": ""
+  },
+  "anam": {
+    "arti": "enam",
+    "keterangan": ""
+  },
+  "mambantuak": {
+    "arti": "membentuk",
+    "keterangan": ""
+  },
+  "daripado": {
+    "arti": "daripada",
+    "keterangan": ""
+  },
+  "mamakai": {
+    "arti": "memakai",
+    "keterangan": ""
+  },
+  "langsuang": {
+    "arti": "langsung",
+    "keterangan": ""
+  },
+  "namonyo": {
+    "arti": "namanya",
+    "keterangan": ""
+  },
+  "umaik": {
+    "arti": "umat",
+    "keterangan": ""
+  },
+  "sakik": {
+    "arti": "sakit",
+    "keterangan": ""
+  },
+  "mato": {
+    "arti": "mata",
+    "keterangan": ""
+  },
+  "digunokan": {
+    "arti": "digunakan",
+    "keterangan": ""
+  },
+  "datuak": {
+    "arti": "datuk",
+    "keterangan": ""
+  },
+  "jauah": {
+    "arti": "jauh",
+    "keterangan": ""
+  },
+  "tarutamo": {
+    "arti": "terutama",
+    "keterangan": ""
+  },
+  "babantuak": {
+    "arti": "berbentuk",
+    "keterangan": ""
+  },
+  "supayo": {
+    "arti": "supaya",
+    "keterangan": ""
+  },
+  "tatapi": {
+    "arti": "tetapi",
+    "keterangan": ""
+  },
+  "antaronyo": {
+    "arti": "diantaranya",
+    "keterangan": ""
+  },
+  "diangkek": {
+    "arti": "diangkat",
+    "keterangan": ""
+  },
+  "ayahnyo": {
+    "arti": "ayahnya",
+    "keterangan": ""
+  },
+  "dima": {
+    "arti": "dimana",
+    "keterangan": ""
+  },
+  "muko": {
+    "arti": "muka",
+    "keterangan": ""
+  },
+  "alun": {
+    "arti": "belum",
+    "keterangan": ""
+  },
+  "talua": {
+    "arti": "telur",
+    "keterangan": ""
+  },
+  "karusakan": {
+    "arti": "kerusakan",
+    "keterangan": ""
+  },
+  "baitu": {
+    "arti": "adalah",
+    "keterangan": ""
+  },
+  "katurunan": {
+    "arti": "keturunan",
+    "keterangan": ""
+  },
+  "mamainan": {
+    "arti": "memainkan",
+    "keterangan": ""
+  },
+  "pajuang": {
+    "arti": "pejuang",
+    "keterangan": ""
+  },
+  "gulo": {
+    "arti": "gula",
+    "keterangan": ""
+  },
+  "suaro": {
+    "arti": "suara",
+    "keterangan": ""
+  },
+  "didirian": {
+    "arti": "didirikan",
+    "keterangan": ""
+  },
+  "manikah": {
+    "arti": "menikah",
+    "keterangan": ""
+  },
+  "manggunokan": {
+    "arti": "menggunakan",
+    "keterangan": ""
+  },
+  "bungo": {
+    "arti": "bunga",
+    "keterangan": ""
+  },
+  "sainggo": {
+    "arti": "sehingga",
+    "keterangan": ""
+  },
+  "kulik": {
+    "arti": "kulit",
+    "keterangan": ""
+  },
+  "pai": {
+    "arti": "pergi",
+    "keterangan": ""
+  },
+  "mako": {
+    "arti": "maka",
+    "keterangan": ""
+  },
+  "dagiang": {
+    "arti": "daging",
+    "keterangan": ""
+  },
+  "sadonyo": {
+    "arti": "semuanya",
+    "keterangan": ""
+  },
+  "rakyaik": {
+    "arti": "rakyat",
+    "keterangan": ""
+  },
+  "tibo": {
+    "arti": "tiba",
+    "keterangan": ""
+  },
+  "bukik": {
+    "arti": "bukit",
+    "keterangan": ""
+  },
+  "tubuah": {
+    "arti": "tubuh",
+    "keterangan": ""
+  },
+  "adonyo": {
+    "arti": "adanya",
+    "keterangan": ""
+  },
+  "kalua": {
+    "arti": "keluar",
+    "keterangan": ""
+  },
+  "kaduonyo": {
+    "arti": "keduanya",
+    "keterangan": ""
+  },
+  "parubahan": {
+    "arti": "perubahan",
+    "keterangan": ""
+  },
+  "bakapasitas": {
+    "arti": "berkapasitas",
+    "keterangan": ""
+  },
+  "ditulih": {
+    "arti": "ditulis",
+    "keterangan": ""
+  },
+  "kandangnyo": {
+    "arti": "kandangnya",
+    "keterangan": ""
+  },
+  "barikuik": {
+    "arti": "berikut",
+    "keterangan": ""
+  },
+  "satampek": {
+    "arti": "setempat",
+    "keterangan": ""
+  },
+  "sangkek": {
+    "arti": "sejak",
+    "keterangan": ""
+  },
+  "mandapekan": {
+    "arti": "mendapatkan",
+    "keterangan": ""
+  },
+  "saaik": {
+    "arti": "saat",
+    "keterangan": ""
+  },
+  "kantua": {
+    "arti": "kantor",
+    "keterangan": ""
+  },
+  "palabuahan": {
+    "arti": "pelabuhan",
+    "keterangan": ""
+  },
+  "surek": {
+    "arti": "surat",
+    "keterangan": ""
+  },
+  "limo": {
+    "arti": "lima",
+    "keterangan": ""
+  },
+  "jawi": {
+    "arti": "sapi",
+    "keterangan": ""
+  },
+  "pamimpin": {
+    "arti": "pemimpin",
+    "keterangan": ""
+  },
+  "bana": {
+    "arti": "sangat",
+    "keterangan": ""
+  },
+  "rancak": {
+    "arti": "bagus",
+    "keterangan": ""
+  }
 }

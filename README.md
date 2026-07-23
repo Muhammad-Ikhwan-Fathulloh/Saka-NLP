@@ -1,4 +1,4 @@
-# Saka: Pemrosesan Bahasa Indonesia dengan Prompting dan Dukungan AI Agentik v0.2.7
+# Saka: Pemrosesan Bahasa Indonesia dengan Prompting dan Dukungan AI Agentik v0.2.8
 
 [**English**](README_EN.md) | [**Bahasa Indonesia**](README.md)
 
@@ -14,7 +14,7 @@
 ---
 
 ## Daftar Isi
-- [Saka: Pemrosesan Bahasa Indonesia dengan Prompting dan Dukungan AI Agentik v0.2.7](#saka-pemrosesan-bahasa-indonesia-dengan-prompting-dan-dukungan-ai-agentik-v026)
+- [Saka: Pemrosesan Bahasa Indonesia dengan Prompting dan Dukungan AI Agentik v0.2.8](#saka-pemrosesan-bahasa-indonesia-dengan-prompting-dan-dukungan-ai-agentik-v026)
   - [Daftar Isi](#daftar-isi)
   - [Fitur Utama](#fitur-utama)
   - [Instalasi](#instalasi)
@@ -189,7 +189,7 @@ Saka-NLP memecah kata majemuk secara otomatis menggunakan aturan yang ditentukan
 
 Dukungan mendalam untuk bahasa daerah melalui kamus dan aksara tradisional.
 
-### Batak (Baru di v0.2.7)
+### Batak (Baru di v0.2.8)
 
 Saka-NLP sekarang mendukung **Batak** lintas tiga dialek — Toba, Karo, dan Mandailing — dengan leksikon **780+ kata** bersumber dari tata bahasa akademis dan KamusBatak.com.
 
@@ -256,7 +256,7 @@ saka --normalize "ngapain ke kampus klo libur"
   month = {5},
   year = {2026},
   publisher = {Zenodo},
-  version = {0.2.7},
+  version = {0.2.8},
   doi = {10.5281/zenodo.20092640},
   url = {https://github.com/Muhammad-Ikhwan-Fathulloh/Saka-NLP}
 }

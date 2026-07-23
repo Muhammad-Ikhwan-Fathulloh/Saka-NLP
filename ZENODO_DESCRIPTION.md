@@ -1,4 +1,4 @@
-# Saka-NLP v0.2.7
+# Saka-NLP v0.2.8
 
 [![PyPI version](https://img.shields.io/pypi/v/saka-nlp.svg)](https://pypi.org/project/saka-nlp/)
 [![Documentation](https://img.shields.io/badge/docs-live-brightgreen)](http://saka-nlp.netlify.app/)
@@ -26,6 +26,20 @@
 | **Saka-Eval** | Suite benchmark asinkron untuk evaluasi model NLP Bahasa Indonesia. |
 | **Penanganan Kata Majemuk Dinamis** | Pisahkan kata majemuk Bahasa Indonesia secara otomatis. |
 | **Apify Actor** | Jalankan Saka di cloud untuk otomatisasi scraping dan pemrosesan teks. |
+
+---
+
+## Changelog v0.2.8
+
+### Peningkatan Normalisasi & Bahasa Daerah
+- **Prioritas Dictionary**: Memperbaiki urutan penggabungan dictionary agar dictionary bahasa daerah yang lebih baik (Minang, Bali, Sunda, Batak) tidak ditimpa secara keliru oleh entri yang lebih pendek dari bahasa lain.
+- **Konflik Slang vs Partikel**: Mengatasi tabrakan kata slang dengan partikel bahasa daerah (seperti "ka" dan "teh") dengan menghapusnya dari slang base sebelum penggabungan regional.
+- **Penyesuaian Kosakata**:
+  - **Sunda**: Menambahkan kata dasar seperti "abdi", "nuju", "ka", dan "bumi" ("rumah"). Menghapus "bumi" dari daftar kata yang dilindungi agar bisa dipetakan.
+  - **Jawa**: Memperbaiki arti "bocah" menjadi "anak" dan menambahkan "sopo", "arep", "tuku", "iki".
+  - **Bali**: Menambahkan "lakar" dan "jukut" (menjadi "sayur").
+  - **Minang**: Memastikan "jo" tetap "dengan" dan "rancak" menjadi "bagus".
+- **Format Otomatis**: Normalizer kini secara cerdas mempertahankan huruf kapital (termasuk huruf kapital penuh dan huruf awal kapital) serta merapikan spasi sebelum tanda baca (, . ! ? : ;).
 
 ---
 
@@ -99,11 +113,11 @@ Jika Anda menggunakan Saka-NLP dalam penelitian atau aplikasi Anda, silakan sita
   month        = jul,
   year         = 2026,
   publisher    = {Zenodo},
-  version      = {0.2.7},
+  version      = {0.2.8},
   doi          = {10.5281/zenodo.21418577},
   url          = {https://doi.org/10.5281/zenodo.21418577}
 }
 ```
 
 ### APA
-Fathulloh, M. I. (2026). *Saka-NLP: Indonesian Language Processing with Prompting and Agentic AI Support* (Version 0.2.7) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.21418577
+Fathulloh, M. I. (2026). *Saka-NLP: Indonesian Language Processing with Prompting and Agentic AI Support* (Version 0.2.8) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.21418577

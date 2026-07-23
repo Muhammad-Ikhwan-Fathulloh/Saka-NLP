@@ -300,8 +300,8 @@
     "keterangan": "mider"
   },
   "aji": {
-    "arti": "harga",
-    "keterangan": "mider"
+    "arti": "ayah",
+    "keterangan": "alus"
   },
   "ali": {
     "arti": "cari",
@@ -339,10 +339,6 @@
     "arti": "ayah, bapak",
     "keterangan": "andap"
   },
-  "aji": {
-    "arti": "ayah",
-    "keterangan": "alus"
-  },
   "kaki": {
     "arti": "kakek",
     "keterangan": "andap"
@@ -378,5 +374,13 @@
   "punika": {
     "arti": "itu",
     "keterangan": "alus"
+  },
+  "lakar": {
+    "arti": "akan",
+    "keterangan": "andap"
+  },
+  "jukut": {
+    "arti": "sayur",
+    "keterangan": "mider"
   }
 }
