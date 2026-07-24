@@ -1,4 +1,4 @@
-# Saka: Indonesian Language Processing with Prompting and Agentic AI Support v0.2.8
+# Saka: Indonesian Language Processing with Prompting and Agentic AI Support v0.2.9
 
 [**English**](README_EN.md) | [**Bahasa Indonesia**](README.md)
 
@@ -14,37 +14,43 @@
 ---
 
 ## Table of Contents
-- [Saka: Indonesian Language Processing with Prompting and Agentic AI Support v0.2.8](#saka-indonesian-language-processing-with-prompting-and-agentic-ai-support-v026)
+- [Saka: Indonesian Language Processing with Prompting and Agentic AI Support v0.2.9](#saka-indonesian-language-processing-with-prompting-and-agentic-ai-support-v029)
   - [Table of Contents](#table-of-contents)
   - [Key Features](#key-features)
   - [Installation](#installation)
   - [Quick Start](#quick-start)
-  - [Agentic AI & Prompting](#agentic-ai--prompting)
+  - [Agentic AI \& Prompting](#agentic-ai--prompting)
   - [Saka-Eval Benchmark](#saka-eval-benchmark)
   - [Dynamic Compound Handling](#dynamic-compound-handling)
   - [Regional Ecosystem](#regional-ecosystem)
-  - [CLI & Citation](#cli--citation)
-  - [Sources & Credits](#sources--credits)
+    - [Batak (New in v0.2.8)](#batak-new-in-v028)
+    - [Sundanese Script (Ngalagena)](#sundanese-script-ngalagena)
+    - [Javanese Script (Nglegena)](#javanese-script-nglegena)
+    - [Balinese Script (Wreastra)](#balinese-script-wreastra)
+  - [CLI \& Citation](#cli--citation)
+    - [CLI Usage](#cli-usage)
+    - [Citation](#citation)
+  - [Sources \& Credits](#sources--credits)
   - [Support](#support)
 
 ---
 
 ## Key Features
 
-| Feature | Description |
-|---------|-------------|
-| **Async Processing** | Supports non-blocking operations to efficiently process large-scale datasets without waiting for one task to finish first. |
-| **Performance Optimizations** | LRU caching on `normalize()`, `analyze()`, and `get_stopwords()` to reduce repeated processing time and improve speed. |
-| **Modular Design** | Plug-and-play components to simplify integration with other applications or adding new features. |
-| **Morphology Analyzer** | Hybrid affix analysis of Indonesian and regional languages with *Morphophonemic Restructuring* to separate and understand word structure, including compound words and derived words. |
-| **Live KBBI** | Real-time extraction of word meanings from the official Indonesian Dictionary (KBBI) via web scraping to get accurate definitions. |
-| **Hybrid Stopwords** | Supports stopwords for various languages and dialects: Indonesian, English, Sundanese, Javanese, Balinese, Minangkabau, Batak (Toba, Karo, Mandailing), and South Jakarta slang. |
-| **Regional Lexicons** | Provides validated word dictionaries for regional languages like Sundanese, Javanese, Balinese, Minangkabau, and Batak. |
-| **Regional Script Transliteration** | Enables text conversion between Latin letters and traditional scripts of Sundanese (Ngalagena), Javanese (Nglegena), and Balinese (Wreastra). |
-| **Agentic AI** | Provides tools to orchestrate LLM (Large Language Model) prompts, manage multi-agent systems, and perform custom tool calling to build AI-based applications. |
-| **Saka-Eval** | Asynchronous benchmark suite to evaluate the performance of Indonesian NLP models on tasks like sentiment analysis and Named Entity Recognition (NER). |
-| **Dynamic Compound Handling** | Automatically splits Indonesian and regional compound words using rules defined in `compounds.json`. |
-| **Apify Actor** | Run Saka on the Apify platform for cloud-based Indonesian web scraping and text processing automation, available at [ikhwan_fathulloh/saka-nlp-actor](https://apify.com/ikhwan_fathulloh/saka-nlp-actor). |
+| Feature                             | Description                                                                                                                                                                                               |
+| ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Async Processing**                | Supports non-blocking operations to efficiently process large-scale datasets without waiting for one task to finish first.                                                                                |
+| **Performance Optimizations**       | LRU caching on `normalize()`, `analyze()`, and `get_stopwords()` to reduce repeated processing time and improve speed.                                                                                    |
+| **Modular Design**                  | Plug-and-play components to simplify integration with other applications or adding new features.                                                                                                          |
+| **Morphology Analyzer**             | Hybrid affix analysis of Indonesian and regional languages with *Morphophonemic Restructuring* to separate and understand word structure, including compound words and derived words.                     |
+| **Live KBBI**                       | Real-time extraction of word meanings from the official Indonesian Dictionary (KBBI) via web scraping to get accurate definitions.                                                                        |
+| **Hybrid Stopwords**                | Supports stopwords for various languages and dialects: Indonesian, English, Sundanese, Javanese, Balinese, Minangkabau, Batak (Toba, Karo, Mandailing), and South Jakarta slang.                          |
+| **Regional Lexicons**               | Provides validated word dictionaries for regional languages like Sundanese, Javanese, Balinese, Minangkabau, and Batak.                                                                                   |
+| **Regional Script Transliteration** | Enables text conversion between Latin letters and traditional scripts of Sundanese (Ngalagena), Javanese (Nglegena), and Balinese (Wreastra).                                                             |
+| **Agentic AI**                      | Provides tools to orchestrate LLM (Large Language Model) prompts, manage multi-agent systems, and perform custom tool calling to build AI-based applications.                                             |
+| **Saka-Eval**                       | Asynchronous benchmark suite to evaluate the performance of Indonesian NLP models on tasks like sentiment analysis and Named Entity Recognition (NER).                                                    |
+| **Dynamic Compound Handling**       | Automatically splits Indonesian and regional compound words using rules defined in `compounds.json`.                                                                                                      |
+| **Apify Actor**                     | Run Saka on the Apify platform for cloud-based Indonesian web scraping and text processing automation, available at [ikhwan_fathulloh/saka-nlp-actor](https://apify.com/ikhwan_fathulloh/saka-nlp-actor). |
 
 ---
 
@@ -176,12 +182,12 @@ asyncio.run(run())
 
 Saka-NLP automatically splits compound words using rules defined in `compounds.json`:
 
-| Input | Root |
-|-------|------|
-| `menyebarluaskan` | `sebar luas` |
-| `kerjasama` | `kerja sama` |
-| `hulunagara` | `hulu nagara` (Sundanese) |
-| `bundokanduang` | `bundo kanduang` (Minangkabau) |
+| Input             | Root                           |
+| ----------------- | ------------------------------ |
+| `menyebarluaskan` | `sebar luas`                   |
+| `kerjasama`       | `kerja sama`                   |
+| `hulunagara`      | `hulu nagara` (Sundanese)      |
+| `bundokanduang`   | `bundo kanduang` (Minangkabau) |
 
 ---
 
@@ -220,19 +226,19 @@ print(_BATAK_DICT["denggan"]["arti"])    # 'baik, bagus'
 
 ### Sundanese Script (Ngalagena)
 | Latin | Script | Latin | Script |
-|-------|--------|-------|--------|
-| ha    | ᮠ     | na    | ᮔ     |
+| ----- | ------ | ----- | ------ |
+| ha    | ᮠ      | na    | ᮔ      |
 | ...   | ...    | ...   | ...    |
 
 ### Javanese Script (Nglegena)
 | Latin | Script | Latin | Script |
-|-------|--------|-------|--------|
-| ha    | ꦲ     | na    | ꦤ     |
+| ----- | ------ | ----- | ------ |
+| ha    | ꦲ      | na    | ꦤ      |
 | ...   | ...    | ...   | ...    |
 
 ### Balinese Script (Wreastra)
 | Latin | Script | Latin | Script |
-|-------|--------|-------|--------|
+| ----- | ------ | ----- | ------ |
 | ...   | ...    | ...   | ...    |
 
 *(Full table available in [Web Documentation](http://saka-nlp.netlify.app/))*
@@ -269,23 +275,23 @@ saka --normalize "ngapain ke kampus klo libur"
 
 Saka-NLP is built on the following open research and datasets. We thank the researchers and contributors:
 
-| Category | Source | Description |
-|----------|--------|-------------|
-| **Datasets** | [Carant-AI](https://huggingface.co/datasets/carant-ai/indonesian_sentiment_dataset) | Indonesian Sentiment Dataset |
-| | [Kiuyha](https://huggingface.co/datasets/Kiuyha/surabaya-ner-dataset) | Surabaya NER Dataset |
-| | [IndoNLU](https://huggingface.co/datasets/indonlp/indonlu) | Indonesian NLP Standard Benchmark |
-| | [Tala Dataset](https://github.com/masdevid/ID-Stopwords) | Indonesian Stopwords |
-| **Lexicons** | [SundaDigi](https://sundadigi.com) | Sundanese Digital Dictionary |
-| | [Sastra.org](https://sastra.org) | Javanese Lexicon |
-| | [BASAbali Wiki](https://basabali.org) | Balinese Lexicon |
-| | [KamusBatak.Com](https://www.kamusbatak.com) | Batak Dictionary |
-| **Grammars** | Nababan (1981). *A Grammar of Toba-Batak*. [DOI:10.15144/PL-D37](https://doi.org/10.15144/PL-D37) | Toba Batak Grammar |
-| | Woollams (1996). *A Grammar of Karo Batak*. [DOI:10.15144/PL-C130](https://doi.org/10.15144/PL-C130) | Karo Batak Grammar |
-| | Bird et al. (2009). *NLTK*. [nltk.org](https://www.nltk.org/) | English Stopwords |
-| | Pedregosa et al. (2011). *Scikit-learn*. JMLR 12. | English Stopwords and Evaluation Metrics |
-| **Libraries** | [HuggingFace](https://huggingface.co) | Dataset & Model Hub Ecosystem |
-| | [scikit-learn](https://scikit-learn.org) | Evaluation Metrics |
-| | [Emoji/Emot](https://pypi.org/project/emoji/) | Social Media Text Handling |
+| Category      | Source                                                                                               | Description                              |
+| ------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------- |
+| **Datasets**  | [Carant-AI](https://huggingface.co/datasets/carant-ai/indonesian_sentiment_dataset)                  | Indonesian Sentiment Dataset             |
+|               | [Kiuyha](https://huggingface.co/datasets/Kiuyha/surabaya-ner-dataset)                                | Surabaya NER Dataset                     |
+|               | [IndoNLU](https://huggingface.co/datasets/indonlp/indonlu)                                           | Indonesian NLP Standard Benchmark        |
+|               | [Tala Dataset](https://github.com/masdevid/ID-Stopwords)                                             | Indonesian Stopwords                     |
+| **Lexicons**  | [SundaDigi](https://sundadigi.com)                                                                   | Sundanese Digital Dictionary             |
+|               | [Sastra.org](https://sastra.org)                                                                     | Javanese Lexicon                         |
+|               | [BASAbali Wiki](https://basabali.org)                                                                | Balinese Lexicon                         |
+|               | [KamusBatak.Com](https://www.kamusbatak.com)                                                         | Batak Dictionary                         |
+| **Grammars**  | Nababan (1981). *A Grammar of Toba-Batak*. [DOI:10.15144/PL-D37](https://doi.org/10.15144/PL-D37)    | Toba Batak Grammar                       |
+|               | Woollams (1996). *A Grammar of Karo Batak*. [DOI:10.15144/PL-C130](https://doi.org/10.15144/PL-C130) | Karo Batak Grammar                       |
+|               | Bird et al. (2009). *NLTK*. [nltk.org](https://www.nltk.org/)                                        | English Stopwords                        |
+|               | Pedregosa et al. (2011). *Scikit-learn*. JMLR 12.                                                    | English Stopwords and Evaluation Metrics |
+| **Libraries** | [HuggingFace](https://huggingface.co)                                                                | Dataset & Model Hub Ecosystem            |
+|               | [scikit-learn](https://scikit-learn.org)                                                             | Evaluation Metrics                       |
+|               | [Emoji/Emot](https://pypi.org/project/emoji/)                                                        | Social Media Text Handling               |
 
 ---
 
