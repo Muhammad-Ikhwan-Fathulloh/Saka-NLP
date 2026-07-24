@@ -14,9 +14,9 @@ class Agent:
         self.tools.append(schema)
         if func: self.funcs[name] = func
 
-    def prompt(self, query: str, context: str = "") -> str:
+    def prompt(self, query: str, context: str = "", output_language: str = None) -> str:
         constr = f"1. Follow ReAct format.\n2. Use tools:\n{json.dumps(self.tools)}" if self.tools else "Answer directly."
-        return build_prompt(role=self.role, task=self.task, context=context, constraint=constr, input_data=query)
+        return build_prompt(role=self.role, task=self.task, context=context, constraint=constr, input_data=query, output_language=output_language)
 
     def call_tool(self, action: str, action_input: Union[str, Dict]) -> Any:
         if isinstance(action_input, str):
@@ -32,6 +32,16 @@ class Agent:
     def format_output(self, data: Any, format_type: str = "markdown") -> str:
         """Utility to format data using the built-in formatter."""
         return OutputFormatter.format(data, format_type)
+
+    def translate_to(self, text: str, target_lang: str) -> str:
+        """Utilitas untuk menghasilkan prompt terjemahan ke bahasa daerah (contoh: sunda, jawa, bali, dll)."""
+        return build_prompt(
+            role="Penerjemah Bahasa Daerah",
+            task=f"Terjemahkan teks berikut dengan natural ke dalam bahasa: {target_lang}",
+            input_data=text,
+            output_language=target_lang,
+            optimize_text=True
+        )
 
 class MultiAgentManager:
     def __init__(self): self.agents: Dict[str, Agent] = {}

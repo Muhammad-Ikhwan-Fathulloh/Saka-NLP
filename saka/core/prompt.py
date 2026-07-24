@@ -42,6 +42,9 @@ def build_prompt(**kwargs) -> Union[str, Dict[str, Any]]:
             
     add("data input", inp)
     
+    if kwargs.get('output_language'):
+        add("output language", f"Hasilkan atau terjemahkan output ke dalam bahasa daerah: {kwargs.get('output_language')}")
+    
     if not kwargs.get('output_contract'):
         ind = kwargs.get('output_indicator', 'Teks').strip()
         if ind.upper() in ["JSON", "LIST", "TABEL"]:

@@ -1,4 +1,4 @@
-__version__ = "0.2.8"
+__version__ = "0.2.9"
 
 
 from .core.tokenizer import tokenize, async_tokenize, get_token_count
@@ -8,6 +8,7 @@ from .core.emoji_handler import demojize, replace_emoticons
 from .core.prompt import build_prompt, async_build_prompt, parse_llm_output, PromptTemplate
 from .core.agent import Agent, MultiAgentManager, get_react_prompt
 from .core.transaction import parse_transaction_units, extract_transaction_entities
+from .core.translator import dict_translate
 from .utils.formatter import OutputFormatter
 from .dict.stopwords import get_stopwords
 from .plugins.kbbi_scraper import query_kbbi
@@ -60,4 +61,5 @@ __all__ = [
     "aksara_jawa_to_latin",
     "latin_to_aksara",
     "aksara_to_latin",
+    "dict_translate",
 ]
