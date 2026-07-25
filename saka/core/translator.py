@@ -11,6 +11,14 @@ def _invert_dict(raw_dict: Dict[str, Any]) -> Dict[str, str]:
     inverted = {}
     for region_word, data in raw_dict.items():
         if isinstance(data, dict) and 'arti' in data:
+            # Clean the region_word to remove numbers and parenthetical notes
+            cleaned_rw = re.sub(r'\(.*?\)', '', region_word)
+            cleaned_rw = re.sub(r'\d+', '', cleaned_rw)
+            cleaned_rw = cleaned_rw.strip(' -:').strip()
+            # If completely empty after cleaning, use the original without spaces
+            if not cleaned_rw:
+                cleaned_rw = region_word.strip()
+                
             meanings_str = data['arti']
             # Split multiple meanings
             meanings = re.split(r'[,;\/]', meanings_str)
@@ -23,7 +31,7 @@ def _invert_dict(raw_dict: Dict[str, Any]) -> Dict[str, str]:
                 
                 # Take only single words or short phrases
                 if m and m not in inverted:
-                    inverted[m] = region_word
+                    inverted[m] = cleaned_rw
     return inverted
 
 def _load_and_invert(filename: str) -> Dict[str, str]:
@@ -73,8 +81,59 @@ def dict_translate(text: str, target_lang: str) -> str:
     for t in tokens:
         if re.match(r'^[A-Za-z\-]+$', t):
             lower_t = t.lower()
+            repl = None
             if lower_t in lang_dict:
                 repl = lang_dict[lower_t]
+            else:
+                # Basic Affix fallback
+                prefixes = ['meng', 'meny', 'mem', 'men', 'me', 'peng', 'peny', 'pem', 'pen', 'pe', 'ber', 'ter', 'di', 'ke', 'se']
+                suffixes = ['kannya', 'annya', 'nya', 'kan', 'an', 'lah', 'kah', 'pun', 'ku', 'mu']
+                
+                # Check suffix
+                for suf in suffixes:
+                    if lower_t.endswith(suf) and len(lower_t) > len(suf) + 2:
+                        root = lower_t[:-len(suf)]
+                        if root in lang_dict:
+                            # Try to localize suffix if possible
+                            if suf == 'nya' and target_lang == 'sunda': suf = 'na'
+                            elif suf == 'nya' and target_lang in ['jawa', 'bali']: suf = 'ne'
+                            elif suf == 'nya' and target_lang == 'minang': suf = 'nyo'
+                            elif suf == 'nya' and target_lang == 'batak': suf = 'na'
+                            
+                            if suf == 'ku' and target_lang == 'batak': suf = 'hu'
+                            elif suf == 'mu' and target_lang == 'batak': suf = 'mi'
+                            
+                            repl = lang_dict[root] + suf
+                            break
+                            
+                # Check prefix
+                if not repl:
+                    for pre in prefixes:
+                        if lower_t.startswith(pre) and len(lower_t) > len(pre) + 2:
+                            root = lower_t[len(pre):]
+                            if root in lang_dict:
+                                repl = pre + lang_dict[root]
+                                break
+                                
+                # Check prefix + suffix
+                if not repl:
+                    for pre in prefixes:
+                        for suf in suffixes:
+                            if lower_t.startswith(pre) and lower_t.endswith(suf) and len(lower_t) > len(pre) + len(suf) + 2:
+                                root = lower_t[len(pre):-len(suf)]
+                                if root in lang_dict:
+                                    # Localize suffix
+                                    if suf == 'nya' and target_lang == 'sunda': suf = 'na'
+                                    elif suf == 'nya' and target_lang in ['jawa', 'bali']: suf = 'ne'
+                                    elif suf == 'nya' and target_lang == 'minang': suf = 'nyo'
+                                    elif suf == 'nya' and target_lang == 'batak': suf = 'na'
+                                    
+                                    repl = pre + lang_dict[root] + suf
+                                    break
+                        if repl:
+                            break
+
+            if repl:
                 # Match casing
                 if t.isupper():
                     repl = repl.upper()

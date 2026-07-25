@@ -1,4 +1,4 @@
-__version__ = "0.2.9"
+__version__ = "0.3.0"
 
 
 from .core.tokenizer import tokenize, async_tokenize, get_token_count
@@ -10,7 +10,7 @@ from .core.agent import Agent, MultiAgentManager, get_react_prompt
 from .core.transaction import parse_transaction_units, extract_transaction_entities
 from .core.translator import dict_translate
 from .utils.formatter import OutputFormatter
-from .dict.stopwords import get_stopwords
+from .dict.stopwords import get_stopwords, remove_stopwords
 from .plugins.kbbi_scraper import query_kbbi
 from .plugins.sunda.transliterate import (
     latin_to_aksara_sunda, 
@@ -51,6 +51,7 @@ __all__ = [
     "extract_transaction_entities",
     "OutputFormatter",
     "get_stopwords",
+    "remove_stopwords",
     "query_kbbi",
     "query_sundadigi",
     "query_sastra",

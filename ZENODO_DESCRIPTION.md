@@ -1,4 +1,4 @@
-# Saka-NLP v0.2.8
+# Saka-NLP v0.3.0
 
 [![PyPI version](https://img.shields.io/pypi/v/saka-nlp.svg)](https://pypi.org/project/saka-nlp/)
 [![Documentation](https://img.shields.io/badge/docs-live-brightgreen)](http://saka-nlp.netlify.app/)
@@ -29,7 +29,7 @@
 
 ---
 
-## Changelog v0.2.8
+## Changelog v0.3.0
 
 ### Peningkatan Normalisasi & Bahasa Daerah
 - **Prioritas Dictionary**: Memperbaiki urutan penggabungan dictionary agar dictionary bahasa daerah yang lebih baik (Minang, Bali, Sunda, Batak) tidak ditimpa secara keliru oleh entri yang lebih pendek dari bahasa lain.
@@ -113,11 +113,11 @@ Jika Anda menggunakan Saka-NLP dalam penelitian atau aplikasi Anda, silakan sita
   month        = jul,
   year         = 2026,
   publisher    = {Zenodo},
-  version      = {0.2.8},
+  version      = {0.3.0},
   doi          = {10.5281/zenodo.21418577},
   url          = {https://doi.org/10.5281/zenodo.21418577}
 }
 ```
 
 ### APA
-Fathulloh, M. I. (2026). *Saka-NLP: Indonesian Language Processing with Prompting and Agentic AI Support* (Version 0.2.8) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.21418577
+Fathulloh, M. I. (2026). *Saka-NLP: Indonesian Language Processing with Prompting and Agentic AI Support* (Version 0.3.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.21418577

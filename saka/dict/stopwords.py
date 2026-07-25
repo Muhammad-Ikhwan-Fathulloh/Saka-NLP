@@ -307,3 +307,38 @@ def get_stopwords(lang: str = "all") -> Set[str]:
         stopwords.update(_JAKSEL_STOPWORDS)
         
     return stopwords
+
+def remove_stopwords(text: str, lang: str = "all", remove_punctuation: bool = False, extra_punctuation: str = "") -> str:
+    """
+    Menghapus stopwords dari teks.
+    
+    Args:
+        text (str): Teks asal
+        lang (str): Pilihan bahasa stopword ('id', 'sunda', 'jawa', 'bali', 'minang', 'batak', 'jaksel', 'en', atau 'all')
+        remove_punctuation (bool): Jika True, akan membuang tanda baca dasar (.,!?;:()[]"' dsb)
+        extra_punctuation (str): Karakter kustom tambahan yang ingin dibuang (misal "-_")
+        
+    Returns:
+        str: Teks yang sudah bersih dari stopwords (dan tanda baca jika dipilih)
+    """
+    import string
+    
+    # 1. Bersihkan tanda baca jika diminta
+    if remove_punctuation or extra_punctuation:
+        chars_to_remove = extra_punctuation
+        if remove_punctuation:
+            chars_to_remove += string.punctuation
+            
+        if chars_to_remove:
+            translation_table = str.maketrans(dict.fromkeys(chars_to_remove))
+            text = text.translate(translation_table)
+            
+    # 2. Tokenisasi secara kasar basis spasi
+    words = text.split()
+    stops = get_stopwords(lang)
+    
+    # 3. Filter
+    filtered_words = [w for w in words if w.lower() not in stops]
+    
+    return " ".join(filtered_words)
+

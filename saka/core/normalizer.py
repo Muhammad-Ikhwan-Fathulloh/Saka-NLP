@@ -13,9 +13,14 @@ def normalize(text: str) -> str:
     """
     from .tokenizer import tokenize
     from .transaction import parse_transaction_units
+    from .emoji_handler import replace_emoticons, demojize
     
     # Pre-normalization: handle transactional units (10k -> 10000)
     text = parse_transaction_units(text)
+    
+    # Pre-normalization: handle emoticons and emojis
+    text = demojize(text)
+    text = replace_emoticons(text)
     
     tokens = tokenize(text)
     normalized_tokens = []

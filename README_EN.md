@@ -1,4 +1,4 @@
-# Saka: Indonesian Language Processing with Prompting and Agentic AI Support v0.2.9
+# Saka: Indonesian Language Processing with Prompting and Agentic AI Support v0.3.0
 
 [**English**](README_EN.md) | [**Bahasa Indonesia**](README.md)
 
@@ -14,16 +14,19 @@
 ---
 
 ## Table of Contents
-- [Saka: Indonesian Language Processing with Prompting and Agentic AI Support v0.2.9](#saka-indonesian-language-processing-with-prompting-and-agentic-ai-support-v029)
+- [Saka: Indonesian Language Processing with Prompting and Agentic AI Support v0.3.0](#saka-indonesian-language-processing-with-prompting-and-agentic-ai-support-v030)
   - [Table of Contents](#table-of-contents)
   - [Key Features](#key-features)
   - [Installation](#installation)
   - [Quick Start](#quick-start)
+  - [Examples Directory](#examples-directory)
   - [Agentic AI \& Prompting](#agentic-ai--prompting)
   - [Saka-Eval Benchmark](#saka-eval-benchmark)
   - [Dynamic Compound Handling](#dynamic-compound-handling)
   - [Regional Ecosystem](#regional-ecosystem)
-    - [Batak (New in v0.2.8)](#batak-new-in-v028)
+    - [1. Sundanese, Javanese, and Balinese](#1-sundanese-javanese-and-balinese)
+    - [2. Minangkabau](#2-minangkabau)
+    - [3. Batak](#3-batak)
     - [Sundanese Script (Ngalagena)](#sundanese-script-ngalagena)
     - [Javanese Script (Nglegena)](#javanese-script-nglegena)
     - [Balinese Script (Wreastra)](#balinese-script-wreastra)
@@ -127,6 +130,40 @@ print("however" in en_stops)  # True
 
 ---
 
+## Examples Directory
+
+All reference scripts can be found in the `examples/` directory. Here is a comprehensive overview of their functionalities:
+
+- **1. Core Usage and Utilities**
+  - `basic_usage.py` — Introduction to the most frequently used features (tokenization, normalization, KBBI lookup, etc).
+  - `full_core_integration_demo.py` — Combining a series of Saka core modules into a complete processing pipeline.
+  - `async_usage.py` — Guide to using library features in an _Asynchronous_ environment.
+  - `transactional_context_demo.py` — How to use transactional entity extraction functions.
+  - `output_demo.py` — Offline formatting features to/from CSV/HTML Markdown using the `OutputFormatter` module.
+
+- **2. Morphology and Analysis**
+  - `morphology_advanced.py` — Advanced dissection case of the internal heuristics in Saka's affix *Analyzer*.
+  - `stopwords_demo.py` — Advanced application of per-language _stopwords_ mode (including pure punctuation stripping).
+  - `dict_translate_demo.py` — Executing literal word translation into custom regional language families.
+  - `kbbi_demo.py` — Guide for delegating web KBBI _scraping_ to your terminal for up-to-date definitions.
+
+- **3. Regional Plugin Ecosystem**
+  - `sunda_plugin.py` — Full transliteration demo for Ngalagena script and local KBBI site fetching.
+  - `jawa_plugin.py` — Use case for Latin transliteration to royal Nglegena alphabet script.
+  - `bali_plugin.py` — Demonstration script for the Wreastra archipelago script system programmatically.
+
+- **4. Agentic AI & LLM Parameters**
+  - `multi_agent_edu_demo.py` — Environment configuration simulating several LLM intermediary agents cohesively.
+  - `tool_calling_edu_demo.py` — AI Assistant wrapped in modular _Function/Tool Calling_ from Saka.
+  - `prompt_optimization_demo.py` — Assembling carefully manipulated *prompt* instructions for modern language models (LLMs).
+
+- **5. Saka-Eval (Fast Evaluation and Metrics)**
+  - `benchmark_stack.py` — Basic execution mapping for stacked *Benchmark* evaluation schemes on local NLP engines.
+  - `saka_eval_demo.py` — Example instantiation of the *Saka Evaluation pipeline* purely offline.
+  - `saka_eval_huggingface_demo.py` — Standard accrued metric testing drawing Language NLP datasets from the _Hugging Face Hub_.
+
+---
+
 ## Agentic AI & Prompting
 
 Build LLM-based applications with full control. Complete examples: [output_demo.py](examples/output_demo.py) & [multi_agent_edu_demo.py](examples/multi_agent_edu_demo.py).
@@ -193,9 +230,49 @@ Saka-NLP automatically splits compound words using rules defined in `compounds.j
 
 ## Regional Ecosystem
 
-Deep support for regional languages through dictionaries and traditional scripts.
+Saka-NLP provides deep support for various regional language families in Indonesia through literal translation dictionary features, morphology dissection, collections of _stopwords_, web dictionary *scraping* extractors, down to ancient/traditional script transliteration.
 
-### Batak (New in v0.2.8)
+### 1. Sundanese, Javanese, and Balinese
+These three languages possess the most complete plural feature support in the Saka ecosystem:
+- **Lexicon & Specific Stopwords:** Contains internal vocabulary and sets of sentence complementary conjunctions for their respective languages.
+- **Traditional Script Transliteration:** Converts sequences of Latin text back and forth to **Ngalagena (Sundanese)**, **Nglegena (Javanese)**, and **Wreastra (Balinese)** scripts.
+- **Live Dictionary Scraper Modules:** Interactive compact APIs through `query_sundadigi()`, `query_sastra()`, and `query_basabali()` that dissect direct *backends* and extract grammar parameters from giant local digital treasury sites (SundaDigi, Sastra.org, BASAbali Wiki).
+
+```python
+import saka
+import asyncio
+
+# 1. Lexicon & Morphology Analysis
+print(saka.analyze("geulis")["regional_matches"])     # ['sunda'] (beautiful)
+print(saka.analyze("nglegena")["regional_matches"])   # ['jawa']
+print(saka.analyze("rahajeng")["regional_matches"])   # ['bali'] (safe/greetings)
+
+# 2. Latin ↔ Traditional Script Transliteration
+print(saka.latin_to_aksara_sunda("sampurasun"))       # ᮞᮙ᮪ᮕᮥᮛᮞᮥᮔ᮪
+
+# 3. Actual Dictionary Meaning Scraping
+jawa_def = asyncio.run(saka.query_sastra("mangan"))
+print(jawa_def["definitions"][0])                     # 'makan; memakan ...' (eat)
+```
+
+### 2. Minangkabau
+The core morphological analysis support is seamlessly integrated with Minangkabau text functionalities:
+- **Lexicon & Special Word Handling:** Automatic *root-word* splitting with regional combined words. The hybrid system natively recognizes cultural consecutive terms.
+- **Minang Stopwords Filter:** Feature to reduce popular Minangkabau filler words (*cinto*, *nan*, *jo*, etc).
+
+```python
+import saka
+
+# Special / consecutive word analysis (example: bundo kanduang)
+print(saka.analyze("bundokanduang")["regional_matches"]) # ['minang']
+print(saka.analyze("bundokanduang")["root"])             # 'bundo kanduang'
+
+# Pruning regional functional words (Minang Stopwords)
+minang_teks = saka.remove_stopwords("rancak bana pado inyo", lang="minang")
+print(minang_teks)                                       # 'rancak bana'
+```
+
+### 3. Batak
 
 Saka-NLP now supports **Batak** across three dialects — Toba, Karo, and Mandailing — with a lexicon of **780+ words** sourced from academic grammars and KamusBatak.com.
 
@@ -227,21 +304,44 @@ print(_BATAK_DICT["denggan"]["arti"])    # 'baik, bagus'
 ### Sundanese Script (Ngalagena)
 | Latin | Script | Latin | Script |
 | ----- | ------ | ----- | ------ |
-| ha    | ᮠ      | na    | ᮔ      |
-| ...   | ...    | ...   | ...    |
+| ka    | ᮊ      | ga    | ᮌ      |
+| nga   | ᮍ      | ca    | ᮎ      |
+| ja    | ᮏ      | nya   | ᮑ      |
+| ta    | ᮒ      | da    | ᮓ      |
+| na    | ᮔ      | pa    | ᮕ      |
+| ba    | ᮘ      | ma    | ᮙ      |
+| ya    | ᮚ      | ra    | ᮛ      |
+| la    | ᮜ      | wa    | ᮝ      |
+| sa    | ᮞ      | ha    | ᮠ      |
 
 ### Javanese Script (Nglegena)
 | Latin | Script | Latin | Script |
 | ----- | ------ | ----- | ------ |
 | ha    | ꦲ      | na    | ꦤ      |
-| ...   | ...    | ...   | ...    |
+| ca    | ꦕ      | ra    | ꦫ      |
+| ka    | ꦏ      | da    | ꦢ      |
+| ta    | ꦠ      | sa    | ꦱ      |
+| wa    | ꦮ      | la    | ꦭ      |
+| pa    | ꦥ      | dha   | ꦝ      |
+| ja    | ꦗ      | ya    | ꦪ      |
+| nya   | ꦚ      | ma    | ꦩ      |
+| ga    | ꦒ      | ba    | ꦧ      |
+| tha   | ꦛ      | nga   | ꦔ      |
 
 ### Balinese Script (Wreastra)
 | Latin | Script | Latin | Script |
 | ----- | ------ | ----- | ------ |
-| ...   | ...    | ...   | ...    |
+| ha    | ᬳ      | na    | ᬦ      |
+| ca    | ᬘ      | ra    | ᬭ      |
+| ka    | ᬓ      | da    | ᬤ      |
+| ta    | ᬢ      | sa    | ᬲ      |
+| wa    | ᬯ      | la    | ᬮ      |
+| ma    | ᬫ      | ga    | ᬕ      |
+| ba    | ᬩ      | nga   | ᬗ      |
+| pa    | ᬧ      | ja    | ᬚ      |
+| ya    | ᬬ      | nya   | ᬜ      |
 
-*(Full table available in [Web Documentation](http://saka-nlp.netlify.app/))*
+*(Full table along with modifiers/vowel signs available in [Web Documentation](http://saka-nlp.netlify.app/))*
 </details>
 
 ---
@@ -263,7 +363,7 @@ saka --normalize "ngapain ke kampus klo libur"
   month     = {5},
   year      = {2026},
   publisher = {Zenodo},
-  version   = {0.2.8},
+  version   = {0.3.0},
   doi       = {10.5281/zenodo.20092640},
   url       = {https://github.com/Muhammad-Ikhwan-Fathulloh/Saka-NLP}
 }
@@ -275,23 +375,25 @@ saka --normalize "ngapain ke kampus klo libur"
 
 Saka-NLP is built on the following open research and datasets. We thank the researchers and contributors:
 
-| Category      | Source                                                                                               | Description                              |
-| ------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------- |
-| **Datasets**  | [Carant-AI](https://huggingface.co/datasets/carant-ai/indonesian_sentiment_dataset)                  | Indonesian Sentiment Dataset             |
-|               | [Kiuyha](https://huggingface.co/datasets/Kiuyha/surabaya-ner-dataset)                                | Surabaya NER Dataset                     |
-|               | [IndoNLU](https://huggingface.co/datasets/indonlp/indonlu)                                           | Indonesian NLP Standard Benchmark        |
-|               | [Tala Dataset](https://github.com/masdevid/ID-Stopwords)                                             | Indonesian Stopwords                     |
-| **Lexicons**  | [SundaDigi](https://sundadigi.com)                                                                   | Sundanese Digital Dictionary             |
-|               | [Sastra.org](https://sastra.org)                                                                     | Javanese Lexicon                         |
-|               | [BASAbali Wiki](https://basabali.org)                                                                | Balinese Lexicon                         |
-|               | [KamusBatak.Com](https://www.kamusbatak.com)                                                         | Batak Dictionary                         |
-| **Grammars**  | Nababan (1981). *A Grammar of Toba-Batak*. [DOI:10.15144/PL-D37](https://doi.org/10.15144/PL-D37)    | Toba Batak Grammar                       |
-|               | Woollams (1996). *A Grammar of Karo Batak*. [DOI:10.15144/PL-C130](https://doi.org/10.15144/PL-C130) | Karo Batak Grammar                       |
-|               | Bird et al. (2009). *NLTK*. [nltk.org](https://www.nltk.org/)                                        | English Stopwords                        |
-|               | Pedregosa et al. (2011). *Scikit-learn*. JMLR 12.                                                    | English Stopwords and Evaluation Metrics |
-| **Libraries** | [HuggingFace](https://huggingface.co)                                                                | Dataset & Model Hub Ecosystem            |
-|               | [scikit-learn](https://scikit-learn.org)                                                             | Evaluation Metrics                       |
-|               | [Emoji/Emot](https://pypi.org/project/emoji/)                                                        | Social Media Text Handling               |
+| Category      | Source                                                                                                                                    | Description                                                                                           |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| **Datasets**  | [Carant-AI](https://huggingface.co/datasets/carant-ai/indonesian_sentiment_dataset)                                                       | Indonesian Sentiment Dataset                                                                          |
+|               | [Kiuyha](https://huggingface.co/datasets/Kiuyha/surabaya-ner-dataset)                                                                     | Surabaya NER Dataset                                                                                  |
+|               | [IndoNLU](https://huggingface.co/datasets/indonlp/indonlu)                                                                                | Indonesian NLP Standard Benchmark                                                                     |
+|               | **Stopwords**: [Tala Dataset](https://github.com/masdevid/ID-Stopwords)                                                                   | Adopts the legendary corpus of the Tala Stopwords Dataset.                                            |
+|               | **Slang Words**: [Twitter COVID-19 Lexicon](https://github.com/evanmartua34/Twitter-COVID19-Indonesia-Sentiment-Analysis---Lexicon-Based) | Utilizes corpus from the Twitter COVID-19 Sentiment Lexicon.                                          |
+| **Lexicons**  | **SundaDigi**: [SundaDigi.com](https://sundadigi.com/)                                                                                    | Uses the digital dictionary SundaDigi for translations & references of regional Sundanese vocabulary. |
+|               | **KBBI (Kamus Besar Bahasa Indonesia)**: [KBBI Daring](https://kbbi.kemendikdasmen.go.id/)                                                | Data netted sourced directly from the credential portal of KBBI Daring Kemendikdasmen.                |
+|               | [Sastra.org](https://sastra.org)                                                                                                          | Javanese Lexicon                                                                                      |
+|               | [BASAbali Wiki](https://basabali.org)                                                                                                     | Balinese Lexicon                                                                                      |
+|               | [KamusBatak.Com](https://www.kamusbatak.com)                                                                                              | Batak Dictionary                                                                                      |
+| **Grammars**  | Nababan (1981). *A Grammar of Toba-Batak*. [DOI:10.15144/PL-D37](https://doi.org/10.15144/PL-D37)                                         | Toba Batak Grammar                                                                                    |
+|               | Woollams (1996). *A Grammar of Karo Batak*. [DOI:10.15144/PL-C130](https://doi.org/10.15144/PL-C130)                                      | Karo Batak Grammar                                                                                    |
+|               | Bird et al. (2009). *NLTK*. [nltk.org](https://www.nltk.org/)                                                                             | English Stopwords                                                                                     |
+|               | Pedregosa et al. (2011). *Scikit-learn*. JMLR 12.                                                                                         | English Stopwords and Evaluation Metrics                                                              |
+| **Libraries** | [HuggingFace](https://huggingface.co)                                                                                                     | Dataset & Model Hub Ecosystem                                                                         |
+|               | [scikit-learn](https://scikit-learn.org)                                                                                                  | Evaluation Metrics                                                                                    |
+|               | [Emoji/Emot](https://pypi.org/project/emoji/)                                                                                             | Social Media Text Handling                                                                            |
 
 ---
 
